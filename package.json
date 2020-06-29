@@ -23,6 +23,8 @@
   },
   "homepage": "https://gitlab.com/madhums/vic-website#readme",
   "dependencies": {
+    "husky": "~4.2.5",
+    "lint-staged": "~10.2.11",
     "next": "~9.4.4",
     "react": "~16.13.1",
     "react-dom": "~16.13.1"
@@ -38,5 +40,16 @@
     "eslint-plugin-react": "~7.20.2",
     "prettier": "~2.0.5",
     "typescript": "~3.9.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
