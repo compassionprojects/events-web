@@ -1,5 +1,7 @@
-function Landing() {
-  return (<div>Hello world</div>)
+import React from 'react';
+
+function Landing(): JSX.Element {
+  return <div>Hello world</div>;
 }
 
-export default Landing
+export default Landing;
