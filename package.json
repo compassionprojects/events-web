@@ -4,9 +4,9 @@
   "description": "Website for vic platform",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server",
     "build": "next build",
-    "start": "next start"
+    "start": "node server"
   },
   "repository": {
     "type": "git",
