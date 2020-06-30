@@ -84,7 +84,7 @@ Icon.propTypes = {
   shape: PropTypes.oneOf(['chevron-down', 'chevron-up', 'external-link']),
 };
 
-function Speaker({ name, bio, image_url }) {
+function Speaker({ name, image_url }) {
   return (
     <div className="my-3">
       <img
