@@ -7,9 +7,7 @@ export default function Layout(props) {
     <>
       <Header />
       <main role="main">
-        <div className="container">
-          <div {...props} />
-        </div>
+        <div {...props} />
       </main>
       <Footer />
     </>
