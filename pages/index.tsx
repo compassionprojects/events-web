@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Collapse, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
+import Head from 'next/head';
 import data from '../data';
 
 function Landing() {
@@ -11,6 +12,10 @@ function Landing() {
 
   return (
     <>
+      <Head>
+        <title>{data.mission_title}</title>
+        <meta name="description" content={data.mission_description} />
+      </Head>
       <Cover className="text-white text-center">
         <Narrow className="px-2 py-5 mx-auto">
           <h1 className="pt-5">{data.mission_title}</h1>
