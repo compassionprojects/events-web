@@ -22,6 +22,10 @@
     "url": "https://gitlab.com/madhums/vic-website/issues"
   },
   "homepage": "https://gitlab.com/madhums/vic-website#readme",
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.13.4"
+  },
   "dependencies": {
     "husky": "~4.2.5",
     "lint-staged": "~10.2.11",
