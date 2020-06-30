@@ -12,7 +12,7 @@ function Landing() {
   return (
     <>
       <Cover className="text-white text-center">
-        <Narrow className="px-2 pt-5 mx-auto">
+        <Narrow className="px-2 py-5 mx-auto">
           <h1 className="pt-5">{data.mission_title}</h1>
           <p className="lead pt-4">{data.mission_description}</p>
           <BuyTicket />
@@ -27,7 +27,7 @@ function Landing() {
         </div>
         <div className="mt-5 py-5">
           <h1 className="text-center py-3">Frequently Asked Questions</h1>
-          <Narrow className="mx-auto pl-5">
+          <Narrow className="mx-auto pl-sm-5">
             {data.faqs.map((item, index) => (
               <div className="py-2" key={index}>
                 <a style={{ cursor: 'pointer' }} onClick={() => toggle(index)}>
@@ -109,7 +109,7 @@ function BuyTicket() {
       href={data.buy_ticket_url}
       rel="noreferrer"
       target="_blank"
-      className="btn btn-lg btn-primary mt-4">
+      className="btn btn-lg btn-primary my-4">
       {data.buy_ticket_title}
       <Icon
         shape="external-link"
