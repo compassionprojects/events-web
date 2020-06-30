@@ -28,4 +28,17 @@ module.exports = {
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
+  rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        jsxBracketSameLine: true,
+        endOfLine: 'auto',
+        printWidth: 80,
+        tabWidth: 2,
+      },
+    ],
+    '@typescript-eslint/no-var-requires': 0,
+  },
 };
