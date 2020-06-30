@@ -81,7 +81,7 @@ function Icon({ shape, ...props }) {
 Icon.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
-  shape: PropTypes.oneOf(['chevron-down', 'chevron-up']),
+  shape: PropTypes.oneOf(['chevron-down', 'chevron-up', 'external-link']),
 };
 
 function Speaker({ name, bio, image_url }) {
