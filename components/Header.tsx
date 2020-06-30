@@ -21,17 +21,17 @@ export default function Header() {
         <NavbarBrand href="/">{APP_NAME}</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto py-3" navbar>
-            <NavItem className="pl-4">
+          <Nav className="ml-auto py-md-3" navbar>
+            <NavItem className="pl-md-4">
               <NavLink href="#">About</NavLink>
             </NavItem>
-            <NavItem className="pl-4">
+            <NavItem className="pl-md-4">
               <NavLink href="#">FAQ&apos;s</NavLink>
             </NavItem>
-            <NavItem className="pl-4">
+            <NavItem className="pl-md-4">
               <NavLink href="#">Speakers</NavLink>
             </NavItem>
-            <NavItem className="pl-4">
+            <NavItem className="pl-md-4">
               <NavLink href="#">Contact</NavLink>
             </NavItem>
           </Nav>
