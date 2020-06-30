@@ -1,6 +1,6 @@
 export default {
   cover_image: '/images/cover.jpg',
-  mission_title: 'Virtual Intensive Care Festival',
+  mission_title: 'Virtual Intensive Course',
   mission_description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis. 140 chars',
   buy_ticket_url:
