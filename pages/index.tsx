@@ -26,11 +26,20 @@ function Landing() {
       <div className="container">
         <div className="mt-4 py-5">
           <Narrow className="mx-auto">
-            <h1 className="text-center py-3">About us</h1>
-            <AboutDescription>{data.about_us}</AboutDescription>
+            <h1 className="text-center py-3">About</h1>
+            <Description>{data.about}</Description>
           </Narrow>
         </div>
-        <div className="mt-5 py-5">
+        <Section>
+          <Narrow className="mx-auto">
+            <h1 className="text-center py-3">Course</h1>
+            <Description>{data.course}</Description>
+            <div className="pt-3 text-center">
+              <BuyTicket />
+            </div>
+          </Narrow>
+        </Section>
+        <Section>
           <h1 className="text-center py-3">Frequently Asked Questions</h1>
           <Narrow className="mx-auto pl-sm-5">
             {data.faqs.map((item, index) => (
@@ -45,13 +54,13 @@ function Landing() {
               </div>
             ))}
           </Narrow>
-        </div>
-        <div className="mt-4 py-5">
+        </Section>
+        <Section>
           <Narrow className="mx-auto">
-            <h1 className="text-center py-3">Speakers</h1>
-            {data.speakers_intro}
+            <h1 className="text-center py-3">Trainers</h1>
+            {data.trainers_intro}
             <Row>
-              {data.speakers.map((item, index) => (
+              {data.trainers.map((item, index) => (
                 <Col
                   key={index}
                   className="text-center"
@@ -64,6 +73,16 @@ function Landing() {
               ))}
             </Row>
           </Narrow>
+        </Section>
+        <div className="mt-4 py-5">
+          <div className="embed-responsive embed-responsive-16by9">
+            <iframe
+              frameBorder="1"
+              className="embed-responsive-item"
+              sandbox="allow-same-origin allow-scripts"
+              src={data.video_embed_url}
+              allowFullScreen></iframe>
+          </div>
         </div>
         <div className="py-5 text-center">
           <BuyTicket />
@@ -136,7 +155,7 @@ const Narrow = styled.div`
   max-width: 600px;
 `;
 
-const AboutDescription = styled.div`
+const Description = styled.div`
   white-space: pre-line;
 `;
 
@@ -150,3 +169,7 @@ const Feather = styled.svg`
   fill: none;
   margin-right: 5px;
 `;
+
+const Section = styled.section.attrs({
+  className: 'mt-4 py-5 border-top',
+})``;

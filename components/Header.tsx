@@ -26,6 +26,9 @@ export default function Header() {
               <NavLink href="#">About</NavLink>
             </NavItem>
             <NavItem className="pl-md-4">
+              <NavLink href="#">Course</NavLink>
+            </NavItem>
+            <NavItem className="pl-md-4">
               <NavLink href="#">FAQ&apos;s</NavLink>
             </NavItem>
             <NavItem className="pl-md-4">
