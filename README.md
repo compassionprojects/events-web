@@ -1,6 +1,6 @@
 ## VIC website
 
-Virtual Intensive Care website
+Virtual Intensive Course website
 
 ## Development
 
