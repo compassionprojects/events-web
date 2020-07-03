@@ -22,7 +22,7 @@ export default function Footer() {
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
-              Speakers
+              Trainers
             </a>
           </li>
           <li className="nav-item">
