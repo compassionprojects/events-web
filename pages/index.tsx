@@ -67,6 +67,7 @@ function Landing() {
             {data.faqs.map((item, index) => (
               <div className="py-2" key={index}>
                 <a
+                  className="d-flex align-items-center"
                   style={{ cursor: 'pointer' }}
                   onClick={() => toggleFAQ(index)}>
                   <Icon shape={faq[index] ? 'chevron-up' : 'chevron-down'} />
@@ -84,7 +85,7 @@ function Landing() {
         <Section>
           <Narrow className="mx-auto">
             <h1 className="text-center py-3">Trainers</h1>
-            {data.trainers_intro}
+            <div className="pb-4">{data.trainers_intro}</div>
             <Row>
               {data.trainers.map((item, index) => (
                 <Col
