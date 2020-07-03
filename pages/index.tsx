@@ -117,7 +117,7 @@ function Landing() {
                 </Col>
               ))}
             </Row>
-            <Modal isOpen={modal} fade={false} toggle={toggleModal}>
+            <Modal isOpen={modal} fade={false} toggle={toggleModal} centered>
               <ModalHeader toggle={toggleModal}>
                 <div className="d-flex">
                   <img
