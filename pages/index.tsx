@@ -13,6 +13,7 @@ import {
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
+import Icon from '../components/Icon';
 import data from '../data';
 
 interface Trainer {
@@ -34,25 +35,32 @@ function Landing() {
 
   return (
     <>
+      {/* title and description for SEO */}
       <Head>
         <title>{data.mission_title}</title>
         <meta name="description" content={data.mission_description} />
       </Head>
-      <Cover className="text-white text-center">
+
+      {/* Cover section for the fold */}
+      <Cover className="text-white text-center" id="top">
         <Narrow className="px-2 py-5 mx-auto">
           <h1 className="pt-5">{data.mission_title}</h1>
           <p className="lead pt-4">{data.mission_description}</p>
           <BuyTicket />
         </Narrow>
       </Cover>
+
       <div className="container">
-        <div className="mt-4 py-5">
+        {/* About section */}
+        <div className="mt-4 py-5" id="about">
           <Narrow className="mx-auto">
             <h1 className="text-center py-3">About</h1>
             <ReactMarkdown source={data.about} />
           </Narrow>
         </div>
-        <Section>
+
+        {/* Course section */}
+        <Section id="course">
           <Narrow className="mx-auto">
             <h1 className="text-center py-3">Course</h1>
             <ReactMarkdown source={data.course} />
@@ -61,7 +69,9 @@ function Landing() {
             </div>
           </Narrow>
         </Section>
-        <Section>
+
+        {/* FAQ section */}
+        <Section id="faq">
           <h1 className="text-center py-3">Frequently Asked Questions</h1>
           <Narrow className="mx-auto pl-sm-5">
             {data.faqs.map((item, index) => (
@@ -82,7 +92,9 @@ function Landing() {
             ))}
           </Narrow>
         </Section>
-        <Section>
+
+        {/* Trainers section */}
+        <Section id="trainers">
           <Narrow className="mx-auto">
             <h1 className="text-center py-3">Trainers</h1>
             <div className="pb-4">{data.trainers_intro}</div>
@@ -129,7 +141,9 @@ function Landing() {
             </Modal>
           </Narrow>
         </Section>
-        <div className="mt-4 py-5">
+
+        {/* Video presentation section */}
+        <div className="mt-4 py-5" id="video">
           <div className="embed-responsive embed-responsive-16by9">
             <iframe
               title="a video presentation on vic"
@@ -140,6 +154,8 @@ function Landing() {
               allowFullScreen></iframe>
           </div>
         </div>
+
+        {/* Last CTA */}
         <div className="py-5 text-center">
           <BuyTicket />
         </div>
@@ -149,20 +165,6 @@ function Landing() {
 }
 
 export default Landing;
-
-function Icon({ shape, ...props }) {
-  return (
-    <Feather {...props}>
-      <use xlinkHref={`/images/feather-sprite.svg#${shape}`} />
-    </Feather>
-  );
-}
-
-Icon.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  shape: PropTypes.oneOf(['chevron-down', 'chevron-up', 'external-link']),
-};
 
 function Trainer({ name, image_url, bio, setTrainer }) {
   const openModal = (e) => {
@@ -220,17 +222,6 @@ const Cover = styled.div`
 
 const Narrow = styled.div`
   max-width: 600px;
-`;
-
-const Feather = styled.svg`
-  width: ${(props) => props.width || 25}px;
-  height: ${(props) => props.height || 25}px;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-  margin-right: 5px;
 `;
 
 const Section = styled.section.attrs({
