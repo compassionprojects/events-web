@@ -1,15 +1,36 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Collapse, Row, Col } from 'reactstrap';
+import {
+  Collapse,
+  Row,
+  Col,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+} from 'reactstrap';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 import data from '../data';
 
+interface Trainer {
+  name: string;
+  image_url: string;
+  bio: string;
+}
+
 function Landing() {
-  const [state, setIsOpen] = useState({});
-  const toggle = (index) =>
-    setIsOpen((prev) => ({ ...prev, [index]: !prev[index] }));
+  const [faq, setFAQIsOpen] = useState({});
+  const toggleFAQ = (index) =>
+    setFAQIsOpen((prev) => ({ ...prev, [index]: !prev[index] }));
+
+  const [modal, setModal] = useState(false);
+  const toggleModal = () => setModal(!modal);
+
+  const t: Trainer = { name: '', image_url: '', bio: '' };
+  const [trainer, setTrainer] = useState(t);
 
   return (
     <>
@@ -45,11 +66,13 @@ function Landing() {
           <Narrow className="mx-auto pl-sm-5">
             {data.faqs.map((item, index) => (
               <div className="py-2" key={index}>
-                <a style={{ cursor: 'pointer' }} onClick={() => toggle(index)}>
-                  <Icon shape={state[index] ? 'chevron-up' : 'chevron-down'} />
+                <a
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => toggleFAQ(index)}>
+                  <Icon shape={faq[index] ? 'chevron-up' : 'chevron-down'} />
                   <span>{item.question}</span>
                 </a>
-                <Collapse style={{ marginLeft: 30 }} isOpen={state[index]}>
+                <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
                   {item.answer}
                 </Collapse>
               </div>
@@ -69,10 +92,38 @@ function Landing() {
                   sm={6}
                   md={4}
                   lg={3}>
-                  <Speaker {...item} />
+                  <Trainer
+                    {...item}
+                    setTrainer={({ ...args }) => {
+                      setTrainer({ ...args });
+                      toggleModal();
+                    }}
+                  />
                 </Col>
               ))}
             </Row>
+            <Modal isOpen={modal} fade={false} toggle={toggleModal}>
+              <ModalHeader toggle={toggleModal}>
+                <div className="d-flex">
+                  <img
+                    width="30"
+                    height="30"
+                    alt={trainer.name}
+                    src={trainer.image_url}
+                    className="mr-2 img-fluid rounded-circle"
+                  />
+                  <span>{trainer.name}</span>
+                </div>
+              </ModalHeader>
+              <ModalBody>
+                <ReactMarkdown source={trainer.bio} />
+              </ModalBody>
+              <ModalFooter>
+                <Button color="secondary" onClick={toggleModal}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </Modal>
           </Narrow>
         </Section>
         <div className="mt-4 py-5">
@@ -110,24 +161,34 @@ Icon.propTypes = {
   shape: PropTypes.oneOf(['chevron-down', 'chevron-up', 'external-link']),
 };
 
-function Speaker({ name, image_url }) {
+function Trainer({ name, image_url, bio, setTrainer }) {
+  const openModal = (e) => {
+    e.preventDefault();
+    setTrainer({ name, image_url, bio });
+  };
   return (
-    <div className="my-3">
-      <img
-        alt={name}
-        src={image_url}
-        className="img-fluid rounded-circle"
-        style={{ height: 120, margin: '0 auto' }}
-      />
-      <h6 className="mt-3">{name}</h6>
-    </div>
+    <>
+      <div className="my-3">
+        <img
+          alt={name}
+          src={image_url}
+          className="img-fluid rounded-circle"
+          style={{ height: 120, margin: '0 auto', cursor: 'pointer' }}
+          onClick={openModal}
+        />
+        <a className="mt-3 h6 d-block" href="" onClick={openModal}>
+          {name}
+        </a>
+      </div>
+    </>
   );
 }
 
-Speaker.propTypes = {
+Trainer.propTypes = {
   name: PropTypes.string,
   bio: PropTypes.string,
   image_url: PropTypes.string,
+  setTrainer: PropTypes.func,
 };
 
 function BuyTicket() {
@@ -156,10 +217,6 @@ const Cover = styled.div`
 
 const Narrow = styled.div`
   max-width: 600px;
-`;
-
-const Description = styled.div`
-  white-space: pre-line;
 `;
 
 const Feather = styled.svg`
