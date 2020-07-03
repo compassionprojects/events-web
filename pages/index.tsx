@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Collapse, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
+import ReactMarkdown from 'react-markdown';
 import data from '../data';
 
 function Landing() {
@@ -27,13 +28,13 @@ function Landing() {
         <div className="mt-4 py-5">
           <Narrow className="mx-auto">
             <h1 className="text-center py-3">About</h1>
-            <Description>{data.about}</Description>
+            <ReactMarkdown source={data.about} />
           </Narrow>
         </div>
         <Section>
           <Narrow className="mx-auto">
             <h1 className="text-center py-3">Course</h1>
-            <Description>{data.course}</Description>
+            <ReactMarkdown source={data.course} />
             <div className="pt-3 text-center">
               <BuyTicket />
             </div>
@@ -77,6 +78,7 @@ function Landing() {
         <div className="mt-4 py-5">
           <div className="embed-responsive embed-responsive-16by9">
             <iframe
+              title="a video presentation on vic"
               frameBorder="1"
               className="embed-responsive-item"
               sandbox="allow-same-origin allow-scripts"
@@ -112,6 +114,7 @@ function Speaker({ name, image_url }) {
   return (
     <div className="my-3">
       <img
+        alt={name}
         src={image_url}
         className="img-fluid rounded-circle"
         style={{ height: 120, margin: '0 auto' }}

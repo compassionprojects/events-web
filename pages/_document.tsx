@@ -38,7 +38,7 @@ class VicDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <link href="/css/bootstrap.min.css" rel="stylesheet" />
         </Head>
