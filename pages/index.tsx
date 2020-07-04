@@ -121,8 +121,7 @@ function Landing() {
               <ModalHeader toggle={toggleModal}>
                 <div className="d-flex">
                   <img
-                    width="30"
-                    height="30"
+                    style={{ height: 30, width: 30 }}
                     alt={trainer.name}
                     src={trainer.image_url}
                     className="mr-2 img-fluid rounded-circle"
