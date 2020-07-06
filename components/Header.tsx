@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 import scrollTo from 'scroll-to-element';
 import { APP_NAME } from '../constants';
+import data from '../data';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +45,7 @@ export default function Header() {
               </NavLink>
             </NavItem>
             <NavItem className="pl-md-4">
-              <NavLink href="#">Contact</NavLink>
+              <NavLink href={`mailto:${data.contact_email}`}>Contact</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

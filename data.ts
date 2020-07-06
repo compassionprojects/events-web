@@ -1,3 +1,5 @@
+const contact_email = 'louise@peacefactory.fr';
+
 export default {
   cover_image: '/images/cover.jpg',
   mission_title: 'Nonviolent Communication Virtual Intensive Course',
@@ -34,7 +36,7 @@ export default {
   No other translation is envisaged by the organisers, although our experience is that many bilingual people are happy to jump in when necessary on an ad hoc basis. You can also buy a ticket for two and work side by side with your own interpreter.
 
   <div class="py-4 h3 text-center">
-  What to expect
+  What to expect?
   </div>
 
   - **Richness and diversity**: Every year there are participants from many countries and this tremendous inter-cultural diversity adds to the richness of experience and exploration.
@@ -42,14 +44,12 @@ export default {
   - **Community**: We aim to live equality in our community, exploring and creating together. We are aware of different talents and passions we bring into the course and this diversity proves to be a contributing element.
 
   <div class="py-4 h3 text-center">
-  How
+  What you need?
   </div>
 
-  Equipment required : a webcam, microphone and an internet connection. It’s that simple!
+  A webcam, microphone and a stable internet connection. It’s that simple!
 
-  The virtual platform has been developed by the Peace Factory team, with personal and community spaces, take care spaces, details on the schedule, media library and more...
-
-  All the meetings will take place on Zoom which is compatible with Microsoft or Apple. After registering, if you’re new to Zoom, you can access detailed information about how to use it and be supported with technical aspects. Peace Factory has 9 years of experience offering on-line courses, so you’re in good hands.
+  All the meetings will take place on <a href="https://zoom.us" target="_blank">Zoom</a> which is compatible with Microsoft or Apple. After registering, if you’re new to Zoom, you can access detailed information about how to use it and be supported with technical aspects. Peace Factory has 9 years of experience offering on-line courses, so you’re in good hands.
 
   <div class="py-4 h3 text-center">
   Course Content
@@ -76,7 +76,7 @@ export default {
   </div>
 
   _Prices are in Euros._
-  _If you would prefer to pay in US Dollars, please contact <a href="mailto:louise@peacefactory.fr">Louise</a>._
+  _If you would prefer to pay in US Dollars, please contact <a href="mailto:${contact_email}">Louise</a>._
 
   The fee to participate for the eight days online course is:
 
@@ -139,7 +139,7 @@ export default {
     },
     {
       question: 'You can’t find your question?',
-      answer: `If you have questions that aren’t included here, you are invited to write to <a href="mailto:louise@peacefactory.fr">Louise</a> so that this part of the flier gets richer!`,
+      answer: `If you have questions that aren’t included here, you are invited to write to <a href="mailto:${contact_email}">Louise</a> so that this part of the flier gets richer!`,
     },
   ],
   trainers_intro:
@@ -207,4 +207,5 @@ export default {
     },
   ],
   video_embed_url: 'https://www.youtube.com/embed/j0WYvQ105Wo',
+  contact_email,
 };

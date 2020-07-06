@@ -1,6 +1,7 @@
 import React from 'react';
 import scrollTo from 'scroll-to-element';
 import Icon from './Icon';
+import data from '../data';
 
 export default function Footer() {
   return (
@@ -49,7 +50,7 @@ export default function Footer() {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href={`mailto:${data.contact_email}`}>
               Contact
             </a>
           </li>
