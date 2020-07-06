@@ -1,6 +1,6 @@
-## VIC website
+## VIC web
 
-Virtual Intensive Course website
+Virtual Intensive Course platform / app
 
 ## Development
 
