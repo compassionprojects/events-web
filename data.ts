@@ -4,7 +4,7 @@ export default {
   cover_image: '/images/cover.jpg',
   mission_title: 'Nonviolent Communication Virtual Intensive Course',
   mission_description:
-    'Endorsed and fully supported by the Center for Nonviolent Communication (CNVC)',
+    'A ground-breaking way to engage in learning Nonviolent Communication - an 8 day Virtual Intensive Course. Endorsed and fully supported by the Center for Nonviolent Communication (CNVC)',
   buy_ticket_url:
     'https://www.eventbrite.co.uk/e/nonviolent-communication-virtual-intensive-course-2020-tickets-112284722628',
   buy_ticket_title: 'Buy tickets',
