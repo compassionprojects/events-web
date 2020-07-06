@@ -6,7 +6,7 @@ export default {
   mission_description:
     'Endorsed and fully supported by the Center for Nonviolent Communication (CNVC)',
   buy_ticket_url:
-    'https://www.eventbrite.com/e/the-show-must-go-on-the-afro-peruvian-sextets-livestreaming-experience-tickets-92497932807',
+    'https://www.eventbrite.co.uk/e/nonviolent-communication-virtual-intensive-course-2020-tickets-112284722628',
   buy_ticket_title: 'Buy tickets',
   about: `With so many unknowns about COVID-19, the core trainer team of the annual European Intensive Course decided that this year’s event would be held virtually so you can learn and deepen your Nonviolent Communication (NVC) skills in the safety and comfort of your own home.
 
