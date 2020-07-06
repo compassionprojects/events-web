@@ -41,6 +41,10 @@ class VicDocument extends Document {
       <Html lang="en">
         <Head>
           <link href="/css/bootstrap.min.css" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body className="d-flex flex-column h-100">
           <Main />
