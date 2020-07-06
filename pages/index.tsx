@@ -12,7 +12,7 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown/with-html';
 import Icon from '../components/Icon';
 import data from '../data';
 
@@ -55,7 +55,10 @@ function Landing() {
         <div className="mt-4 py-5" id="about">
           <Narrow className="mx-auto">
             <h1 className="text-center py-3">About</h1>
-            <ReactMarkdown source={data.about} />
+            <ReactMarkdown source={data.about} escapeHtml={false} />
+            <div className="pt-3 text-center">
+              <BuyTicket />
+            </div>
           </Narrow>
         </div>
 
@@ -63,7 +66,7 @@ function Landing() {
         <Section id="course">
           <Narrow className="mx-auto">
             <h1 className="text-center py-3">Course</h1>
-            <ReactMarkdown source={data.course} />
+            <ReactMarkdown source={data.course} escapeHtml={false} />
             <div className="pt-3 text-center">
               <BuyTicket />
             </div>
@@ -86,10 +89,13 @@ function Landing() {
                   </span>
                 </a>
                 <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
-                  {item.answer}
+                  <ReactMarkdown source={item.answer} escapeHtml={false} />
                 </Collapse>
               </div>
             ))}
+            <div className="pt-3 text-center">
+              <BuyTicket />
+            </div>
           </Narrow>
         </Section>
 
@@ -220,7 +226,7 @@ const Cover = styled.div`
 `;
 
 const Narrow = styled.div`
-  max-width: 600px;
+  max-width: 700px;
 `;
 
 const Section = styled.section.attrs({
