@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  h1, h2, h3, .h1, .h2, .h3 {
-    font-family: 'Nunito', sans-serif;
+  blockquote {
+    padding-left: 1rem;
+    border-left: 6px solid #eee;
   }
 `;

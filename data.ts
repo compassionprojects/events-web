@@ -273,25 +273,25 @@ export default {
     {
       name: 'Frank Gaschler',
       image_url: '/images/trainers/frank.png',
-      bio: `My current passion revolves around four life themes:
+      bio: `> My current passion revolves around four life themes:
 
   - without having to do anything for it, to be welcome;
   - to have a space in which I can also stand up;
   - instead of having to control, to be held in trust; and
   - instead of fulfilling others dreams, be alive.
 
-My passion is to experiment with NVC outside the box, far away from the boundaries of words and language. I like to concentrate on intuition, empathic presence and body language.
+> My passion is to experiment with NVC outside the box, far away from the boundaries of words and language. I like to concentrate on intuition, empathic presence and body language.
 
-“Giraffe’s dream” is a social change project which introduces and spreads NVC in preschools and primary schools. This programme has become the biggest social change project in this field.
+> “Giraffe’s dream” is a social change project which introduces and spreads NVC in preschools and primary schools. This programme has become the biggest social change project in this field.
 
-I am a CNVC certified trainer and assessor in the certification process of the CNVC. My current passion revolves around the 4 life themes:
+> I am a CNVC certified trainer and assessor in the certification process of the CNVC. My current passion revolves around the 4 life themes:
 To be welcome - without having to do anything for it, to have a space for which I can also stand up, to be held in trust instead of having to control and be alive instead of fulfilling others dreams.
 
-My passion is to experiment with NVC outside the box, far away from the boundaries of words and language. Therefore I like to concentrate on intuition, empathic presence and body language.
+> My passion is to experiment with NVC outside the box, far away from the boundaries of words and language. Therefore I like to concentrate on intuition, empathic presence and body language.
 
-My social change project “giraffe’s dream” aims at introducing and spreading NVC in kindergartens, preschools and primary schools. This program has become the biggest social change project in this field.
+> My social change project “giraffe’s dream” aims at introducing and spreading NVC in kindergartens, preschools and primary schools. This program has become the biggest social change project in this field.
 
-I live with Gundi, my wife, near Munich, Germany.
+> I live with Gundi, my wife, near Munich, Germany.
 Visit me on [www.freiekommunikation.de](http://www.freiekommunikation.de)
       `,
     },
@@ -318,27 +318,27 @@ Visit me on [www.freiekommunikation.de](http://www.freiekommunikation.de)
     {
       name: 'Irmtraud Kauschat',
       image_url: '/images/trainers/irmtraud.png',
-      bio: `My passion in NVC is reconciliation, mediation, peacebuilding and supporting people in sharing NVC and social change.
+      bio: `> My passion in NVC is reconciliation, mediation, peacebuilding and supporting people in sharing NVC and social change.
 
-  A medical doctor by training, I’ve offered NVC courses in different countries, including Serbia/Croatia, Kenya, Israel/Palestine, Iceland, Ukraine and more recently in Somalia.
+  > A medical doctor by training, I’ve offered NVC courses in different countries, including Serbia/Croatia, Kenya, Israel/Palestine, Iceland, Ukraine and more recently in Somalia.
 
-  I have expertise in reconciliation between warring groups, like in former Yugoslavia (in 1996 especially with youth from Serbia and Croatia), in Kenya (with different communities that had been affected by the post-election violence in 2007/2008), with two tribes from the north that had been at war with each other for about 30 years, and most recently with people from Israel/Palestine, Ukraine and Somalia.
+  > I have expertise in reconciliation between warring groups, like in former Yugoslavia (in 1996 especially with youth from Serbia and Croatia), in Kenya (with different communities that had been affected by the post-election violence in 2007/2008), with two tribes from the north that had been at war with each other for about 30 years, and most recently with people from Israel/Palestine, Ukraine and Somalia.
 
-  Since 2017, I have been accompanying candidates on their certification path and I’ve co-authored two books with exercises to practise NVC.
+  > Since 2017, I have been accompanying candidates on their certification path and I’ve co-authored two books with exercises to practise NVC.
       `,
     },
     {
       name: 'Louise Romain',
       image_url: '/images/trainers/louise.png',
-      bio: `My vision is to disrupt “business as usual” to achieve social change.
+      bio: `> My vision is to disrupt “business as usual” to achieve social change.
 
-  I get a high from spending NVC time training, speaking, writing and I particularly enjoy working with Liberating companies. The rest of the time I don’t do much, preferring to just be, although (almost magically) things do get done, including (occasionally) housework.
+  > I get a high from spending NVC time training, speaking, writing and I particularly enjoy working with Liberating companies. The rest of the time I don’t do much, preferring to just be, although (almost magically) things do get done, including (occasionally) housework.
 
-  I ground my work in centering the experiences of historically underrepresented communities, using systemic approaches to address inequities, especially the power of being heard by the group.
+  > I ground my work in centering the experiences of historically underrepresented communities, using systemic approaches to address inequities, especially the power of being heard by the group.
 
-  I pride myself on making mistakes, being a not-quite-as-cool as I would have liked to have been Mum. Grateful for these learning experiences, my children are now adults but they are still keeping me on my toes, still learning about how to relate in ways that serves everyone’s needs. I’m a thinker, an adventurer in life, and often a cool and fun adult presence to my friends children.
+  > I pride myself on making mistakes, being a not-quite-as-cool as I would have liked to have been Mum. Grateful for these learning experiences, my children are now adults but they are still keeping me on my toes, still learning about how to relate in ways that serves everyone’s needs. I’m a thinker, an adventurer in life, and often a cool and fun adult presence to my friends children.
 
-  I co-founded a small eco community (where I live), which has become known for offering courses in NVC and group decision-making. I’m currently working on a book and podcast series about gender and power through the lense of NVC.
+  > I co-founded a small eco community (where I live), which has become known for offering courses in NVC and group decision-making. I’m currently working on a book and podcast series about gender and power through the lense of NVC.
 
   Having learnt so much from settling up her freelance business in her early 20’s, Louise worked as a human resources consultant within client business organisations until becoming a mother to two children, and then the learning notched up a gear.
 
