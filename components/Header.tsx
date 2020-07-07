@@ -29,12 +29,15 @@ export default function Header() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto py-md-3" navbar>
             <NavItem className="pl-md-4">
-              <NavLink href="/#about" onClick={() => scrollTo('#about')}>
+              <NavLink
+                href="/#about"
+                onClick={() => scrollTo('#about')}
+                className="text-primary">
                 About
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar className="pl-md-4">
-              <DropdownToggle nav caret>
+              <DropdownToggle nav caret className="text-primary">
                 Course
               </DropdownToggle>
               <DropdownMenu>
@@ -59,17 +62,27 @@ export default function Header() {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem className="pl-md-4">
-              <NavLink href="/#faq" onClick={() => scrollTo('#faq')}>
+              <NavLink
+                href="/#faq"
+                onClick={() => scrollTo('#faq')}
+                className="text-primary">
                 FAQ&apos;s
               </NavLink>
             </NavItem>
             <NavItem className="pl-md-4">
-              <NavLink href="/#trainers" onClick={() => scrollTo('#trainers')}>
+              <NavLink
+                href="/#trainers"
+                onClick={() => scrollTo('#trainers')}
+                className="text-primary">
                 Trainers
               </NavLink>
             </NavItem>
             <NavItem className="pl-md-4">
-              <NavLink href={`mailto:${data.contact_email}`}>Contact</NavLink>
+              <NavLink
+                href={`mailto:${data.contact_email}`}
+                className="text-primary">
+                Contact
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>
