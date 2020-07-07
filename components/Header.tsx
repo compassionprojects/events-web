@@ -19,12 +19,20 @@ import media from './Media';
 import { APP_NAME } from '../constants';
 import data from '../data';
 
+const o = { duration: 300, offset: -70 };
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar color="light" light expand="md" id="header">
+    <Navbar
+      color="light"
+      light
+      expand="md"
+      id="header"
+      fixed="top"
+      className="border-bottom">
       <Container>
         <Brand href="/#">
           <Logo />
@@ -36,7 +44,7 @@ export default function Header() {
             <NavItem className="pl-md-4">
               <NavLink
                 href="/#about"
-                onClick={() => scrollTo('#about')}
+                onClick={() => scrollTo('#about', o)}
                 className="text-primary">
                 About
               </NavLink>
@@ -46,22 +54,22 @@ export default function Header() {
                 Course
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem onClick={() => scrollTo('#course')}>
+                <DropdownItem onClick={() => scrollTo('#course', o)}>
                   Course
                 </DropdownItem>
-                <DropdownItem onClick={() => scrollTo('#language')}>
+                <DropdownItem onClick={() => scrollTo('#language', o)}>
                   Language
                 </DropdownItem>
-                <DropdownItem onClick={() => scrollTo('#what-to-expect')}>
+                <DropdownItem onClick={() => scrollTo('#what-to-expect', o)}>
                   What to expect?
                 </DropdownItem>
-                <DropdownItem onClick={() => scrollTo('#what-you-need')}>
+                <DropdownItem onClick={() => scrollTo('#what-you-need', o)}>
                   What you need?
                 </DropdownItem>
-                <DropdownItem onClick={() => scrollTo('#course-content')}>
+                <DropdownItem onClick={() => scrollTo('#course-content', o)}>
                   Course Content
                 </DropdownItem>
-                <DropdownItem onClick={() => scrollTo('#fee')}>
+                <DropdownItem onClick={() => scrollTo('#fee', o)}>
                   Participation fee
                 </DropdownItem>
               </DropdownMenu>
@@ -69,7 +77,7 @@ export default function Header() {
             <NavItem className="pl-md-4">
               <NavLink
                 href="/#faq"
-                onClick={() => scrollTo('#faq')}
+                onClick={() => scrollTo('#faq', o)}
                 className="text-primary">
                 FAQ&apos;s
               </NavLink>
@@ -77,7 +85,7 @@ export default function Header() {
             <NavItem className="pl-md-4">
               <NavLink
                 href="/#trainers"
-                onClick={() => scrollTo('#trainers')}
+                onClick={() => scrollTo('#trainers', o)}
                 className="text-primary">
                 Trainers
               </NavLink>
