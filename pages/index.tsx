@@ -51,9 +51,9 @@ function Landing() {
       {/* Cover section for the fold */}
       <Cover className="text-white text-center" id="top">
         <Narrow className="px-2 py-sm-5 py-4 mx-auto">
-          <h1 className="pt-5">{data.mission_title}</h1>
-          <p className="lead pt-4">{data.mission_description}</p>
-          <PreserveLineBreaks>{data.dates}</PreserveLineBreaks>
+          <h1 className="pt-4 pt-sm-5">{data.mission_title}</h1>
+          <p className="lead pt-4 pb-2">{data.mission_description}</p>
+          <PreserveLineBreaks className="my-4">{data.dates}</PreserveLineBreaks>
           <BuyTicket accent />
         </Narrow>
         <ShapeLeft />
@@ -265,7 +265,7 @@ const Section = styled.section.attrs({
   className: 'mt-4 py-5 border-top',
 })``;
 
-const PreserveLineBreaks = styled.p`
+const PreserveLineBreaks = styled.div`
   white-space: pre-line;
 `;
 

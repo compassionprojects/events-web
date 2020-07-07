@@ -14,4 +14,12 @@ export default createGlobalStyle`
       border-bottom-width: 1px;
     }
   }
+  strong {
+    padding: .2em;
+    background-color: #fcf8e3;
+    font-weight: 500;
+  }
+  p.lead {
+    color: #e0e0e0;
+  }
 `;
