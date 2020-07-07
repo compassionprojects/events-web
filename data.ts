@@ -183,7 +183,7 @@ A webcam, microphone and a stable internet connection. It’s that simple!
     },
     {
       question: 'What is the format and structure?',
-      answer: `To provide participants with a choice of learning opportunities VIC’s typically operate in a manner that is similar to the principles of Open Space Technology. For more information about the principles, please look at www.openspaceworld.org
+      answer: `To provide participants with a choice of learning opportunities VIC’s typically operate in a manner that is similar to the principles of Open Space Technology. For more information about the principles, please look at [openspaceworld.org](http://openspaceworld.org)
       `,
     },
     {
@@ -289,7 +289,6 @@ A webcam, microphone and a stable internet connection. It’s that simple!
 To be welcome - without having to do anything for it, to have a space for which I can also stand up, to be held in trust instead of having to control and be alive instead of fulfilling others dreams.
 
 > I live with Gundi, my wife, near Munich, Germany.
-Visit me on [www.freiekommunikation.de](http://www.freiekommunikation.de)
       `,
     },
     {
@@ -346,7 +345,8 @@ Visit me on [www.freiekommunikation.de](http://www.freiekommunikation.de)
   Louise is motivated to travel in order to serve a community, recently training more than 500 school directors and teachers in Nepal, aligned with her vision to contribute to peacebuilding.
   She is also trained in physiotherapy and art foundry.
 
-  Peace Factory is proud to be hosting this VIC with the endorsement and support of CNVC. The website is here: [peacefactory.fr](http://peacefactory.fr)`,
+  Peace Factory is proud to be hosting this VIC with the endorsement and support of CNVC.
+  `,
     },
     {
       name: 'Magdalena Sendor',
@@ -362,7 +362,7 @@ Visit me on [www.freiekommunikation.de](http://www.freiekommunikation.de)
   She lived in France for seven years, where she studied and worked. For 18 years, she has been living in a bi-cultural and bilingual family whose diversity and challenges give her a lot of joy and contribute to reflection. She is the author of two books (in Polish) on proximity parenting.
 
   She works in three languages: Polish, French and English.
-  Contact: [www.strefaporozumienia.pl](http://www.strefaporozumienia.pl)`,
+  `,
     },
   ],
 };
