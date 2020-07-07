@@ -102,15 +102,15 @@ function Landing() {
           <Narrow className="mx-auto">
             <h1 className="text-center py-3">Trainers</h1>
             <div className="pb-4">{data.trainers_intro}</div>
-            <Row>
+            <Row className="justify-content-center">
               {data.trainers.map((item, index) => (
                 <Col
                   key={index}
                   className="text-center"
-                  xs={12}
+                  xs={6}
                   sm={6}
                   md={4}
-                  lg={3}>
+                  lg={4}>
                   <Trainer
                     {...item}
                     setTrainer={({ ...args }) => {
@@ -121,28 +121,33 @@ function Landing() {
                 </Col>
               ))}
             </Row>
-            <Modal isOpen={modal} fade={false} toggle={toggleModal} centered>
-              <ModalHeader toggle={toggleModal}>
-                <div className="d-flex">
-                  <img
-                    style={{ height: 30, width: 30 }}
-                    alt={trainer.name}
-                    src={trainer.image_url}
-                    className="mr-2 img-fluid rounded-circle"
-                  />
-                  <span>{trainer.name}</span>
-                </div>
-              </ModalHeader>
-              <ModalBody>
-                <ReactMarkdown source={trainer.bio} />
-              </ModalBody>
-              <ModalFooter>
-                <Button color="secondary" onClick={toggleModal}>
-                  Close
-                </Button>
-              </ModalFooter>
-            </Modal>
           </Narrow>
+          <Modal
+            isOpen={modal}
+            fade={false}
+            toggle={toggleModal}
+            centered
+            size="lg">
+            <ModalHeader toggle={toggleModal}>
+              <div className="d-flex">
+                <img
+                  style={{ height: 30, width: 30 }}
+                  alt={trainer.name}
+                  src={trainer.image_url}
+                  className="mr-2 img-fluid rounded-circle"
+                />
+                <span>{trainer.name}</span>
+              </div>
+            </ModalHeader>
+            <ModalBody>
+              <ReactMarkdown source={trainer.bio} />
+            </ModalBody>
+            <ModalFooter>
+              <Button color="secondary" onClick={toggleModal}>
+                Close
+              </Button>
+            </ModalFooter>
+          </Modal>
         </Section>
 
         {/* Video presentation section */}

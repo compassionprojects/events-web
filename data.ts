@@ -267,64 +267,102 @@ export default {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.  140 chars',
   trainers: [
     {
-      name: 'Louise',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
+      name: 'Frank Gaschler',
+      image_url: '/images/trainers/frank.png',
+      bio: `My current passion revolves around four life themes:
+
+  - without having to do anything for it, to be welcome;
+  - to have a space in which I can also stand up;
+  - instead of having to control, to be held in trust; and
+  - instead of fulfilling others dreams, be alive.
+
+My passion is to experiment with NVC outside the box, far away from the boundaries of words and language. I like to concentrate on intuition, empathic presence and body language.
+
+“Giraffe’s dream” is a social change project which introduces and spreads NVC in preschools and primary schools. This programme has become the biggest social change project in this field.
+
+I am a CNVC certified trainer and assessor in the certification process of the CNVC. My current passion revolves around the 4 life themes:
+To be welcome - without having to do anything for it, to have a space for which I can also stand up, to be held in trust instead of having to control and be alive instead of fulfilling others dreams.
+
+My passion is to experiment with NVC outside the box, far away from the boundaries of words and language. Therefore I like to concentrate on intuition, empathic presence and body language.
+
+My social change project “giraffe’s dream” aims at introducing and spreading NVC in kindergartens, preschools and primary schools. This program has become the biggest social change project in this field.
+
+I live with Gundi, my wife, near Munich, Germany.
+Visit me on [www.freiekommunikation.de](http://www.freiekommunikation.de)
+      `,
     },
     {
-      name: 'Magdalena',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
+      name: 'Godfrey Spencer',
+      image_url: '/images/trainers/godfrey.png',
+      bio: `Trained by Marshall Rosenberg, Godfrey became a CNVC Certified Trainer in 2001.  He has been approached by universities, professional organisations of lawyers, the judiciary, university hospitals, companies, business schools and governments... for which he acts as a coach and mediator, as well as a teacher of mediation and negotiation. In 2004, he was appointed to the Board of Directors of the Center for Nonviolent Communication (CNVC) International.
+
+  Since 2006, he has been regularly called to Senegal and the Gambia (2019) to mediate between the Casamance rebel factions and also between rebel leaders and the Government.  In 2016, he was invited to work alongside HH Dalai Lama in the framework of the "Mind & Life Dialogue".
+
+  > “I thoroughly enjoy the sense of belonging generated before, during and after intensives.  I moved from interpreting IITs for Marshall in the French-speaking world to assisting him when Marshall was IIT lead-trainer.  I was invited by Louise Romain to facilitate the European Intensive Course at the Peace Factory in the Pyrenees for ten years.
+
+  > “I am especially turned on by life in the present, experiencing how past and future can become eminently manageable when brought into the here and now.  Intensives produce order in chaos!  The unexpected can prove to be a real pedagogue!  Pushing back the borders of classical NVC helps learners to integrate the power of this process in their day-to-day interactions.
+
+  > “Social change stems from inner change.  Let’s remember that inner change is the real challenge, while changing the world is a perilous illusion.  Participants on my courses say how much they enjoy the passion, the novelty, the rigour, the the language skills, the clarity…  and the impression that time flies!”
+
+  Godfrey has developed a passion for self-empathy as a springboard to empathy for others and the development of quality relationships in the service of increased productivity.  He started his career as a linguist and laboured under the illusion that communication was all about sequences of semantic fields. A ten-year stint manning the IBM Europe International Effective Communication programme tended to confirm this!
+
+  He later did two NLP masters, one in the US and the other in France. Still hungry for something more, he was advised by one of his university students to meet Marshall Rosenberg!  The encounter changed his life.  For the first time, he experienced the power of compassion, both for himself and for others.
+
+  He trains, mediates and coaches in English and French, basing his whole approach on NVC.  His clients range from couples to individual professionals; from major international institutions, such as the European Commission, to banks large and small, from local corporations to government institutions.
+      `,
     },
     {
-      name: 'Irmtraud',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
+      name: 'Irmtraud Kauschat',
+      image_url: '/images/trainers/irmtraud.png',
+      bio: `My passion in NVC is reconciliation, mediation, peacebuilding and supporting people in sharing NVC and social change.
+
+  A medical doctor by training, I’ve offered NVC courses in different countries, including Serbia/Croatia, Kenya, Israel/Palestine, Iceland, Ukraine and more recently in Somalia.
+
+  I have expertise in reconciliation between warring groups, like in former Yugoslavia (in 1996 especially with youth from Serbia and Croatia), in Kenya (with different communities that had been affected by the post-election violence in 2007/2008), with two tribes from the north that had been at war with each other for about 30 years, and most recently with people from Israel/Palestine, Ukraine and Somalia.
+
+  Since 2017, I have been accompanying candidates on their certification path and I’ve co-authored two books with exercises to practise NVC.
+      `,
     },
     {
-      name: 'Franck',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
+      name: 'Louise Romain',
+      image_url: '/images/trainers/louise.png',
+      bio: `My vision is to disrupt “business as usual” to achieve social change.
+
+  I get a high from spending NVC time training, speaking, writing and I particularly enjoy working with Liberating companies. The rest of the time I don’t do much, preferring to just be, although (almost magically) things do get done, including (occasionally) housework.
+
+  I ground my work in centering the experiences of historically underrepresented communities, using systemic approaches to address inequities, especially the power of being heard by the group.
+
+  I pride myself on making mistakes, being a not-quite-as-cool as I would have liked to have been Mum. Grateful for these learning experiences, my children are now adults but they are still keeping me on my toes, still learning about how to relate in ways that serves everyone’s needs. I’m a thinker, an adventurer in life, and often a cool and fun adult presence to my friends children.
+
+  I co-founded a small eco community (where I live), which has become known for offering courses in NVC and group decision-making. I’m currently working on a book and podcast series about gender and power through the lense of NVC.
+
+  Having learnt so much from settling up her freelance business in her early 20’s, Louise worked as a human resources consultant within client business organisations until becoming a mother to two children, and then the learning notched up a gear.
+
+  Serving as an assistant at more than 10 IITs with Marshall Rosenberg, with whom she did all her training, she is thoroughly convinced of the benefits of immersion training, and since 2011 she has organised two intensive courses every summer, one in French and one with a European reach. The courses are hosted at Peace Factory in South-West France where her role is director.
+
+  Since becoming a trainer certified with CNVC in 2007, she enjoys working as a personal, professional, and organisational development trainer and consultant, particularly delighting in working clients using Agile and Liberating company approaches (teal organisations), whilst still keeping time to contribute to and develop the eco-community where she lives.
+
+  Louise is motivated to travel in order to serve a community, recently training more than 500 school directors and teachers in Nepal, aligned with her vision to contribute to peacebuilding.
+  She is also trained in physiotherapy and art foundry.
+
+  Peace Factory is proud to be hosting this VIC with the endorsement and support of CNVC. The website is here : [peacefactory.fr](http://peacefactory.fr)`,
     },
     {
-      name: 'Godfrey',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
+      name: 'Magdalena Sendor',
+      image_url: '/images/trainers/magdalena.png',
+      bio: `Magdalena helps to build harmonious relations, with oneself and others, in the authenticity and the respect of each one.
+
+  Magdalena specialises in conflict resolution, organising team meetings and circle talks based on the model of sociocracy. She works with individuals, schools, non-governmental organizations and businesses. She also teaches at   Collegium Civitas, a private university in Warsaw, as part of postgraduate studies in Nonviolent Communication.
+
+  Attentive to freedom and the spirit of responsibility, Magdalena is particularly interested in cooperation with democratic schools and companies that develop new management styles (teal organistions).
+
+  Her strong point is her passion for learning. She is constantly expanding her knowledge, currently developing her skills by combining CNV and conscious body-work.
+
+  She lived in France for seven years, where she studied and worked. For 18 years, she has been living in a bi-cultural and bilingual family whose diversity and challenges give her a lot of joy and contribute to reflection. She is the author of two books (in Polish) on proximity parenting.
+
+  She works in three languages: Polish, French and English.
+  Contact: www.strefaporozumienia.pl`,
     },
-    {
-      name: 'Maud',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
-    },
-    {
-      name: 'Polly Higgins',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
-    },
-    {
-      name: 'Rob Bilott',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
-    },
-    {
-      name: 'Katharine Gun',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
-    },
-    {
-      name: 'Gail Bradbrook',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
-    },
-    {
-      name: 'John Doe',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
-    },
-    {
-      name: 'More people',
-      bio: 'Short bio 140 chars',
-      image_url: 'https://place-hold.it/300',
   ],
   video_embed_url: 'https://www.youtube.com/embed/j0WYvQ105Wo',
   contact_email,
