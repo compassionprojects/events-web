@@ -13,8 +13,9 @@ import {
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown/with-html';
 import Icon from '../components/Icon';
-import data from '../data';
+import media from '../components/Media';
 import Meta from '../components/Meta';
+import data from '../data';
 
 interface Trainer {
   name: string;
@@ -50,6 +51,8 @@ function Landing() {
           <PreserveLineBreaks>{data.dates}</PreserveLineBreaks>
           <BuyTicket accent />
         </Narrow>
+        <ShapeLeft />
+        <ShapeRight />
       </Cover>
 
       <div className="container">
@@ -241,8 +244,8 @@ BuyTicket.propTypes = {
 };
 
 const Cover = styled.div`
+  position: relative;
   background: #17506d;
-  // background-size: 100% 100%;
   min-height: 70vh;
 `;
 
@@ -256,4 +259,29 @@ const Section = styled.section.attrs({
 
 const PreserveLineBreaks = styled.p`
   white-space: pre-line;
+`;
+
+const Shape = styled.img`
+  opacity: 0.1;
+  ${// @ts-ignore
+  media.down.tablet`
+    width: 256px;
+    height: 256px;
+  `}
+`;
+
+const ShapeLeft = styled(Shape).attrs({
+  src: '/images/shape-left.svg',
+})`
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+`;
+
+const ShapeRight = styled(Shape).attrs({
+  src: '/images/shape-right.svg',
+})`
+  position: absolute;
+  right: 30px;
+  top: 20px;
 `;
