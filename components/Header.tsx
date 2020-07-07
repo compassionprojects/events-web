@@ -99,6 +99,7 @@ export default function Header() {
 const Logo = styled.img.attrs({
   src: '/images/logo.svg',
   className: 'mr-2',
+  alt: APP_NAME + ' logo',
 })`
   width: 48px;
   height: 48px;

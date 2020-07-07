@@ -261,7 +261,9 @@ const PreserveLineBreaks = styled.p`
   white-space: pre-line;
 `;
 
-const Shape = styled.img`
+const Shape = styled.img.attrs({
+  alt: 'Decoration image',
+})`
   opacity: 0.1;
   ${// @ts-ignore
   media.down.tablet`
