@@ -1,4 +1,7 @@
 const contact_email = 'louise@peacefactory.fr';
+const irmtraud_email = 'irmtraud.kauschat@yahoo.de';
+const buy_ticket_url =
+  'https://www.eventbrite.co.uk/e/nonviolent-communication-virtual-intensive-course-2020-tickets-112284722628';
 
 export default {
   cover_image: '/images/cover.jpg',
@@ -7,8 +10,7 @@ export default {
     'A ground-breaking way to engage in learning Nonviolent Communication - an 8 day Virtual Intensive Course. Endorsed and fully supported by the Center for Nonviolent Communication (CNVC)',
   dates: `31st July - 9th August 2020
   UTC 0 to +4 Time zones`,
-  buy_ticket_url:
-    'https://www.eventbrite.co.uk/e/nonviolent-communication-virtual-intensive-course-2020-tickets-112284722628',
+  buy_ticket_url,
   buy_ticket_title: 'Buy tickets',
   video_embed_url: 'https://www.youtube.com/embed/j0WYvQ105Wo',
   contact_email,
@@ -97,7 +99,7 @@ export default {
       </tr>
       <tr>
         <th scope="row">€750</th>
-        <td>Reduced-resources contribution (please contact <a href="irmtraud.kauschat@yahoo.de">Irmtraud</a>)</td>
+        <td>Reduced-resources contribution (please contact <a href="${irmtraud_email}">Irmtraud</a>)</td>
       </tr>
       <tr>
         <th scope="row">€500</th>
@@ -133,7 +135,7 @@ export default {
     {
       question:
         'My English is not very fluent. Are you sure I can participate?',
-      answer: `We’re confident because most of the team speak English as a second or third language, so it’s simple and slow. But if you’d like to check it out, please book a 10 minute exchange with <a href="mailto:irmtraud.kauschat@yahoo.de">Irmtraud</a>`,
+      answer: `We’re confident because most of the team speak English as a second or third language, so it’s simple and slow. But if you’d like to check it out, please book a 10 minute exchange with <a href="mailto:${irmtraud_email}">Irmtraud</a>`,
     },
     {
       question: 'Can I offer workshops during the course?',
@@ -193,12 +195,12 @@ export default {
     },
     {
       question: 'What payment options do I have?',
-      answer: `We request payment in Euros using Eventbrite. You can book a place [here](https://www.eventbrite.co.uk/e/nvc-virtual-intensive-course-tickets-112284722628?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=strongmail&utm-term=listing)
+      answer: `We request payment in Euros using Eventbrite. You can book a place by [registering yourself](${buy_ticket_url})
       `,
     },
     {
       question: 'How to apply for an VIC?',
-      answer: `You can apply for this VIC by clicking on this [registration link](https://www.eventbrite.co.uk/e/nvc-virtual-intensive-course-tickets-112284722628?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=strongmail&utm-term=listing) and then clicking on tickets.
+      answer: `You can apply for this VIC by clicking on this [registration link](${buy_ticket_url}) and then clicking on tickets.
 
   If you are applying for a scholarship, we ask that your application is accompanied by a Scholarship Request form before the scholarship application deadline. (See the form here.)
 
@@ -344,7 +346,7 @@ Visit me on [www.freiekommunikation.de](http://www.freiekommunikation.de)
   Louise is motivated to travel in order to serve a community, recently training more than 500 school directors and teachers in Nepal, aligned with her vision to contribute to peacebuilding.
   She is also trained in physiotherapy and art foundry.
 
-  Peace Factory is proud to be hosting this VIC with the endorsement and support of CNVC. The website is here : [peacefactory.fr](http://peacefactory.fr)`,
+  Peace Factory is proud to be hosting this VIC with the endorsement and support of CNVC. The website is here: [peacefactory.fr](http://peacefactory.fr)`,
     },
     {
       name: 'Magdalena Sendor',
@@ -360,7 +362,7 @@ Visit me on [www.freiekommunikation.de](http://www.freiekommunikation.de)
   She lived in France for seven years, where she studied and worked. For 18 years, she has been living in a bi-cultural and bilingual family whose diversity and challenges give her a lot of joy and contribute to reflection. She is the author of two books (in Polish) on proximity parenting.
 
   She works in three languages: Polish, French and English.
-  Contact: www.strefaporozumienia.pl`,
+  Contact: [www.strefaporozumienia.pl](http://www.strefaporozumienia.pl)`,
     },
   ],
 };
