@@ -11,7 +11,7 @@ function Meta({ title, description, image_url }) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image_url} />
-      <meta property="og:url" content="http://vic.peacefactory.fr" />
+      <meta property="og:url" content="https://vic.peacefactory.fr" />
       <meta name="twitter:card" content={image_url} />
     </Head>
   );

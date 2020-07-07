@@ -12,6 +12,7 @@ export default {
   buy_ticket_title: 'Buy tickets',
   video_embed_url: 'https://www.youtube.com/embed/j0WYvQ105Wo',
   contact_email,
+  trainers_intro: '',
   about: `With so many unknowns about COVID-19, the core trainer team of the annual European Intensive Course decided that this year’s event would be held virtually so you can learn and deepen your Nonviolent Communication (NVC) skills in the safety and comfort of your own home.
 
   Peace Factory is **honoured and thrilled** to offer you a ground-breaking way to engage in learning Nonviolent Communication - an 8 day Virtual Intensive Course (VIC), aiming to **encourage and promote intercultural dialogue** and citizenship during this period where face-to-face International Intensive Trainings (IITs) have been cancelled due to health concerns.
@@ -53,7 +54,7 @@ export default {
 
   A webcam, microphone and a stable internet connection. It’s that simple!
 
-  All the meetings will take place on <a href="https://zoom.us" target="_blank">Zoom</a> which is compatible with Microsoft or Apple. After registering, if you’re new to Zoom, you can access detailed information about how to use it and be supported with technical aspects. Peace Factory has 9 years of experience offering on-line courses, so you’re in good hands.
+  All the meetings will take place on [Zoom](https://zoom.us) which is compatible with Microsoft or Apple. After registering, if you’re new to Zoom, you can access detailed information about how to use it and be supported with technical aspects. Peace Factory has 9 years of experience offering on-line courses, so you’re in good hands.
 
   <div class="py-4 h3 text-center" id="course-content">
   Course Content
@@ -132,7 +133,7 @@ export default {
     {
       question:
         'My English is not very fluent. Are you sure I can participate?',
-      answer: `We’re confident because most of the team speak English as a second or third language, so it’s simple and slow. But if you’d like to check it out, please book a 10 minute exchange with <a href="mailto:Irmtraud.kauschat@yahoo.de">Irmtraud</a>`,
+      answer: `We’re confident because most of the team speak English as a second or third language, so it’s simple and slow. But if you’d like to check it out, please book a 10 minute exchange with <a href="mailto:irmtraud.kauschat@yahoo.de">Irmtraud</a>`,
     },
     {
       question: 'Can I offer workshops during the course?',
@@ -267,8 +268,6 @@ export default {
       answer: `If you have questions that aren’t included here, you are invited to write to <a href="mailto:${contact_email}">Louise</a> so that this part of the flier gets richer!`,
     },
   ],
-  trainers_intro:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.  140 chars',
   trainers: [
     {
       name: 'Frank Gaschler',

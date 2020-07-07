@@ -11,7 +11,6 @@ import {
   Button,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
-import Head from 'next/head';
 import ReactMarkdown from 'react-markdown/with-html';
 import Icon from '../components/Icon';
 import data from '../data';
@@ -58,7 +57,11 @@ function Landing() {
         <div className="mt-4 py-5" id="about">
           <Narrow className="mx-auto">
             <h1 className="text-center py-3">About</h1>
-            <ReactMarkdown source={data.about} escapeHtml={false} />
+            <ReactMarkdown
+              linkTarget="_blank"
+              source={data.about}
+              escapeHtml={false}
+            />
             <div className="pt-3 text-center">
               <BuyTicket />
             </div>
@@ -69,7 +72,11 @@ function Landing() {
         <Section id="course">
           <Narrow className="mx-auto">
             <h1 className="text-center py-3">Course</h1>
-            <ReactMarkdown source={data.course} escapeHtml={false} />
+            <ReactMarkdown
+              linkTarget="_blank"
+              source={data.course}
+              escapeHtml={false}
+            />
             <div className="pt-3 text-center">
               <BuyTicket />
             </div>
@@ -90,7 +97,11 @@ function Landing() {
                   <span className="font-weight-bold">{item.question}</span>
                 </a>
                 <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
-                  <ReactMarkdown source={item.answer} escapeHtml={false} />
+                  <ReactMarkdown
+                    linkTarget="_blank"
+                    source={item.answer}
+                    escapeHtml={false}
+                  />
                 </Collapse>
               </div>
             ))}
@@ -143,7 +154,7 @@ function Landing() {
               </div>
             </ModalHeader>
             <ModalBody>
-              <ReactMarkdown source={trainer.bio} />
+              <ReactMarkdown linkTarget="_blank" source={trainer.bio} />
             </ModalBody>
             <ModalFooter>
               <Button color="secondary" onClick={toggleModal}>
