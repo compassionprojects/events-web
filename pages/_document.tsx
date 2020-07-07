@@ -47,7 +47,7 @@ class VicDocument extends Document {
           />
           <link rel="icon" href="/images/favicon.png" />
         </Head>
-        <body>
+        <body id="top">
           <Main />
           <NextScript />
         </body>

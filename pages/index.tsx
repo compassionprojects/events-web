@@ -49,7 +49,7 @@ function Landing() {
       />
 
       {/* Cover section for the fold */}
-      <Cover className="text-white text-center" id="top">
+      <Cover className="text-white text-center">
         <Narrow className="px-2 py-sm-5 py-4 mx-auto">
           <h1 className="pt-4 pt-sm-5">{data.mission_title}</h1>
           <p className="lead pt-4 pb-2">{data.mission_description}</p>

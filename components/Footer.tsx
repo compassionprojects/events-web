@@ -2,6 +2,7 @@ import React from 'react';
 import scrollTo from 'scroll-to-element';
 import Icon from './Icon';
 import data from '../data';
+import { o } from './Header';
 
 export default function Footer() {
   return (
@@ -12,7 +13,7 @@ export default function Footer() {
             <a
               href="/#"
               className="nav-link text-muted"
-              onClick={() => scrollTo('#header')}>
+              onClick={() => scrollTo('#top', o)}>
               <Icon shape="arrow-up" className="p-1" />
               Back to top
             </a>
@@ -21,7 +22,7 @@ export default function Footer() {
             <a
               className="nav-link"
               href="/#about"
-              onClick={() => scrollTo('#about')}>
+              onClick={() => scrollTo('#about', o)}>
               About
             </a>
           </li>
@@ -29,7 +30,7 @@ export default function Footer() {
             <a
               className="nav-link"
               href="/#course"
-              onClick={() => scrollTo('#course')}>
+              onClick={() => scrollTo('#course', o)}>
               Course
             </a>
           </li>
@@ -37,7 +38,7 @@ export default function Footer() {
             <a
               className="nav-link"
               href="/#faq"
-              onClick={() => scrollTo('#faq')}>
+              onClick={() => scrollTo('#faq', o)}>
               FAQ&apos;s
             </a>
           </li>
@@ -45,7 +46,7 @@ export default function Footer() {
             <a
               className="nav-link"
               href="/#trainers"
-              onClick={() => scrollTo('#trainers')}>
+              onClick={() => scrollTo('#trainers', o)}>
               Trainers
             </a>
           </li>

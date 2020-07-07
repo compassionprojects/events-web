@@ -19,7 +19,7 @@ import media from './Media';
 import { APP_NAME } from '../constants';
 import data from '../data';
 
-const o = { duration: 300, offset: -70 };
+export const o = { duration: 300, offset: -70 };
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
