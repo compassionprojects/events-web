@@ -281,14 +281,10 @@ export default {
 
 > My passion is to experiment with NVC outside the box, far away from the boundaries of words and language. I like to concentrate on intuition, empathic presence and body language.
 
-> “Giraffe’s dream” is a social change project which introduces and spreads NVC in preschools and primary schools. This programme has become the biggest social change project in this field.
+> My social change project “giraffe’s dream” aims at introducing and spreading NVC in kindergartens, preschools and primary schools. This program has become the biggest social change project in this field.
 
 > I am a CNVC certified trainer and assessor in the certification process of the CNVC. My current passion revolves around the 4 life themes:
 To be welcome - without having to do anything for it, to have a space for which I can also stand up, to be held in trust instead of having to control and be alive instead of fulfilling others dreams.
-
-> My passion is to experiment with NVC outside the box, far away from the boundaries of words and language. Therefore I like to concentrate on intuition, empathic presence and body language.
-
-> My social change project “giraffe’s dream” aims at introducing and spreading NVC in kindergartens, preschools and primary schools. This program has become the biggest social change project in this field.
 
 > I live with Gundi, my wife, near Munich, Germany.
 Visit me on [www.freiekommunikation.de](http://www.freiekommunikation.de)
