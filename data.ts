@@ -99,7 +99,7 @@ export default {
       </tr>
       <tr>
         <th scope="row">€750</th>
-        <td>Reduced-resources contribution (please contact <a href="${irmtraud_email}">Irmtraud</a>)</td>
+        <td>Reduced-resources contribution (please contact <a href="mailto:${irmtraud_email}">Irmtraud</a>)</td>
       </tr>
       <tr>
         <th scope="row">€500</th>
