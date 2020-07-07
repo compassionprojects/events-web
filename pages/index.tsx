@@ -93,10 +93,13 @@ function Landing() {
             {data.faqs.map((item, index) => (
               <div className="py-2" key={index}>
                 <a
-                  className="d-flex align-items-center"
+                  className="d-flex align-items-top"
                   style={{ cursor: 'pointer' }}
                   onClick={() => toggleFAQ(index)}>
-                  <Icon shape={faq[index] ? 'chevron-up' : 'chevron-down'} />
+                  <Icon
+                    shape={faq[index] ? 'chevron-up' : 'chevron-down'}
+                    className="flex-shrink-0"
+                  />
                   <span className="font-weight-bold">{item.question}</span>
                 </a>
                 <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
