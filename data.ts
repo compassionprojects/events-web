@@ -46,15 +46,15 @@ export default {
   What to expect?
   </div>
 
-  - **Richness and diversity**: Every year there are participants from many countries and this tremendous inter-cultural diversity adds to the richness of experience and exploration.
-  - **Depth and breadth**: Throughout the course, along numerous training sessions and community meetings, we explore together a needs-based consciousness in all facets of life – in relationship to self, others and life, at home and at work, in relationship to inner as well as outer resources. We want to fully explore what life is and what it can be, from the very practical realms to the deeply spiritual ones. No theme is off-topic and everything is embraced.
-  - **Community**: We aim to live equality in our community, exploring and creating together. We are aware of different talents and passions we bring into the course and this diversity proves to be a contributing element.
+- **Richness and diversity**: Every year there are participants from many countries and this tremendous inter-cultural diversity adds to the richness of experience and exploration.
+- **Depth and breadth**: Throughout the course, along numerous training sessions and community meetings, we explore together a needs-based consciousness in all facets of life – in relationship to self, others and life, at home and at work, in relationship to inner as well as outer resources. We want to fully explore what life is and what it can be, from the very practical realms to the deeply spiritual ones. No theme is off-topic and everything is embraced.
+- **Community**: We aim to live equality in our community, exploring and creating together. We are aware of different talents and passions we bring into the course and this diversity proves to be a contributing element.
 
-  <div class="py-4 h3 text-center" id="what-you-need">
-  What you need?
-  </div>
+<div class="py-4 h3 text-center" id="what-you-need">
+What you need?
+</div>
 
-  A webcam, microphone and a stable internet connection. It’s that simple!
+A webcam, microphone and a stable internet connection. It’s that simple!
 
   All the meetings will take place on [Zoom](https://zoom.us) which is compatible with Microsoft or Apple. After registering, if you’re new to Zoom, you can access detailed information about how to use it and be supported with technical aspects. Peace Factory has 9 years of experience offering on-line courses, so you’re in good hands.
 
@@ -70,12 +70,12 @@ export default {
 
   Our programme includes deepening awareness of needs, integrating NVC skills, handling conflicts, basics of mediation, personal growth and spiritual aspects of NVC, deep self-empathy, transforming enemy images and the pain of unmet needs, so that we can:
 
-    - explore and identify personal core beliefs and create new cognitive structures that emanate directly from our living needs;
-    - reduce the level of pain carried in our systems so that we are able to generate lives of satisfaction and empowerment;
-    - honour power-with leadership models like Systemic Consensing[1] and Open Space Technology;
-    - shift from scarcity thinking (an inherent part of a domination system) to the consciousness of plenty;
-    - study the belief systems of money and practice how resources can flow from a perspective of abundance;
-    - move from chronic struggle and “busy-ness” to a sense of flow and ease in our lives.
+  - explore and identify personal core beliefs and create new cognitive structures that emanate directly from our living needs;
+  - reduce the level of pain carried in our systems so that we are able to generate lives of satisfaction and empowerment;
+  - honour power-with leadership models like Systemic Consensing[1] and Open Space Technology;
+  - shift from scarcity thinking (an inherent part of a domination system) to the consciousness of plenty;
+  - study the belief systems of money and practice how resources can flow from a perspective of abundance;
+  - move from chronic struggle and “busy-ness” to a sense of flow and ease in our lives.
 
 
   <div class="py-4 h3 text-center" id="fee">
