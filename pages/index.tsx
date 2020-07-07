@@ -43,10 +43,11 @@ function Landing() {
 
       {/* Cover section for the fold */}
       <Cover className="text-white text-center" id="top">
-        <Narrow className="px-2 py-5 mx-auto">
+        <Narrow className="px-2 py-sm-5 py-4 mx-auto">
           <h1 className="pt-5">{data.mission_title}</h1>
           <p className="lead pt-4">{data.mission_description}</p>
-          <BuyTicket />
+          <PreserveLineBreaks>{data.dates}</PreserveLineBreaks>
+          <BuyTicket accent />
         </Narrow>
       </Cover>
 
@@ -204,13 +205,13 @@ Trainer.propTypes = {
   setTrainer: PropTypes.func,
 };
 
-function BuyTicket() {
+function BuyTicket({ accent }) {
   return (
     <a
       href={data.buy_ticket_url}
       rel="noreferrer"
       target="_blank"
-      className="btn btn-lg btn-primary my-4">
+      className={`btn btn-lg btn-${accent ? 'accent' : 'primary'} my-4`}>
       {data.buy_ticket_title}
       <Icon
         shape="external-link"
@@ -222,9 +223,13 @@ function BuyTicket() {
   );
 }
 
+BuyTicket.propTypes = {
+  accent: PropTypes.bool,
+};
+
 const Cover = styled.div`
-  background: url('${data.cover_image}') no-repeat;
-  background-size: 100% 100%;
+  background: #17506d;
+  // background-size: 100% 100%;
   min-height: 70vh;
 `;
 
@@ -235,3 +240,7 @@ const Narrow = styled.div`
 const Section = styled.section.attrs({
   className: 'mt-4 py-5 border-top',
 })``;
+
+const PreserveLineBreaks = styled.p`
+  white-space: pre-line;
+`;

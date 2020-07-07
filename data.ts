@@ -5,9 +5,13 @@ export default {
   mission_title: 'Nonviolent Communication Virtual Intensive Course',
   mission_description:
     'A ground-breaking way to engage in learning Nonviolent Communication - an 8 day Virtual Intensive Course. Endorsed and fully supported by the Center for Nonviolent Communication (CNVC)',
+  dates: `31st July - 9th August 2020
+  UTC 0 to +4 Time zones`,
   buy_ticket_url:
     'https://www.eventbrite.co.uk/e/nonviolent-communication-virtual-intensive-course-2020-tickets-112284722628',
   buy_ticket_title: 'Buy tickets',
+  video_embed_url: 'https://www.youtube.com/embed/j0WYvQ105Wo',
+  contact_email,
   about: `With so many unknowns about COVID-19, the core trainer team of the annual European Intensive Course decided that this year’s event would be held virtually so you can learn and deepen your Nonviolent Communication (NVC) skills in the safety and comfort of your own home.
 
   Peace Factory is **honoured and thrilled** to offer you a ground-breaking way to engage in learning Nonviolent Communication - an 8 day Virtual Intensive Course (VIC), aiming to **encourage and promote intercultural dialogue** and citizenship during this period where face-to-face International Intensive Trainings (IITs) have been cancelled due to health concerns.
@@ -364,6 +368,4 @@ Visit me on [www.freiekommunikation.de](http://www.freiekommunikation.de)
   Contact: www.strefaporozumienia.pl`,
     },
   ],
-  video_embed_url: 'https://www.youtube.com/embed/j0WYvQ105Wo',
-  contact_email,
 };
