@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import {
   Collapse,
   Container,
@@ -14,6 +15,7 @@ import {
   NavLink,
 } from 'reactstrap';
 import scrollTo from 'scroll-to-element';
+import media from './Media';
 import { APP_NAME } from '../constants';
 import data from '../data';
 
@@ -24,7 +26,10 @@ export default function Header() {
   return (
     <Navbar color="light" light expand="md" id="header">
       <Container>
-        <NavbarBrand href="/#">{APP_NAME}</NavbarBrand>
+        <Brand href="/#">
+          <Logo />
+          {APP_NAME}
+        </Brand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto py-md-3" navbar>
@@ -90,3 +95,22 @@ export default function Header() {
     </Navbar>
   );
 }
+
+const Logo = styled.img.attrs({
+  src: '/images/logo.svg',
+  className: 'mr-2',
+})`
+  width: 48px;
+  height: 48px;
+
+  ${media.down.mini`
+    width: 28px;
+    height: 28px;
+  `}
+`;
+
+const Brand = styled(NavbarBrand)`
+  ${media.down.mini`
+    font-size: 1rem;
+  `}
+`;

@@ -7,6 +7,7 @@ export const sizes = {
   desktop: 992,
   tablet: 768,
   phone: 576,
+  mini: 360,
 };
 
 export const responsiveCarousel = {
@@ -28,6 +29,10 @@ export const responsiveCarousel = {
   },
   phone: {
     breakpoint: { max: sizes.phone, min: 0 },
+    items: 1,
+  },
+  mini: {
+    breakpoint: { max: sizes.mini, min: 0 },
     items: 1,
   },
 };
