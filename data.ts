@@ -12,7 +12,7 @@ export default {
   UTC 0 to +4 Time zones`,
   buy_ticket_url,
   buy_ticket_title: 'Buy tickets',
-  video_embed_url: 'https://www.youtube.com/embed/j0WYvQ105Wo',
+  video_embed_url: '',
   contact_email,
   trainers_intro: '',
   about: `With so many unknowns about COVID-19, the core trainer team of the annual European Intensive Course decided that this year’s event would be held virtually so you can learn and deepen your Nonviolent Communication (NVC) skills in the safety and comfort of your own home.

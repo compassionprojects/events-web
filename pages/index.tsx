@@ -60,7 +60,7 @@ function Landing() {
         <ShapeRight />
       </Cover>
 
-      <div className="d-flex justify-content-center bg-light py-4">
+      <div className="d-flex justify-content-center bg-light py-4 align-items-center">
         <ImgAffiliates src="/images/logo-pf.svg" alt="Peacefactory logo" />
         <ImgAffiliates
           src="/images/logo-cnvc.svg"
@@ -93,37 +93,6 @@ function Landing() {
               source={data.course}
               escapeHtml={false}
             />
-            <div className="pt-3 text-center">
-              <BuyTicket />
-            </div>
-          </Narrow>
-        </Section>
-
-        {/* FAQ section */}
-        <Section id="faq">
-          <h1 className="text-center py-3">Frequently Asked Questions</h1>
-          <Narrow className="mx-auto pl-sm-5">
-            {data.faqs.map((item, index) => (
-              <div className="py-2" key={index}>
-                <a
-                  className="d-flex align-items-top"
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => toggleFAQ(index)}>
-                  <Icon
-                    shape={faq[index] ? 'chevron-up' : 'chevron-down'}
-                    className="flex-shrink-0"
-                  />
-                  <span className="font-weight-bold">{item.question}</span>
-                </a>
-                <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
-                  <ReactMarkdown
-                    linkTarget="_blank"
-                    source={item.answer}
-                    escapeHtml={false}
-                  />
-                </Collapse>
-              </div>
-            ))}
             <div className="pt-3 text-center">
               <BuyTicket />
             </div>
@@ -181,25 +150,64 @@ function Landing() {
               </Button>
             </ModalFooter>
           </Modal>
+          <div className="pt-3 text-center">
+            <BuyTicket />
+          </div>
+        </Section>
+
+        {/* FAQ section */}
+        <Section id="faq">
+          <h1 className="text-center py-3">Frequently Asked Questions</h1>
+          <Narrow className="mx-auto pl-sm-5">
+            {data.faqs.map((item, index) => (
+              <div className="py-2" key={index}>
+                <a
+                  className="d-flex align-items-top"
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => toggleFAQ(index)}>
+                  <Icon
+                    shape={faq[index] ? 'chevron-up' : 'chevron-down'}
+                    className="flex-shrink-0"
+                  />
+                  <span className="font-weight-bold">{item.question}</span>
+                </a>
+                <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
+                  <ReactMarkdown
+                    linkTarget="_blank"
+                    source={item.answer}
+                    escapeHtml={false}
+                  />
+                </Collapse>
+              </div>
+            ))}
+          </Narrow>
         </Section>
 
         {/* Video presentation section */}
-        <div className="mt-4 py-5" id="video">
-          <div className="embed-responsive embed-responsive-16by9">
-            <iframe
-              title="a video presentation on vic"
-              frameBorder="1"
-              className="embed-responsive-item"
-              sandbox="allow-same-origin allow-scripts"
-              src={data.video_embed_url}
-              allowFullScreen></iframe>
+        {data.video_embed_url && (
+          <div className="mt-4 py-5" id="video">
+            <div className="embed-responsive embed-responsive-16by9">
+              <iframe
+                title="a video presentation on vic"
+                frameBorder="1"
+                className="embed-responsive-item"
+                sandbox="allow-same-origin allow-scripts"
+                src={data.video_embed_url}
+                allowFullScreen></iframe>
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* Last CTA */}
-        <div className="py-5 text-center">
-          <BuyTicket />
-        </div>
+        <Section>
+          <h1 className="text-center">Register</h1>
+          <Narrow className="px-2 py-4 mx-auto text-center">
+            <p>{data.mission_description}</p>
+            <PreserveLineBreaks className="my-2 text-muted">
+              {data.dates}
+            </PreserveLineBreaks>
+            <BuyTicket />
+          </Narrow>
+        </Section>
       </div>
     </>
   );
@@ -318,5 +326,5 @@ const ShapeRight = styled(Shape).attrs({
 const ImgAffiliates = styled(ImgUnselectable).attrs({
   className: 'mx-3',
 })`
-  height: 50px;
+  height: 60px;
 `;
