@@ -101,6 +101,7 @@ const Logo = styled.img.attrs({
   className: 'mr-2',
   alt: APP_NAME + ' logo',
 })`
+  pointer-events: none;
   width: 48px;
   height: 48px;
 

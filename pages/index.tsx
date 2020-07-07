@@ -60,6 +60,14 @@ function Landing() {
         <ShapeRight />
       </Cover>
 
+      <div className="d-flex justify-content-center bg-light py-4">
+        <ImgAffiliates src="/images/logo-pf.svg" alt="Peacefactory logo" />
+        <ImgAffiliates
+          src="/images/logo-cnvc.svg"
+          alt="Center for nonviolent communication logo"
+        />
+      </div>
+
       <div className="container">
         {/* About section */}
         <div className="mt-4 py-5" id="about">
@@ -254,7 +262,6 @@ BuyTicket.propTypes = {
 const Cover = styled.div`
   position: relative;
   background: #17506d;
-  min-height: 70vh;
 `;
 
 const Narrow = styled.div`
@@ -269,7 +276,19 @@ const PreserveLineBreaks = styled.div`
   white-space: pre-line;
 `;
 
-const Shape = styled.img.attrs({
+// Preventing an image from being draggable or selectable without using JS
+// https://stackoverflow.com/a/12906840/232619
+const ImgUnselectable = styled.img`
+  pointer-events: none;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+`;
+
+const Shape = styled(ImgUnselectable).attrs({
   alt: 'Decoration image',
 })`
   opacity: 0.1;
@@ -294,4 +313,10 @@ const ShapeRight = styled(Shape).attrs({
   position: absolute;
   right: 30px;
   top: 20px;
+`;
+
+const ImgAffiliates = styled(ImgUnselectable).attrs({
+  className: 'mx-3',
+})`
+  height: 50px;
 `;
