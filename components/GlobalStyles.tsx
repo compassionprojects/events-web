@@ -9,6 +9,7 @@ export default createGlobalStyle`
     text-decoration: none;
     border-bottom: 3px solid #34F6F2;
     padding-bottom: 2px;
+    font-weight: 500;
     &:hover {
       text-decoration: none;
       border-bottom-width: 1px;
