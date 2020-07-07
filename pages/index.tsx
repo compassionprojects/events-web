@@ -15,6 +15,7 @@ import Head from 'next/head';
 import ReactMarkdown from 'react-markdown/with-html';
 import Icon from '../components/Icon';
 import data from '../data';
+import Meta from '../components/Meta';
 
 interface Trainer {
   name: string;
@@ -36,10 +37,11 @@ function Landing() {
   return (
     <>
       {/* title and description for SEO */}
-      <Head>
-        <title>{data.mission_title}</title>
-        <meta name="description" content={data.mission_description} />
-      </Head>
+      <Meta
+        title={data.mission_title}
+        description={data.mission_description}
+        image_url="/images/social-media-banner.png"
+      />
 
       {/* Cover section for the fold */}
       <Cover className="text-white text-center" id="top">
