@@ -84,9 +84,7 @@ function Landing() {
                   style={{ cursor: 'pointer' }}
                   onClick={() => toggleFAQ(index)}>
                   <Icon shape={faq[index] ? 'chevron-up' : 'chevron-down'} />
-                  <span className={faq[index] ? 'font-weight-bold' : ''}>
-                    {item.question}
-                  </span>
+                  <span className="font-weight-bold">{item.question}</span>
                 </a>
                 <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
                   <ReactMarkdown source={item.answer} escapeHtml={false} />
