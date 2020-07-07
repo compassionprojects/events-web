@@ -7,7 +7,7 @@ export const sizes = {
   desktop: 992,
   tablet: 768,
   phone: 576,
-  mini: 360,
+  mini: 365,
 };
 
 export const responsiveCarousel = {

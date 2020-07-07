@@ -107,7 +107,13 @@ const Logo = styled.img.attrs({
   media.down.mini`
     width: 28px;
     height: 28px;
-  `}
+  `};
+
+  ${// @ts-ignore
+  media.up.phone`
+    width: 56px;
+    height: 56px;
+  `};
 `;
 
 const Brand = styled(NavbarBrand)`
