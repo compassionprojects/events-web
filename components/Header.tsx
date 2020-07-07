@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import {
   Collapse,
   Container,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
   Navbar,
   NavbarToggler,
   NavbarBrand,
@@ -29,11 +33,31 @@ export default function Header() {
                 About
               </NavLink>
             </NavItem>
-            <NavItem className="pl-md-4">
-              <NavLink href="/#course" onClick={() => scrollTo('#course')}>
+            <UncontrolledDropdown nav inNavbar className="pl-md-4">
+              <DropdownToggle nav caret>
                 Course
-              </NavLink>
-            </NavItem>
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem onClick={() => scrollTo('#course')}>
+                  Course
+                </DropdownItem>
+                <DropdownItem onClick={() => scrollTo('#language')}>
+                  Language
+                </DropdownItem>
+                <DropdownItem onClick={() => scrollTo('#what-to-expect')}>
+                  What to expect?
+                </DropdownItem>
+                <DropdownItem onClick={() => scrollTo('#what-you-need')}>
+                  What you need?
+                </DropdownItem>
+                <DropdownItem onClick={() => scrollTo('#course-content')}>
+                  Course Content
+                </DropdownItem>
+                <DropdownItem onClick={() => scrollTo('#fee')}>
+                  Participation fee
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
             <NavItem className="pl-md-4">
               <NavLink href="/#faq" onClick={() => scrollTo('#faq')}>
                 FAQ&apos;s
