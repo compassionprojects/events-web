@@ -30,6 +30,11 @@ function Landing() {
 
   const [modal, setModal] = useState(false);
   const toggleModal = () => setModal(!modal);
+  const closeBtn = (
+    <button className="close" onClick={toggleModal}>
+      <Icon shape="x" />
+    </button>
+  );
 
   const t: Trainer = { name: '', image_url: '', bio: '' };
   const [trainer, setTrainer] = useState(t);
@@ -148,7 +153,7 @@ function Landing() {
             toggle={toggleModal}
             centered
             size="lg">
-            <ModalHeader toggle={toggleModal}>
+            <ModalHeader toggle={toggleModal} close={closeBtn}>
               <div className="d-flex">
                 <img
                   style={{ height: 30, width: 30 }}

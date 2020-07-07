@@ -18,6 +18,7 @@ Icon.propTypes = {
     'chevron-up',
     'external-link',
     'arrow-up',
+    'x',
   ]),
 };
 
