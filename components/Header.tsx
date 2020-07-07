@@ -103,14 +103,16 @@ const Logo = styled.img.attrs({
   width: 48px;
   height: 48px;
 
-  ${media.down.mini`
+  ${// @ts-ignore
+  media.down.mini`
     width: 28px;
     height: 28px;
   `}
 `;
 
 const Brand = styled(NavbarBrand)`
-  ${media.down.mini`
+  ${// @ts-ignore
+  media.down.mini`
     font-size: 1rem;
   `}
 `;
