@@ -18,6 +18,7 @@ import scrollTo from 'scroll-to-element';
 import media from './Media';
 import { APP_NAME } from '../constants';
 import data from '../data';
+import GetTickets from './GetTickets';
 
 export const o = { duration: 300, offset: -70 };
 
@@ -41,7 +42,7 @@ export default function Header() {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto py-md-3" navbar>
-            <NavItem className="pl-md-4">
+            <NavItem className="pl-md-2 pl-lg-4">
               <NavLink
                 href="/#about"
                 onClick={() => scrollTo('#about', o)}
@@ -49,7 +50,7 @@ export default function Header() {
                 About
               </NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar className="pl-md-4">
+            <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
               <DropdownToggle nav caret className="text-primary">
                 Course
               </DropdownToggle>
@@ -72,17 +73,12 @@ export default function Header() {
                 <DropdownItem onClick={() => scrollTo('#fee', o)}>
                   Participation fee
                 </DropdownItem>
+                <DropdownItem onClick={() => scrollTo('#trainers', o)}>
+                  Trainers
+                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            <NavItem className="pl-md-4">
-              <NavLink
-                href="/#trainers"
-                onClick={() => scrollTo('#trainers', o)}
-                className="text-primary">
-                Trainers
-              </NavLink>
-            </NavItem>
-            <NavItem className="pl-md-4">
+            <NavItem className="pl-md-2 pl-lg-4">
               <NavLink
                 href="/#faq"
                 onClick={() => scrollTo('#faq', o)}
@@ -90,12 +86,15 @@ export default function Header() {
                 FAQ&apos;s
               </NavLink>
             </NavItem>
-            <NavItem className="pl-md-4">
+            <NavItem className="pl-md-2 pl-lg-4">
               <NavLink
                 href={`mailto:${data.contact_email}`}
                 className="text-primary">
                 Contact
               </NavLink>
+            </NavItem>
+            <NavItem className="pl-md-2 pl-lg-4 mt-1">
+              <GetTickets size="sm" nav title="Get" />
             </NavItem>
           </Nav>
         </Collapse>

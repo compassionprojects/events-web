@@ -11,7 +11,6 @@ export default {
   dates: `31st July - 9th August 2020
   UTC 0 to +4 Time zones`,
   buy_ticket_url,
-  buy_ticket_title: 'Buy tickets',
   video_embed_url: '',
   contact_email,
   trainers_intro: '',

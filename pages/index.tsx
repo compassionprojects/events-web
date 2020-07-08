@@ -12,6 +12,7 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown/with-html';
+import GetTickets from '../components/GetTickets';
 import Icon from '../components/Icon';
 import media from '../components/Media';
 import Meta from '../components/Meta';
@@ -54,7 +55,7 @@ function Landing() {
           <h1 className="pt-4 pt-sm-5">{data.mission_title}</h1>
           <p className="lead pt-4 pb-2">{data.mission_description}</p>
           <PreserveLineBreaks className="my-4">{data.dates}</PreserveLineBreaks>
-          <BuyTicket accent />
+          <GetTickets accent />
         </Narrow>
         <ShapeLeft />
         <ShapeRight />
@@ -79,7 +80,7 @@ function Landing() {
               escapeHtml={false}
             />
             <div className="pt-3 text-center">
-              <BuyTicket />
+              <GetTickets />
             </div>
           </Narrow>
         </div>
@@ -94,7 +95,7 @@ function Landing() {
               escapeHtml={false}
             />
             <div className="pt-3 text-center">
-              <BuyTicket />
+              <GetTickets />
             </div>
           </Narrow>
         </Section>
@@ -151,7 +152,7 @@ function Landing() {
             </ModalFooter>
           </Modal>
           <div className="pt-3 text-center">
-            <BuyTicket />
+            <GetTickets />
           </div>
         </Section>
 
@@ -205,7 +206,7 @@ function Landing() {
             <PreserveLineBreaks className="my-2 text-muted">
               {data.dates}
             </PreserveLineBreaks>
-            <BuyTicket />
+            <GetTickets />
           </Narrow>
         </Section>
       </div>
@@ -243,28 +244,6 @@ Trainer.propTypes = {
   bio: PropTypes.string,
   image_url: PropTypes.string,
   setTrainer: PropTypes.func,
-};
-
-function BuyTicket({ accent }) {
-  return (
-    <a
-      href={data.buy_ticket_url}
-      rel="noreferrer"
-      target="_blank"
-      className={`btn btn-lg btn-${accent ? 'accent' : 'primary'} my-4`}>
-      {data.buy_ticket_title}
-      <Icon
-        shape="external-link"
-        width={16}
-        height={16}
-        style={{ paddingBottom: 3, marginLeft: 5 }}
-      />
-    </a>
-  );
-}
-
-BuyTicket.propTypes = {
-  accent: PropTypes.bool,
 };
 
 const Cover = styled.div`
