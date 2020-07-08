@@ -10,7 +10,7 @@ export default function GetTickets({ accent, size, nav, title }) {
       href={data.buy_ticket_url}
       rel="noreferrer"
       target="_blank"
-      className={classnames('btn', {
+      className={classnames('btn rounded-pill', {
         'btn-lg': size === 'lg',
         'btn-sm': size === 'sm',
         'btn-accent': accent,

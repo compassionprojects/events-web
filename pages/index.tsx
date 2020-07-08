@@ -164,7 +164,7 @@ function Landing() {
             {data.faqs.map((item, index) => (
               <div
                 className={classnames('py-2 px-sm-2', {
-                  'bg-light rounded': faq[index],
+                  'bg-light rounded-lg': faq[index],
                 })}
                 key={index}>
                 <a
