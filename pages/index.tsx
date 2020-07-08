@@ -72,9 +72,9 @@ function Landing() {
 
       <div className="container">
         {/* About section */}
-        <div className="mt-4 py-5" id="about">
+        <div className="mt-4 py-5" id="about" tabIndex={-1}>
           <Narrow className="mx-auto">
-            <h1 className="text-center py-3">About</h1>
+            <h2 className="text-center py-3">About</h2>
             <ReactMarkdown
               linkTarget="_blank"
               source={data.about}
@@ -87,9 +87,9 @@ function Landing() {
         </div>
 
         {/* Course section */}
-        <Section id="course">
+        <Section id="course" tabIndex={-1}>
           <Narrow className="mx-auto">
-            <h1 className="text-center py-3">Course</h1>
+            <h2 className="text-center py-3">Course</h2>
             <ReactMarkdown
               linkTarget="_blank"
               source={data.course}
@@ -102,9 +102,9 @@ function Landing() {
         </Section>
 
         {/* Trainers section */}
-        <Section id="trainers">
+        <Section id="trainers" tabIndex={-1}>
           <Narrow className="mx-auto">
-            <h1 className="text-center py-3">Trainers</h1>
+            <h2 className="text-center py-3">Trainers</h2>
             <div className="pb-4">{data.trainers_intro}</div>
             <Row className="justify-content-center">
               {data.trainers.map((item, index) => (
@@ -158,8 +158,8 @@ function Landing() {
         </Section>
 
         {/* FAQ section */}
-        <Section id="faq">
-          <h1 className="text-center py-3">Frequently Asked Questions</h1>
+        <Section id="faq" tabIndex={-1}>
+          <h2 className="text-center py-3">Frequently Asked Questions</h2>
           <Narrow className="mx-auto pl-sm-5">
             {data.faqs.map((item, index) => (
               <div
@@ -167,7 +167,7 @@ function Landing() {
                   'bg-light rounded-lg': faq[index],
                 })}
                 key={index}>
-                <a
+                <span
                   className="d-flex align-items-top"
                   style={{ cursor: 'pointer' }}
                   onClick={() => toggleFAQ(index)}>
@@ -176,7 +176,7 @@ function Landing() {
                     className="flex-shrink-0"
                   />
                   <span className="font-weight-bold">{item.question}</span>
-                </a>
+                </span>
                 <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
                   <ReactMarkdown
                     linkTarget="_blank"
@@ -205,7 +205,7 @@ function Landing() {
         )}
 
         <Section>
-          <h1 className="text-center">Register</h1>
+          <h2 className="text-center">Register</h2>
           <Narrow className="px-2 py-4 mx-auto text-center">
             <p>{data.mission_description}</p>
             <PreserveLineBreaks className="my-2 text-muted">
@@ -281,7 +281,7 @@ const ImgUnselectable = styled.img`
 `;
 
 const Shape = styled(ImgUnselectable).attrs({
-  alt: 'Decoration image',
+  alt: 'Decorative artwork of semi-circle',
 })`
   opacity: 0.1;
   ${// @ts-ignore

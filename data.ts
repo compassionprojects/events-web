@@ -71,7 +71,7 @@ A webcam, microphone and a stable internet connection. It’s that simple!
 
   - explore and identify personal core beliefs and create new cognitive structures that emanate directly from our living needs;
   - reduce the level of pain carried in our systems so that we are able to generate lives of satisfaction and empowerment;
-  - honour power-with leadership models like Systemic Consensing[1] and Open Space Technology;
+  - honour power-with leadership models like Systemic Consensing and Open Space Technology;
   - shift from scarcity thinking (an inherent part of a domination system) to the consciousness of plenty;
   - study the belief systems of money and practice how resources can flow from a perspective of abundance;
   - move from chronic struggle and “busy-ness” to a sense of flow and ease in our lives.

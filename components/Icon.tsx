@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function Icon({ shape, ...props }) {
   return (
-    <Feather {...props}>
+    <Feather {...props} focusable="false">
       <use xlinkHref={`/images/feather-sprite.svg#${shape}`} />
     </Feather>
   );

@@ -32,4 +32,13 @@ export default createGlobalStyle`
       padding-top: 50px;
     }
   }
+  .sr-only-focusable:focus {
+    color: white;
+    position: fixed;
+    top: 15px;
+    z-index: 1040;
+    background: #000;
+    padding: 1rem;
+    right: 0;
+  }
 `;
