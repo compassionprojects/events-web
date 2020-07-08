@@ -72,7 +72,7 @@ function Landing() {
 
       <div className="container">
         {/* About section */}
-        <div className="mt-4 py-5" id="about" tabIndex={-1}>
+        <Section className="mt-4 py-5 border-top-0" id="about" tabIndex={-1}>
           <Narrow className="mx-auto">
             <h2 className="text-center py-3">About</h2>
             <ReactMarkdown
@@ -84,7 +84,7 @@ function Landing() {
               <GetTickets />
             </div>
           </Narrow>
-        </div>
+        </Section>
 
         {/* Course section */}
         <Section id="course" tabIndex={-1}>
@@ -262,7 +262,9 @@ const Narrow = styled.div`
 
 const Section = styled.section.attrs({
   className: 'mt-4 py-5 border-top',
-})``;
+})`
+  outline: none;
+`;
 
 const PreserveLineBreaks = styled.div`
   white-space: pre-line;
