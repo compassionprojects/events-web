@@ -11,6 +11,7 @@ import {
   Button,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import ReactMarkdown from 'react-markdown/with-html';
 import GetTickets from '../components/GetTickets';
 import Icon from '../components/Icon';
@@ -161,7 +162,11 @@ function Landing() {
           <h1 className="text-center py-3">Frequently Asked Questions</h1>
           <Narrow className="mx-auto pl-sm-5">
             {data.faqs.map((item, index) => (
-              <div className="py-2" key={index}>
+              <div
+                className={classnames('py-2 px-sm-2', {
+                  'bg-light rounded': faq[index],
+                })}
+                key={index}>
                 <a
                   className="d-flex align-items-top"
                   style={{ cursor: 'pointer' }}
