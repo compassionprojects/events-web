@@ -76,18 +76,18 @@ export default function Header() {
             </UncontrolledDropdown>
             <NavItem className="pl-md-4">
               <NavLink
-                href="/#faq"
-                onClick={() => scrollTo('#faq', o)}
-                className="text-primary">
-                FAQ&apos;s
-              </NavLink>
-            </NavItem>
-            <NavItem className="pl-md-4">
-              <NavLink
                 href="/#trainers"
                 onClick={() => scrollTo('#trainers', o)}
                 className="text-primary">
                 Trainers
+              </NavLink>
+            </NavItem>
+            <NavItem className="pl-md-4">
+              <NavLink
+                href="/#faq"
+                onClick={() => scrollTo('#faq', o)}
+                className="text-primary">
+                FAQ&apos;s
               </NavLink>
             </NavItem>
             <NavItem className="pl-md-4">

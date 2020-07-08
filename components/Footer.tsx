@@ -37,17 +37,17 @@ export default function Footer() {
           <li className="nav-item">
             <a
               className="nav-link"
-              href="/#faq"
-              onClick={() => scrollTo('#faq', o)}>
-              FAQ&apos;s
+              href="/#trainers"
+              onClick={() => scrollTo('#trainers', o)}>
+              Trainers
             </a>
           </li>
           <li className="nav-item">
             <a
               className="nav-link"
-              href="/#trainers"
-              onClick={() => scrollTo('#trainers', o)}>
-              Trainers
+              href="/#faq"
+              onClick={() => scrollTo('#faq', o)}>
+              FAQ&apos;s
             </a>
           </li>
           <li className="nav-item">
