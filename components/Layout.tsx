@@ -8,13 +8,13 @@ import SkipLinks from './SkipLinks';
 export default function Layout({ router, ...props }) {
   const isLanding = router.pathname === '/';
   return (
-    <>
+    <div className="d-flex flex-column h-100">
       <GlobalStyles />
       {isLanding && <SkipLinks />}
       {isLanding ? <HeaderLanding /> : <Header />}
-      <main role="main" {...props} />
+      <main className="flex-shrink-0" role="main" {...props} />
       {isLanding ? <FooterLanding /> : <Footer />}
-    </>
+    </div>
   );
 }
 
