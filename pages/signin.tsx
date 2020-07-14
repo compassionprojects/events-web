@@ -59,7 +59,7 @@ export default function SignIn() {
           )}
           {data && (
             <div className="d-flex lead">
-              <Icon shape="mail" className="mt-1 mr-3 flex-shrink-0" />{' '}
+              <Icon shape="send" className="mt-1 mr-3 flex-shrink-0" />{' '}
               We&apos;ve sent a magic sign-in link to {email}.
             </div>
           )}

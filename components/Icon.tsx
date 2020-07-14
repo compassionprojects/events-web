@@ -19,7 +19,7 @@ Icon.propTypes = {
     'external-link',
     'arrow-up',
     'x',
-    'mail',
+    'send',
   ]),
 };
 
