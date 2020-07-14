@@ -4,7 +4,7 @@ import Icon from './Icon';
 import data from '../data';
 import { o } from './Header';
 
-export default function Footer() {
+export default function FooterLanding() {
   return (
     <footer className="footer mt-auto py-5 border-top">
       <div className="container">
@@ -47,6 +47,37 @@ export default function Footer() {
               className="nav-link"
               href="/#faq"
               onClick={() => scrollTo('#faq', o)}>
+              FAQ&apos;s
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href={`mailto:${data.contact_email}`}>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  );
+}
+
+export function Footer() {
+  return (
+    <footer className="footer mt-auto py-5 border-top">
+      <div className="container">
+        <ul className="nav justify-content-center">
+          <li className="nav-item">
+            <a className="nav-link" href="/#about">
+              About
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/#course">
+              Course
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/#faq">
               FAQ&apos;s
             </a>
           </li>

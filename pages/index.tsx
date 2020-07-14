@@ -13,9 +13,10 @@ import {
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ReactMarkdown from 'react-markdown/with-html';
+import { createGlobalStyle } from 'styled-components';
 import GetTickets from '../components/GetTickets';
 import Icon from '../components/Icon';
-import media from '../components/Media';
+import media, { sizes } from '../components/Media';
 import Meta from '../components/Meta';
 import data from '../data';
 
@@ -24,6 +25,17 @@ interface Trainer {
   image_url: string;
   bio: string;
 }
+
+const LandingStyles = createGlobalStyle`
+  body {
+    padding-top: 75px;
+  }
+  @media (max-width: ${sizes.mini / 16}rem) {
+    body {
+      padding-top: 50px;
+    }
+  }
+`;
 
 function Landing() {
   const [faq, setFAQIsOpen] = useState({});
@@ -49,6 +61,8 @@ function Landing() {
         description={data.mission_description}
         image_url="/images/social-media-banner.png"
       />
+
+      <LandingStyles />
 
       {/* Cover section for the fold */}
       <Cover className="text-white text-center">

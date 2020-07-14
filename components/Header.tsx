@@ -22,7 +22,7 @@ import GetTickets from './GetTickets';
 
 export const o = { duration: 300, offset: -70 };
 
-export default function Header() {
+export default function HeaderLanding() {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -95,6 +95,53 @@ export default function Header() {
             </NavItem>
             <NavItem className="pl-md-2 pl-lg-4 mt-1">
               <GetTickets size="sm" nav title="Get" />
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Container>
+    </Navbar>
+  );
+}
+
+export function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+  return (
+    <Navbar
+      color="light"
+      light
+      expand="md"
+      id="header"
+      className="border-bottom">
+      <Container>
+        <Brand href="/">
+          <Logo />
+          {APP_NAME}
+        </Brand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="ml-auto py-md-3" navbar>
+            <NavItem className="pl-md-2 pl-lg-4">
+              <NavLink href="/#about" className="text-primary">
+                About
+              </NavLink>
+            </NavItem>
+            <NavItem className="pl-md-2 pl-lg-4">
+              <NavLink href="/#course" className="text-primary">
+                Course
+              </NavLink>
+            </NavItem>
+            <NavItem className="pl-md-2 pl-lg-4">
+              <NavLink href="/#faq" className="text-primary">
+                FAQ&apos;s
+              </NavLink>
+            </NavItem>
+            <NavItem className="pl-md-2 pl-lg-4">
+              <NavLink
+                href={`mailto:${data.contact_email}`}
+                className="text-primary">
+                Contact
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>

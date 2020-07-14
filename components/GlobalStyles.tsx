@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { sizes } from './Media';
 
 export default createGlobalStyle`
   blockquote {
@@ -24,19 +23,11 @@ export default createGlobalStyle`
   p.lead {
     color: #e0e0e0;
   }
-  body {
-    padding-top: 70px;
-  }
-  @media (max-width: ${sizes.mini / 16}rem) {
-    body {
-      padding-top: 50px;
-    }
-  }
+
   .sr-only-focusable:focus {
     color: white;
     position: fixed;
-    top: 15px;
-    z-index: 1040;
+    top: 15px;   z-index: 1040;
     background: #000;
     padding: 1rem;
     right: 0;
