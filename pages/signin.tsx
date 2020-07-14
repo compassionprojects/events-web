@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Form, FormGroup, Label, Input, Button, Container } from 'reactstrap';
+import { Form, FormGroup, Input, Button, Container } from 'reactstrap';
 import Meta from '../components/Meta';
 
 const meta = {
