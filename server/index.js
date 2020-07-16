@@ -1,7 +1,6 @@
 // server.js
 
-const { createServer } = require('http');
-const { parse } = require('url');
+const express = require('express');
 const next = require('next');
 const { ApolloClient, gql, HttpLink } = require('apollo-boost');
 const { InMemoryCache } = require('apollo-cache-inmemory');
@@ -10,33 +9,31 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-const PORT = process.env.PORT || 4000;
+const port = process.env.PORT || 4000;
 
 app.prepare().then(() => {
-  createServer(async (req, res) => {
-    // Be sure to pass `true` as the second argument to `url.parse`.
-    // This tells it to parse the query portion of the URL.
-    const parsedUrl = parse(req.url, true);
-    const { pathname, query } = parsedUrl;
+  const server = express();
 
-    // set auth token cookie
-    if (pathname === '/auth' && query.token) {
-      try {
-        // Set token if validation succeeds
-        await validateToken(query.token);
-        res.setHeader('Set-Cookie', [`token=${query.token}`]);
-        // @todo
-        // redirect to home
-        // authenticate the components
-      } catch (e) {
-        console.log(e);
-      }
+  server.get('/auth', async (req, res) => {
+    try {
+      // Set token if validation succeeds
+      await validateToken(req.query.token);
+      res.cookie('token', req.query.token);
+      res.redirect('/home');
+    } catch (e) {
+      res.clearCookie('token');
+      res.redirect('/signin?fail=1');
+      console.log(e);
     }
+  });
 
-    handle(req, res, parsedUrl);
-  }).listen(PORT, (err) => {
+  server.all('*', (req, res) => {
+    return handle(req, res);
+  });
+
+  server.listen(port, (err) => {
     if (err) throw err;
-    console.log(`> Ready on http://localhost:${PORT}`);
+    console.log(`> Ready on http://localhost:${port}`);
   });
 });
 
@@ -53,6 +50,8 @@ function validateToken(token) {
       mutation validateToken($token: String!) {
         validateToken(token: $token) {
           id
+          expiresAt
+          token
         }
       }
     `,
