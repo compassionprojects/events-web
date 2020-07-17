@@ -1,5 +1,5 @@
 const contact_email = 'louise@peacefactory.fr';
-const irmtraud_email = 'irmtraud.kauschat@yahoo.de';
+// const irmtraud_email = 'irmtraud.kauschat@yahoo.de';
 const buy_ticket_url =
   'https://www.eventbrite.co.uk/e/nonviolent-communication-two-day-virtual-course-from-peace-factory-tickets-113631992348';
 
@@ -13,7 +13,7 @@ export default {
   buy_ticket_url,
   video_embed_url: '',
   contact_email,
-  trainers_intro: '',
+  trainers_intro: 'Meet our CNVC certified trainers',
   about: `Peace Factory's team is delighted to offer you a ground-breaking way to engage in learning Nonviolent Communication - a 2 day online course, aimed at encouraging and promoting intercultural dialogue and citizenship.
 
   NVC is a communication tool that improves relationships, bringing us closer to ourselves and to those around us. It also points to how we can replace the dehumanising systems in which most of us grew up, allowing us to create better ways to be together, sharing power with each other.
