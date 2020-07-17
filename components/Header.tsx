@@ -9,19 +9,20 @@ import {
   DropdownItem,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink as _NavLink,
 } from 'reactstrap';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import scrollTo from 'scroll-to-element';
+
+import Link from './Link';
 import media from './Media';
 import { APP_NAME } from '../constants';
 import data from '../data';
 import GetTickets from './GetTickets';
 import { UserContext } from '../lib/UserContext';
-import { useRouter } from 'next/router';
 
 export const o = { duration: 300, offset: -70 };
 
@@ -57,31 +58,33 @@ export default function HeaderLanding() {
                 About
               </NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
-              <DropdownToggle nav caret className="text-primary">
-                Course
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem onClick={() => scrollTo('#course', o)}>
+            {!user && (
+              <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
+                <DropdownToggle nav caret className="text-primary">
                   Course
-                </DropdownItem>
-                <DropdownItem onClick={() => scrollTo('#language', o)}>
-                  Language
-                </DropdownItem>
-                <DropdownItem onClick={() => scrollTo('#what-you-need', o)}>
-                  What you need?
-                </DropdownItem>
-                <DropdownItem onClick={() => scrollTo('#course-content', o)}>
-                  Course Content
-                </DropdownItem>
-                <DropdownItem onClick={() => scrollTo('#fee', o)}>
-                  Participation fee
-                </DropdownItem>
-                <DropdownItem onClick={() => scrollTo('#trainers', o)}>
-                  Trainers
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem onClick={() => scrollTo('#course', o)}>
+                    Course
+                  </DropdownItem>
+                  <DropdownItem onClick={() => scrollTo('#language', o)}>
+                    Language
+                  </DropdownItem>
+                  <DropdownItem onClick={() => scrollTo('#what-you-need', o)}>
+                    What you need?
+                  </DropdownItem>
+                  <DropdownItem onClick={() => scrollTo('#course-content', o)}>
+                    Course Content
+                  </DropdownItem>
+                  <DropdownItem onClick={() => scrollTo('#fee', o)}>
+                    Participation fee
+                  </DropdownItem>
+                  <DropdownItem onClick={() => scrollTo('#trainers', o)}>
+                    Trainers
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            )}
             <NavItem className="pl-md-2 pl-lg-4">
               <NavLink
                 href="/#faq"
@@ -91,11 +94,11 @@ export default function HeaderLanding() {
               </NavLink>
             </NavItem>
             <NavItem className="pl-md-2 pl-lg-4">
-              <NavLink
+              <_NavLink
                 href={`mailto:${data.contact_email}`}
                 className="text-primary">
                 Contact
-              </NavLink>
+              </_NavLink>
             </NavItem>
             {!user && (
               <NavItem className="pl-md-2 pl-lg-4 mt-1">
@@ -120,14 +123,13 @@ export default function HeaderLanding() {
   );
 }
 
-export function Header() {
+export function Header({ activePath }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const { user, signOut } = useContext(UserContext);
-  const { pathname } = useRouter();
   let root = '/';
   if (user) root = '/home';
-  const isHome = pathname === '/home';
+  const isHome = activePath === '/home';
 
   return (
     <Navbar
@@ -157,11 +159,11 @@ export function Header() {
                   </NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink
+                  <_NavLink
                     href={`mailto:${data.contact_email}`}
                     className="text-primary">
                     Contact
-                  </NavLink>
+                  </_NavLink>
                 </NavItem>
               </>
             )}
@@ -173,19 +175,18 @@ export function Header() {
                   </NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink
+                  <_NavLink
                     href={`mailto:${data.contact_email}`}
                     className="text-primary">
                     Contact
-                  </NavLink>
+                  </_NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
                   <NavLink
                     href="/home"
                     className={classnames('text-primary', {
-                      'px-3 rounded-pill': isHome,
-                    })}
-                    active={isHome}>
+                      'px-3 rounded-pill active': isHome,
+                    })}>
                     Home
                   </NavLink>
                 </NavItem>
@@ -206,6 +207,10 @@ export function Header() {
     </Navbar>
   );
 }
+
+Header.propTypes = {
+  activePath: PropTypes.string,
+};
 
 const Logo = styled.img.attrs({
   src: '/images/logo.svg',
@@ -229,14 +234,18 @@ const Logo = styled.img.attrs({
   `};
 `;
 
-const Brand = styled(NavbarBrand)`
+const Brand = styled(Link).attrs({
+  className: 'navbar-brand',
+})`
   ${// @ts-ignore
   media.down.mini`
     font-size: 1rem;
   `}
 `;
 
-const NavLink = styled(_NavLink)`
+const NavLink = styled(Link).attrs({
+  className: 'nav-link',
+})`
   &.active {
     background: rgba(23, 80, 109, 0.25);
   }

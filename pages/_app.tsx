@@ -8,10 +8,11 @@ import { UserContext } from '../lib/UserContext';
 import useAuth from '../lib/useAuth';
 
 function VicApp({ Component, pageProps, router, token }) {
-  const { user, authenticating, signOut } = useAuth(token);
-  const value = useMemo(() => ({ user, authenticating, signOut }), [
+  const { user, authenticating, error, signOut } = useAuth(token);
+  const value = useMemo(() => ({ user, authenticating, error, signOut }), [
     user,
     authenticating,
+    error,
     signOut,
   ]);
 
