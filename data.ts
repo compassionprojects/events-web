@@ -1,14 +1,14 @@
 const contact_email = 'louise@peacefactory.fr';
 const irmtraud_email = 'irmtraud.kauschat@yahoo.de';
 const buy_ticket_url =
-  'https://www.eventbrite.co.uk/e/nonviolent-communication-virtual-intensive-course-2020-tickets-112284722628';
+  'https://www.eventbrite.co.uk/e/nonviolent-communication-two-day-virtual-course-from-peace-factory-tickets-113631992348';
 
 export default {
   cover_image: '/images/cover.jpg',
   mission_title: 'Nonviolent Communication Virtual Intensive Course',
   mission_description:
     'A ground-breaking way to engage in learning Nonviolent Communication - an 8 day Virtual Intensive Course. Endorsed and fully supported by the Center for Nonviolent Communication (CNVC)',
-  dates: `31st July - 9th August 2020
+  dates: `8th - 9th August 2020
   UTC 0 to +4 Time zones`,
   buy_ticket_url,
   video_embed_url: '',
@@ -26,10 +26,10 @@ export default {
 
   This course is obviously about learning and practicing NVC skills and yet it's so much more than this.
 
-  Join us from **31st July to 9th August**, for the first Virtual Intensive Course (VIC), especially geared to support NVC learning for people living in African/European time zones.
+  Join us on 8th and 9th of August**, for the first Virtual Intensive Course (VIC), especially geared to support NVC learning for people living in African/European time zones.
 
   If you are motivated and have a desire to integrate the spirit of NVC into all aspects of life, this is the course for you!`,
-  course: `The course starts on 31st of July and ends on 9th of August, 8 days in total. Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs. Our experience is that our daily schedule supports group’s needs (schedule will be shared with the participants before the event).
+  course: `The course starts on 8th of August and ends on 9th of August, 2 days in total. Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs. Our experience is that our daily schedule supports group’s needs (schedule will be shared with the participants before the event).
 
   <div class="py-4 h3 text-center" id="language">
   Language
