@@ -7,26 +7,24 @@ export default {
   cover_image: '/images/cover.jpg',
   mission_title: 'Nonviolent Communication Virtual Intensive Course',
   mission_description:
-    'A ground-breaking way to engage in learning Nonviolent Communication - an 8 day Virtual Intensive Course. Endorsed and fully supported by the Center for Nonviolent Communication (CNVC)',
+    'A ground-breaking way to engage in learning Nonviolent Communication - a two day Virtual Course. Endorsed and fully supported by the Center for Nonviolent Communication (CNVC)',
   dates: `8th - 9th August 2020
   UTC 0 to +4 Time zones`,
   buy_ticket_url,
   video_embed_url: '',
   contact_email,
   trainers_intro: '',
-  about: `With so many unknowns about COVID-19, the core trainer team of the annual European Intensive Course decided that this year’s event would be held virtually so you can learn and deepen your Nonviolent Communication (NVC) skills in the safety and comfort of your own home.
+  about: `Peace Factory's team is delighted to offer you a ground-breaking way to engage in learning Nonviolent Communication - a 2 day online course, aimed at encouraging and promoting intercultural dialogue and citizenship.
 
-  Peace Factory is **honoured and thrilled** to offer you a ground-breaking way to engage in learning Nonviolent Communication - an 8 day Virtual Intensive Course (VIC), aiming to **encourage and promote intercultural dialogue** and citizenship during this period where face-to-face International Intensive Trainings (IITs) have been cancelled due to health concerns.
+  NVC is a communication tool that improves relationships, bringing us closer to ourselves and to those around us. It also points to how we can replace the dehumanising systems in which most of us grew up, allowing us to create better ways to be together, sharing power with each other.
 
-  You probably already know NVC as a communication tool to **improve relationships, bringing us closer to ourselves and to those around us**. Yet it also points to how we can replace the dehumanising systems in which most of us grew up, allowing us to create better ways to be together, **sharing power with each other**.
+  Peace Factory has taken the lead to design and build the virtual exchange platform, and supported by a team of people, we have become an exemplary example of using NVC to work well together. Even when deadlines have been tight, we took into account the humanity of each person before doing any task, and we only did tasks we loved to do! So you can rest assured there has been no coercion in the making of this course and we are pleased to showcase the process we used to work together.
 
-  Peace Factory has taken the lead to design and build the virtual platform, and supported by a team of people, we have become an exemplary example of using NVC to work well together. Even when deadlines have been tight, we took into account the humanity of each person before doing any task, and we only did tasks we loved to do!  So you can rest assured there has been no coercion in the making of this course and during the VIC, we are proud to showcase the process we used to work together.
+  We are all delighted and passionate about exploring together with you the breadth and depth of Nonviolent Communication, and keen to grow as a community to extend well beyond the 2 days spent together.
 
-  We are all **delighted and passionate** about exploring together with you the breadth and depth of Nonviolent Communication, and keen to **grow as a community** to extend well beyond the 8 days spent together.
+  This course is obviously about learning and practising NVC skills with certified trainers and yet it's so much more than this. Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs.
 
-  This course is obviously about learning and practicing NVC skills and yet it's so much more than this.
-
-  Join us on 8th and 9th of August**, for the first Virtual Intensive Course (VIC), especially geared to support NVC learning for people living in African/European time zones.
+  Join us the weekend of 8th and 9th August, especially geared to support NVC learning for people living in Africa/Europe UTC 0 to +4 time zones.
 
   If you are motivated and have a desire to integrate the spirit of NVC into all aspects of life, this is the course for you!`,
   course: `The course starts on 8th of August and ends on 9th of August, 2 days in total. Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs. Our experience is that our daily schedule supports group’s needs (schedule will be shared with the participants before the event).
@@ -35,19 +33,9 @@ export default {
   Language
   </div>
 
-  **English** is used as our shared common language during community sessions and there is translation English/French/English for all community meetings (sessions one and four).
+  **English** is used as our shared common language during all sessions.
 
-  Two workshops a day are also translated from English into French: one every morning, one every afternoon (sessions two and three).
-
-  No other translation is envisaged by the organisers, although our experience is that many bilingual people are happy to jump in when necessary on an ad hoc basis. You can also buy a ticket for two and work side by side with your own interpreter.
-
-  <div class="py-4 h3 text-center" id="what-to-expect">
-  What to expect?
-  </div>
-
-- **Richness and diversity**: Every year there are participants from many countries and this tremendous inter-cultural diversity adds to the richness of experience and exploration.
-- **Depth and breadth**: Throughout the course, along numerous training sessions and community meetings, we explore together a needs-based consciousness in all facets of life – in relationship to self, others and life, at home and at work, in relationship to inner as well as outer resources. We want to fully explore what life is and what it can be, from the very practical realms to the deeply spiritual ones. No theme is off-topic and everything is embraced.
-- **Community**: We aim to live equality in our community, exploring and creating together. We are aware of different talents and passions we bring into the course and this diversity proves to be a contributing element.
+  No translation is envisaged by the organisers, although our experience is that many bilingual people are happy to jump in when necessary on an ad hoc basis. You can also buy one ticket for two and work side by side with your own interpreter.
 
 <div class="py-4 h3 text-center" id="what-you-need">
 What you need?
@@ -81,38 +69,7 @@ A webcam, microphone and a stable internet connection. It’s that simple!
   Participation fee
   </div>
 
-  _Prices are in Euros._
-  _If you would prefer to pay in US Dollars, please contact <a href="mailto:${contact_email}">Louise</a>._
-
-  The fee to participate for the eight days online course is:
-
-  <table class="table">
-    <tbody>
-      <tr>
-        <th scope="row">€1500</th>
-        <td>Standard contribution per person</td>
-      </tr>
-      <tr>
-        <th scope="row">€2800</th>
-        <td>Two people sharing the same postal address booked at the same time with one receipt and two certificates of attendance</td>
-      </tr>
-      <tr>
-        <th scope="row">€750</th>
-        <td>Reduced-resources contribution (please contact <a href="mailto:${irmtraud_email}">Irmtraud</a>)</td>
-      </tr>
-      <tr>
-        <th scope="row">€500</th>
-        <td>Participating CNVC certified trainer</td>
-      </tr>
-      <tr>
-        <th scope="row">€1125</th>
-        <td>Registered certification candidate with CNVC</td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  Attendance at an IIT is a request of those who wish to become CNVC certified trainers, and whilst it is highly recommended to anyone who wishes to share NVC, whether you want to be certified or not, this course is also recognised as equivalent to an IIT. [More info](https://www.cnvc.org/certification/process#CPP).
+  €50 buys a place to learn and deepen your Nonviolent Communication (NVC) skills in the safety and comfort of your own home..
   `,
   faqs: [
     {
@@ -131,11 +88,11 @@ A webcam, microphone and a stable internet connection. It’s that simple!
       question: 'Why do some people attend the course each year?',
       answer: `Even the more experienced participants don’t find an intensive course repetitive. Course materials are continually evolving, so it’s somewhat different from year to year. Additionally people report that the material is so rich that they hear something different even if a topic is the same! Most important, peer learning is an integral part of our course. Having applied the material in their lives for a year, they enrich and broaden the programme for everybody. They may coach during mediation role-plays, offer empathy and support between training sessions so first-time participants get all the support they could want throughout the course.`,
     },
-    {
+    /* {
       question:
         'My English is not very fluent. Are you sure I can participate?',
       answer: `We’re confident because most of the team speak English as a second or third language, so it’s simple and slow. But if you’d like to check it out, please book a 10 minute exchange with <a href="mailto:${irmtraud_email}">Irmtraud</a>`,
-    },
+    }, */
     {
       question: 'Can I offer workshops during the course?',
       answer: `Yes, if a trainer is willing to be present with you, otherwise there is plenty of space for you to lead workshops outside the daily schedule.
@@ -185,13 +142,13 @@ A webcam, microphone and a stable internet connection. It’s that simple!
       answer: `To provide participants with a choice of learning opportunities VIC’s typically operate in a manner that is similar to the principles of Open Space Technology. For more information about the principles, please look at [openspaceworld.org](http://openspaceworld.org)
       `,
     },
-    {
+    /* {
       question: 'What are the start and end times?',
       answer: `All times quoted are Universal Time Coordinated (UTC)+2  (like in Berlin, Budapest, Cairo, Harare, Kigali, Ljubljana, Madrid, Paris, Prague, Oslo, Stockholm, Warsaw)
       On day 1: the scheduled start of the program (first meeting) is at 09:30
       On (last) day 8:The last meeting ends at 17:50
       `,
-    },
+    }, */
     {
       question: 'What payment options do I have?',
       answer: `We request payment in Euros using Eventbrite. You can book a place by [registering yourself](${buy_ticket_url})
@@ -224,7 +181,7 @@ A webcam, microphone and a stable internet connection. It’s that simple!
   The nonrefundable portion of the fee is €100.
       `,
     },
-    {
+    /* {
       question: 'Does Peace Factory offer financial support?',
       answer: `Peace Factory has a limited number of Tuition Reduction to VICs. Below are the criteria of tuition reduction taken into consideration.
 
@@ -239,17 +196,17 @@ A webcam, microphone and a stable internet connection. It’s that simple!
   4. Connection to the CNVC community, and previous contribution to the Peace Factory community.
   5. Except in extraordinary circumstances, reductions are not offered to people who have previously attended an NVC intensive course.
       `,
-    },
+    }, */
     {
       question: 'What is the waiting list procedure?',
       answer: `Once the places on the VIC are filled, Peace Factory creates a waiting list. If the VIC is full when you apply (and you will see this information on the registration form), your name is automatically placed on the waiting list in the order received, and your payment is not requested unless/until you are promoted from the waiting list and registered into the VIC. There is no guarantee that a space will open up.`,
     },
-    {
+    /* {
       question: 'I attended an intensive before; can I attend again?',
       answer: `Yes. People find great value in attending intensives several time during their NVC journey.
       `,
-    },
-    {
+    }, */
+    /* {
       question:
         'Is attendance of an intensive training still required for a CNVC Certified Trainer?',
       answer: `_Please note the change in language regarding Intensive trainings and certification. In an effort to support clarity and easy access to information, here is the updated language._
@@ -263,7 +220,7 @@ A webcam, microphone and a stable internet connection. It’s that simple!
   - Established a connection to CNVC, have a clear priority to support Peace Factory's mission, willing and able to renew annual certification
 
       `,
-    },
+    }, */
     {
       question: 'You can’t find your question?',
       answer: `If you have questions that aren’t included here, you are invited to write to <a href="mailto:${contact_email}">Louise</a> so that this part of the flier gets richer!`,
