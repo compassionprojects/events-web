@@ -61,9 +61,6 @@ export default function HeaderLanding() {
                 <DropdownItem onClick={() => scrollTo('#language', o)}>
                   Language
                 </DropdownItem>
-                <DropdownItem onClick={() => scrollTo('#what-to-expect', o)}>
-                  What to expect?
-                </DropdownItem>
                 <DropdownItem onClick={() => scrollTo('#what-you-need', o)}>
                   What you need?
                 </DropdownItem>

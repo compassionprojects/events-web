@@ -119,7 +119,7 @@ function Landing() {
         <Section id="trainers" tabIndex={-1}>
           <Narrow className="mx-auto">
             <h2 className="text-center py-3">Trainers</h2>
-            <div className="pb-4">{data.trainers_intro}</div>
+            <div className="pb-4 text-center">{data.trainers_intro}</div>
             <Row className="justify-content-center">
               {data.trainers.map((item, index) => (
                 <Col
