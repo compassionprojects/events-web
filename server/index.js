@@ -18,7 +18,10 @@ app.prepare().then(() => {
     try {
       // Set token if validation succeeds
       await validateToken(req.query.token);
-      res.cookie('token', req.query.token);
+      const date = new Date();
+      res.cookie('token', req.query.token, {
+        expires: new Date(date.setMonth(date.getMonth() + 1)),
+      });
       res.redirect('/home');
     } catch (e) {
       res.clearCookie('token');
