@@ -7,6 +7,7 @@ import SkipLinks from './SkipLinks';
 
 export default function Layout({ router, ...props }) {
   const isLanding = router.pathname === '/';
+
   return (
     <div className="d-flex flex-column h-100">
       <GlobalStyles />

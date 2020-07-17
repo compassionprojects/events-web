@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { Form, FormGroup, Input, Button, Container } from 'reactstrap';
 import { useMutation } from '@apollo/react-hooks';
@@ -7,6 +7,8 @@ import { gql } from 'apollo-boost';
 import Icon from '../components/Icon';
 import Meta from '../components/Meta';
 import Loading from '../components/Loading';
+import { UserContext } from '../lib/UserContext';
+import { useRouter } from 'next/router';
 
 const meta = {
   title: 'Sign In',
@@ -22,12 +24,18 @@ const START_SIGN_IN = gql`
 
 export default function SignIn() {
   const [startSignIn, { loading, data, error }] = useMutation(START_SIGN_IN);
+  const { user } = useContext(UserContext);
+  const router = useRouter();
 
   const [email, setEmail] = useState('');
   const sendMagicLink = (e) => {
     e.preventDefault();
     startSignIn({ variables: { email } });
   };
+
+  useEffect(() => {
+    if (user) router.push('/home');
+  });
 
   return (
     <>

@@ -11,6 +11,7 @@
       "es2017"
     ],
     "module": "esnext",
+    "strictNullChecks": false,
     "moduleResolution": "node",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
