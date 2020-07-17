@@ -84,10 +84,10 @@ A webcam, microphone and a stable internet connection. It’s that simple!
       question: 'I know nothing about Nonviolent Communication. Can I come?',
       answer: `You’re so welcome! There is no experience required to join and we have a special beginners track for the first 3 days designed just for you!`,
     },
-    {
+    /* {
       question: 'Why do some people attend the course each year?',
       answer: `Even the more experienced participants don’t find an intensive course repetitive. Course materials are continually evolving, so it’s somewhat different from year to year. Additionally people report that the material is so rich that they hear something different even if a topic is the same! Most important, peer learning is an integral part of our course. Having applied the material in their lives for a year, they enrich and broaden the programme for everybody. They may coach during mediation role-plays, offer empathy and support between training sessions so first-time participants get all the support they could want throughout the course.`,
-    },
+    }, */
     /* {
       question:
         'My English is not very fluent. Are you sure I can participate?',
@@ -154,7 +154,7 @@ A webcam, microphone and a stable internet connection. It’s that simple!
       answer: `We request payment in Euros using Eventbrite. You can book a place by [registering yourself](${buy_ticket_url})
       `,
     },
-    {
+    /* {
       question: 'How to apply for an VIC?',
       answer: `You can apply for this VIC by clicking on this [registration link](${buy_ticket_url}) and then clicking on tickets.
 
@@ -164,13 +164,13 @@ A webcam, microphone and a stable internet connection. It’s that simple!
 
   Peace Factory will notify you of the status of your application. Notification is usually sent 1-7 days after the application is received.
       `,
-    },
+    }, */
     {
       question: 'Are sessions recorded?',
       answer: `We plan to film and record parts of the sessions at the VIC which do not include a personal or group process. These recording are accessible only by participants for the next 12 months so you can carry on learning from the sessions.
       `,
     },
-    {
+    /* {
       question: 'What are the VIC cancellations and refunds policies?',
       answer: `Peace Factory incurs significant expenses with every application processed, so we request that you refrain from applying for an VIC unless your plans are firm, and you are confident of your ability to attend.
 
@@ -180,7 +180,7 @@ A webcam, microphone and a stable internet connection. It’s that simple!
 
   The nonrefundable portion of the fee is €100.
       `,
-    },
+    }, */
     /* {
       question: 'Does Peace Factory offer financial support?',
       answer: `Peace Factory has a limited number of Tuition Reduction to VICs. Below are the criteria of tuition reduction taken into consideration.
