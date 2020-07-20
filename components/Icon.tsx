@@ -20,6 +20,10 @@ Icon.propTypes = {
     'arrow-up',
     'x',
     'send',
+    'external-link',
+    'image',
+    'video',
+    'file-text',
   ]),
 };
 

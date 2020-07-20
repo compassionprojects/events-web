@@ -23,6 +23,7 @@ import { APP_NAME } from '../constants';
 import data from '../data';
 import GetTickets from './GetTickets';
 import { UserContext } from '../lib/UserContext';
+import { useRouter } from 'next/router';
 
 export const o = { duration: 300, offset: -70 };
 
@@ -123,13 +124,15 @@ export default function HeaderLanding() {
   );
 }
 
-export function Header({ activePath }) {
+export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { pathname } = useRouter();
   const toggle = () => setIsOpen(!isOpen);
+
   const { user, signOut } = useContext(UserContext);
   let root = '/';
   if (user) root = '/home';
-  const isHome = activePath === '/home';
+  const isHome = pathname === '/home';
 
   return (
     <Navbar
@@ -207,10 +210,6 @@ export function Header({ activePath }) {
     </Navbar>
   );
 }
-
-Header.propTypes = {
-  activePath: PropTypes.string,
-};
 
 const Logo = styled.img.attrs({
   src: '/images/logo.svg',

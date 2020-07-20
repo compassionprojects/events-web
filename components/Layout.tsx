@@ -19,7 +19,7 @@ export default function Layout({ router, ...props }) {
     <div className="d-flex flex-column h-100">
       <GlobalStyles />
       {isLanding && <SkipLinks />}
-      {isLanding ? <HeaderLanding /> : <Header activePath={activePath} />}
+      {isLanding ? <HeaderLanding /> : <Header />}
       {onecol && <main className="flex-shrink-0" role="main" {...props} />}
 
       {user && !isLanding && (
@@ -27,7 +27,7 @@ export default function Layout({ router, ...props }) {
           <Container className="py-5">
             <Row>
               <Col md={4} lg={3}>
-                <Nav activePath={activePath} />
+                <Nav />
               </Col>
               <Col md={8} lg={9} {...props} />
             </Row>
