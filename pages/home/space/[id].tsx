@@ -70,7 +70,7 @@ function Space() {
               href={item.callToActionUrl}
               target="_blank"
               rel="noreferrer"
-              className="btn btn-primary">
+              className="btn btn-primary rounded-pill">
               {item.callToActionTitle || 'Join'}
             </a>
           )}
