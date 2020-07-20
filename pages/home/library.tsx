@@ -51,7 +51,7 @@ const GET_LIBRARY_CONTENTS = gql`
 function Library() {
   // const { user } = useContext(UserContext);
   const { query, pathname } = useRouter();
-  const { data, error, loading } = useQuery(GET_LIBRARY_CONTENTS, {
+  const { data, loading } = useQuery(GET_LIBRARY_CONTENTS, {
     variables: { librarySection: query.section },
   });
 

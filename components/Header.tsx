@@ -13,7 +13,6 @@ import {
   NavItem,
   NavLink as _NavLink,
 } from 'reactstrap';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import scrollTo from 'scroll-to-element';
 
