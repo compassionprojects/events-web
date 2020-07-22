@@ -59,6 +59,16 @@ export default function Navigation() {
                 </Link>
               </NavItem>
             ))}
+        <NavItem>
+          <Link
+            className={classnames('nav-link', {
+              active: pathname === '/home/cards',
+            })}
+            href="/home/cards"
+            as="/home/cards">
+            Cards
+          </Link>
+        </NavItem>
       </Nav>
     </>
   );
