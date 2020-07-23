@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useQuery } from '@apollo/react-hooks';
+import { Nav, NavItem, NavLink } from 'reactstrap';
+import Router, { useRouter } from 'next/router';
+import { gql } from 'apollo-boost';
 // import PropTypes from 'prop-types';
 // import ReactMarkdown from 'react-markdown';
 // import { UserContext } from '../../lib/UserContext';
 import withAuth from '../auth';
 import Meta from '../../components/Meta';
 import Loading from '../../components/Loading';
-import { gql } from 'apollo-boost';
-import { useQuery } from '@apollo/react-hooks';
-import { useRouter } from 'next/router';
 
 const meta = {
   title: 'Cards',
@@ -25,12 +26,20 @@ const GET_CARDS = gql`
 `;
 
 function Cards() {
-  const { query } = useRouter();
+  const { query, pathname } = useRouter();
   const { data, loading } = useQuery(GET_CARDS, {
     variables: { type: query.type },
   });
 
   const cards = data?.allCards || [];
+
+  const filter = (e, type) => {
+    e.preventDefault();
+    Router.push({
+      pathname,
+      query: type ? { type } : {},
+    });
+  };
 
   return (
     <>
@@ -39,6 +48,34 @@ function Cards() {
         <span className="pr-2">{meta.title}</span>
         {loading && <Loading color="primary" />}
       </h2>
+
+      <Nav pills className="my-4">
+        <NavItem>
+          <NavLink
+            href="/home/cards?type=challenge"
+            active={query.type === 'challenge'}
+            onClick={(e) => filter(e, 'challenge')}>
+            Daily challenge
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink
+            href="/home/cards?type=feelings"
+            active={query.type === 'feelings'}
+            onClick={(e) => filter(e, 'feelings')}>
+            Feelings
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink
+            href="/home/cards?type=needs"
+            active={query.type === 'needs'}
+            onClick={(e) => filter(e, 'needs')}>
+            Needs
+          </NavLink>
+        </NavItem>
+      </Nav>
+
       <div className="row align-items-center">
         {cards.map((card) => (
           <Card key={card.id} className="col-4">
@@ -50,7 +87,9 @@ function Cards() {
                   className="img-fluid border rounded"
                 />
               </CardFront>
-              <CardBack className="border">{card.text}</CardBack>
+              <CardBack className="border rounded bg-light">
+                {card.text}
+              </CardBack>
             </CardInner>
           </Card>
         ))}
@@ -66,7 +105,7 @@ const CardInner = styled.div`
   width: 100%;
   height: 187px;
   text-align: center;
-  transition: transform 0.6s;
+  transition: transform 0.3s;
   transform-style: preserve-3d;
 `;
 
@@ -93,4 +132,5 @@ const CardFront = styled(CardFrontBack)`
 
 const CardBack = styled(CardFrontBack)`
   transform: rotateY(180deg);
+  padding: 1rem;
 `;

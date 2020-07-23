@@ -64,8 +64,8 @@ export default function Navigation() {
             className={classnames('nav-link', {
               active: pathname === '/home/cards',
             })}
-            href="/home/cards"
-            as="/home/cards">
+            href="/home/cards?type=challenge"
+            as="/home/cards?type=challenge">
             Games
           </Link>
         </NavItem>
