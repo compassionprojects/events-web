@@ -66,7 +66,7 @@ export default function Navigation() {
             })}
             href="/home/cards"
             as="/home/cards">
-            Cards
+            Games
           </Link>
         </NavItem>
       </Nav>
