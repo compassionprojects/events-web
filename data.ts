@@ -7,7 +7,7 @@ export default {
   cover_image: '/images/cover.jpg',
   mission_title: 'Nonviolent Communication Virtual Course from Peace Factory',
   mission_description:
-    'A ground-breaking way to engage in learning Nonviolent Communication - a two day Virtual Course. Endorsed and fully supported by the Center for Nonviolent Communication (CNVC)',
+    'A ground-breaking way to engage in learning Nonviolent Communication - a two day Virtual Course. Endorsed and fully supported by the Center for Nonviolent Communication (CNVC).',
   dates: `8th - 9th August 2020
   UTC 0 to +4 Time zones`,
   buy_ticket_url,
