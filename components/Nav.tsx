@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 
 const GET_ALL_SPACES = gql`
   query allSpaces {
-    allSpaces {
+    allSpaces(sortBy: position_ASC) {
       id
       title
     }
