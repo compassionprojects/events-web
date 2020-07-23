@@ -28,6 +28,7 @@ const GET_LIBRARY_CONTENTS = gql`
         librarySection: { id: $librarySection }
         librarySection_is_null: false
       }
+      sortBy: createdAt_DESC
     ) {
       id
       title

@@ -16,7 +16,7 @@ const GET_CONTENT = gql`
       id
       title
     }
-    allContents(where: { space: { id: $id } }) {
+    allContents(where: { space: { id: $id } }, sortBy: createdAt_DESC) {
       id
       title
       description
