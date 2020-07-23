@@ -66,6 +66,11 @@ function Library() {
     });
   };
 
+  allContents.forEach((item) => {
+    item.isDropboxVideo =
+      item.url && item.url.includes('dropbox.com') && item.url.includes('.mp4');
+  });
+
   return (
     <>
       <Meta {...meta} />
@@ -115,10 +120,17 @@ function Library() {
           )}
           {item.contentType === 'video' && item.url && (
             <div className="embed-responsive embed-responsive-16by9">
-              <iframe
-                className="embed-responsive-item"
-                src={item.url}
-                allowFullScreen></iframe>
+              {!item.isDropboxVideo && (
+                <iframe
+                  className="embed-responsive-item"
+                  src={item.url}
+                  allowFullScreen></iframe>
+              )}
+              {item.isDropboxVideo && (
+                <video width="auto" height="auto" controls>
+                  <source src={item.url} type="video/mp4" />
+                </video>
+              )}
             </div>
           )}
           {item.callToActionUrl && (
