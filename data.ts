@@ -53,7 +53,7 @@ A webcam, microphone and a stable internet connection. It’s that simple!
 
   With a ratio of about ten people per trainer, the programme structure is intensive, with some participants who have NVC skills and awareness well beyond the early levels, whilst others are starting their NVC journey.
 
-  The course is designed to promote the integration and sustainability of work throughout the following year and in addition to the eight-day course in August, there is an option for small groups to stay in active contact once a fortnight and to enjoy monthly mentoring from one of the trainers.
+  The courses are designed to promote the integration and sustainability of work throughout the following year and in addition to the two-day course in August, there is an eight-day course in November (LINK), plus an option for small groups to stay in active contact once a fortnight and to enjoy monthly mentoring from one of the trainers
 
   Our programme includes deepening awareness of needs, integrating NVC skills, handling conflicts, basics of mediation, personal growth and spiritual aspects of NVC, deep self-empathy, transforming enemy images and the pain of unmet needs, so that we can:
 
@@ -82,7 +82,7 @@ A webcam, microphone and a stable internet connection. It’s that simple!
     },
     {
       question: 'I know nothing about Nonviolent Communication. Can I come?',
-      answer: `You’re so welcome! There is no experience required to join and we have a special beginners track for the first 3 days designed just for you!`,
+      answer: `You’re so welcome! No experience is required to join and we have a special beginners track for 2 days designed just for you!`,
     },
     /* {
       question: 'Why do some people attend the course each year?',
