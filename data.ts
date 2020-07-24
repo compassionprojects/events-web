@@ -7,7 +7,7 @@ export default {
   cover_image: '/images/cover.jpg',
   mission_title: 'Nonviolent Communication Virtual Course from Peace Factory',
   mission_description:
-    'Learn Nonviolent Communication skills in the safety and comfort of your own home during 2 day online course, aimed at encouraging and promoting intercultural dialogue and citizenship. Full beginners are welcome too!',
+    'Learn Nonviolent Communication skills in the safety and comfort of your own home during 2 day online course, aimed at encouraging and promoting intercultural dialogue and citizenship. Beginners are welcome too, no previous experience required to join!',
   dates: `8th - 9th August 2020
   UTC 0 to +4 Time zones`,
   buy_ticket_url,
