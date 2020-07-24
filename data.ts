@@ -53,7 +53,7 @@ A webcam, microphone and a stable internet connection. It’s that simple!
 
   With a ratio of about ten people per trainer, the programme structure is intensive, with some participants who have NVC skills and awareness well beyond the early levels, whilst others are starting their NVC journey.
 
-  The courses are designed to promote the integration and sustainability of work throughout the following year and in addition to the two-day course in August, there is an eight-day course in November (LINK), plus an option for small groups to stay in active contact once a fortnight and to enjoy monthly mentoring from one of the trainers
+  The courses are designed to promote the integration and sustainability of work throughout the following year and in addition to the two-day course in August, there is an [eight-day course in November](https://www.eventbrite.co.uk/e/peace-factory-nonviolent-communication-virtual-summer-course-tickets-113631992348), plus an option for small groups to stay in active contact once a fortnight and to enjoy monthly mentoring from one of the trainers
 
   Our programme includes deepening awareness of needs, integrating NVC skills, handling conflicts, basics of mediation, personal growth and spiritual aspects of NVC, deep self-empathy, transforming enemy images and the pain of unmet needs, so that we can:
 
