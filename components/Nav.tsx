@@ -66,7 +66,7 @@ export default function Navigation() {
             })}
             href="/home/cards?type=challenge"
             as="/home/cards?type=challenge">
-            Games
+            Interactive tools
           </Link>
         </NavItem>
       </Nav>
