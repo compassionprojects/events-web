@@ -11,10 +11,19 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const port = process.env.PORT || 4000;
-const domain = 'peacefactory.fr';
+const domain = dev ? 'localhost' : 'peacefactory.fr';
 
 app.prepare().then(() => {
   const server = express();
+
+  // middleware to redirect to https
+  server.use(function (req, res, next) {
+    // request was via https, so do no special handling
+    if (req.secure) return next();
+
+    // request was via http, so redirect to https
+    res.redirect('https://' + req.headers.host + req.url);
+  });
 
   server.get('/auth', async (req, res) => {
     try {
