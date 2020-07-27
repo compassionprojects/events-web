@@ -1,4 +1,4 @@
-import removeAuthToken from './removeAuthToken';
+import logout from './logout';
 
 export const initialState = {
   user: {
@@ -9,9 +9,8 @@ export const initialState = {
 export default {
   Query: {},
   Mutation: {
-    async signOut() {
-      removeAuthToken();
-      return true;
+    signOut() {
+      logout();
     },
   },
 };

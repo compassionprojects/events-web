@@ -2,8 +2,9 @@
 
 const express = require('express');
 const next = require('next');
-const { ApolloClient, gql, HttpLink } = require('apollo-boost');
-const { InMemoryCache } = require('apollo-cache-inmemory');
+// const { ApolloClient, gql, HttpLink } = require('apollo-boost');
+// const { InMemoryCache } = require('apollo-cache-inmemory');
+const fetch = require('node-fetch');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -17,17 +18,23 @@ app.prepare().then(() => {
   server.get('/auth', async (req, res) => {
     try {
       // Set token if validation succeeds
-      await validateToken(req.query.token);
-      const date = new Date();
-      res.cookie('token', req.query.token, {
-        expires: new Date(date.setMonth(date.getMonth() + 1)),
-      });
+      const session = await validateToken(req.query.token);
+      console.log(session);
+      res.setHeader('Set-Cookie', session);
       res.redirect('/home');
     } catch (e) {
-      res.clearCookie('token');
+      res.clearCookie('keystone.sid');
       res.redirect('/signin?fail=1');
       console.log(e);
     }
+  });
+
+  server.get('/logout', (req, res) => {
+    // @todo perhaps end session on the server side as well?
+    // either run unauthenticateUser or create an endpoint that runs
+    // sessionManager.endAuthedSession()
+    res.clearCookie('keystone.sid');
+    res.redirect('/');
   });
 
   server.all('*', (req, res) => {
@@ -40,26 +47,17 @@ app.prepare().then(() => {
   });
 });
 
-function validateToken(token) {
-  const client = new ApolloClient({
-    link: new HttpLink({
-      uri: process.env.VIC_API_ROOT || 'http://localhost:3000/admin/api',
-    }),
-    cache: new InMemoryCache(),
-  });
+async function validateToken(token) {
+  const host = process.env.VIC_API_HOST || 'http://localhost:3000';
+  const response = await fetch(
+    `${host}/auth/magiclink/callback?token=${token}`,
+    {
+      header: {
+        Accept: 'application/json',
+      },
+    }
+  );
 
-  return client.mutate({
-    mutation: gql`
-      mutation validateToken($token: String!) {
-        validateToken(token: $token) {
-          id
-          expiresAt
-          token
-        }
-      }
-    `,
-    variables: {
-      token,
-    },
-  });
+  if (response.status !== 200) throw new Error('Invalid token');
+  return response.headers.get('set-cookie');
 }

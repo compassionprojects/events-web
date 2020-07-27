@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { UserContext } from '../lib/UserContext';
 import { useRouter } from 'next/router';
 
@@ -8,8 +8,12 @@ export default (Component) => {
     const { user, authenticating, error } = useContext(UserContext);
 
     if (authenticating && !user) return <div>Authenticating...</div>;
+
+    useEffect(() => {
+      if ((!user && !authenticating) || error) router.push('/signin?fail=1');
+    }, [user, authenticating, error]);
+
     if ((!user && !authenticating) || error) {
-      router.push('/signin?fail=1');
       return null;
     }
 

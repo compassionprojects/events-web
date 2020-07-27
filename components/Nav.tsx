@@ -21,7 +21,7 @@ export default function Navigation() {
   const items = [
     { path: '/home', title: 'Home' },
     { path: '/home/library', title: 'Library' },
-    // { path: '/home/wall', title: 'Wall' },
+    { path: '/home/wall', title: 'Wall' },
   ];
 
   return (
