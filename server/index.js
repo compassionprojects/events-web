@@ -3,6 +3,7 @@
 const express = require('express');
 const next = require('next');
 const fetch = require('node-fetch');
+const helmet = require('helmet');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -13,6 +14,8 @@ const domain = dev ? 'localhost' : 'peacefactory.fr';
 
 app.prepare().then(() => {
   const server = express();
+
+  server.use(helmet());
 
   server.get('/auth', async (req, res) => {
     try {

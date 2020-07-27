@@ -1,8 +1,6 @@
 import ApolloClient, { InMemoryCache } from 'apollo-boost';
 import resolvers from './resolvers';
 
-const isDev = process.env.NODE_ENV === 'development';
-
 const API_URL =
   process.env.VIC_API_ROOT ||
   process.env.NEXT_PUBLIC_VIC_API_ROOT ||
@@ -10,7 +8,7 @@ const API_URL =
 
 const apolloClient = new ApolloClient({
   uri: API_URL,
-  credentials: isDev ? 'include' : 'same-origin',
+  credentials: 'include',
   resolvers,
   cache: new InMemoryCache(),
 });
