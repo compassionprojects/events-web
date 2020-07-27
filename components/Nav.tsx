@@ -6,9 +6,13 @@ import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
 
-const GET_ALL_SPACES = gql`
-  query allSpaces {
+const GET_SPACES_AND_MESSAGE_TYPES = gql`
+  query allSpacesAndMessageTypes {
     allSpaces(sortBy: position_ASC) {
+      id
+      title
+    }
+    allMessageTypes {
       id
       title
     }
@@ -16,12 +20,15 @@ const GET_ALL_SPACES = gql`
 `;
 
 export default function Navigation() {
-  const { data, loading } = useQuery(GET_ALL_SPACES);
+  const { data, loading } = useQuery(GET_SPACES_AND_MESSAGE_TYPES);
   const { pathname, asPath } = useRouter();
+
+  const [defaultWall = {}] = (data && data.allMessageTypes) || [];
+
   const items = [
     { path: '/home', title: 'Home' },
     { path: '/home/library', title: 'Library' },
-    { path: '/home/wall', title: 'Wall' },
+    { path: `/home/wall?type=${defaultWall.id}`, title: 'Wall' },
   ];
 
   return (
@@ -31,7 +38,7 @@ export default function Navigation() {
           <NavItem key={item.path}>
             <Link
               className={classnames('nav-link', {
-                active: item.path === pathname,
+                active: item.path.split('?')[0] === pathname,
               })}
               href={item.path}
               as={item.path}>
