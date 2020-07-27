@@ -33,6 +33,7 @@
     "cookie": "~0.4.1",
     "express": "~4.17.1",
     "graphql": "~15.3.0",
+    "helmet": "~3.23.3",
     "husky": "~4.2.5",
     "lint-staged": "~10.2.11",
     "moment": "~2.27.0",
