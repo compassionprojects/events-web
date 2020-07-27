@@ -8,7 +8,7 @@ const API_URL =
 
 const apolloClient = new ApolloClient({
   uri: API_URL,
-  credentials: 'include',
+  credentials: 'same-origin',
   resolvers,
   cache: new InMemoryCache(),
 });
