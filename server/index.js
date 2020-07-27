@@ -11,6 +11,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const port = process.env.PORT || 4000;
+const domain = 'peacefactory.fr';
 
 app.prepare().then(() => {
   const server = express();
@@ -19,8 +20,7 @@ app.prepare().then(() => {
     try {
       // Set token if validation succeeds
       const session = await validateToken(req.query.token);
-      console.log(session);
-      res.setHeader('Set-Cookie', session);
+      res.setHeader('Set-Cookie', `${session}; Domain=${domain}`);
       res.redirect('/home');
     } catch (e) {
       res.clearCookie('keystone.sid');
