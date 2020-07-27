@@ -206,7 +206,7 @@ function Wall() {
       {allMessages.map((message) => (
         <div key={message.id} className="py-4 border-top d-flex">
           <div
-            className="rounded bg-light mt-1 mr-3"
+            className="rounded bg-light mt-1 mr-3 flex-shrink-0"
             style={{ width: 50, height: 50 }}></div>
           <div>
             <div>
