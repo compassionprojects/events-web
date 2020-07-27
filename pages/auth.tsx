@@ -11,6 +11,7 @@ export default (Component) => {
 
     useEffect(() => {
       if ((!user && !authenticating) || error) router.push('/signin?fail=1');
+      console.log(error);
     }, [user, authenticating, error]);
 
     if ((!user && !authenticating) || error) {
