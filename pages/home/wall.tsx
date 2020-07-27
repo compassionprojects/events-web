@@ -221,7 +221,7 @@ function Wall() {
       ))}
       {allMessages.length < count && (
         <Button color="outline-primary" onClick={loadMore}>
-          Load more
+          Load more ({count - allMessages.length})
         </Button>
       )}
     </>
