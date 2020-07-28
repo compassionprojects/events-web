@@ -62,8 +62,9 @@ export default function FooterLanding() {
 }
 
 export function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="footer mt-auto py-5 border-top">
+    <footer className="footer mt-auto py-5 border-top bg-light">
       <div className="container">
         <ul className="nav justify-content-center">
           <li className="nav-item">
@@ -87,6 +88,9 @@ export function Footer() {
             </a>
           </li>
         </ul>
+      </div>
+      <div className="py-4 mt-3 small text-muted text-center">
+        &copy; {year} peacefactory.fr
       </div>
     </footer>
   );
