@@ -104,7 +104,7 @@ function Wall() {
   const limit = 15;
   const variables = { typeId: query.type, first: limit, skip: 0 };
   const inputRef = useRef(null);
-  const [current, setCurrent] = useState({});
+  const [deleting, setDeleting] = useState(null);
   const [deleteMessage, { loading: dm }] = useMutation(DELETE_MESSAGE);
   const [create, { loading: cm }] = useMutation(CREATE_MESSAGE);
   const { data: dataMessageTypes, loading: lt } = useQuery(GET_MESSAGE_TYPES, {
@@ -173,16 +173,16 @@ function Wall() {
   };
 
   const remove = (e, message) => {
-    setCurrent(message);
+    setDeleting(message.id);
     e.preventDefault();
     if (!window.confirm('Are you sure you want to delete this message?')) {
-      setCurrent({});
+      setDeleting(null);
       return;
     }
     deleteMessage({
       variables: { id: message.id },
       update: (store) => {
-        setCurrent({});
+        setDeleting(null);
         // Read the data from our cache for this query.
         const data = store.readQuery({ query: GET_MESSAGES, variables });
 
@@ -247,7 +247,7 @@ function Wall() {
         <div
           key={message.id}
           className={classnames('py-4 border-top d-flex px-4', {
-            'bg-deleting': current['id'] === message.id,
+            'bg-deleting': deleting === message.id,
           })}>
           <div
             className="rounded bg-light mt-1 mr-3 flex-shrink-0"
