@@ -26,7 +26,7 @@ export default function Navigation() {
   const [defaultWall = {}] = (data && data.allMessageTypes) || [];
 
   const items = [
-    { path: '/home', title: 'Home' },
+    { path: '/home', title: 'Schedule' },
     { path: '/home/library', title: 'Library' },
     { path: `/home/wall?type=${defaultWall.id}`, title: 'Wall' },
   ];
