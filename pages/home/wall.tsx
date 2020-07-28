@@ -1,5 +1,6 @@
 import React, { useRef, useContext, useState } from 'react';
 import { gql } from 'apollo-boost';
+import PropTypes from 'prop-types';
 import { Nav, NavItem, NavLink, Button, Form, FormGroup } from 'reactstrap';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import Router, { useRouter } from 'next/router';
@@ -31,7 +32,7 @@ const GET_MESSAGE_TYPES = gql`
 const GET_MESSAGES = gql`
   query getMessages($typeId: ID!, $skip: Int, $first: Int) {
     allMessages(
-      where: { type: { id: $typeId } }
+      where: { type: { id: $typeId }, parent_is_null: true }
       sortBy: createdAt_DESC
       first: $first
       skip: $skip
@@ -47,9 +48,12 @@ const GET_MESSAGES = gql`
         name
       }
       createdAt
-      replies {
+      replies(sortBy: createdAt_DESC) {
         id
         body
+        parent {
+          id
+        }
         createdBy {
           id
           name
@@ -57,7 +61,7 @@ const GET_MESSAGES = gql`
         createdAt
       }
     }
-    _allMessagesMeta(where: { type: { id: $typeId } }) {
+    _allMessagesMeta(where: { type: { id: $typeId }, parent_is_null: true }) {
       count
     }
   }
@@ -77,9 +81,12 @@ const CREATE_MESSAGE = gql`
         name
       }
       createdAt
-      replies {
+      replies(sortBy: createdAt_DESC) {
         id
         body
+        parent {
+          id
+        }
         createdBy {
           id
           name
@@ -98,13 +105,54 @@ const DELETE_MESSAGE = gql`
   }
 `;
 
+const UPDATE_MESSAGE = gql`
+  mutation updateMessage($id: ID!, $body: String!, $typeId: ID!) {
+    updateMessage(
+      id: $id
+      data: {
+        replies: {
+          create: {
+            parent: { connect: { id: $id } }
+            body: $body
+            type: { connect: { id: $typeId } }
+          }
+        }
+      }
+    ) {
+      id
+      body
+      type {
+        id
+        title
+      }
+      createdBy {
+        id
+        name
+      }
+      createdAt
+      replies(sortBy: createdAt_DESC) {
+        id
+        body
+        parent {
+          id
+        }
+        createdBy {
+          id
+          name
+        }
+        createdAt
+      }
+    }
+  }
+`;
+
 function Wall() {
   const { query } = useRouter();
-  const { user } = useContext(UserContext);
   const limit = 15;
   const variables = { typeId: query.type, first: limit, skip: 0 };
-  const inputRef = useRef(null);
-  const [deleting, setDeleting] = useState(null);
+  const [deletingId, setDeleting] = useState(null);
+  const [openReplies, setOpenReplies] = useState({});
+  const [update, { loading: um }] = useMutation(UPDATE_MESSAGE);
   const [deleteMessage, { loading: dm }] = useMutation(DELETE_MESSAGE);
   const [create, { loading: cm }] = useMutation(CREATE_MESSAGE);
   const { data: dataMessageTypes, loading: lt } = useQuery(GET_MESSAGE_TYPES, {
@@ -116,7 +164,7 @@ function Wall() {
   );
   const loading = lt || lm;
 
-  const { allMessageTypes = [], MessageType = {} } = dataMessageTypes || {};
+  const { allMessageTypes = [] } = dataMessageTypes || {};
   const { allMessages = [], _allMessagesMeta = {} } = dataMessages || {};
   const { count = 0 } = _allMessagesMeta;
 
@@ -128,7 +176,7 @@ function Wall() {
     });
   };
 
-  const post = (e) => {
+  const post = (e, inputRef) => {
     e.preventDefault();
     create({
       variables: { body: inputRef.current.value, typeId: query.type },
@@ -148,9 +196,11 @@ function Wall() {
             },
           },
         });
+
+        // clear input
+        inputRef.current.value = '';
       },
     });
-    inputRef.current.value = '';
   };
 
   const loadMore = () => {
@@ -173,7 +223,7 @@ function Wall() {
   };
 
   const remove = (e, message) => {
-    setDeleting(message.id);
+    setDeleting(parseInt(message.id));
     e.preventDefault();
     if (!window.confirm('Are you sure you want to delete this message?')) {
       setDeleting(null);
@@ -191,13 +241,58 @@ function Wall() {
           query: GET_MESSAGES,
           variables,
           data: {
-            allMessages: data['allMessages'].filter((m) => m.id !== message.id),
+            allMessages: data['allMessages']
+              .filter((m) => m.id !== message.id)
+              .map((m) => ({
+                ...m,
+                replies: m.replies.filter((m) => m.id !== message.id),
+              })),
             _allMessagesMeta: {
               ...data['_allMessagesMeta'],
-              count: data['_allMessagesMeta'].count - 1,
+              count: message.parent
+                ? data['_allMessagesMeta'].count
+                : data['_allMessagesMeta'].count - 1,
             },
           },
         });
+      },
+    });
+  };
+
+  const openReply = (e, message) => {
+    e.preventDefault();
+    setOpenReplies({ ...openReplies, [message.id]: true });
+  };
+
+  const reply = (e, inputRef, message) => {
+    e.preventDefault();
+    update({
+      variables: {
+        id: message.id,
+        body: inputRef.current.value,
+        typeId: query.type,
+      },
+      update: (store, { data: { updateMessage } }) => {
+        // Read the data from our cache for this query.
+        const data = store.readQuery({ query: GET_MESSAGES, variables });
+
+        // Write our data back to the cache.
+        store.writeQuery({
+          query: GET_MESSAGES,
+          variables,
+          data: {
+            allMessages: data['allMessages'].map((m) => {
+              if (m.id === updateMessage.id) {
+                m.replies = updateMessage.replies;
+              }
+              return m;
+            }),
+            _allMessagesMeta: data['_allMessagesMeta'],
+          },
+        });
+
+        // clear input value
+        inputRef.current.value = '';
       },
     });
   };
@@ -223,61 +318,50 @@ function Wall() {
         ))}
       </Nav>
 
-      <Form onSubmit={post} className="mb-4">
-        <FormGroup>
-          <textarea
-            rows={2}
-            onFocus={() => (inputRef.current.rows = 4)}
-            onBlur={() => {
-              if (inputRef.current.value) return;
-              inputRef.current.rows = 2;
-            }}
-            className="form-control"
-            ref={inputRef}
-            required
-            placeholder={`Share ${MessageType.title}`}
-          />
-        </FormGroup>
-        <Button color="primary" className="rounded-pill" disabled={cm}>
-          Share {cm && <Loading />}
-        </Button>
-      </Form>
+      <Respond
+        onSubmit={post}
+        loading={cm}
+        placeholder="Share what's on your mind!"
+        className="mb-4"
+      />
 
       {allMessages.map((message) => (
-        <div
+        <Message
+          className="py-4 border-top px-4"
           key={message.id}
-          className={classnames('py-4 border-top d-flex px-4', {
-            'bg-deleting': deleting === message.id,
-          })}>
-          <div
-            className="rounded bg-light mt-1 mr-3 flex-shrink-0"
-            style={{ width: 50, height: 50 }}
-          />
-          <div className="w-100">
-            <div className="d-flex align-items-center">
-              <b className="mr-auto">{message.createdBy.name}</b>
-              {message.createdBy.id === user.id && (
-                <a href="" onClick={(e) => remove(e, message)}>
-                  <Icon
-                    shape="trash-2"
-                    className="text-danger"
-                    width={15}
-                    height={15}
-                  />
-                  {dm && <Loading />}
-                </a>
-              )}
+          deletingId={deletingId}
+          deleteInProgress={dm}
+          removeMessage={remove}
+          {...message}>
+          &nbsp;&nbsp;
+          <a href="" className="small" onClick={(e) => openReply(e, message)}>
+            reply
+          </a>
+          {message.id in openReplies && (
+            <div className="py-3">
+              <Respond
+                onSubmit={(e, ref) => reply(e, ref, message)}
+                loading={um}
+                placeholder="Share what's on your mind!"
+                btnTitle="Reply"
+                btnSmall
+                min={1}
+                max={2}
+              />
             </div>
-            <div className="py-2">{message.body}</div>
-            <span className="text-muted small">
-              {moment(message.createdAt).fromNow()}
-            </span>
-            &nbsp;&nbsp;
-            <a href="" className="small" onClick={(e) => e.preventDefault()}>
-              reply
-            </a>
-          </div>
-        </div>
+          )}
+          {message.replies.map((m) => (
+            <Message
+              {...m}
+              key={m.id}
+              deletingId={deletingId}
+              deleteInProgress={dm}
+              removeMessage={remove}
+              className="px-3 py-2 small border-top"
+              verticalSpacing="py-1"
+            />
+          ))}
+        </Message>
       ))}
 
       {allMessages.length < count && (
@@ -293,3 +377,126 @@ function Wall() {
 }
 
 export default withAuth(Wall);
+
+function Respond({
+  onSubmit,
+  placeholder,
+  btnTitle,
+  loading,
+  min,
+  max,
+  btnSmall,
+  className,
+}) {
+  const inputRef = useRef(null);
+  return (
+    <Form onSubmit={(e) => onSubmit(e, inputRef)} className={className}>
+      <FormGroup>
+        <textarea
+          rows={min}
+          onFocus={() => (inputRef.current.rows = max)}
+          onBlur={() => {
+            if (inputRef.current.value) return;
+            inputRef.current.rows = min;
+          }}
+          className="form-control"
+          ref={inputRef}
+          required
+          placeholder={placeholder}
+        />
+      </FormGroup>
+      <Button
+        color="primary"
+        className="rounded-pill"
+        size={(btnSmall && 'sm') || ''}
+        disabled={loading}>
+        {btnTitle} {loading && <Loading />}
+      </Button>
+    </Form>
+  );
+}
+
+Respond.propTypes = {
+  onSubmit: PropTypes.func,
+  placeholder: PropTypes.string,
+  btnTitle: PropTypes.string,
+  btnSmall: PropTypes.bool,
+  loading: PropTypes.bool,
+  min: PropTypes.number,
+  max: PropTypes.number,
+  className: PropTypes.string,
+};
+
+Respond.defaultProps = {
+  placeholder: '',
+  btnTitle: 'Share',
+  btnSmall: false,
+  loading: false,
+  min: 2,
+  max: 4,
+};
+
+function Message({
+  id,
+  parent,
+  createdBy,
+  createdAt,
+  body,
+  deletingId,
+  deleteInProgress,
+  removeMessage,
+  className,
+  verticalSpacing,
+  children,
+}) {
+  const { user } = useContext(UserContext);
+  return (
+    <div
+      key={id}
+      className={classnames('d-flex', className, verticalSpacing, {
+        'bg-deleting': deletingId === id,
+      })}>
+      <div
+        className="rounded bg-light mt-1 mr-3 flex-shrink-0"
+        style={{ width: 50, height: 50 }}
+      />
+      <div className="w-100">
+        <div className="d-flex align-items-center">
+          <b className="mr-auto">{createdBy.name}</b>
+          {createdBy.id === user.id && (
+            <a href="" onClick={(e) => removeMessage(e, { id, parent })}>
+              <Icon
+                shape="trash-2"
+                className="text-danger"
+                width={15}
+                height={15}
+              />
+              {deleteInProgress && <Loading />}
+            </a>
+          )}
+        </div>
+        <div className={verticalSpacing}>{body}</div>
+        <span className="text-muted small">{moment(createdAt).fromNow()}</span>
+
+        {children}
+      </div>
+    </div>
+  );
+}
+
+Message.propTypes = {
+  id: PropTypes.string,
+  createdBy: PropTypes.object,
+  createdAt: PropTypes.string,
+  body: PropTypes.string,
+  deletingId: PropTypes.number,
+  deleteInProgress: PropTypes.bool,
+  removeMessage: PropTypes.func,
+  className: PropTypes.string,
+  verticalSpacing: PropTypes.string,
+  children: PropTypes.node,
+};
+
+Message.defaultProps = {
+  verticalSpacing: 'py-2',
+};
