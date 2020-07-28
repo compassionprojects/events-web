@@ -189,7 +189,7 @@ export function Header() {
                     className={classnames('text-primary', {
                       'px-3 rounded-pill active': isHome,
                     })}>
-                    Home
+                    Schedule
                   </NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
