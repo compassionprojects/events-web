@@ -43,4 +43,11 @@ export default createGlobalStyle`
   .bg-deleting {
     background: #ffd7d7;
   }
+
+  textarea:required {
+    box-shadow:none;
+  }
+  textarea:invalid {
+    box-shadow: none;
+  }
 `;

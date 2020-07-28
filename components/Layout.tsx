@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import FooterLanding, { Footer } from './Footer';
 import HeaderLanding, { Header } from './Header';
 import GlobalStyles from './GlobalStyles';
+import Affix from './Affix';
 import SkipLinks from './SkipLinks';
 import Nav from './Nav';
 import { UserContext } from '../lib/UserContext';
@@ -27,7 +28,9 @@ export default function Layout({ router, ...props }) {
           <Container className="py-5">
             <Row>
               <Col md={4} lg={3}>
-                <Nav />
+                <Affix top={20}>
+                  <Nav />
+                </Affix>
               </Col>
               <Col md={8} lg={9} {...props} />
             </Row>

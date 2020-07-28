@@ -139,7 +139,7 @@ export function Header() {
       light
       expand="md"
       id="header"
-      className="border-bottom">
+      className="border-bottom flex-shrink-0">
       <Container>
         <Brand href={root}>
           <Logo />
