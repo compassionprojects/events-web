@@ -199,7 +199,7 @@ function Wall() {
             placeholder={`Share ${MessageType.title}`}
           />
         </FormGroup>
-        <Button color="primary" disabled={cm}>
+        <Button color="primary" className="rounded-pill" disabled={cm}>
           Share {cm && <Loading />}
         </Button>
       </Form>
@@ -207,22 +207,26 @@ function Wall() {
         <div key={message.id} className="py-4 border-top d-flex">
           <div
             className="rounded bg-light mt-1 mr-3 flex-shrink-0"
-            style={{ width: 50, height: 50 }}></div>
+            style={{ width: 50, height: 50 }}
+          />
           <div>
             <div>
               <b>{message.createdBy.name}</b>
             </div>
             <div className="py-2">{message.body}</div>
-            <div className="text-muted small">
+            <span className="text-muted small">
               {moment(message.createdAt).fromNow()}
-            </div>
+            </span>
           </div>
         </div>
       ))}
       {allMessages.length < count && (
-        <Button color="outline-primary" onClick={loadMore}>
-          Load more ({count - allMessages.length})
-        </Button>
+        <>
+          <br />
+          <Button color="outline-primary" block onClick={loadMore}>
+            Load more ({count - allMessages.length})
+          </Button>
+        </>
       )}
     </>
   );

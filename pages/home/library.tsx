@@ -138,7 +138,7 @@ function Library() {
               href={item.callToActionUrl}
               target="_blank"
               rel="noreferrer"
-              className="btn btn-accent">
+              className="btn btn-accent rounded-pill">
               {item.callToActionTitle || 'Join'}
             </a>
           )}
