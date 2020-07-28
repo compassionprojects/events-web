@@ -187,7 +187,7 @@ export function Header() {
                   <NavLink
                     href="/home"
                     className={classnames('text-primary', {
-                      'px-3 rounded-pill active': isHome,
+                      'rounded-pill active': isHome,
                     })}>
                     Schedule
                   </NavLink>
