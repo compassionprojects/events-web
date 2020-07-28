@@ -6,6 +6,7 @@ import { useQuery, useMutation } from '@apollo/react-hooks';
 import Router, { useRouter } from 'next/router';
 import classnames from 'classnames';
 import moment from 'moment';
+import Gravatar from 'react-gravatar';
 
 import { UserContext } from '../../lib/UserContext';
 import withAuth from '../auth';
@@ -484,9 +485,17 @@ function Message({
           'bg-deleting': deletingId === id,
         })}>
         <div
-          className="rounded bg-light mt-1 mr-3 flex-shrink-0"
-          style={{ width: 50, height: 50 }}
-        />
+          className={classnames('mt-1 flex-shrink-0', {
+            'mr-3': !parent,
+            'mr-2': parent,
+          })}
+          style={{ width: parent ? 30 : 50 }}>
+          <Gravatar
+            email={user.email}
+            default="wavatar"
+            className="rounded img-fluid"
+          />
+        </div>
         <div className="w-100">
           <div className="d-flex align-items-center">
             <b className="mr-auto">{createdBy.name}</b>

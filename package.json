@@ -43,6 +43,7 @@
     "prop-types": "~15.7.2",
     "react": "~16.13.1",
     "react-dom": "~16.13.1",
+    "react-gravatar": "~2.6.3",
     "react-markdown": "~4.3.1",
     "reactstrap": "~8.5.1",
     "scroll-to-element": "~2.0.3",
