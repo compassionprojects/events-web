@@ -217,6 +217,10 @@ function Wall() {
             <span className="text-muted small">
               {moment(message.createdAt).fromNow()}
             </span>
+            &nbsp;&nbsp;
+            <a href="" className="small" onClick={(e) => e.preventDefault()}>
+              reply
+            </a>
           </div>
         </div>
       ))}

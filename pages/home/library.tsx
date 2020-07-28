@@ -1,16 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
+import Router, { useRouter } from 'next/router';
+import { gql } from 'apollo-boost';
+import { Nav, NavItem, NavLink, Button } from 'reactstrap';
+import { useQuery } from '@apollo/react-hooks';
 import moment from 'moment';
-// import { UserContext } from '../../lib/UserContext';
+
 import withAuth from '../auth';
 import Meta from '../../components/Meta';
 import Loading from '../../components/Loading';
-// import Link from '../../components/Link';
-import { Nav, NavItem, NavLink } from 'reactstrap';
-import { gql } from 'apollo-boost';
-import { useQuery } from '@apollo/react-hooks';
-import Router, { useRouter } from 'next/router';
 import Icon from '../../components/Icon';
 
 const meta = {
@@ -18,7 +16,7 @@ const meta = {
 };
 
 const GET_LIBRARY_CONTENTS = gql`
-  query getLibraryContents($librarySection: ID) {
+  query getLibraryContents($librarySection: ID, $skip: Int, $first: Int) {
     allLibrarySections {
       id
       title
@@ -29,6 +27,8 @@ const GET_LIBRARY_CONTENTS = gql`
         librarySection_is_null: false
       }
       sortBy: createdAt_DESC
+      first: $first
+      skip: $skip
     ) {
       id
       title
@@ -46,23 +46,53 @@ const GET_LIBRARY_CONTENTS = gql`
         name
       }
     }
+    _allContentsMeta(
+      where: {
+        librarySection: { id: $librarySection }
+        librarySection_is_null: false
+      }
+    ) {
+      count
+    }
   }
 `;
 
 function Library() {
-  // const { user } = useContext(UserContext);
   const { query, pathname } = useRouter();
-  const { data, loading } = useQuery(GET_LIBRARY_CONTENTS, {
-    variables: { librarySection: query.section },
+  const limit = 15;
+  const variables = { librarySection: query.section, first: limit, skip: 0 };
+  const { data, loading, fetchMore } = useQuery(GET_LIBRARY_CONTENTS, {
+    variables,
   });
 
   const { allLibrarySections = [], allContents = [] } = data || {};
+  const { _allContentsMeta = {} } = data || {};
+  const { count = 0 } = _allContentsMeta;
 
   const filter = (e, section) => {
     e.preventDefault();
     Router.push({
       pathname: pathname,
       query: section ? { section } : {},
+    });
+  };
+
+  const loadMore = () => {
+    fetchMore({
+      variables: {
+        ...variables,
+        first: limit,
+        skip: allContents.length,
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult) return prev;
+        return Object.assign({}, prev, {
+          allContents: [
+            ...prev['allContents'],
+            ...fetchMoreResult['allContents'],
+          ],
+        });
+      },
     });
   };
 
@@ -144,12 +174,16 @@ function Library() {
           )}
         </div>
       ))}
+      {allContents.length < count && (
+        <>
+          <br />
+          <Button color="outline-primary" block onClick={loadMore}>
+            Load more ({count - allContents.length})
+          </Button>
+        </>
+      )}
     </>
   );
 }
-
-Library.propTypes = {
-  user: PropTypes.object,
-};
 
 export default withAuth(Library);

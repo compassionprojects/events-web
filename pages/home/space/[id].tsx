@@ -1,22 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import ReactMarkdown from 'react-markdown';
-// import { UserContext } from '../../../lib/UserContext';
-import withAuth from '../../auth';
-import Meta from '../../../components/Meta';
-import Loading from '../../../components/Loading';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
+import ReactMarkdown from 'react-markdown';
+import { Button } from 'reactstrap';
+
+import withAuth from '../../auth';
+import Meta from '../../../components/Meta';
+import Loading from '../../../components/Loading';
 
 const GET_CONTENT = gql`
-  query allContentOnSpaces($id: ID!) {
+  query allContentOnSpaces($id: ID!, $skip: Int, $first: Int) {
     Space(where: { id: $id }) {
       id
       title
     }
-    allContents(where: { space: { id: $id } }, sortBy: createdAt_DESC) {
+    allContents(
+      where: { space: { id: $id } }
+      sortBy: createdAt_DESC
+      first: $first
+      skip: $skip
+    ) {
       id
       title
       description
@@ -29,21 +35,47 @@ const GET_CONTENT = gql`
         name
       }
     }
+    _allContentsMeta(where: { space: { id: $id } }) {
+      count
+    }
   }
 `;
 
 function Space() {
-  // const { user } = useContext(UserContext);
   const { query } = useRouter();
-  const { data, loading } = useQuery(GET_CONTENT, {
-    variables: { id: query.id },
+  const limit = 15;
+  const variables = { id: query.id, first: limit, skip: 0 };
+  const { data, loading, fetchMore } = useQuery(GET_CONTENT, {
+    variables,
   });
 
   const { Space = {}, allContents = [] } = data || {};
+  const { _allContentsMeta = {} } = data || {};
+  const { count = 0 } = _allContentsMeta;
+
+  const loadMore = () => {
+    fetchMore({
+      variables: {
+        ...variables,
+        first: limit,
+        skip: allContents.length,
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult) return prev;
+        return Object.assign({}, prev, {
+          allContents: [
+            ...prev['allContents'],
+            ...fetchMoreResult['allContents'],
+          ],
+        });
+      },
+    });
+  };
 
   const meta = {
     title: Space.title || '',
   };
+
   return (
     <>
       <Meta {...meta} />
@@ -76,6 +108,14 @@ function Space() {
           )}
         </div>
       ))}
+      {allContents.length < count && (
+        <>
+          <br />
+          <Button color="outline-primary" block onClick={loadMore}>
+            Load more ({count - allContents.length})
+          </Button>
+        </>
+      )}
     </>
   );
 }
