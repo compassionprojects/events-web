@@ -492,8 +492,8 @@ function Message({
           style={{ width: parent ? 30 : 50 }}>
           <Gravatar
             email={user.email}
-            default="wavatar"
-            className="rounded img-fluid"
+            default="monsterid"
+            className="rounded-circle img-fluid"
           />
         </div>
         <div className="w-100">
