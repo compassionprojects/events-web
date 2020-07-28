@@ -13,7 +13,7 @@ import Loading from '../../components/Loading';
 import Icon from '../../components/Icon';
 
 const meta = {
-  title: 'Wall',
+  title: 'Walls',
 };
 
 const GET_MESSAGE_TYPES = gql`
