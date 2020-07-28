@@ -1,23 +1,16 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext, useState } from 'react';
 import { gql } from 'apollo-boost';
-import {
-  Nav,
-  NavItem,
-  NavLink,
-  Button,
-  Form,
-  // Input,
-  FormGroup,
-} from 'reactstrap';
+import { Nav, NavItem, NavLink, Button, Form, FormGroup } from 'reactstrap';
+import { useQuery, useMutation } from '@apollo/react-hooks';
+import Router, { useRouter } from 'next/router';
+import classnames from 'classnames';
 import moment from 'moment';
-// import Link from '../../components/Link';
-// import PropTypes from 'prop-types';
-// import { UserContext } from '../../lib/UserContext';
+
+import { UserContext } from '../../lib/UserContext';
 import withAuth from '../auth';
 import Meta from '../../components/Meta';
 import Loading from '../../components/Loading';
-import { useQuery, useMutation } from '@apollo/react-hooks';
-import Router, { useRouter } from 'next/router';
+import Icon from '../../components/Icon';
 
 const meta = {
   title: 'Wall',
@@ -97,20 +90,29 @@ const CREATE_MESSAGE = gql`
   }
 `;
 
+const DELETE_MESSAGE = gql`
+  mutation deleteMessage($id: ID!) {
+    deleteMessage(id: $id) {
+      id
+    }
+  }
+`;
+
 function Wall() {
   const { query } = useRouter();
+  const { user } = useContext(UserContext);
   const limit = 15;
-  const variables = { typeId: query.type };
+  const variables = { typeId: query.type, first: limit, skip: 0 };
   const inputRef = useRef(null);
-  const [createPost, { loading: cm }] = useMutation(CREATE_MESSAGE);
+  const [current, setCurrent] = useState({});
+  const [deleteMessage, { loading: dm }] = useMutation(DELETE_MESSAGE);
+  const [create, { loading: cm }] = useMutation(CREATE_MESSAGE);
   const { data: dataMessageTypes, loading: lt } = useQuery(GET_MESSAGE_TYPES, {
-    variables,
+    variables: { typeId: query.type },
   });
   const { data: dataMessages, loading: lm, fetchMore } = useQuery(
     GET_MESSAGES,
-    {
-      variables: { ...variables, first: limit, skip: 0 },
-    }
+    { variables }
   );
   const loading = lt || lm;
 
@@ -128,18 +130,25 @@ function Wall() {
 
   const post = (e) => {
     e.preventDefault();
-    createPost({
+    create({
       variables: { body: inputRef.current.value, typeId: query.type },
-      refetchQueries: [
-        {
+      update: (store, { data: { createMessage } }) => {
+        // Read the data from our cache for this query.
+        const data = store.readQuery({ query: GET_MESSAGES, variables });
+
+        // Write our data back to the cache.
+        store.writeQuery({
           query: GET_MESSAGES,
-          variables: {
-            ...variables,
-            first: limit,
-            skip: 0,
+          variables,
+          data: {
+            allMessages: [createMessage, ...data['allMessages']],
+            _allMessagesMeta: {
+              ...data['_allMessagesMeta'],
+              count: data['_allMessagesMeta'].count + 1,
+            },
           },
-        },
-      ],
+        });
+      },
     });
     inputRef.current.value = '';
   };
@@ -158,6 +167,36 @@ function Wall() {
             ...prev['allMessages'],
             ...fetchMoreResult['allMessages'],
           ],
+        });
+      },
+    });
+  };
+
+  const remove = (e, message) => {
+    setCurrent(message);
+    e.preventDefault();
+    if (!window.confirm('Are you sure you want to delete this message?')) {
+      setCurrent({});
+      return;
+    }
+    deleteMessage({
+      variables: { id: message.id },
+      update: (store) => {
+        setCurrent({});
+        // Read the data from our cache for this query.
+        const data = store.readQuery({ query: GET_MESSAGES, variables });
+
+        // Write our data back to the cache by removing the deleted item
+        store.writeQuery({
+          query: GET_MESSAGES,
+          variables,
+          data: {
+            allMessages: data['allMessages'].filter((m) => m.id !== message.id),
+            _allMessagesMeta: {
+              ...data['_allMessagesMeta'],
+              count: data['_allMessagesMeta'].count - 1,
+            },
+          },
         });
       },
     });
@@ -203,15 +242,31 @@ function Wall() {
           Share {cm && <Loading />}
         </Button>
       </Form>
+
       {allMessages.map((message) => (
-        <div key={message.id} className="py-4 border-top d-flex">
+        <div
+          key={message.id}
+          className={classnames('py-4 border-top d-flex px-4', {
+            'bg-deleting': current['id'] === message.id,
+          })}>
           <div
             className="rounded bg-light mt-1 mr-3 flex-shrink-0"
             style={{ width: 50, height: 50 }}
           />
-          <div>
-            <div>
-              <b>{message.createdBy.name}</b>
+          <div className="w-100">
+            <div className="d-flex align-items-center">
+              <b className="mr-auto">{message.createdBy.name}</b>
+              {message.createdBy.id === user.id && (
+                <a href="" onClick={(e) => remove(e, message)}>
+                  <Icon
+                    shape="trash-2"
+                    className="text-danger"
+                    width={15}
+                    height={15}
+                  />
+                  {dm && <Loading />}
+                </a>
+              )}
             </div>
             <div className="py-2">{message.body}</div>
             <span className="text-muted small">
@@ -224,6 +279,7 @@ function Wall() {
           </div>
         </div>
       ))}
+
       {allMessages.length < count && (
         <>
           <br />
@@ -237,20 +293,3 @@ function Wall() {
 }
 
 export default withAuth(Wall);
-
-/*
-// Unfortunately this does not update the React UI so we are going to
-// refetch all in the post method
-update: (store, { data: { createMessage } }) => {
-  // Read the data from our cache for this query.
-  const data = store.readQuery({
-    query: GET_MESSAGES,
-    variables,
-  });
-
-  // Add our comment from the mutation to the end.
-  const all = [createMessage, ...data['allMessages']];
-  // Write our data back to the cache.
-  store.writeQuery({ query: GET_MESSAGES, data: { allMessages: all } });
-},
-*/

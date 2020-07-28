@@ -39,4 +39,8 @@ export default createGlobalStyle`
     padding: 1rem;
     right: 0;
   }
+
+  .bg-deleting {
+    background: #ffd7d7;
+  }
 `;
