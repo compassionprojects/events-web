@@ -9,7 +9,7 @@ import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 
 const meta = {
-  title: 'Home',
+  title: 'Schedule',
 };
 
 const GET_SCHEDULE = gql`
