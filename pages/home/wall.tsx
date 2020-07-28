@@ -13,6 +13,8 @@ import Meta from '../../components/Meta';
 import Loading from '../../components/Loading';
 import Icon from '../../components/Icon';
 
+const limit = 15;
+const limitReplies = 2;
 const meta = {
   title: 'Walls',
 };
@@ -148,8 +150,8 @@ const UPDATE_MESSAGE = gql`
 
 function Wall() {
   const { query } = useRouter();
-  const limit = 15;
   const variables = { typeId: query.type, first: limit, skip: 0 };
+  const [visibleReplies, showAllReplies] = useState([]);
   const [deletingId, setDeleting] = useState(null);
   const [openReplies, setOpenReplies] = useState({});
   const [update, { loading: um }] = useMutation(UPDATE_MESSAGE);
@@ -297,6 +299,11 @@ function Wall() {
     });
   };
 
+  const showReplies = (e, m) => {
+    e.preventDefault();
+    showAllReplies([...visibleReplies, ...m.replies.map((m) => m.id), m.id]);
+  };
+
   return (
     <>
       <Meta {...meta} />
@@ -338,7 +345,7 @@ function Wall() {
             reply
           </a>
           {message.id in openReplies && (
-            <div className="py-3">
+            <div className="pt-2">
               <Respond
                 onSubmit={(e, ref) => reply(e, ref, message)}
                 loading={um}
@@ -350,17 +357,36 @@ function Wall() {
               />
             </div>
           )}
-          {message.replies.map((m) => (
+          {message.replies.length > 0 && <div className="py-1" />}
+          {message.replies.map((m, idx) => (
             <Message
               {...m}
               key={m.id}
               deletingId={deletingId}
               deleteInProgress={dm}
               removeMessage={remove}
-              className="px-3 py-2 small border-top"
+              className="px-2 py-2 small border-top"
+              style={
+                !visibleReplies.includes(m.id) && idx >= limitReplies
+                  ? { display: 'none' }
+                  : {}
+              }
               verticalSpacing="py-1"
             />
           ))}
+          {message.replies.length > limitReplies &&
+            !visibleReplies.includes(message.id) && (
+              <>
+                <br />
+                <Button
+                  color="outline-primary"
+                  block
+                  size="sm"
+                  onClick={(e) => showReplies(e, message)}>
+                  Show all ({message.replies.length - limitReplies})
+                </Button>
+              </>
+            )}
         </Message>
       ))}
 
@@ -448,37 +474,41 @@ function Message({
   className,
   verticalSpacing,
   children,
+  ...props
 }) {
   const { user } = useContext(UserContext);
   return (
-    <div
-      key={id}
-      className={classnames('d-flex', className, verticalSpacing, {
-        'bg-deleting': deletingId === id,
-      })}>
+    <div {...props}>
       <div
-        className="rounded bg-light mt-1 mr-3 flex-shrink-0"
-        style={{ width: 50, height: 50 }}
-      />
-      <div className="w-100">
-        <div className="d-flex align-items-center">
-          <b className="mr-auto">{createdBy.name}</b>
-          {createdBy.id === user.id && (
-            <a href="" onClick={(e) => removeMessage(e, { id, parent })}>
-              <Icon
-                shape="trash-2"
-                className="text-danger"
-                width={15}
-                height={15}
-              />
-              {deleteInProgress && <Loading />}
-            </a>
-          )}
-        </div>
-        <div className={verticalSpacing}>{body}</div>
-        <span className="text-muted small">{moment(createdAt).fromNow()}</span>
+        className={classnames('d-flex', className, verticalSpacing, {
+          'bg-deleting': deletingId === id,
+        })}>
+        <div
+          className="rounded bg-light mt-1 mr-3 flex-shrink-0"
+          style={{ width: 50, height: 50 }}
+        />
+        <div className="w-100">
+          <div className="d-flex align-items-center">
+            <b className="mr-auto">{createdBy.name}</b>
+            {createdBy.id === user.id && (
+              <a href="" onClick={(e) => removeMessage(e, { id, parent })}>
+                <Icon
+                  shape="trash-2"
+                  className="text-danger"
+                  width={15}
+                  height={15}
+                />
+                {deleteInProgress && <Loading />}
+              </a>
+            )}
+          </div>
+          <div className={verticalSpacing}>{body}</div>
+          <span className="text-muted small">
+            {moment(createdAt).fromNow()}
+          </span>
 
-        {children}
+          {children}
+        </div>
       </div>
     </div>
   );
@@ -486,6 +516,7 @@ function Message({
 
 Message.propTypes = {
   id: PropTypes.string,
+  parent: PropTypes.object,
   createdBy: PropTypes.object,
   createdAt: PropTypes.string,
   body: PropTypes.string,
@@ -495,6 +526,7 @@ Message.propTypes = {
   className: PropTypes.string,
   verticalSpacing: PropTypes.string,
   children: PropTypes.node,
+  style: PropTypes.object,
 };
 
 Message.defaultProps = {
