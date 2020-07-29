@@ -13,8 +13,8 @@ export default {
   video_embed_url: '',
   contact_email,
   trainers_intro: 'Meet our CNVC certified trainers',
-  about: `The course is a fundraiser for CNVC - a donation of €50 or more means you receive a €50 discount to the [8-day Virtual Intensive Course from 13th to 22nd November 2020](https://peacefactory.fr/index.php/virtual-intensive-course-2020-eic/). If this amount is too much for your comfort, a smaller donation is welcome. If you have the comfort of accessing more resources than average, please consider increasing your donation.
-
+  before_about: `The course is a fundraiser for CNVC - a donation of €50 or more means you receive a €50 discount to the [8-day Virtual Intensive Course from 13th to 22nd November 2020](https://peacefactory.fr/index.php/virtual-intensive-course-2020-eic/). If this amount is too much for your comfort, a smaller donation is welcome. If you have the comfort of accessing more resources than average, please consider increasing your donation.`,
+  about: `
   We are happy to invite you to join us for a two-day virtual Nonviolent Communication (NVC) fundraiser for the Center for Nonviolent Communication (CNVC), with certified trainers Frank Gaschler (DE), Irmtraud Kauschat (DE), Louise Romain (FR/GB), Magdalena Sendor (PO) and Godfrey Spencer (FR/GB).
 
   The weekend is especially geared to support NVC learning for people living in Africa/Europe UTC -1 to +4 time zones.
