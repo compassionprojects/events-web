@@ -49,6 +49,7 @@ const GET_MESSAGES = gql`
       createdBy {
         id
         name
+        email
       }
       createdAt
       replies(sortBy: createdAt_DESC) {
@@ -60,6 +61,7 @@ const GET_MESSAGES = gql`
         createdBy {
           id
           name
+          email
         }
         createdAt
       }
@@ -82,6 +84,7 @@ const CREATE_MESSAGE = gql`
       createdBy {
         id
         name
+        email
       }
       createdAt
       replies(sortBy: createdAt_DESC) {
@@ -93,6 +96,7 @@ const CREATE_MESSAGE = gql`
         createdBy {
           id
           name
+          email
         }
         createdAt
       }
@@ -131,6 +135,7 @@ const UPDATE_MESSAGE = gql`
       createdBy {
         id
         name
+        email
       }
       createdAt
       replies(sortBy: createdAt_DESC) {
@@ -142,6 +147,7 @@ const UPDATE_MESSAGE = gql`
         createdBy {
           id
           name
+          email
         }
         createdAt
       }
@@ -491,7 +497,7 @@ function Message({
           })}
           style={{ width: parent ? 30 : 50 }}>
           <Gravatar
-            email={user.email}
+            email={createdBy.email}
             default="monsterid"
             className="rounded-circle img-fluid"
           />
