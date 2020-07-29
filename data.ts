@@ -7,69 +7,57 @@ export default {
   cover_image: '/images/cover.jpg',
   mission_title: 'Nonviolent Communication Virtual Course from Peace Factory',
   mission_description:
-    'Learn Nonviolent Communication skills in the safety and comfort of your own home during 2 day online course, aimed at encouraging and promoting intercultural dialogue and citizenship. Beginners are welcome too, no previous experience required to join!',
+    'Learn Nonviolent Communication skills in the safety and comfort of your own home during our two day online course, aimed at encouraging and promoting intercultural dialogue and citizenship. Beginners are welcome too, no previous experience required to join!',
   dates: `8th - 9th August 2020
   UTC 0 to +4 Time zones`,
   buy_ticket_url,
   video_embed_url: '',
   contact_email,
   trainers_intro: 'Meet our CNVC certified trainers',
-  about: `Peace Factory's team is delighted to offer you a ground-breaking way to engage in learning Nonviolent Communication - a 2 day online course, aimed at encouraging and promoting intercultural dialogue and citizenship.
+  about: `The course is a fundraiser for CNVC - a donation of €50 or more means you receive a €50 discount to the [8-day Virtual Intensive Course from 13th to 22nd November 2020](https://peacefactory.fr/index.php/virtual-intensive-course-2020-eic/). If this amount is too much for your comfort, a smaller donation is welcome. If you have the comfort of accessing more resources than average, please consider increasing your donation.
 
-  NVC is a communication tool that improves relationships, bringing us closer to ourselves and to those around us. It also points to how we can replace the dehumanising systems in which most of us grew up, allowing us to create better ways to be together, sharing power with each other.
+  We are happy to invite you to join us for a two-day virtual Nonviolent Communication (NVC) fundraiser for the Center for Nonviolent Communication (CNVC), with certified trainers Frank Gaschler (DE), Irmtraud Kauschat (DE), Louise Romain (FR/GB), Magdalena Sendor (PO) and Godfrey Spencer (FR/GB).
 
-  Peace Factory has taken the lead to design and build the virtual exchange platform, and supported by a team of people, we have become an exemplary example of using NVC to work well together. Even when deadlines have been tight, we took into account the humanity of each person before doing any task, and we only did tasks we loved to do! So you can rest assured there has been no coercion in the making of this course and we are pleased to showcase the process we used to work together.
+  The weekend is especially geared to support NVC learning for people living in Africa/Europe UTC -1 to +4 time zones.
 
-  We are all delighted and passionate about exploring together with you the breadth and depth of Nonviolent Communication, and keen to grow as a community to extend well beyond the 2 days spent together.
+  If you are motivated and have a desire to integrate the spirit of NVC into all aspects of  life, this is the course for you!
 
-  This course is obviously about learning and practising NVC skills with certified trainers and yet it's so much more than this. Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs.
+  Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs. Beginners are welcome as we have a special beginner track for you!
+  `,
+  course: `Through a range of activities, the course is co-created with you to provide a safe container where everybody taps into the living energy of an emerging community, you can participate, experiment and facilitate learning with experienced trainers, all certified with CNVC, to learn skills which are quickly transferred into daily life, making profound changes to how we live.
 
-  Join us the weekend of 8th and 9th August, especially geared to support NVC learning for people living in Africa/Europe UTC 0 to +4 time zones.
+  The programme structure is rich, with some participants who have NVC skills and awareness well beyond the early levels, whilst others are starting their NVC journey.
 
-  If you are motivated and have a desire to integrate the spirit of NVC into all aspects of life, this is the course for you!`,
-  course: `The course starts on 8th of August and ends on 9th of August, 2 days in total. Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs. Our experience is that our daily schedule supports group’s needs (schedule will be shared with the participants before the event).
+  Our programme includes deepening awareness of needs, integrating NVC skills, handling conflicts, basics of mediation, personal growth and spiritual aspects of NVC, deep self-empathy, transforming enemy images and the pain of unmet needs.
+
+<div class="py-4 h3 text-center" id="topics">
+Topics
+</div>
+
+  **Education/parenting**: Same needs, different stories. How can we educate this and future generations of children to create new organizations whose goal is to meet human needs—to make life more wonderful for themselves and others? Explore ways of including children’s needs as fully as adults’ needs in making decisions, staying present and engaging fully, even in those most difficult moments of “no”, tantrums, or distance.
+
+  **Conflict resolution**: NVC’s dynamic communication techniques transform potential conflicts into peaceful dialogues. Learn simple tools to defuse arguments and create compassionate connections with family, friends, colleagues and other acquaintances.
+
+  **Personal growth**: Nonviolent Communication is the integration of four things: Consciousness: a set of principles that support living a life of compassion, collaboration, courage, and authenticity; Language: understanding how words contribute to connection or distance; Communication: knowing how to ask for what we want, how to hear others even in disagreement, and how to move toward solutions that work for all; Means of influence: sharing “power with others” rather than using “power over others”
+
+  **Work place**: Asking what the importance is of communication in the workplace might be best answered when we look at what happens when it is missing. The constraint of limited time because of work-related timeframes and deadlines and that people don’t go to work to become emotionally close with their co-workers means that what we are looking for when we apply NVC in a workplace setting, is enough connection so that people can best attend to the reason and purpose for being there: getting the work done.
+
+  **Social change**: From the manner in which we communicate, to the intention we bring to every interaction and the organisation structures we support, social change “begins with me.” Nonviolent Communication can help create an internal culture of peace that will help effect lasting social change.
 
   <div class="py-4 h3 text-center" id="language">
   Language
   </div>
 
-  **English** is used as our shared common language during all sessions.
+  **English** is used as our shared common language during all sessions. No translation is envisaged by the organisers, although our experience is that many bilingual people are happy to jump in when necessary on an ad hoc basis. You can also buy one ticket for two and work side by side with your own interpreter.
 
-  No translation is envisaged by the organisers, although our experience is that many bilingual people are happy to jump in when necessary on an ad hoc basis. You can also buy one ticket for two and work side by side with your own interpreter.
-
-<div class="py-4 h3 text-center" id="what-you-need">
-What you need?
-</div>
-
-A webcam, microphone and a stable internet connection. It’s that simple!
+  <div class="py-4 h3 text-center" id="what-you-need">
+  What you need
+  </div>
 
   All the meetings will take place on [Zoom](https://zoom.us) which is compatible with Microsoft or Apple. After registering, if you’re new to Zoom, you can access detailed information about how to use it and be supported with technical aspects. Peace Factory has 9 years of experience offering on-line courses, so you’re in good hands.
 
-  <div class="py-4 h3 text-center" id="course-content">
-  Course Content
-  </div>
+  You might like to look here to see the [proposed schedule](https://docs.google.com/spreadsheets/d/1YOAW-clR6lLfv0lrN-C4x_fdX05kRvz-Hlvyyr60j34/edit?usp=sharing).
 
-  Through a range of activities, the VIC aims to expand the reach and scope of technology-enabled people-to-people courses sustained over a period of 8 days. **Co-created with you to provide a safe container where everybody taps into the living energy of an emerging community**, you can participate, experiment and facilitate learning with 10 experienced trainers, all certified with CNVC, to learn skills which are quickly transferred into daily life, making profound changes to how we live.
-
-  With a ratio of about ten people per trainer, the programme structure is intensive, with some participants who have NVC skills and awareness well beyond the early levels, whilst others are starting their NVC journey.
-
-  The courses are designed to promote the integration and sustainability of work throughout the following year and in addition to the two-day course in August, there is an [eight-day course in November](https://www.eventbrite.co.uk/e/peace-factory-nonviolent-communication-virtual-summer-course-tickets-113631992348), plus an option for small groups to stay in active contact once a fortnight and to enjoy monthly mentoring from one of the trainers
-
-  Our programme includes deepening awareness of needs, integrating NVC skills, handling conflicts, basics of mediation, personal growth and spiritual aspects of NVC, deep self-empathy, transforming enemy images and the pain of unmet needs, so that we can:
-
-  - explore and identify personal core beliefs and create new cognitive structures that emanate directly from our living needs;
-  - reduce the level of pain carried in our systems so that we are able to generate lives of satisfaction and empowerment;
-  - honour power-with leadership models like Systemic Consensing and Open Space Technology;
-  - shift from scarcity thinking (an inherent part of a domination system) to the consciousness of plenty;
-  - study the belief systems of money and practice how resources can flow from a perspective of abundance;
-  - move from chronic struggle and “busy-ness” to a sense of flow and ease in our lives.
-
-
-  <div class="py-4 h3 text-center" id="fee">
-  Participation fee
-  </div>
-
-  €50 buys a place to learn and deepen your Nonviolent Communication (NVC) skills in the safety and comfort of your own home..
   `,
   faqs: [
     {
@@ -221,6 +209,10 @@ A webcam, microphone and a stable internet connection. It’s that simple!
 
       `,
     }, */
+    {
+      question: 'Where can I find more details?',
+      answer: `Please check [this document](https://docs.google.com/document/d/1Euca-dFE5pcw9Zm1P0I7hUdZzVqRqlsGJo3JPROXTOo/edit) for more details`,
+    },
     {
       question: 'You can’t find your question?',
       answer: `If you have questions that aren’t included here, you are invited to write to <a href="mailto:${contact_email}">Louise</a> so that this part of the flier gets richer!`,

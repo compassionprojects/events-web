@@ -67,17 +67,14 @@ export default function HeaderLanding() {
                   <DropdownItem onClick={() => scrollTo('#course', o)}>
                     Course
                   </DropdownItem>
+                  <DropdownItem onClick={() => scrollTo('#topics', o)}>
+                    Topics
+                  </DropdownItem>
                   <DropdownItem onClick={() => scrollTo('#language', o)}>
                     Language
                   </DropdownItem>
                   <DropdownItem onClick={() => scrollTo('#what-you-need', o)}>
                     What you need?
-                  </DropdownItem>
-                  <DropdownItem onClick={() => scrollTo('#course-content', o)}>
-                    Course Content
-                  </DropdownItem>
-                  <DropdownItem onClick={() => scrollTo('#fee', o)}>
-                    Participation fee
                   </DropdownItem>
                   <DropdownItem onClick={() => scrollTo('#trainers', o)}>
                     Trainers
