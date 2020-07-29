@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import classnames from 'classnames';
 import { useQuery } from '@apollo/react-hooks';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import Router, { useRouter } from 'next/router';
@@ -24,6 +25,7 @@ const GET_CARDS = gql`
 
 function Cards() {
   const { query, pathname } = useRouter();
+  const [opened, setOpen] = useState({});
   const { data, loading } = useQuery(GET_CARDS, {
     variables: { type: query.type },
   });
@@ -75,11 +77,17 @@ function Cards() {
 
       <div className="row">
         {cards.map((card) => (
-          <Card key={card.id} className="col-md-6 col-lg-4 my-3">
-            <CardInner>
+          <Card key={card.id} className="col-6 col-md-6 col-lg-4 col-xl-3 my-3">
+            <CardInner
+              className={classnames({
+                open: opened[card.id],
+              })}
+              onClick={() =>
+                setOpen({ ...opened, [card.id]: !opened[card.id] })
+              }>
               <CardFront>
                 <img
-                  style={{ height: 210 }}
+                  style={{ height: 175 }}
                   src="/images/hedgehog.png"
                   alt="Smiling hedgehog"
                   className="img-fluid border rounded-circle p-3"
@@ -102,20 +110,21 @@ export default withAuth(Cards);
 
 const CardInner = styled.div`
   position: relative;
-  width: 210px;
-  height: 210px;
+  width: 175px;
+  height: 175px;
   text-align: center;
   transition: transform 0.3s;
   transform-style: preserve-3d;
+  cursor: pointer;
+
+  &.open {
+    transform: rotateY(180deg);
+  }
 `;
 
 const Card = styled.div`
   background-color: transparent;
   perspective: 1000px;
-
-  &:hover ${CardInner} {
-    transform: rotateY(180deg);
-  }
 `;
 
 const CardFrontBack = styled.div`
