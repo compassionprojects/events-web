@@ -125,11 +125,17 @@ function Landing() {
         />
       </div>
 
-      {data.before_about && <div className="container py-5">
-        <Narrow className="mx-auto">
-          {data.before_about}
-        </Narrow>
-      </div>}
+      {data.before_about && (
+        <div className="container pt-5 mt-3">
+          <Narrow className="mx-auto">
+            <ReactMarkdown
+              linkTarget="_blank"
+              source={data.before_about}
+              escapeHtml={false}
+            />
+          </Narrow>
+        </div>
+      )}
 
       <div className="container">
         {/* About section */}
