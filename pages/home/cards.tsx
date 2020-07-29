@@ -76,6 +76,7 @@ function Cards() {
       </Nav>
 
       <div className="row">
+        {/* Sort the cards randomly */}
         {cards.map((card) => (
           <Card key={card.id} className="col-6 col-md-6 col-lg-4 col-xl-3 my-3">
             <CardInner
