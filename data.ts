@@ -5,8 +5,10 @@ const buy_ticket_url =
 
 export default {
   cover_image: '/images/cover.jpg',
-  mission_title: 'Nonviolent Communication Virtual Exchange Platform',
-  mission_description: 'Learn Nonviolent Communication skills from the safety and comfort of your own home.',
+  mission_title:
+    '<span>Nonviolent Communication</span> <span>Virtual Exchange Platform</span>',
+  mission_description:
+    'Learn Nonviolent Communication skills from the safety and comfort of your own home.',
   dates: `8th - 9th August 2020
   UTC -1 to +4 Time zones`,
   buy_ticket_url,

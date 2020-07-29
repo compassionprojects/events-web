@@ -77,6 +77,13 @@ function CTA({ ...props }) {
   return <LinkInternal path="/home" title="Home" {...props} />;
 }
 
+function stripHtml(str) {
+  const regex = /[^<>]+(?=[<])/g;
+  const result = regex.exec(str);
+  if (!result) return str;
+  return result[0];
+}
+
 function Landing() {
   const { user } = useContext(UserContext);
   const [faq, setFAQIsOpen] = useState({});
@@ -98,7 +105,7 @@ function Landing() {
     <>
       {/* title and description for SEO */}
       <Meta
-        title={data.mission_title}
+        title={stripHtml(data.mission_title)}
         description={data.mission_description}
         image_url="/images/social-media-banner.png"
       />
@@ -108,16 +115,19 @@ function Landing() {
       {/* Cover section for the fold */}
       <Cover className="text-white text-center">
         <Narrow className="px-2 py-sm-5 py-4 mx-auto">
-          <h1 className="pt-4 pt-sm-5">{data.mission_title}</h1>
-          <p className="lead pt-4 pb-2">{data.mission_description}</p>
+          <h1 className="pt-4 pt-sm-5">
+            <ReactMarkdown source={data.mission_title} escapeHtml={false} />
+          </h1>
+          <p className="lead py-4">{data.mission_description}</p>
           <PreserveLineBreaks className="my-4">{data.dates}</PreserveLineBreaks>
           <CTA accent />
+          <div className="mb-2"></div>
         </Narrow>
         <ShapeLeft />
         <ShapeRight />
       </Cover>
 
-      <div className="d-flex justify-content-center bg-light py-4 align-items-center">
+      <div className="d-flex justify-content-center bg-light py-5 align-items-center">
         <ImgAffiliates src="/images/logo-pf.svg" alt="Peacefactory logo" />
         <ImgAffiliates
           src="/images/logo-cnvc.svg"
@@ -126,7 +136,7 @@ function Landing() {
       </div>
 
       {data.before_about && (
-        <div className="container pt-5 mt-3">
+        <div className="container py-5 mt-4 border-bottom">
           <Narrow className="mx-auto">
             <ReactMarkdown
               linkTarget="_blank"
@@ -323,6 +333,12 @@ Trainer.propTypes = {
 const Cover = styled.div`
   position: relative;
   background: #17506d;
+
+  ${media.up['phone']`
+    h1 span {
+      display: block;
+    }
+  `}
 `;
 
 const Narrow = styled.div`

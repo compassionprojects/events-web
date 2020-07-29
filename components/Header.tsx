@@ -234,8 +234,12 @@ const Brand = styled(Link).attrs({
 })`
   ${// @ts-ignore
   media.down.mini`
-    font-size: 1rem;
-  `}
+    font-size: 0.9rem;
+  `};
+
+  @media only screen and (max-width: 390px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const NavLink = styled(Link).attrs({
