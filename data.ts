@@ -6,8 +6,7 @@ const buy_ticket_url =
 export default {
   cover_image: '/images/cover.jpg',
   mission_title: 'Nonviolent Communication Virtual Course from Peace Factory',
-  mission_description:
-    'Learn Nonviolent Communication skills in the safety and comfort of your own home during our two day online course, aimed at encouraging and promoting intercultural dialogue and citizenship. Beginners are welcome too, no previous experience required to join!',
+  mission_description: 'Learn Nonviolent Communication skills from the safety and comfort of your own home.',
   dates: `8th - 9th August 2020
   UTC -1 to +4 Time zones`,
   buy_ticket_url,
