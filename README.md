@@ -1,6 +1,6 @@
 ## VIC web
 
-Virtual Intensive Course platform / app
+Virtual Exchange Platform / app
 
 ## Development
 

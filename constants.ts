@@ -1,1 +1,1 @@
-export const APP_NAME = 'Virtual Intensive Course';
+export const APP_NAME = 'Virtual Exchange Platform';
