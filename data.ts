@@ -9,7 +9,7 @@ export default {
   mission_description:
     'Learn Nonviolent Communication skills in the safety and comfort of your own home during our two day online course, aimed at encouraging and promoting intercultural dialogue and citizenship. Beginners are welcome too, no previous experience required to join!',
   dates: `8th - 9th August 2020
-  UTC 0 to +4 Time zones`,
+  UTC -1 to +4 Time zones`,
   buy_ticket_url,
   video_embed_url: '',
   contact_email,
