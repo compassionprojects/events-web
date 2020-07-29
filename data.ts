@@ -242,7 +242,16 @@ To be welcome - without having to do anything for it, to have a space for which 
     {
       name: 'Godfrey Spencer',
       image_url: '/images/trainers/godfrey.png',
-      bio: `Trained by Marshall Rosenberg, Godfrey became a CNVC Certified Trainer in 2001.  He has been approached by universities, professional organisations of lawyers, the judiciary, university hospitals, companies, business schools and governments... for which he acts as a coach and mediator, as well as a teacher of mediation and negotiation. In 2004, he was appointed to the Board of Directors of the Center for Nonviolent Communication (CNVC) International.
+      bio: `
+  > I was trained by Marshall Rosenberg and became a CNVC Certified Trainer in 2001.  I’ve been approached by universities, professional organisations of lawyers, the judiciary, university hospitals, companies, business schools and governments... for which I act as a coach and mediator, as well as a teacher of mediation and negotiation
+
+  > I thoroughly enjoy the sense of belonging generated before, during and after intensives.  I moved from interpreting IITs for Marshall in the French-speaking world to assisting him when Marshall was IIT lead-trainer.
+
+  > I am especially turned on by life in the present, experiencing how past and future can become eminently manageable when brought into the here and now.  Intensives produce order in chaos!  The unexpected can prove to be a real pedagogue!  Pushing back the borders of classical NVC helps learners to integrate the power of this process in their day-to-day interactions.
+
+  > Social change stems from inner change.  Let’s remember that inner change is the real challenge, while changing the world is a perilous illusion.  Participants on my courses say how much they enjoy the passion, the novelty, the rigour, the the language skills, the clarity…  and the impression that time flies!
+
+  Trained by Marshall Rosenberg, Godfrey became a CNVC Certified Trainer in 2001.  He has been approached by universities, professional organisations of lawyers, the judiciary, university hospitals, companies, business schools and governments... for which he acts as a coach and mediator, as well as a teacher of mediation and negotiation. In 2004, he was appointed to the Board of Directors of the Center for Nonviolent Communication (CNVC) International.
 
   Since 2006, he has been regularly called to Senegal and the Gambia (2019) to mediate between the Casamance rebel factions and also between rebel leaders and the Government.  In 2016, he was invited to work alongside HH Dalai Lama in the framework of the "Mind & Life Dialogue".
 
@@ -269,7 +278,37 @@ To be welcome - without having to do anything for it, to have a space for which 
   > I have expertise in reconciliation between warring groups, like in former Yugoslavia (in 1996 especially with youth from Serbia and Croatia), in Kenya (with different communities that had been affected by the post-election violence in 2007/2008), with two tribes from the north that had been at war with each other for about 30 years, and most recently with people from Israel/Palestine, Ukraine and Somalia.
 
   > Since 2017, I have been accompanying candidates on their certification path and I’ve co-authored two books with exercises to practise NVC.
-      `,
+
+  When she heard Marshall talk about his experiences in Israel/Palestine and Northern Ireland she was very enthusiastic about the impact NVC could have on people’s lives and her vision was to contribute to peacebuilding in a similar way. This vision has come true.
+
+  Peace is a very important topic for her since her childhood when she saw ruins in Frankfurt after World War 2 and witnessed the broadcasting of the Auschwitz process in her teenage years, when she was confused getting to know that the very same people who killed Jewish children and parents were described as loving parents themselves.
+
+  She had organized and been a trainer in the first IIT in Africa in 2013 and a second one in 2017. She also served as an IIT trainer in Austria 2018 in Austria and in Germany 2019.
+
+  She is part of the core EIC trainer team since the beginning in 2012.
+
+  Networking is very important for her. She is a founding member and chairperson of her local circle in Darmstadt as well as of the German speaking network D-A-CH and served as a member of GCC (NVC Global Community Circle) and coordinator of the EAC (English speaking NVC European African Circle). From January 2012 till October 2013 she served as a member of the CNVC board.
+
+  Irmtraud works as a medical doctor and has given NVC trainings in different countries, including Serbia/Croatia, Kenya, Israel/Palestine, Iceland, Ukraine and more recently in Somalia.
+
+  Irmtraud has expertise in reconciliation between warring groups like in former Yugoslavia (in 1996 especially with youth from Serbia and Croatia), in Kenya with different communities that had been affected by the post-election violence in 2007/208, as well as with two tribes from the north that had been at war with each other for about 30 years and most recently with people from Israel/Palestine and Ukraine.
+
+  When she heard Marshall talk about his experiences in Israel/Palestine and Northern Ireland she was very enthusiastic about the impact NVC could have on people’s lives and her vision was to contribute to peacebuilding in a similar way. This vision has come true.
+
+  Peace is a very important topic for her since her childhood when she saw ruins in Frankfurt after World War 2 and witnessed the broadcasting of the Auschwitz process in her teenage years, when she was confused getting to know that the very same people who killed Jewish children and parents were described as loving parents themselves.
+
+  Her passion in NVC – apart from reconciliation, mediation and peacebuilding– is supporting people in sharing NVC and social change.
+
+  She had organized and been a trainer in the first IIT in Africa in 2013 and a second one in 2017. She also served as an IIT trainer in Austria 2018 in Austria and in Germany 2019.
+
+  She is part of the core EIC trainer team since the beginning in 2012.
+
+  Networking is very important for her. She is a founding member and chairperson of her local circle in Darmstadt as well as of the German speaking network D-A-CH and served as a member of GCC (NVC Global Community Circle) and coordinator of the EAC (English speaking NVC European African Circle). From January 2012 till October 2013 she served as a member of the CNVC board.
+
+  She accompanies candidates on their way to certification since 2017.
+
+  She has co-authored two books with NVC exercises.
+    `,
     },
     {
       name: 'Louise Romain',
