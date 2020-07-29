@@ -1,13 +1,20 @@
 import React, { useContext, useEffect } from 'react';
-import { UserContext } from '../lib/UserContext';
 import { useRouter } from 'next/router';
+import { UserContext } from '../lib/UserContext';
+import Loading from '../components/Loading';
 
 export default (Component) => {
   const Auth = (props) => {
     const router = useRouter();
     const { user, authenticating, error } = useContext(UserContext);
 
-    if (authenticating && !user) return <div>Authenticating...</div>;
+    if (authenticating && !user) {
+      return (
+        <div className="d-flex align-items-center justify-content-center pt-5 mt-2">
+          <Loading color="primary" /> &nbsp;Authenticating...
+        </div>
+      );
+    }
 
     useEffect(() => {
       if ((!user && !authenticating) || error) router.push('/signin?fail=1');
