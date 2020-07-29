@@ -1,4 +1,5 @@
 const contact_email = 'louise@peacefactory.fr';
+const facebook_event_url = 'https://www.facebook.com/events/261603761787978/';
 // const irmtraud_email = 'irmtraud.kauschat@yahoo.de';
 const buy_ticket_url =
   'https://www.eventbrite.co.uk/e/nonviolent-communication-two-day-virtual-course-from-peace-factory-tickets-113631992348';
@@ -13,6 +14,7 @@ export default {
   UTC -1 to +4 Time zones`,
   buy_ticket_url,
   video_embed_url: '',
+  facebook_event_url,
   contact_email,
   trainers_intro: 'Meet our CNVC certified trainers',
   before_about: `The course is a fundraiser for CNVC - a donation of €50 or more means you receive a €50 discount to the [8-day Virtual Intensive Course from 13th to 22nd November 2020](https://peacefactory.fr/index.php/virtual-intensive-course-2020-eic/). If this amount is too much for your comfort, a smaller donation is welcome. If you have the comfort of accessing more resources than average, please consider increasing your donation.`,

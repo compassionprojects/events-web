@@ -63,6 +63,16 @@ export default function FooterLanding() {
               Contact
             </a>
           </li>
+          <li className="nav-item">
+            <a
+              className="nav-link"
+              href={data.facebook_event_url}
+              target="_blank"
+              rel="noreferrer">
+              <Icon shape="facebook" height={18} width={18} />
+              Facebook
+            </a>
+          </li>
         </ul>
       </div>
       <div className="py-4 mt-3 small text-muted text-center">

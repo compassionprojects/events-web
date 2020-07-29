@@ -25,6 +25,7 @@ Icon.propTypes = {
     'video',
     'file-text',
     'trash-2',
+    'facebook',
   ]),
 };
 

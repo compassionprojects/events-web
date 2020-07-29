@@ -283,7 +283,7 @@ function Landing() {
 
         {!user && (
           <Section>
-            <h2 className="text-center">Register</h2>
+            <h2 className="text-center pt-3">Register</h2>
             <Narrow className="px-2 py-4 mx-auto text-center">
               <p>{data.mission_description}</p>
               <PreserveLineBreaks className="my-2 text-muted">
