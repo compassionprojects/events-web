@@ -125,6 +125,12 @@ function Landing() {
         />
       </div>
 
+      {data.before_about && <div className="container py-5">
+        <Narrow className="mx-auto">
+          {data.before_about}
+        </Narrow>
+      </div>}
+
       <div className="container">
         {/* About section */}
         <Section className="mt-4 py-5 border-top-0" id="about" tabIndex={-1}>
