@@ -4,15 +4,12 @@ import { useQuery } from '@apollo/react-hooks';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import Router, { useRouter } from 'next/router';
 import { gql } from 'apollo-boost';
-// import PropTypes from 'prop-types';
-// import ReactMarkdown from 'react-markdown';
-// import { UserContext } from '../../lib/UserContext';
 import withAuth from '../auth';
 import Meta from '../../components/Meta';
 import Loading from '../../components/Loading';
 
 const meta = {
-  title: 'Cards',
+  title: 'Interactive tools',
 };
 
 const GET_CARDS = gql`
@@ -76,19 +73,22 @@ function Cards() {
         </NavItem>
       </Nav>
 
-      <div className="row align-items-center">
+      <div className="row">
         {cards.map((card) => (
-          <Card key={card.id} className="col-4">
+          <Card key={card.id} className="col-md-6 col-lg-4 my-3">
             <CardInner>
               <CardFront>
                 <img
+                  style={{ height: 210 }}
                   src="/images/hedgehog.png"
                   alt="Smiling hedgehog"
-                  className="img-fluid border rounded"
+                  className="img-fluid border rounded-circle p-3"
                 />
               </CardFront>
-              <CardBack className="border rounded bg-light">
-                {card.text}
+              <CardBack className="border rounded-circle bg-light">
+                <div className="d-flex align-items-center h-100 justify-content-center">
+                  {card.text}
+                </div>
               </CardBack>
             </CardInner>
           </Card>
@@ -102,8 +102,8 @@ export default withAuth(Cards);
 
 const CardInner = styled.div`
   position: relative;
-  width: 100%;
-  height: 187px;
+  width: 210px;
+  height: 210px;
   text-align: center;
   transition: transform 0.3s;
   transform-style: preserve-3d;
