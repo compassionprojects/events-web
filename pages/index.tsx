@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import {
   Collapse,
@@ -14,11 +14,18 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ReactMarkdown from 'react-markdown/with-html';
 import { createGlobalStyle } from 'styled-components';
+import moment from 'moment';
+
+import { UserContext } from '../lib/UserContext';
 import GetTickets from '../components/GetTickets';
 import Icon from '../components/Icon';
 import media, { sizes } from '../components/Media';
+import Link from '../components/Link';
 import Meta from '../components/Meta';
 import data from '../data';
+
+const start = new Date(2020, 7, 6);
+const end = new Date(2020, 7, 9);
 
 interface Trainer {
   name: string;
@@ -37,7 +44,41 @@ const LandingStyles = createGlobalStyle`
   }
 `;
 
+function LinkInternal({ path, title, accent }) {
+  return (
+    <Link
+      href={path}
+      as={path}
+      className={classnames('btn btn-lg rounded-pill my-4', {
+        'btn-accent': accent,
+        'btn-primary': !accent,
+      })}>
+      {title}
+    </Link>
+  );
+}
+
+LinkInternal.propTypes = {
+  path: PropTypes.string,
+  title: PropTypes.string,
+  accent: PropTypes.bool,
+};
+
+function CTA({ ...props }) {
+  const beforeTheEvent = moment(new Date()).isBefore(start);
+  const duringTheEvent = moment(new Date()).isBetween(start, end);
+
+  const { user } = useContext(UserContext);
+  if (!user && beforeTheEvent) {
+    return <GetTickets {...props} />;
+  } else if (!user && duringTheEvent) {
+    return <LinkInternal path="/signin" title="Sign In" {...props} />;
+  }
+  return <LinkInternal path="/home" title="Home" {...props} />;
+}
+
 function Landing() {
+  const { user } = useContext(UserContext);
   const [faq, setFAQIsOpen] = useState({});
   const toggleFAQ = (index) =>
     setFAQIsOpen((prev) => ({ ...prev, [index]: !prev[index] }));
@@ -70,7 +111,7 @@ function Landing() {
           <h1 className="pt-4 pt-sm-5">{data.mission_title}</h1>
           <p className="lead pt-4 pb-2">{data.mission_description}</p>
           <PreserveLineBreaks className="my-4">{data.dates}</PreserveLineBreaks>
-          <GetTickets accent />
+          <CTA accent />
         </Narrow>
         <ShapeLeft />
         <ShapeRight />
@@ -95,7 +136,7 @@ function Landing() {
               escapeHtml={false}
             />
             <div className="pt-3 text-center">
-              <GetTickets />
+              <CTA />
             </div>
           </Narrow>
         </Section>
@@ -110,7 +151,7 @@ function Landing() {
               escapeHtml={false}
             />
             <div className="pt-3 text-center">
-              <GetTickets />
+              <CTA />
             </div>
           </Narrow>
         </Section>
@@ -167,7 +208,7 @@ function Landing() {
             </ModalFooter>
           </Modal>
           <div className="pt-3 text-center">
-            <GetTickets />
+            <CTA />
           </div>
         </Section>
 
@@ -218,16 +259,18 @@ function Landing() {
           </div>
         )}
 
-        <Section>
-          <h2 className="text-center">Register</h2>
-          <Narrow className="px-2 py-4 mx-auto text-center">
-            <p>{data.mission_description}</p>
-            <PreserveLineBreaks className="my-2 text-muted">
-              {data.dates}
-            </PreserveLineBreaks>
-            <GetTickets />
-          </Narrow>
-        </Section>
+        {!user && (
+          <Section>
+            <h2 className="text-center">Register</h2>
+            <Narrow className="px-2 py-4 mx-auto text-center">
+              <p>{data.mission_description}</p>
+              <PreserveLineBreaks className="my-2 text-muted">
+                {data.dates}
+              </PreserveLineBreaks>
+              <GetTickets />
+            </Narrow>
+          </Section>
+        )}
       </div>
     </>
   );
