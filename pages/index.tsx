@@ -103,7 +103,7 @@ function Landing() {
       <LandingStyles />
 
       {/* Cover section for the fold */}
-      <Cover className="text-center bg-light">
+      <Cover className="text-center">
         <Narrow className="px-2 py-sm-5 py-4 mx-auto">
           <h1 className="pt-4 pt-sm-5">
             <ReactMarkdown source={data.mission_title} escapeHtml={false} />
