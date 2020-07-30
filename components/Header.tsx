@@ -13,7 +13,7 @@ import {
   NavItem,
   NavLink as _NavLink,
 } from 'reactstrap';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 import scrollTo from 'scroll-to-element';
 
 import Link from './Link';
@@ -22,7 +22,7 @@ import { APP_NAME } from '../constants';
 import data from '../data';
 import GetTickets from './GetTickets';
 import { UserContext } from '../lib/UserContext';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 export const o = { duration: 300, offset: -70 };
 
@@ -122,13 +122,13 @@ export default function HeaderLanding() {
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const { pathname } = useRouter();
+  // const { pathname } = useRouter();
   const toggle = () => setIsOpen(!isOpen);
 
   const { user, signOut } = useContext(UserContext);
   let root = '/';
   if (user) root = '/home';
-  const isHome = pathname === '/home';
+  // const isHome = pathname === '/home';
 
   return (
     <Navbar
