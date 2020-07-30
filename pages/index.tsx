@@ -15,6 +15,7 @@ import classnames from 'classnames';
 import ReactMarkdown from 'react-markdown/with-html';
 import { createGlobalStyle } from 'styled-components';
 import moment from 'moment';
+import striptags from 'striptags';
 
 import { UserContext } from '../lib/UserContext';
 import GetTickets from '../components/GetTickets';
@@ -73,13 +74,6 @@ function CTA({ ...props }) {
   return <LinkInternal path="/home" title="Home" />;
 }
 
-function stripHtml(str) {
-  const regex = /[^<>]+(?=[<])/g;
-  const result = regex.exec(str);
-  if (!result) return str;
-  return result[0];
-}
-
 function Landing() {
   const { user } = useContext(UserContext);
   const [faq, setFAQIsOpen] = useState({});
@@ -101,8 +95,8 @@ function Landing() {
     <>
       {/* title and description for SEO */}
       <Meta
-        title={stripHtml(data.mission_title)}
-        description={stripHtml(data.mission_description)}
+        title={striptags(data.mission_title)}
+        description={striptags(data.mission_description)}
         image_url="/images/social-media-banner.png"
       />
 
@@ -114,12 +108,12 @@ function Landing() {
           <h1 className="pt-4 pt-sm-5">
             <ReactMarkdown source={data.mission_title} escapeHtml={false} />
           </h1>
-          <p className="lead py-4">
+          <div className="lead py-4">
             <ReactMarkdown
               source={data.mission_description}
               escapeHtml={false}
             />
-          </p>
+          </div>
           <PreserveLineBreaks className="my-4">{data.dates}</PreserveLineBreaks>
           <CTA />
           <div className="mb-2"></div>
@@ -286,7 +280,10 @@ function Landing() {
           <Section>
             <h2 className="text-center pt-3">Register</h2>
             <Narrow className="px-2 py-4 mx-auto text-center">
-              <p>{data.mission_description}</p>
+              <ReactMarkdown
+                source={data.mission_description}
+                escapeHtml={false}
+              />
               <PreserveLineBreaks className="my-2 text-muted">
                 {data.dates}
               </PreserveLineBreaks>
@@ -335,7 +332,7 @@ const Cover = styled.div`
   position: relative;
 
   ${media.up['phone']`
-    h1 span, p.lead span {
+    h1 span, p span {
       display: block;
     }
   `}
