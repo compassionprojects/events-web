@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
 const contact_email = 'louise@peacefactory.fr';
 const facebook_event_url = 'https://www.facebook.com/events/261603761787978/';
 // const irmtraud_email = 'irmtraud.kauschat@yahoo.de';
@@ -6,6 +6,9 @@ const buy_ticket_url =
   'https://www.eventbrite.co.uk/e/nonviolent-communication-two-day-virtual-course-from-peace-factory-tickets-113631992348';
 const startDate = moment('2020-08-08T07:30:00Z'); // in UTC
 const endDate = moment('2020-08-09T15:30:00Z'); // in UTC
+const timeZone = moment.tz.guess();
+const timeZoneOffset = new Date().getTimezoneOffset();
+const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
 
 export default {
   cover_image: '/images/cover.jpg',
@@ -13,8 +16,10 @@ export default {
     '<span>Nonviolent Communication</span> <span>Virtual Exchange Platform</span>',
   mission_description:
     '<span>Learn Nonviolent Communication skills</span> <span>from the safety and comfort of your own home.</span>',
-  dates: `Starts at ${startDate.format('h:mm a dddd, MMMM Do YYYY')}
-  until ${endDate.format('h:mm a dddd, MMMM Do YYYY')}`,
+  dates: `Starts at ${startDate
+    .tz(tzName)
+    .format('h:mm a z dddd, MMMM Do YYYY')}
+  until ${endDate.tz(tzName).format('h:mm a z dddd, MMMM Do YYYY')}`,
   buy_ticket_url,
   video_embed_url: '',
   facebook_event_url,
