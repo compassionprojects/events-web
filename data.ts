@@ -1,8 +1,11 @@
+import moment from 'moment';
 const contact_email = 'louise@peacefactory.fr';
 const facebook_event_url = 'https://www.facebook.com/events/261603761787978/';
 // const irmtraud_email = 'irmtraud.kauschat@yahoo.de';
 const buy_ticket_url =
   'https://www.eventbrite.co.uk/e/nonviolent-communication-two-day-virtual-course-from-peace-factory-tickets-113631992348';
+const startDate = moment('2020-08-08T07:30:00Z'); // in UTC
+const endDate = moment('2020-08-09T15:30:00Z'); // in UTC
 
 export default {
   cover_image: '/images/cover.jpg',
@@ -10,8 +13,8 @@ export default {
     '<span>Nonviolent Communication</span> <span>Virtual Exchange Platform</span>',
   mission_description:
     'Learn Nonviolent Communication skills from the safety and comfort of your own home.',
-  dates: `Starts at 07:30 UTC
-  8th and 9th August 2020`,
+  dates: `Starts at ${startDate.format('h:mm a dddd, MMMM Do YYYY')}
+  until ${endDate.format('h:mm a dddd, MMMM Do YYYY')}`,
   buy_ticket_url,
   video_embed_url: '',
   facebook_event_url,
