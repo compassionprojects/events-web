@@ -181,11 +181,7 @@ export function Header() {
                   </_NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink
-                    href="/home"
-                    className={classnames('text-accent', {
-                      'rounded-pill active': isHome,
-                    })}>
+                  <NavLink href="/home" className="text-accent">
                     Schedule
                   </NavLink>
                 </NavItem>
