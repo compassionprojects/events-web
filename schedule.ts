@@ -9,6 +9,9 @@ function t(time_in_cest) {
   return startDate.tz(tzName).format('HH:mm');
 }
 
+// Make sure the dates below are in CEST, the code will do its job in
+// displaying it in local timezone of the user
+
 const day1 = {
   startDate: moment(`2020-08-08T09:30:00+02:00`)
     .tz(tzName)
