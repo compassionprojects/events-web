@@ -12,7 +12,7 @@ export default {
   mission_title:
     '<span>Nonviolent Communication</span> <span>Virtual Exchange Platform</span>',
   mission_description:
-    'Learn Nonviolent Communication skills from the safety and comfort of your own home.',
+    '<span>Learn Nonviolent Communication skills</span> <span>from the safety and comfort of your own home.</span>',
   dates: `Starts at ${startDate.format('h:mm a dddd, MMMM Do YYYY')}
   until ${endDate.format('h:mm a dddd, MMMM Do YYYY')}`,
   buy_ticket_url,

@@ -12,7 +12,7 @@ export default createGlobalStyle`
 
   p a {
     text-decoration: none;
-    border-bottom: 3px solid #34F6F2;
+    border-bottom: 1px solid ${(props) => props.theme.colors.primary};
     padding-bottom: 2px;
     font-weight: 500;
     &:hover {
@@ -25,10 +25,6 @@ export default createGlobalStyle`
     padding: .2em;
     background-color: #fcf8e3;
     font-weight: 500;
-  }
-
-  p.lead {
-    color: #e0e0e0;
   }
 
   .sr-only-focusable:focus {

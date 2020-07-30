@@ -54,13 +54,13 @@ export default function HeaderLanding() {
               <NavLink
                 href="/#about"
                 onClick={() => scrollTo('#about', o)}
-                className="text-primary">
+                className="text-accent">
                 About
               </NavLink>
             </NavItem>
             {!user && (
               <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
-                <DropdownToggle nav caret className="text-primary">
+                <DropdownToggle nav caret className="text-accent">
                   Course
                 </DropdownToggle>
                 <DropdownMenu>
@@ -86,14 +86,14 @@ export default function HeaderLanding() {
               <NavLink
                 href="/#faq"
                 onClick={() => scrollTo('#faq', o)}
-                className="text-primary">
+                className="text-accent">
                 FAQ&apos;s
               </NavLink>
             </NavItem>
             <NavItem className="pl-md-2 pl-lg-4">
               <_NavLink
                 href={`mailto:${data.contact_email}`}
-                className="text-primary">
+                className="text-accent">
                 Contact
               </_NavLink>
             </NavItem>
@@ -148,19 +148,19 @@ export function Header() {
             {!user && (
               <>
                 <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink href="/#about" className="text-primary">
+                  <NavLink href="/#about" className="text-accent">
                     About
                   </NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink href="/#faq" className="text-primary">
+                  <NavLink href="/#faq" className="text-accent">
                     FAQ&apos;s
                   </NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
                   <_NavLink
                     href={`mailto:${data.contact_email}`}
-                    className="text-primary">
+                    className="text-accent">
                     Contact
                   </_NavLink>
                 </NavItem>
@@ -169,21 +169,21 @@ export function Header() {
             {user && (
               <>
                 <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink href="/#about" className="text-primary">
+                  <NavLink href="/#about" className="text-accent">
                     About
                   </NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
                   <_NavLink
                     href={`mailto:${data.contact_email}`}
-                    className="text-primary">
+                    className="text-accent">
                     Contact
                   </_NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
                   <NavLink
                     href="/home"
-                    className={classnames('text-primary', {
+                    className={classnames('text-accent', {
                       'rounded-pill active': isHome,
                     })}>
                     Schedule

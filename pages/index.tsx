@@ -44,15 +44,12 @@ const LandingStyles = createGlobalStyle`
   }
 `;
 
-function LinkInternal({ path, title, accent }) {
+function LinkInternal({ path, title }) {
   return (
     <Link
       href={path}
       as={path}
-      className={classnames('btn btn-lg rounded-pill my-4', {
-        'btn-accent': accent,
-        'btn-primary': !accent,
-      })}>
+      className="btn btn-lg rounded-pill my-4 btn-primary">
       {title}
     </Link>
   );
@@ -61,7 +58,6 @@ function LinkInternal({ path, title, accent }) {
 LinkInternal.propTypes = {
   path: PropTypes.string,
   title: PropTypes.string,
-  accent: PropTypes.bool,
 };
 
 function CTA({ ...props }) {
@@ -72,9 +68,9 @@ function CTA({ ...props }) {
   if (!user && beforeTheEvent) {
     return <GetTickets {...props} />;
   } else if (!user && duringTheEvent) {
-    return <LinkInternal path="/signin" title="Sign In" {...props} />;
+    return <LinkInternal path="/signin" title="Sign In" />;
   }
-  return <LinkInternal path="/home" title="Home" {...props} />;
+  return <LinkInternal path="/home" title="Home" />;
 }
 
 function stripHtml(str) {
@@ -106,21 +102,26 @@ function Landing() {
       {/* title and description for SEO */}
       <Meta
         title={stripHtml(data.mission_title)}
-        description={data.mission_description}
+        description={stripHtml(data.mission_description)}
         image_url="/images/social-media-banner.png"
       />
 
       <LandingStyles />
 
       {/* Cover section for the fold */}
-      <Cover className="text-white text-center">
+      <Cover className="text-center bg-light">
         <Narrow className="px-2 py-sm-5 py-4 mx-auto">
           <h1 className="pt-4 pt-sm-5">
             <ReactMarkdown source={data.mission_title} escapeHtml={false} />
           </h1>
-          <p className="lead py-4">{data.mission_description}</p>
+          <p className="lead py-4">
+            <ReactMarkdown
+              source={data.mission_description}
+              escapeHtml={false}
+            />
+          </p>
           <PreserveLineBreaks className="my-4">{data.dates}</PreserveLineBreaks>
-          <CTA accent />
+          <CTA />
           <div className="mb-2"></div>
         </Narrow>
         <ShapeLeft />
@@ -332,10 +333,9 @@ Trainer.propTypes = {
 
 const Cover = styled.div`
   position: relative;
-  background: #17506d;
 
   ${media.up['phone']`
-    h1 span {
+    h1 span, p.lead span {
       display: block;
     }
   `}
@@ -370,7 +370,7 @@ const ImgUnselectable = styled.img`
 const Shape = styled(ImgUnselectable).attrs({
   alt: 'Decorative artwork of semi-circle',
 })`
-  opacity: 0.1;
+  opacity: 0.5;
   ${// @ts-ignore
   media.down.tablet`
     width: 256px;

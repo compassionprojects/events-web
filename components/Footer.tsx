@@ -24,7 +24,7 @@ export default function FooterLanding() {
           </li>
           <li className="nav-item">
             <Link
-              className="nav-link"
+              className="nav-link text-accent"
               href="/#about"
               as="/#about"
               onClick={() => scrollTo('#about', o)}>
@@ -33,7 +33,7 @@ export default function FooterLanding() {
           </li>
           <li className="nav-item">
             <Link
-              className="nav-link"
+              className="nav-link text-accent"
               href="/#course"
               as="/#course"
               onClick={() => scrollTo('#course', o)}>
@@ -42,7 +42,7 @@ export default function FooterLanding() {
           </li>
           <li className="nav-item">
             <Link
-              className="nav-link"
+              className="nav-link text-accent"
               href="/#trainers"
               as="/#trainers"
               onClick={() => scrollTo('#trainers', o)}>
@@ -51,7 +51,7 @@ export default function FooterLanding() {
           </li>
           <li className="nav-item">
             <Link
-              className="nav-link"
+              className="nav-link text-accent"
               href="/#faq"
               as="/#faq"
               onClick={() => scrollTo('#faq', o)}>
@@ -59,13 +59,15 @@ export default function FooterLanding() {
             </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href={`mailto:${data.contact_email}`}>
+            <a
+              className="nav-link text-accent"
+              href={`mailto:${data.contact_email}`}>
               Contact
             </a>
           </li>
           <li className="nav-item">
             <a
-              className="nav-link"
+              className="nav-link text-accent"
               href={data.facebook_event_url}
               target="_blank"
               rel="noreferrer">
@@ -88,22 +90,27 @@ export function Footer() {
       <div className="container">
         <ul className="nav justify-content-center">
           <li className="nav-item">
-            <Link className="nav-link" href="/#about" as="/#about">
+            <Link className="nav-link text-accent" href="/#about" as="/#about">
               About
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="/#course" as="/#course">
+            <Link
+              className="nav-link text-accent"
+              href="/#course"
+              as="/#course">
               Course
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="/#faq" as="/#faq">
+            <Link className="nav-link text-accent" href="/#faq" as="/#faq">
               FAQ&apos;s
             </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href={`mailto:${data.contact_email}`}>
+            <a
+              className="nav-link text-accent"
+              href={`mailto:${data.contact_email}`}>
               Contact
             </a>
           </li>
