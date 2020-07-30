@@ -11,7 +11,7 @@ export default {
   mission_description:
     'Learn Nonviolent Communication skills from the safety and comfort of your own home.',
   dates: `8th - 9th August 2020
-  UTC -1 to +4 Time zones`,
+  Starts at 07:30 UTC`,
   buy_ticket_url,
   video_embed_url: '',
   facebook_event_url,
