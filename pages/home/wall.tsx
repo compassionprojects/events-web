@@ -35,7 +35,7 @@ const GET_MESSAGE_TYPES = gql`
 const GET_MESSAGES = gql`
   query getMessages($typeId: ID!, $skip: Int, $first: Int) {
     allMessages(
-      where: { type: { id: $typeId }, parent_is_null: true }
+      where: { type: { id: $typeId }, parent_is_null: true, orphaned_not: true }
       sortBy: createdAt_DESC
       first: $first
       skip: $skip
@@ -66,7 +66,9 @@ const GET_MESSAGES = gql`
         createdAt
       }
     }
-    _allMessagesMeta(where: { type: { id: $typeId }, parent_is_null: true }) {
+    _allMessagesMeta(
+      where: { type: { id: $typeId }, parent_is_null: true, orphaned_not: true }
+    ) {
       count
     }
   }
