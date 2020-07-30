@@ -29,6 +29,10 @@ export default {
   If you are motivated and have a desire to integrate the spirit of NVC into all aspects of  life, this is the course for you!
 
   Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs. Beginners are welcome as we have a special beginner track for you!
+
+  **Equipment required**: a webcam, microphone and an internet connection.
+
+  **Language**: English
   `,
   course: `Through a range of activities, the course is co-created with you to provide a safe container where everybody taps into the living energy of an emerging community, you can participate, experiment and facilitate learning with experienced trainers, all certified with CNVC, to learn skills which are quickly transferred into daily life, making profound changes to how we live.
 
