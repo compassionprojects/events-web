@@ -232,7 +232,7 @@ function Wall() {
   };
 
   const remove = (e, message) => {
-    setDeleting(parseInt(message.id));
+    setDeleting(message.id);
     e.preventDefault();
     if (!window.confirm('Are you sure you want to delete this message?')) {
       setDeleting(null);
@@ -245,17 +245,16 @@ function Wall() {
         // Read the data from our cache for this query.
         const data = store.readQuery({ query: GET_MESSAGES, variables });
 
+        const filter = (m) => +m.id !== +message.id;
         // Write our data back to the cache by removing the deleted item
         store.writeQuery({
           query: GET_MESSAGES,
           variables,
           data: {
-            allMessages: data['allMessages']
-              .filter((m) => m.id !== message.id)
-              .map((m) => ({
-                ...m,
-                replies: m.replies.filter((m) => m.id !== message.id),
-              })),
+            allMessages: data['allMessages'].filter(filter).map((m) => ({
+              ...m,
+              replies: m.replies.filter(filter),
+            })),
             _allMessagesMeta: {
               ...data['_allMessagesMeta'],
               count: message.parent
@@ -488,7 +487,7 @@ function Message({
     <div {...props}>
       <div
         className={classnames('d-flex', className, verticalSpacing, {
-          'bg-deleting': deletingId === id,
+          'bg-deleting': deletingId === +id,
         })}>
         <div
           className={classnames('mt-1 flex-shrink-0', {
@@ -506,7 +505,7 @@ function Message({
           <div className="d-flex align-items-center">
             <b className="mr-auto">{createdBy.name}</b>
             {createdBy.id === user.id && (
-              <a href="" onClick={(e) => removeMessage(e, { id, parent })}>
+              <a href="" onClick={(e) => removeMessage(e, { id: +id, parent })}>
                 <Icon
                   shape="trash-2"
                   className="text-danger"
