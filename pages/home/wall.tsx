@@ -52,7 +52,7 @@ const GET_MESSAGES = gql`
         email
       }
       createdAt
-      replies(sortBy: createdAt_DESC) {
+      replies(sortBy: createdAt_ASC) {
         id
         body
         parent {
@@ -89,7 +89,7 @@ const CREATE_MESSAGE = gql`
         email
       }
       createdAt
-      replies(sortBy: createdAt_DESC) {
+      replies(sortBy: createdAt_ASC) {
         id
         body
         parent {
@@ -140,7 +140,7 @@ const UPDATE_MESSAGE = gql`
         email
       }
       createdAt
-      replies(sortBy: createdAt_DESC) {
+      replies(sortBy: createdAt_ASC) {
         id
         body
         parent {
@@ -348,6 +348,39 @@ function Wall() {
           deleteInProgress={dm}
           removeMessage={remove}
           {...message}>
+          {message.replies.length > limitReplies &&
+            !visibleReplies.includes(message.id) && (
+              <Button
+                color="light"
+                block
+                size="sm"
+                onClick={(e) => showReplies(e, message)}>
+                Show previous replies ({message.replies.length - limitReplies})
+              </Button>
+            )}
+          {message.replies.map((m, idx) => (
+            <Message
+              {...m}
+              key={m.id}
+              deletingId={deletingId}
+              deleteInProgress={dm}
+              removeMessage={remove}
+              className="px-2 py-2 small border-top"
+              style={
+                /* eslint-disable-next-line prettier/prettier */
+                !visibleReplies.includes(m.id) && idx <= message.replies.length - 1 - limitReplies
+                  ? { display: 'none' }
+                  : {}
+              }
+              verticalSpacing="py-1">
+              <span className="text-muted small">
+                {moment(m.createdAt).fromNow()}
+              </span>
+            </Message>
+          ))}
+          <span className="text-muted small">
+            {moment(message.createdAt).fromNow()}
+          </span>
           &nbsp;&nbsp;
           <a href="" className="small" onClick={(e) => openReply(e, message)}>
             reply
@@ -365,36 +398,6 @@ function Wall() {
               />
             </div>
           )}
-          {message.replies.length > 0 && <div className="py-1" />}
-          {message.replies.map((m, idx) => (
-            <Message
-              {...m}
-              key={m.id}
-              deletingId={deletingId}
-              deleteInProgress={dm}
-              removeMessage={remove}
-              className="px-2 py-2 small border-top"
-              style={
-                !visibleReplies.includes(m.id) && idx >= limitReplies
-                  ? { display: 'none' }
-                  : {}
-              }
-              verticalSpacing="py-1"
-            />
-          ))}
-          {message.replies.length > limitReplies &&
-            !visibleReplies.includes(message.id) && (
-              <>
-                <br />
-                <Button
-                  color="outline-primary"
-                  block
-                  size="sm"
-                  onClick={(e) => showReplies(e, message)}>
-                  Show all ({message.replies.length - limitReplies})
-                </Button>
-              </>
-            )}
         </Message>
       ))}
 
@@ -474,7 +477,6 @@ function Message({
   id,
   parent,
   createdBy,
-  createdAt,
   body,
   deletingId,
   deleteInProgress,
@@ -482,11 +484,11 @@ function Message({
   className,
   verticalSpacing,
   children,
-  ...props
+  style,
 }) {
   const { user } = useContext(UserContext);
   return (
-    <div {...props}>
+    <div style={style}>
       <div
         className={classnames('d-flex', className, verticalSpacing, {
           'bg-deleting': deletingId === +id,
@@ -519,10 +521,6 @@ function Message({
             )}
           </div>
           <div className={verticalSpacing}>{body}</div>
-          <span className="text-muted small">
-            {moment(createdAt).fromNow()}
-          </span>
-
           {children}
         </div>
       </div>
@@ -534,7 +532,6 @@ Message.propTypes = {
   id: PropTypes.string,
   parent: PropTypes.object,
   createdBy: PropTypes.object,
-  createdAt: PropTypes.string,
   body: PropTypes.string,
   deletingId: PropTypes.number,
   deleteInProgress: PropTypes.bool,
