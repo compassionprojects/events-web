@@ -294,6 +294,15 @@ function Wall() {
             allMessages: data['allMessages'].map((m) => {
               if (m.id === updateMessage.id) {
                 m.replies = updateMessage.replies;
+                // If the user has set all replies to be visible
+                // make sure to add all newly created replies to the
+                // visible object so that they are all visible
+                if (visibleReplies.includes(m.id)) {
+                  showAllReplies([
+                    ...visibleReplies,
+                    ...m.replies.map((m) => m.id),
+                  ]);
+                }
               }
               return m;
             }),
