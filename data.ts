@@ -10,8 +10,8 @@ export default {
     '<span>Nonviolent Communication</span> <span>Virtual Exchange Platform</span>',
   mission_description:
     'Learn Nonviolent Communication skills from the safety and comfort of your own home.',
-  dates: `8th - 9th August 2020
-  Starts at 07:30 UTC`,
+  dates: `Starts at 07:30 UTC
+  8th and 9th August 2020`,
   buy_ticket_url,
   video_embed_url: '',
   facebook_event_url,
