@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
+import { gql } from 'apollo-boost';
+import { useQuery } from '@apollo/react-hooks';
 import { UserContext } from '../../lib/UserContext';
 import withAuth from '../auth';
 import Meta from '../../components/Meta';
 import Loading from '../../components/Loading';
-import { gql } from 'apollo-boost';
-import { useQuery } from '@apollo/react-hooks';
+import scheduleData from '../../schedule';
 
 const meta = {
   title: 'Schedule',
@@ -34,11 +36,34 @@ function Home() {
         {loading && <Loading color="primary" />}
       </h2>
       <div>Welcome {user.name}!</div>
+
       <ReactMarkdown
         linkTarget="_blank"
         source={schedule.description}
         escapeHtml={false}
       />
+
+      {Object.keys(scheduleData).map((key, idx) => (
+        <div className="py-4" key={idx}>
+          <strong>
+            Day {idx + 1} {scheduleData[key].startDate}
+          </strong>
+          <Table className="table">
+            <tbody>
+              {scheduleData[key].schedule.map((row, idx) => (
+                <tr key={idx}>
+                  <td width="20%">
+                    {row.start} - {row.end}
+                  </td>
+                  <td>
+                    <ReactMarkdown source={row.body} escapeHtml={false} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
+      ))}
     </>
   );
 }
@@ -48,3 +73,9 @@ Home.propTypes = {
 };
 
 export default withAuth(Home);
+
+const Table = styled.table`
+  td p {
+    margin: 0 !important;
+  }
+`;
