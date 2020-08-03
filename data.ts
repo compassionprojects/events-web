@@ -110,13 +110,13 @@ Topics
       question: 'Does this two day training count for the CNVC certification?',
       answer: `Yes. 2 days with 1 or more certified trainers counts towards the number of day’s training required to either
 a) register as a certification candidate with a CNVC assessor and
-b) once registered as a certification candidate, to count towards the total number of days of training to become certified with CNVC.
+b) once registered as a certification candidate, to count towards the total number of days of training to become certified with CNVC. `,
     },
     {
       question: 'What is an EIC and a VIC?',
       answer: `
   - Normally, the EIC (European Intensive Course) is an 8-day event  organised every year by Peace Factory in France, Europe. The VIC is a virtual format of the same course.
-  -  An experiential workshop for developing fluency in Nonviolent Communication
+  - An experiential workshop for developing fluency in Nonviolent Communication
   - An opportunity to learn and practice Nonviolent Communication with Peace Factory certified trainers
   - A safe environment for personal growth
   - A time to make deep connections
