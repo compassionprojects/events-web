@@ -108,8 +108,7 @@ Topics
     },
     {
       question: 'Does this two day training count for the CNVC certification?',
-      answer: `
-      Yes. 2 days with 1 or more certified trainers counts towards the number of days of training required to either
+      answer: `Yes. 2 days with 1 or more certified trainers counts towards the number of days of training required to either
   - register as a certification candidate with a CNVC assessor and
   - once registered as a certification candidate, to count towards the total number of days of training to become certified with CNVC. `,
     },
