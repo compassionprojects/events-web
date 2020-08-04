@@ -114,7 +114,7 @@ const day2 = {
         <div>NVC in school<br><i>Madga & Godfrey,  <br>4 days +</i></div>
         <div>I am the change <br>I want to see in the world<br><i>Irmtraud,  <br>All levels</i></div>
         <div>Core of our needs<br><i>Frank,  <br>All levels</i></div>
-        <div>NVC Essentials in the workplace<br><i>Louise,  <br>All levels</i></div>
+        <div>NVC Essentials in the workplace<br><i>Louise,  <br>6 days +</i></div>
   </div>
     `,
     },
