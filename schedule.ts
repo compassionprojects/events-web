@@ -40,7 +40,7 @@ const day1 = {
   <div>Parenting<br><i>Madga & Godfrey, <br>All levels</i></div>
   <div>Managing conflict I<br><i>Irmtraud, <br> Self-empathy, all levels</i></div>
   <div>Labels<br><i>Frank, <br>5 days +</i></div>
-  <div>Keep calm and carry on<br><i>Louise, <br>All levels</i></div>
+  <div>Coronavirus fatigue<br><i>Louise, <br>All levels</i></div>
 </div>
   `,
     },
