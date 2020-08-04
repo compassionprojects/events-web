@@ -37,10 +37,10 @@ const day1 = {
       start: t('10:35'),
       end: t('12:35'),
       body: `<div class="d-flex justify-content-between">
-  <div>Parenting<br><i>Madga & Godfrey, all levels</i></div>
-  <div>Self-empathy in conflict<br><i>Irmtraud, all levels<i></div>
-  <div>Labels<br><i>Frank, 5 days +</i></div>
-  <div>Keep calm and carry on<br><i>Louise, all levels</i></div>
+  <div>Parenting<br><i>Madga & Godfrey, <br>all levels</i></div>
+  <div>Self-empathy in conflict<br><i>Irmtraud<br>all levels<i></div>
+  <div>Labels<br><i>Frank,<br>5 days +</i></div>
+  <div>Keep calm and carry on<br><i>Louise,<br>all levels</i></div>
 </div>
   `,
     },
@@ -54,10 +54,10 @@ const day1 = {
       start: t('14:05'),
       end: t('16:05'),
       body: `<div class="d-flex justify-content-between">
-        <div>The importance of needs (part I)<br><i>Madga & Godfrey, all levels</i></div>
-        <div>Empathy for other in conflict<br><i>Irmtraud, 2 days +</i></div>
-        <div>Dealing with monsters<br><i>Frank, 5 days +</i></div>
-        <div>Circle of reflection<br><i>Louise, all levels</i></div>
+        <div>The importance of needs (part I)<br><i>Madga & Godfrey,<br>all levels</i></div>
+        <div>Empathy for other in conflict<br><i>Irmtraud,<br>2 days +</i></div>
+        <div>Dealing with monsters<br><i>Frank,<br>5 days +</i></div>
+        <div>Circle of reflection<br><i>Louise,<br>all levels</i></div>
     </div>`,
     },
     { start: t('16:05'), end: t('16:20'), body: `Break, including energisers` },
@@ -113,7 +113,7 @@ const day2 = {
       body: `<div class="d-flex justify-content-between">
         <div>NVC in school<br><i>Madga & Godfrey, 4 days +</i></div>
         <div>I am the change I want to see in the world<br><i>Irmtraud, all levels</i></div>
-        <div>Core of our needs<br><i>Frank<, all levels/i></div>
+        <div>Core of our needs<br><i>Frank<, all levels</i></div>
         <div>NVC Essentials in the workplace<br><i>Louise, all levels</i></div>
   </div>
     `,
