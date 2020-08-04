@@ -37,10 +37,10 @@ const day1 = {
       start: t('10:35'),
       end: t('12:35'),
       body: `<div class="d-flex justify-content-between">
-  <div>Parenting<br><i>Madga & Godfrey</i></div>
-  <div>Self-empathy in conflict<br><i>Irmtraud<i></div>
-  <div>Labels<br><i>Frank</i></div>
-  <div>Keep calm and carry on<br><i>Louise</i></div>
+  <div>Parenting<br><i>Madga & Godfrey, all levels</i></div>
+  <div>Self-empathy in conflict<br><i>Irmtraud, all levels<i></div>
+  <div>Labels<br><i>Frank, 5 days +</i></div>
+  <div>Keep calm and carry on<br><i>Louise, all levels</i></div>
 </div>
   `,
     },
@@ -54,10 +54,10 @@ const day1 = {
       start: t('14:05'),
       end: t('16:05'),
       body: `<div class="d-flex justify-content-between">
-        <div>The importance of needs<br><i>Madga & Godfrey</i></div>
-        <div>Empathy for other in conflict<br><i>Irmtraud</i></div>
-        <div>Dealing with monsters<br><i>Frank</i></div>
-        <div>Circle of reflection<br><i>Louise</i></div>
+        <div>The importance of needs (part I)<br><i>Madga & Godfrey, all levels</i></div>
+        <div>Empathy for other in conflict<br><i>Irmtraud, 2 days +</i></div>
+        <div>Dealing with monsters<br><i>Frank, 5 days +</i></div>
+        <div>Circle of reflection<br><i>Louise, all levels</i></div>
     </div>`,
     },
     { start: t('16:05'), end: t('16:20'), body: `Break, including energisers` },
@@ -111,9 +111,10 @@ const day2 = {
       start: t('10:35'),
       end: t('12:35'),
       body: `<div class="d-flex justify-content-between">
-    <div>Workshop choice 1</div>
-    <div>Workshop choice 2</div>
-    <div>Workshop choice 3</div>
+        <div>NVC in school<br><i>Madga & Godfrey, 4 days +</i></div>
+        <div>I am the change I want to see in the world<br><i>Irmtraud, all levels</i></div>
+        <div>Core of our needs<br><i>Frank<, all levels/i></div>
+        <div>NVC Essentials in the workplace<br><i>Louise, all levels</i></div>
   </div>
     `,
     },
@@ -127,9 +128,10 @@ const day2 = {
       start: t('14:05'),
       end: t('16:05'),
       body: `<div class="d-flex justify-content-between">
-        <div>Workshop choice 1</div>
-        <div>Workshop choice 2</div>
-        <div>Workshop choice 3</div>
+        <div>Importance of needs (part II)<br><i>Madga & Godfrey, all levels</i></div>
+        <div>Gratitude<br><i>Irmtraud, all levels</i></div>
+        <div>The four themes of life<br><i>Frank, 5 days +</i></div>
+        <div>NVC Essentials in the workplace<br><i>Louise, all levels</i></div>
       </div>`,
     },
     { start: t('16:05'), end: t('16:20'), body: `Break, including energisers` },
