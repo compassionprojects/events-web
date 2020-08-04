@@ -55,7 +55,7 @@ const day1 = {
       end: t('16:05'),
       body: `<div class="d-flex justify-content-between">
         <div>The importance of needs (I)<br><i>Madga & Godfrey, <br>all levels</i></div>
-        <div>Managing conflict<br><i>Irmtraud, <br>Empathy for other, 2 days +</i></div>
+        <div>Managing conflict (II)<br><i>Irmtraud, <br>Empathy for other, 2 days +</i></div>
         <div>Dealing with monsters<br><i>Frank, <br>5 days +</i></div>
         <div>Circle of reflection<br><i>Louise, <br>all levels</i></div>
     </div>`,
