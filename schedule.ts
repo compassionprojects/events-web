@@ -37,10 +37,10 @@ const day1 = {
       start: t('10:35'),
       end: t('12:35'),
       body: `<div class="d-flex justify-content-between">
-  <div>Parenting<br>Trainer: Madga & Godfrey</div>
-  <div>Self-empathy in conflict<br>Trainer: Irmtraud</div>
-  <div>Labels<br>Trainer: Frank</div>
-  <div>Keep calm and carry on<br>Trainer: Louise</div>
+  <div>Parenting<br>Madga & Godfrey</div>
+  <div>Self-empathy in conflict<br>Irmtraud</div>
+  <div>Labels<br>Frank</div>
+  <div>Keep calm and carry on<br>Louise</div>
 </div>
   `,
     },
@@ -54,10 +54,10 @@ const day1 = {
       start: t('14:05'),
       end: t('16:05'),
       body: `<div class="d-flex justify-content-between">
-        <div>The importance of needs<br>Trainers: Madga & Godfrey</div>
-        <div>Empathy for other in conflict<br>Trainer: Irmtraud</div>
-        <div>Dealing with monsters<br>Trainer: Frank</div>
-        <div>Circle of reflection<br>Trainer: Louise</div>
+        <div>The importance of needs<br>Madga & Godfrey</div>
+        <div>Empathy for other in conflict<br>Irmtraud</div>
+        <div>Dealing with monsters<br>Frank</div>
+        <div>Circle of reflection<br>Louise</div>
     </div>`,
     },
     { start: t('16:05'), end: t('16:20'), body: `Break, including energisers` },
