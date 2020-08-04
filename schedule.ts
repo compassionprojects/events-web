@@ -38,7 +38,7 @@ const day1 = {
       end: t('12:35'),
       body: `<div class="d-flex justify-content-between">
   <div>Parenting<br><i>Madga & Godfrey, <br>All levels</i></div>
-  <div>Managing conflict (I)<br><i>Irmtraud, <br> Self-empathy, all levels</i></div>
+  <div>Managing conflict I<br><i>Irmtraud, <br> Self-empathy, all levels</i></div>
   <div>Labels<br><i>Frank, <br>5 days +</i></div>
   <div>Keep calm and carry on<br><i>Louise, <br>All levels</i></div>
 </div>
@@ -55,7 +55,7 @@ const day1 = {
       end: t('16:05'),
       body: `<div class="d-flex justify-content-between">
         <div>The importance of needs (I)<br><i>Madga & Godfrey, <br>All levels</i></div>
-        <div>Managing conflict (II)<br><i>Irmtraud, <br>Empathy for other, <br>2 days +</i></div>
+        <div>Managing conflict II<br><i>Irmtraud, <br>Empathy for other, <br>2 days +</i></div>
         <div>Dealing with monsters<br><i>Frank, <br>5 days +</i></div>
         <div>Circle of reflection<br><i>Louise, <br>All levels</i></div>
     </div>`,
