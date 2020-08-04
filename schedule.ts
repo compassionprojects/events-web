@@ -112,7 +112,7 @@ const day2 = {
       end: t('12:35'),
       body: `<div class="d-flex justify-content-between">
         <div>NVC in school<br><i>Madga & Godfrey,  <br>4 days +</i></div>
-        <div>I am the change I want to see in the world<br><i>Irmtraud,  <br>All levels</i></div>
+        <div>I am the change <br>I want to see in the world<br><i>Irmtraud,  <br>All levels</i></div>
         <div>Core of our needs<br><i>Frank,  <br>All levels</i></div>
         <div>NVC Essentials in the workplace<br><i>Louise,  <br>All levels</i></div>
   </div>
@@ -128,10 +128,10 @@ const day2 = {
       start: t('14:05'),
       end: t('16:05'),
       body: `<div class="d-flex justify-content-between">
-        <div>Importance of needs (part II)<br><i>Madga & Godfrey,  <br>All levels</i></div>
+        <div>Importance of needs (II)<br><i>Madga & Godfrey,  <br>All levels</i></div>
         <div>Gratitude<br><i>Irmtraud,  <br>All levels</i></div>
-        <div>The four themes of life<br><i>Frank,  <br>5 days +</i></div>
-        <div>NVC Essentials in the workplace<br><i>Louise,  <br>All levels</i></div>
+        <div>The four themes <br>of life<br><i>Frank,  <br>5 days +</i></div>
+        <div>Conflict in the classroom<br><i>Louise,  <br>All levels</i></div>
       </div>`,
     },
     { start: t('16:05'), end: t('16:20'), body: `Break, including energisers` },
