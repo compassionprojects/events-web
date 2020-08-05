@@ -74,7 +74,7 @@ const day1 = {
     {
       start: t('17:40'),
       end: t('22:00'),
-      body: `For all offerings (meditation, yoga, dance, movement)`,
+      body: `For all offerings (meditation, yoga, dance, movement, ...)`,
     },
   ],
 };
