@@ -17,7 +17,7 @@ import Icon from '../../components/Icon';
 const limit = 15;
 const limitReplies = 2;
 const meta = {
-  title: 'Walls',
+  title: 'Message Boards',
 };
 
 const GET_MESSAGE_TYPES = gql`
