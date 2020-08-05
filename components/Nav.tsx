@@ -28,7 +28,7 @@ export default function Navigation() {
   const items = [
     { path: '/home', title: 'Schedule' },
     { path: '/home/library', title: 'Library' },
-    { path: `/home/wall?type=${defaultWall.id}`, title: 'Walls' },
+    { path: `/home/wall?type=${defaultWall.id}`, title: 'Message boards' },
   ];
 
   return (
