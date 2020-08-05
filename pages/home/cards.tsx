@@ -124,7 +124,7 @@ const CardInner = styled.div`
 `;
 
 const Card = styled.div`
-  background-color: transparent;
+  background-color: blue;
   perspective: 1000px;
 `;
 
