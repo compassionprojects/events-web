@@ -32,7 +32,7 @@ const day1 = {
       end: t('10:20'),
       body: `Presentation of trainer offerings`,
     },
-    { start: t('10:20'), end: t('10:35'), body: `Break, including energisers` },
+    { start: t('10:20'), end: t('10:35'), body: `Break` },
     {
       start: t('10:35'),
       end: t('12:35'),
