@@ -62,7 +62,7 @@ export default function FooterLanding() {
             <a
               className="nav-link text-accent"
               href={`mailto:${data.contact_email}`}>
-              Contact
+              Help
             </a>
           </li>
           <li className="nav-item">
