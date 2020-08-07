@@ -53,7 +53,7 @@ const day1 = {
       start: t('14:05'),
       end: t('16:05'),
       body: `<div class="d-flex justify-content-between">
-        <div>I hate myself<br><i>Godfrey, <br>All levels</i></div>
+        <div>I hate me<br><i>Godfrey, <br>All levels</i></div>
         <div>Managing conflict<br><i>Irmtraud, <br>Empathy for other, <br>2 days +</i></div>
         <div>Dealing with monsters<br><i>Frank, <br>5 days +</i></div>
     </div>`,
