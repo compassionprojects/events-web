@@ -111,7 +111,7 @@ const day2 = {
       body: `<div class="d-flex justify-content-between">
         <div>NVC in schools<br><i>Madga,  <br>4 days +</i></div>
         <div>I am the change <br>I want to see in the world<br><i>Irmtraud,  <br>All levels</i></div>
-        <div>Core of our needs<br><i>Frank,  <br>All levels</i></div>
+        <div>Mr. Rosenberg <br>and the coffee cup<br><i>Frank,  <br>All levels</i></div>
   </div>
     `,
     },
