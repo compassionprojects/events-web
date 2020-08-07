@@ -1,5 +1,5 @@
 import moment from 'moment-timezone';
-const contact_email = 'louise@peacefactory.fr';
+const contact_email = 'maud@peacefactory.fr';
 const facebook_event_url = 'https://www.facebook.com/events/261603761787978/';
 // const irmtraud_email = 'irmtraud.kauschat@yahoo.de';
 const buy_ticket_url =
