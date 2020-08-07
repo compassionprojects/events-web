@@ -94,7 +94,7 @@ export default function HeaderLanding() {
               <_NavLink
                 href={`mailto:${data.contact_email}`}
                 className="text-accent">
-                Contact
+                Help
               </_NavLink>
             </NavItem>
             {!user && (
