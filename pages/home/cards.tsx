@@ -120,8 +120,6 @@ const CardInner = styled.div`
 
   &.open {
     transform: rotateY(180deg);
-    background: #1CA9E5 !important;
-    color: white;
   }
 `;
 
