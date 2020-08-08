@@ -37,7 +37,7 @@ const day1 = {
       start: t('10:35'),
       end: t('12:35'),
       body: `<div class="d-flex justify-content-between">
-  <div>Parenting<br><i>Madga, <br>All levels</i></div>
+  <div>Parenting<br><i>Magda, <br>All levels</i></div>
   <div>Managing conflict<br><i>Irmtraud, <br> Self-empathy, all levels</i></div>
   <div>Labels<br><i>Frank, <br>5 days +</i></div>
 </div>
@@ -109,7 +109,7 @@ const day2 = {
       start: t('10:35'),
       end: t('12:35'),
       body: `<div class="d-flex justify-content-between">
-        <div>NVC in schools<br><i>Madga,  <br>4 days +</i></div>
+        <div>NVC in schools<br><i>Magda,  <br>4 days +</i></div>
         <div>I am the change <br>I want to see in the world<br><i>Irmtraud,  <br>All levels</i></div>
         <div>Mr. Rosenberg <br>and the coffee cup<br><i>Frank,  <br>All levels</i></div>
   </div>
