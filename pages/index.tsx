@@ -64,11 +64,12 @@ LinkInternal.propTypes = {
 function CTA({ ...props }) {
   const beforeTheEvent = moment(new Date()).isBefore(start);
   const duringTheEvent = moment(new Date()).isBetween(start, end);
+  const afterTheEvent = moment(new Date()).isAfter(end);
 
   const { user } = useContext(UserContext);
   if (!user && beforeTheEvent) {
     return <GetTickets {...props} />;
-  } else if (!user && duringTheEvent) {
+  } else if ((!user && duringTheEvent) || (!user && afterTheEvent)) {
     return <LinkInternal path="/signin" title="Sign In" />;
   }
   return <LinkInternal path="/home" title="Home" />;
