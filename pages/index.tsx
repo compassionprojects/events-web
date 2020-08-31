@@ -25,8 +25,8 @@ import Link from '../components/Link';
 import Meta from '../components/Meta';
 import data from '../data';
 
-const start = new Date(2020, 7, 6);
-const end = new Date(2020, 7, 9);
+const start = new Date(2020, 10, 10);
+const end = new Date(2020, 10, 22);
 
 interface Trainer {
   name: string;
