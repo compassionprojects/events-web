@@ -5,7 +5,7 @@ const irmtraud_email = 'irmtraud.kauschat@yahoo.de';
 const buy_ticket_url =
   'https://www.eventbrite.co.uk/e/nonviolent-communication-virtual-intensive-course-2020-tickets-112284722628';
 const startDate = moment('2020-11-13T08:30:00Z'); // in UTC
-const endDate = moment('2020-11-22T14:30:00Z'); // in UTC
+const endDate = moment('2020-11-22T16:30:00Z'); // in UTC
 const timeZone = moment.tz.guess();
 const timeZoneOffset = new Date().getTimezoneOffset();
 const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
@@ -228,7 +228,7 @@ The fee to participate for the eight days online course includes access to the V
   4. Connection to the CNVC community, and previous contribution to the Peace Factory community.
   5. Except in extraordinary circumstances, reductions are not offered to people who have previously attended an NVC intensive course.
       `,
-    }, 
+    },
     {
       question: 'What is the waiting list procedure?',
       answer: `Once the places on the VIC are filled, Peace Factory creates a waiting list. If the VIC is full when you apply (and you will see this information on the registration form), your name is automatically placed on the waiting list in the order received, and your payment is not requested unless/until you are promoted from the waiting list and registered into the VIC. There is no guarantee that a space will open up.`,
