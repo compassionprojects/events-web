@@ -1,6 +1,6 @@
 import moment from 'moment-timezone';
 const contact_email = 'louise@peacefactory.fr';
-const facebook_event_url = 'https://www.facebook.com/events/261603761787978/';
+const facebook_event_url = 'https://www.facebook.com/events/3210099345744991/';
 const irmtraud_email = 'irmtraud.kauschat@yahoo.de';
 const buy_ticket_url =
   'https://www.eventbrite.co.uk/e/nonviolent-communication-virtual-intensive-course-2020-tickets-112284722628';
