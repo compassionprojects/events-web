@@ -10,7 +10,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const port = process.env.PORT || 4000;
-const domain = dev ? 'localhost' : 'vic-backend.peacefactory.fr';
+const domain = dev ? 'localhost' : 'peacefactory.fr';
 
 app.prepare().then(() => {
   const server = express();
