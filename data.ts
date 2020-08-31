@@ -29,9 +29,9 @@ export default {
   about: `
   We are delighted to invite you to co-create with us a safe container where people from dozens of countries tap into the living energy of an emerging community using Nonviolent Communication. Participating, practising and experimenting with the support of world-known experienced certified trainers, you learn skills which are quickly transferred, making profound changes to everyday life and to take a stand for a world where everyone’s needs matter.
 
-This Virtual Intensive Course is equivalent to an International Intensive Training, endorsed and fully supported by the Center for Nonviolent Communication. Join us from the 13th to 22nd November 2020 (with two days off - Monday 16th and Thursday 19th).
+  This Virtual Intensive Course is equivalent to an International Intensive Training, endorsed and fully supported by the Center for Nonviolent Communication. Join us from the 13th to 22nd November 2020 (with two days off - Monday 16th and Thursday 19th).
 
-You can ask for what you want to learn and the trainers respond to your requests.  Some of the possible topics are: conflict resolution, anger, personal growth, social change, relationships, spirituality, parenting, education, workplace, and a special beginner track - many sessions to choose from and videos to watch later!
+  You can ask for what you want to learn and the trainers respond to your requests.  Some of the possible topics are: conflict resolution, anger, personal growth, social change, relationships, spirituality, parenting, education, workplace, and a special beginner track - many sessions to choose from and videos to watch later!
 
   **Equipment required**: a webcam, microphone and an internet connection.
 
@@ -39,44 +39,44 @@ You can ask for what you want to learn and the trainers respond to your requests
   `,
   course: `Through a range of activities, the VIC aims to expand the reach and scope of technology-enabled people-to-people courses sustained over a period of 8 days. With a ratio of about twelve people per trainer, the programme structure is intensive, with some participants who have NVC skills and awareness well beyond the early levels, whilst others are starting their NVC journey.
 
-The course is designed to promote the integration and sustainability of work throughout the following year and in addition to the eight-day course in November, there is an option for small groups to stay in active contact once a fortnight and to enjoy monthly mentoring from one of the trainers.
+  The course is designed to promote the integration and sustainability of work throughout the following year and in addition to the eight-day course in November, there is an option for small groups to stay in active contact once a fortnight and to enjoy monthly mentoring from one of the trainers.
 
-<div class="py-4 h3 text-center" id="dates-times">
-  Dates and times
-</div>
+  <div class="py-4 h3 text-center" id="dates-times">
+    Dates and times
+  </div>
 
-Starts on  November 13th (Friday) and ends on November 22nd (Sunday) with two days of rest, one on Monday November 16th (Monday) and the other on November 19th (Thursday). Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs. There are two community sessions (1 & 5) lasting a total of up to 2 hours that we would encourage everybody to attend in order to support our focus on community building. All other sessions are highly recommended but  optional.  In our experience, a way to support the group's needs looks like this [schedule](https://docs.google.com/spreadsheets/d/1az-Z-dDhEgckF5GVmbAKwxNLpoA5vx_XmR2Jg-vFUsY/edit?usp=sharing).
+  Starts on  November 13th (Friday) and ends on November 22nd (Sunday) with two days of rest, one on Monday November 16th (Monday) and the other on November 19th (Thursday). Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs. There are two community sessions (1 & 5) lasting a total of up to 2 hours that we would encourage everybody to attend in order to support our focus on community building. All other sessions are highly recommended but  optional.  In our experience, a way to support the group's needs looks like this [schedule](https://docs.google.com/spreadsheets/d/1az-Z-dDhEgckF5GVmbAKwxNLpoA5vx_XmR2Jg-vFUsY/edit?usp=sharing).
 
-<div class="py-4 h3 text-center" id="what-to-expect">
-  What to expect?
-</div>
+  <div class="py-4 h3 text-center" id="what-to-expect">
+    What to expect?
+  </div>
 
-- **Richness and diversity**: Every year there are participants from many countries and this tremendous inter-cultural diversity adds to the richness of experience and exploration.
-- **Depth and breadth**: Throughout the course, along numerous training sessions and community meetings, we explore together a needs-based consciousness in all facets of life – in relationship to self, others and life, at home and at work, in relationship to inner as well as outer resources. We want to fully explore what life is and what it can be, from the very practical realms to the deeply spiritual ones. No theme is off-topic and everything is embraced.
-- **Community**: We aim to live equality in our community, exploring and creating together. We are aware of different talents and passions we bring into the course and this diversity proves to be a contributing element.
+  - **Richness and diversity**: Every year there are participants from many countries and this tremendous inter-cultural diversity adds to the richness of experience and exploration.
+  - **Depth and breadth**: Throughout the course, along numerous training sessions and community meetings, we explore together a needs-based consciousness in all facets of life – in relationship to self, others and life, at home and at work, in relationship to inner as well as outer resources. We want to fully explore what life is and what it can be, from the very practical realms to the deeply spiritual ones. No theme is off-topic and everything is embraced.
+  - **Community**: We aim to live equality in our community, exploring and creating together. We are aware of different talents and passions we bring into the course and this diversity proves to be a contributing element.
 
-<div class="py-4 h3 text-center" id="language">
-  Language
-</div>
+  <div class="py-4 h3 text-center" id="language">
+    Language
+  </div>
 
   **English** is used as our shared common language during community sessions. No translation is envisaged by the organisers, although our experience is that many bilingual people are happy to jump in when necessary on an ad hoc basis. You can also buy a ticket for two and work side by side with your own interpreter.
 
-If you would like to be informed of other people who speak your language, do check back from time-to-time to see what interpretation is being offered.
+  If you would like to be informed of other people who speak your language, do check back from time-to-time to see what interpretation is being offered.
 
-<div class="py-4 h3 text-center" id="what-you-need">
-  What you need
-</div>
+  <div class="py-4 h3 text-center" id="what-you-need">
+    What you need
+  </div>
 
-  All the meetings will take place on Zoom which is compatible with Microsoft or Apple. After registering, if you’re new to Zoom, you can access detailed information about how to use it and be supported with technical aspects. Peace Factory has 9 years of experience offering online courses, so you’re in good hands.
+  All the meetings will take place on [Zoom](https://zoom.us) which is compatible with Microsoft or Apple. After registering, if you’re new to Zoom, you can access detailed information about how to use it and be supported with technical aspects. Peace Factory has 9 years of experience offering online courses, so you’re in good hands.
 
-<div class="py-4 h3 text-center" id="fee">
-  Participation fee
-</div>
+  <div class="py-4 h3 text-center" id="fee">
+    Participation fee
+  </div>
 
-_Prices are in Euros._
-_If you would prefer to pay in US Dollars, please contact <a href="mailto:${contact_email}">Louise</a>._
+  _Prices are in Euros._
+  _If you would prefer to pay in US Dollars, please contact <a href="mailto:${contact_email}">Louise</a>._
 
-The fee to participate for the eight days online course includes access to the Virtual Exchange Platform and full course documentation. It does not include equipment to join or your internet connection.
+  The fee to participate for the eight days online course includes access to the Virtual Exchange Platform and full course documentation. It does not include equipment to join or your internet connection.
 
   <table class="table">
     <tbody>
