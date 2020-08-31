@@ -116,10 +116,10 @@ export default {
       question: 'I know nothing about Nonviolent Communication. Can I come?',
       answer: `You’re so welcome! No experience is required to join and we have a special beginners track for 2 days designed just for you!`,
     },
-    /* {
+    {
       question: 'Why do some people attend the course each year?',
       answer: `Even the more experienced participants don’t find an intensive course repetitive. Course materials are continually evolving, so it’s somewhat different from year to year. Additionally people report that the material is so rich that they hear something different even if a topic is the same! Most important, peer learning is an integral part of our course. Having applied the material in their lives for a year, they enrich and broaden the programme for everybody. They may coach during mediation role-plays, offer empathy and support between training sessions so first-time participants get all the support they could want throughout the course.`,
-    }, */
+    },
     /* {
       question:
         'My English is not very fluent. Are you sure I can participate?',
@@ -178,6 +178,17 @@ export default {
     {
       question: 'What is the format and structure?',
       answer: `To provide participants with a choice of learning opportunities VIC’s typically operate in a manner that is similar to the principles of Open Space Technology. For more information about the principles, please look at [openspaceworld.org](http://openspaceworld.org)
+      `,
+    },
+    {
+      question: 'Why limit the number of people for the course?',
+      answer: `This is not designed as a festival or gathering, it’s a course for skill building, and so the number of people is limited to assure the learning aspects.
+      `,
+    },
+    {
+      question:
+        'I am worried about my privacy. What are the measures you take ?',
+      answer: `We all want to feel secure and we want everybody to feel secure too.  The virtual platform has been designed by experts with privacy in mind. We are aware that during the course people may share personal information. Our data collection is the bare minimum to conform to European law and our Terms of Invitation (ToI) include a written agreement to withhold from registering any part of the VIC and to respect the privacy of everyone’s personal details unless they have written informed consent for another participant.
       `,
     },
     /* {
