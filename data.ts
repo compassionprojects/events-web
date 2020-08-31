@@ -196,13 +196,13 @@ export default {
 
   Peace Factory will notify you of the status of your application. Notification is usually sent 1-7 days after the application is received.
       `,
-    }, */
+    },
     {
       question: 'Are sessions recorded?',
       answer: `We plan to film and record parts of the sessions at the VIC which do not include a personal or group process. These recording are accessible only by participants for the next 12 months so you can carry on learning from the sessions.
       `,
     },
-    /* {
+    {
       question: 'What are the VIC cancellations and refunds policies?',
       answer: `Peace Factory incurs significant expenses with every application processed, so we request that you refrain from applying for an VIC unless your plans are firm, and you are confident of your ability to attend.
 
