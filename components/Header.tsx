@@ -38,7 +38,7 @@ export default function HeaderLanding() {
     <Navbar
       color="light"
       light
-      expand="md"
+      expand="lg"
       id="header"
       fixed="top"
       className="border-bottom">
@@ -101,9 +101,19 @@ export default function HeaderLanding() {
               </_NavLink>
             </NavItem>
             {!user && (
-              <NavItem className="pl-md-2 pl-lg-4 mt-1">
-                <GetTickets size="sm" nav title="Get" />
-              </NavItem>
+              <>
+                <NavItem className="pl-md-2 pl-lg-4">
+                  <Link
+                    href="/signin"
+                    as="/signin"
+                    className="text-accent nav-link">
+                    Sign in
+                  </Link>
+                </NavItem>
+                <NavItem className="pl-md-2 pl-lg-4 mt-1">
+                  <GetTickets size="sm" nav title="Get" />
+                </NavItem>
+              </>
             )}
             {user && (
               <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
