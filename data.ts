@@ -45,7 +45,7 @@ export default {
     Dates and times
   </div>
 
-  Starts on  November 13th (Friday) and ends on November 22nd (Sunday) with two days of rest, one on Monday November 16th (Monday) and the other on November 19th (Thursday). Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs. There are two community sessions (1 & 5) lasting a total of up to 2 hours that we would encourage everybody to attend in order to support our focus on community building. All other sessions are highly recommended but  optional.  In our experience, a way to support the group's needs looks like this [schedule](https://docs.google.com/spreadsheets/d/1az-Z-dDhEgckF5GVmbAKwxNLpoA5vx_XmR2Jg-vFUsY/edit?usp=sharing).
+  Starts on  November 13th (Friday) and ends on November 22nd (Sunday) with two days of rest in between, one on Monday November 16th (Monday) and the other on November 19th (Thursday). Full of NVC activities, each day has individual choices for your level of engagement according to your own learning needs. There are two community sessions (1 & 5) lasting a total of up to 2 hours that we would encourage everybody to attend in order to support our focus on community building. All other sessions are highly recommended but  optional.  In our experience, a way to support the group's needs looks like this [schedule](https://docs.google.com/spreadsheets/d/1az-Z-dDhEgckF5GVmbAKwxNLpoA5vx_XmR2Jg-vFUsY/edit?usp=sharing).
 
   <div class="py-4 h3 text-center" id="what-to-expect">
     What to expect?
