@@ -11,6 +11,33 @@ const timeZoneOffset = new Date().getTimezoneOffset();
 const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
 
 export default {
+  payment_thank_you: `Thank you for buying a ticket! If you have any questions, please email <a href="mailto:${contact_email}">Louise</a>`,
+  tickets: [
+    {
+      price: 'price_1HMYVMJz3cShRWnym6ptO0LW',
+      amount: 1500,
+      quantity: 1,
+      description: 'Standard contribution per person',
+    },
+    {
+      price: 'price_1HMdnFJz3cShRWnyGxfTXeUh',
+      amount: 2800,
+      quantity: 1,
+      description: 'Two people sharing',
+    },
+    {
+      price: 'price_1HMiHFJz3cShRWnyRedFQnaA',
+      amount: 1125,
+      quantity: 1,
+      description: 'Registered certification candidate with CNVC',
+    },
+    {
+      price: 'price_1HMiGcJz3cShRWny3Sm6fRDd',
+      amount: 500,
+      quantity: 1,
+      description: 'Participating CNVC certified trainer',
+    },
+  ],
   cover_image: '/images/cover.jpg',
   mission_title:
     '<span>Nonviolent Communication</span> <span>Virtual Intensive Course</span>',
