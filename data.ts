@@ -13,7 +13,7 @@ const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
 export default {
   cover_image: '/images/cover.jpg',
   mission_title:
-    '<span>Nonviolent Communication</span> <span>Virtual Exchange Platform</span>',
+    '<span>Nonviolent Communication</span> <span>Virtual Intensive Course</span>',
   mission_description:
     '<span>Learn Nonviolent Communication skills</span> <span>from the safety and comfort of your own home.</span>',
   dates: `Starts at ${startDate
