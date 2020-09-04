@@ -25,7 +25,7 @@ export default {
   facebook_event_url,
   contact_email,
   trainers_intro: 'Meet our CNVC certified trainers',
-  before_about: `Join our ground-breaking way to engage in learning Nonviolent Communication - an 8 day Virtual Intensive Course (VIC)`,
+  before_about: ``,
   about: `
   We are delighted to invite you to co-create with us a safe container where people from dozens of countries tap into the living energy of an emerging community using Nonviolent Communication. Participating, practising and experimenting with the support of world-known experienced certified trainers, you learn skills which are quickly transferred, making profound changes to everyday life and to take a stand for a world where everyone’s needs matter.
 
