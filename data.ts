@@ -117,16 +117,6 @@ export default {
       answer: `You’re so welcome! No experience is required to join and we have a special beginners track for 2 days designed just for you!`,
     },
     {
-      question: 'Why do some people attend the course each year?',
-      answer: `Even the more experienced participants don’t find an intensive course repetitive. Course materials are continually evolving, so it’s somewhat different from year to year. Additionally people report that the material is so rich that they hear something different even if a topic is the same! Most important, peer learning is an integral part of our course. Having applied the material in their lives for a year, they enrich and broaden the programme for everybody. They may coach during mediation role-plays, offer empathy and support between training sessions so first-time participants get all the support they could want throughout the course.`,
-    },
-    {
-      question: 'Can I offer workshops during the course?',
-      answer: `Yes, if a trainer is willing to be present with you, otherwise there is plenty of space for you to lead workshops outside the daily schedule.
-
-  Learning NVC is very much like learning a new language. And we all know that the best way to become fluent a new language is to immerse yourself in an environment where others are speaking and learning it too. This is not the kind of training where you can fill up a notebook, put it on the shelf, and call it done. You need to incorporate what you learn into your being. The training is an opportunity for you to learn in a context where you are safe to push yourself, let down your guard a little and try some new things, be present a little longer when you become uncomfortable with conflict, and grow with each incremental step you take. `,
-    },
-    {
       question: 'Why limit the number of people for the course?',
       answer: `This is not designed as a festival or gathering, it’s a course for skill building, and so the number of people is limited to assure the learning aspects.`,
     },
@@ -155,6 +145,16 @@ export default {
       `,
     },
     {
+      question: 'What does a VIC cost and what does the fee include?',
+      answer:
+        'Your contribution to the VIC consists only of a tuition fee for 8 full days.',
+    },
+    {
+      question: 'What is the daily schedule and structure?',
+      answer:
+        'The schedule is subject to change. You can find it [here](https://docs.google.com/spreadsheets/d/1az-Z-dDhEgckF5GVmbAKwxNLpoA5vx_XmR2Jg-vFUsY/edit#gid=0)',
+    },
+    {
       question: 'What is a “Remembering”?',
       answer: `The Remembering Sessions help participants be aware of the purpose underlying NVC. Participants who wish to share may express this remembering with a short exercise, a ceremony, poem, musical selection, a reading, etc. If you would enjoy doing so, please bring materials to contribute to the Remembering Sessions.
       `,
@@ -174,6 +174,76 @@ export default {
         'I am worried about my privacy. What are the measures you take ?',
       answer: `We all want to feel secure and we want everybody to feel secure too.  The virtual platform has been designed by experts with privacy in mind. We are aware that during the course people may share personal information. Our data collection is the bare minimum to conform to European law and our Terms of Invitation (ToI) include a written agreement to withhold from registering any part of the VIC and to respect the privacy of everyone’s personal details unless they have written informed consent for another participant.
       `,
+    },
+    {
+      question: 'What are the start and end times?',
+      answer: `All times quoted are Universal Time Coordinated (UTC)+2  (like in Berlin, Budapest, Cairo, Harare, Kigali, Ljubljana, Madrid, Paris, Prague, Oslo, Stockholm, Warsaw)
+
+On day 1: the scheduled start of the program (first meeting) is at 09:30.
+
+On (last) day 8:The last meeting ends at 17:50
+      `,
+    },
+    {
+      question: 'How to apply for a VIC?',
+      answer: `You can apply for this VIC by clicking on this [registration link](/tickets).
+
+If you are applying for a scholarship, we ask that your application is accompanied by a Scholarship Request form before the scholarship application deadline. (See the form [here](https://docs.google.com/document/d/1g0eDiGWPMcGYHL68oyxichstHpumEyXVhsFipCP6RyY/edit))
+
+Places are based on the sequence in which applications are received and processed.
+
+Once the VIC is filled, Peace Factory creates a waiting list. If the VIC is full when you apply, you will see information on the registration form and your name is automatically placed on the waiting list in the order received. Peace Factory will not request payment unless/until you are promoted from the waiting list and registered into the VIC. There is no guarantee that a space will open up.
+
+Peace Factory will notify you of the status of your application. Notification is usually sent 1-7 days after the application is received. `,
+    },
+    {
+      question: 'Are sessions recorded?',
+      answer: `We plan to film and record parts of the sessions at the VIC which do not include a personal or group process. These recordings are accessible only by participants for the next 12 months so you can carry on learning from the sessions.`,
+    },
+    {
+      question: 'What are the VIC cancellations and refunds policies?',
+      answer: `Peace Factory incurs significant expenses with every application processed, so we request that you refrain from applying for an VIC unless your plans are firm, and you are confident of your ability to attend.
+
+In the event that the VIC 2020 does not take place, the VIC enrollee agrees that Peace Factory shall have no obligation to compensate the VIC enrollee above paid VIC tuition. (In such an event, Peace Factory may offer to reassign the payment to another VIC or Peace Factory workshop, if this is the VIC enrollee’s preference.)
+
+In the event that you cancel your VIC application, Peace Factory will ask how you would like us to handle any monies you have already sent us for the VIC. At your request, prepaid TUITION fees (minus the nonrefundable part of your payment as described below) may be donated to Peace Factory to defray administrative expenses, refunded, or reassigned to a specific, later VIC.
+
+The nonrefundable portion of the fee is €100.
+      `,
+    },
+    {
+      question: 'Does Peace Factory offer financial support?',
+      answer: `Peace Factory has a limited number of Tuition Reduction to VICs. Below are the criteria of tuition reduction taken into consideration.
+
+Please remember: To be eligible for consideration, please submit your completed Tuition Reduction Request at least one week before the start of the VIC. The form is [here](https://docs.google.com/document/d/1g0eDiGWPMcGYHL68oyxichstHpumEyXVhsFipCP6RyY/edit). Late applications will not be considered.
+
+To minimise the chance of disappointing you, we would like you to know that Peace Factory’s tuition reduction funding is limited. We do not expect to give tuition reductions to all, or even most, of those who apply. Please note also that Peace Factory rarely offers reductions to applicants other than those from developing countries. We use the following criteria in selecting recipients:
+
+1. Potential of applicants to share NVC widely, especially among populations not already reached.
+2. Economic need, especially if resulting from circumstances beyond one's control.
+3. Previous NVC training (those with more training will generally be given preference over those with less training).
+4. Connection to the CNVC community, and previous contribution to the Peace Factory community.
+5. Except in extraordinary circumstances, reductions are not offered to people who have previously attended an NVC intensive course.
+      `,
+    },
+    {
+      question: 'What is the waiting list procedure?',
+      answer: `Once the places on the VIC are filled, Peace Factory creates a waiting list. If the VIC is full when you apply (and you will see this information on the registration form), your name is automatically placed on the waiting list in the order received, and your payment is not requested unless/until you are promoted from the waiting list and registered into the VIC. There is no guarantee that a space will open up.`,
+    },
+    {
+      question: 'I attended an intensive before; can I attend again?',
+      answer: `Yes. People find great value in attending intensives several times during their NVC journey. `,
+    },
+    {
+      question:
+        'Is attendance of intensive training still required for a CNVC Certified Trainer?',
+      answer: `We strongly recommend candidates to attend an IIT before becoming certified, but we are no longer in integrity with having a "requirement" in the CPP. So we have come up with the following requests if a candidate does not attend an IIT before becoming certified:
+
+- Multi-day, in-depth, residential training
+- International NVC experience
+- Areas fully experienced: NVC community (ongoing peer support), spirituality, and social change
+- Significant NVC experience with multiple CNVC certified trainers and mentors
+- Established a connection to CNVC, have a clear priority to support Peace Factory's mission, willing and able to renew annual certification `,
     },
     {
       question: 'You can’t find your question?',
