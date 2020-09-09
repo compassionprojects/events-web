@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, Container } from 'reactstrap';
+import React, { useState } from 'react';
+import { Button, Container, FormGroup, Label, Input } from 'reactstrap';
 import striptags from 'striptags';
 import styled from 'styled-components';
 import classnames from 'classnames';
@@ -21,6 +21,7 @@ const meta = {
 };
 
 export default function Tickets() {
+  const [agreed, setAgreed] = useState(false);
   const HOST = process.env.NEXT_PUBLIC_HOST_URL;
   const handleClick = async (e, p) => {
     e.preventDefault();
@@ -55,6 +56,19 @@ export default function Tickets() {
           Course (VIC) from November 13th - 22nd, 2020
         </Intro>
         <TicketContainer>
+          <div className="bg-light rounded p-3 my-3">
+            <FormGroup check>
+              <Label check>
+                <Input type="checkbox" onChange={() => setAgreed(!agreed)} /> I
+                agree to the{' '}
+                <a href="/terms" target="_blank">
+                  terms and conditions
+                </a>
+              </Label>
+            </FormGroup>
+          </div>
+        </TicketContainer>
+        <TicketContainer>
           {data.tickets.map((p, idx) => (
             <div
               className={classnames('py-4 d-flex align-items-center', {
@@ -66,6 +80,7 @@ export default function Tickets() {
                 <b>{p.amount}€</b> &nbsp;
                 <Button
                   color="primary"
+                  disabled={!agreed}
                   className="rounded-pill px-4"
                   onClick={(e) => handleClick(e, p)}>
                   Buy
