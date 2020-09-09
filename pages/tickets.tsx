@@ -27,6 +27,7 @@ export default function Tickets() {
     // When the customer clicks on the button, redirect them to Checkout.
     const stripe = await stripePromise;
     const { error } = await stripe.redirectToCheckout({
+      billingAddressCollection: 'required',
       lineItems: [
         {
           price: p.price,

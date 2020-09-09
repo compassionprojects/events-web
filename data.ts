@@ -14,7 +14,7 @@ export default {
   payment_thank_you: `Thank you for buying a ticket! If you have any questions, please email <a href="mailto:${contact_email}">Louise</a>`,
   tickets: [
     {
-      price: 'price_1HMYVMJz3cShRWnym6ptO0LW',
+      price: 'price_1HPQgRJz3cShRWny8CVEWQWm',
       amount: 1500,
       quantity: 1,
       description: 'Standard contribution per person',
@@ -36,6 +36,13 @@ export default {
       amount: 500,
       quantity: 1,
       description: 'Participating CNVC certified trainer',
+    },
+    {
+      price: 'price_1HPQTUJz3cShRWnyA4uErjpy',
+      amount: 1450,
+      quantity: 1,
+      description:
+        'Standard contribution per person (with discount from August course)',
     },
   ],
   cover_image: '/images/cover.jpg',
