@@ -1,4 +1,6 @@
 export default `
+<!-- TOC -->autoauto- [1. Definitions](#1-definitions)auto- [2. The Services](#2-the-services)auto- [3. Ordering Services](#3-ordering-services)auto- [4. Cancellation and Variation](#4-cancellation-and-variation)auto- [5. Fees](#5-fees)auto- [6. Liability](#6-liability)auto- [7. Intellectual Property](#7-intellectual-property)auto- [8. Confidentiality](#8-confidentiality)auto- [9. Termination](#9-termination)auto- [10. Assignment](#10-assignment)auto- [11. Entire Agreement](#11-entire-agreement)auto- [12. Force Majeure](#12-force-majeure)auto- [13. Assignment](#13-assignment)auto- [14. Data Protection](#14-data-protection)auto- [15. Law and Jurisdiction](#15-law-and-jurisdiction)auto- [16. Notices](#16-notices)autoauto<!-- /TOC -->
+
 These terms and conditions apply to Services provided by Peace Factory (company number 40210163800011 SIRET) of Fonderie de la Dure, 11170 Montolieu, France (“Peace Factory” or “we” or “us”).
 
 You may contact us on louise@peacefactory.fr and/or +33 468 24 81 81

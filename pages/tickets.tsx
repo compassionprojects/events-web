@@ -22,27 +22,35 @@ const meta = {
 
 export default function Tickets() {
   const [agreed, setAgreed] = useState(false);
-  const HOST = process.env.NEXT_PUBLIC_HOST_URL;
   const handleClick = async (e, p) => {
     e.preventDefault();
+
     // When the customer clicks on the button, redirect them to Checkout.
     const stripe = await stripePromise;
-    const { error } = await stripe.redirectToCheckout({
-      billingAddressCollection: 'required',
-      lineItems: [
-        {
-          price: p.price,
-          quantity: 1,
-        },
-      ],
-      mode: 'payment',
-      successUrl: `${HOST}/payment-success`,
-      cancelUrl: `${HOST}/tickets`,
+
+    // Call your backend to create the Checkout Session
+    const response = await fetch('/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ price: p.price }),
     });
-    // If `redirectToCheckout` fails due to a browser or network
-    // error, display the localized error message to your customer
-    // using `error.message`.
-    console.log(error);
+
+    const session = await response.json();
+
+    // When the customer clicks on the button, redirect them to Checkout.
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+
+    if (result.error) {
+      // If `redirectToCheckout` fails due to a browser or network
+      // error, display the localized error message to your customer
+      // using `result.error.message`.
+      alert(result.error.message);
+    }
   };
 
   return (
