@@ -1,7 +1,9 @@
 import moment from 'moment-timezone';
 const contact_email = 'louise@peacefactory.fr';
+const contact_name = 'Louise';
 const facebook_event_url = 'https://www.facebook.com/events/3210099345744991/';
 const irmtraud_email = 'irmtraudkauschat@gmail.com';
+const post_payment_questionaire = 'https://form.typeform.com/to/SUkHJB7P';
 const buy_ticket_url =
   'https://www.eventbrite.co.uk/e/nonviolent-communication-virtual-intensive-course-2020-tickets-112284722628';
 const startDate = moment('2020-11-13T08:30:00Z'); // in UTC
@@ -11,7 +13,16 @@ const timeZoneOffset = new Date().getTimezoneOffset();
 const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
 
 export default {
-  payment_thank_you: `Thank you for buying a ticket! If you have any questions, please email <a href="mailto:${contact_email}">Louise</a>`,
+  payment_thank_you: `
+  We are delighted to see that you registered using this email address **{{email_id}}**.
+
+  If the email is not correct or you decide to use a different one to access the course platform, we invite you to send an email from the address you would like to use to <a href="mailto:${contact_email}?subject=VIC Email ID Correction">${contact_email}</a>.
+
+  We asked for minimal information when booking so that you choose the best moment to fill in more details. Before the start of the course and when you have about 10 minutes free, we invite you to fill in the questionaire.
+
+  <a href="${post_payment_questionaire}" target="_blank" class="btn btn-primary">Help us organise better</a>
+
+  We will send you an email a few days before the course begins so that you can prepare well. If you have any questions, feel free to contact us. Thank you and see you soon!`,
   tickets: [
     {
       price: 'price_1HPQgRJz3cShRWny8CVEWQWm',
@@ -108,7 +119,7 @@ export default {
   </div>
 
   _Prices are in Euros._
-  _If you would prefer to pay in US Dollars, please contact <a href="mailto:${contact_email}">Louise</a>._
+  _If you would prefer to pay in US Dollars, please contact <a href="mailto:${contact_email}">${contact_name}</a>._
 
   The fee to participate for the eight days online course includes access to the Virtual Exchange Platform and full course documentation. It does not include equipment to join or your internet connection.
 
@@ -281,7 +292,7 @@ To minimise the chance of disappointing you, we would like you to know that Peac
     },
     {
       question: 'You can’t find your question?',
-      answer: `If you have questions that aren’t included here, you are invited to write to <a href="mailto:${contact_email}">Louise</a> so that this part of the flier gets richer!`,
+      answer: `If you have questions that aren’t included here, you are invited to write to <a href="mailto:${contact_email}">${contact_name}</a> so that this part of the flier gets richer!`,
     },
   ],
   trainers: [

@@ -36,7 +36,7 @@ app.prepare().then(() => {
         },
       ],
       mode: 'payment',
-      success_url: `${HOST}/payment-success`,
+      success_url: `${HOST}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${HOST}/tickets`,
     });
 
