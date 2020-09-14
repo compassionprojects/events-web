@@ -7,16 +7,15 @@ These terms and conditions are in addition to the Website Disclaimer and apply t
 
 If there is any conflict between our Website Disclaimer, these terms and conditions and any Course Specific Terms and Conditions which might apply to a specific Online Course or Taught Course then the conflict shall be resolved by applying the following order of priority:
 
-
-
 1. Course Specific Terms and Conditions;
 2. These Standard Terms for the Purchase of Online and Taught Courses;
 3. Website Disclaimer.
 
 For purchases via our website, by clicking on the “Accept” button you agree to the terms of this agreement which will bind you.  If you do not agree to these terms and conditions you must cease to continue to purchase any Services from us.
 
+<br>
 
-#### 1. Definitions
+## 1. Definitions
 
 “Confidential Information” means information provided by one party to the other in written, graphic, recorded, machine readable or other form concerning the business, clients, suppliers, finances and other areas of the other party’s business or products, including, without limitation, the Course Materials, but does not include information in the public domain other than through the default of the party disclosing the information, information required to be disclosed by any court or regulatory authority, or any information already in the possession or control of the disclosing party.
 
@@ -36,8 +35,9 @@ For purchases via our website, by clicking on the “Accept” button you agree 
 
 “you” means the individual purchasing the Services.
 
+<br>
 
-#### 2. The Services
+## 2. The Services
 
 2.1. A description of the Services together with the dates on which the Services will begin are available on our Website.  We will provide the Services with reasonable care and skill in accordance with the description set out on the Website.
 
@@ -45,8 +45,9 @@ For purchases via our website, by clicking on the “Accept” button you agree 
 
 2.3 We expect you to confirm that the Services you are purchasing will meet your needs.  We do not make any guarantee to you that you will obtain a particular result, professional qualification or employment opportunity from your purchase and completion of any of the Services.
 
+<br>
 
-#### 3. Ordering Services
+## 3. Ordering Services
 
 Purchasing Services via the Website
 
@@ -70,7 +71,9 @@ Purchasing Services via the Telephone
 
 3.7. Peace Factory does not and is not responsible for booking any examination with any professional body or examination board.  It is your responsibility to ensure that you book prior to the relevant closing date any exam necessary that you wish to take and which may or may not be associated with the subject matter of the Services provided to you by Peace Factory.
 
-#### 4. Cancellation and Variation
+<br>
+
+## 4. Cancellation and Variation
 
 4.1. Subject to clause 4.2 below, where we have accepted / confirmed the Services being purchased by you and formed a legally binding agreement with you in accordance with clause 3.5 above, then you are permitted within 14 working days starting on the day after the date we have concluded our agreement in accordance with clause 3.4, to cancel your purchase of the Services.
 
@@ -78,8 +81,9 @@ Purchasing Services via the Telephone
 
 4.3. Notwithstanding clause 4.1 there is no other right to cancel or vary your purchase of Services and any other cancellation and / or variation of course dates will be at the entire discretion of Peace Factory.
 
+<br>
 
-#### 5. Fees
+## 5. Fees
 
 5.1. The Fees for the Services shall be as set out on the application form at the time you placed an order for them.
 
@@ -91,8 +95,9 @@ Purchasing Services via the Telephone
 
 5.5. You are responsible for all costs you incur in connection with your attendance at any Online Course.
 
+<br>
 
-#### 6. Liability
+## 6. Liability
 
 6.1. No part of the provision of the Services shall be deemed to be, nor is it intended to be, nor should it be taken to be, the provision of advice.
 
@@ -106,8 +111,9 @@ Purchasing Services via the Telephone
 
 6.6. No claim may be brought more than six months after the last date on which the Services concerned have finished or ceased to be provided by Peace Factory.
 
+<br>
 
-#### 7. Intellectual Property
+## 7. Intellectual Property
 
 7.1. All Intellectual Property Rights in the course materials, online courses and the sessions made by trainers are, and remain, the intellectual property of Peace Factory whether adapted, written for or customised or not.
 
@@ -127,8 +133,9 @@ Breach by you of this clause 7.2 shall allow us to immediately terminate these t
 
 7.3. In consideration of the Fees paid by you, we grant to you a limited, non-transferable, non-exclusive licence to use the Course Materials and the software in respect of the Online Course for the sole purpose of completing the Online Course and / or attending the Taught Course.
 
+<br>
 
-#### 8. Confidentiality
+## 8. Confidentiality
 
 8.1. Each party shall keep the other party’s Confidential Information strictly confidential and not use it other than for the purposes of these terms and conditions, and shall return it on demand and not retain copies of it.
 
@@ -136,8 +143,9 @@ Breach by you of this clause 7.2 shall allow us to immediately terminate these t
 
 8.3. This clause shall continue notwithstanding termination of these terms and conditions.
 
+<br>
 
-#### 9. Termination
+## 9. Termination
 
 9.1. We shall be entitled to terminate these terms and conditions and cease to provide you with any Services with immediate effect in the event that you:
 
@@ -154,30 +162,35 @@ Breach by you of this clause 7.2 shall allow us to immediately terminate these t
 
 9.2. On termination clause 6 (liability), 7 (intellectual property rights), 8 (confidentiality) and 10 (restrictions) shall continue notwithstanding such termination.
 
+<br>
 
-#### 10. Assignment
+## 10. Assignment
 
 Any Services provided by us under these terms and conditions are personal to you and cannot be transferred or assigned to any other person.
 
 We shall be entitled to assign these terms and conditions to any other company without prior notice to you.
 
+<br>
 
-#### 11. Entire Agreement
+## 11. Entire Agreement
 
 These terms and conditions, together with the Website Disclaimer and Course Specific Terms and Conditions are the entire agreement between the parties and supersede any prior agreements and arrangements, whether written or oral. You confirm that you have not relied on any representations in entering into these and any other terms and conditions with us.  Nothing in this clause or terms and conditions shall limit liability for any fraudulent misrepresentation.
 
+<br>
 
-#### 12. Force Majeure
+## 12. Force Majeure
 
 Peace Factory shall not be liable to you for any breach of its obligations or termination under these terms and conditions arising from causes beyond its reasonable control, including, but not limited to, fires, floods, earthquakes, volcanoes and other Acts of God, terrorism, strikes, delay caused by transport disputes, failure to provide a course caused by a death in the trainer’s family, illness of the trainer, Government edict or regulation.
 
+<br>
 
-#### 13. Assignment
+## 13. Assignment
 
 We may assign, transfer, sub-contract any of our rights or obligations to any third party at our discretion.
 
+<br>
 
-#### 14. Data Protection
+## 14. Data Protection
 
 14.1 The nature of the Services provided by us means that we will obtain, use and disclose (together "Use") certain information about you ("Data"). This statement sets out the principles governing our Use of Data. By purchasing the Services you agree to this Use.
 
@@ -197,17 +210,19 @@ We may assign, transfer, sub-contract any of our rights or obligations to any th
 
 14.8. If you would like to change or update the data we hold about you, please send an e-mail with the updated data.
 
+<br>
 
-#### 15. Law and Jurisdiction
+## 15. Law and Jurisdiction
 
 This Agreement is subject to French law and the parties submit to the exclusive jurisdiction of the French court in Carcassonne  in connection with any dispute hereunder.
 
+<br>
 
-#### 16. Notices
+## 16. Notices
 
 You can contact us by any of the following methods:
 
-Email: louise@peacefactory.fr \
-Post: Peace Factory, Fonderie de la Dure, 11170 Montolieu, France \
+Email: louise@peacefactory.fr<br>
+Post: Peace Factory, Fonderie de la Dure, 11170 Montolieu, France<br>
 Telephone: +33 468 24 81 81
 `;
