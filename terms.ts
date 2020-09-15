@@ -1,7 +1,5 @@
 export default `
-<!-- TOC -->autoauto- [1. Definitions](#1-definitions)auto- [2. The Services](#2-the-services)auto- [3. Ordering Services](#3-ordering-services)auto- [4. Cancellation and Variation](#4-cancellation-and-variation)auto- [5. Fees](#5-fees)auto- [6. Liability](#6-liability)auto- [7. Intellectual Property](#7-intellectual-property)auto- [8. Confidentiality](#8-confidentiality)auto- [9. Termination](#9-termination)auto- [10. Assignment](#10-assignment)auto- [11. Entire Agreement](#11-entire-agreement)auto- [12. Force Majeure](#12-force-majeure)auto- [13. Assignment](#13-assignment)auto- [14. Data Protection](#14-data-protection)auto- [15. Law and Jurisdiction](#15-law-and-jurisdiction)auto- [16. Notices](#16-notices)autoauto<!-- /TOC -->
-
-These terms and conditions apply to Services provided by Peace Factory (company number 40210163800011 SIRET) of Fonderie de la Dure, 11170 Montolieu, France (“Peace Factory” or “we” or “us”).
+These terms and conditions apply to Services provided by Peace Factory (company number 40210163800011 SIRET) of Fonderie de la Dure, 11170 Montolieu, France ("Peace Factory" or "we" or "us").
 
 You may contact us on louise@peacefactory.fr and/or +33 468 24 81 81
 
@@ -13,29 +11,29 @@ If there is any conflict between our Website Disclaimer, these terms and conditi
 2. These Standard Terms for the Purchase of Online and Taught Courses;
 3. Website Disclaimer.
 
-For purchases via our website, by clicking on the “Accept” button you agree to the terms of this agreement which will bind you.  If you do not agree to these terms and conditions you must cease to continue to purchase any Services from us.
+For purchases via our website, by clicking on the "Accept" button you agree to the terms of this agreement which will bind you.  If you do not agree to these terms and conditions you must cease to continue to purchase any Services from us.
 
 <br>
 
 ## 1. Definitions
 
-“Confidential Information” means information provided by one party to the other in written, graphic, recorded, machine readable or other form concerning the business, clients, suppliers, finances and other areas of the other party’s business or products, including, without limitation, the Course Materials, but does not include information in the public domain other than through the default of the party disclosing the information, information required to be disclosed by any court or regulatory authority, or any information already in the possession or control of the disclosing party.
+"Confidential Information" means information provided by one party to the other in written, graphic, recorded, machine readable or other form concerning the business, clients, suppliers, finances and other areas of the other party’s business or products, including, without limitation, the Course Materials, but does not include information in the public domain other than through the default of the party disclosing the information, information required to be disclosed by any court or regulatory authority, or any information already in the possession or control of the disclosing party.
 
-“Course Materials” means the information provided by Peace Factory to accompany a course provided as part of the Services in hard copy or electronic form.
+"Course Materials" means the information provided by Peace Factory to accompany a course provided as part of the Services in hard copy or electronic form.
 
-“Fees” means the fees paid by you to Peace Factory for the Services.
+"Fees" means the fees paid by you to Peace Factory for the Services.
 
-“Intellectual Property Rights” means copyright, rights in or relating to databases, patent rights, performers’ rights, designs and registered designs, trademarks, rights in or relating to Confidential Information and other intellectual property rights (registered or unregistered) throughout the world.
+"Intellectual Property Rights" means copyright, rights in or relating to databases, patent rights, performers’ rights, designs and registered designs, trademarks, rights in or relating to Confidential Information and other intellectual property rights (registered or unregistered) throughout the world.
 
-“Online Course” means the delivery by us of an online course pursuant to which you learn course materials remotely.
+"Online Course" means the delivery by us of an online course pursuant to which you learn course materials remotely.
 
-“Services” means the provision of the Online Course and/or the Taught Course and/or the Course Materials together with such other services as agreed from time to time and purchased by you through the Website or by telephone.
+"Services" means the provision of the Online Course and/or the Taught Course and/or the Course Materials together with such other services as agreed from time to time and purchased by you through the Website or by telephone.
 
-“Taught Course” means a course taught by us in a classroom setting to which you attend in person.
+"Taught Course" means a course taught by us in a classroom setting to which you attend in person.
 
-“Website” means [www.peacefactory.fr](www.peacefactory.fr)
+"Website" means [www.peacefactory.fr](www.peacefactory.fr)
 
-“you” means the individual purchasing the Services.
+"you" means the individual purchasing the Services.
 
 <br>
 
