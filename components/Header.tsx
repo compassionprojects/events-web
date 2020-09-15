@@ -19,7 +19,7 @@ import scrollTo from 'scroll-to-element';
 import Link from './Link';
 import media from './Media';
 import { APP_NAME } from '../constants';
-import data from '../data';
+import data from '../data/landing';
 import GetTickets from './GetTickets';
 import { UserContext } from '../lib/UserContext';
 // import { useRouter } from 'next/router';

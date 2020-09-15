@@ -24,32 +24,6 @@ export default {
   <a href="${post_payment_questionaire}" target="_blank" class="btn btn-primary rounded-pill">Help us organise better</a> <a href="/" class="btn btn-link">Back to course content</a>
 
   We will send you an email a few days before the course begins so that you can prepare well. If you have any questions, feel free to contact us. Thank you and see you soon!`,
-  tickets: [
-    {
-      price: 'price_1HRIA9Jz3cShRWnyiPFM8L4K',
-      amount: 1500,
-      quantity: 1,
-      description: 'Standard contribution per person',
-    },
-    {
-      price: 'price_1HRIAoJz3cShRWnyVdSBXFFG',
-      amount: 2800,
-      quantity: 1,
-      description: 'Two people sharing',
-    },
-    {
-      price: 'price_1HRIARJz3cShRWnyol7cSwzD',
-      amount: 1125,
-      quantity: 1,
-      description: 'Registered certification candidate with CNVC',
-    },
-    {
-      price: 'price_1HRIAYJz3cShRWnyhKl1j8xk',
-      amount: 500,
-      quantity: 1,
-      description: 'Participating CNVC certified trainer',
-    },
-  ],
   cover_image: '/images/cover.jpg',
   mission_title:
     '<span>Nonviolent Communication</span> <span>Virtual Intensive Course</span>',

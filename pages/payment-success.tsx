@@ -4,7 +4,7 @@ import { Container } from 'reactstrap';
 import ReactMarkdown from 'react-markdown/with-html';
 import Stripe from 'stripe';
 import Meta from '../components/Meta';
-import data from '../data';
+import data from '../data/landing';
 import PropTypes from 'prop-types';
 
 const meta = {

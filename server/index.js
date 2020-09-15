@@ -24,17 +24,11 @@ app.prepare().then(() => {
   server.use(bodyParser.json());
 
   server.post('/create-checkout-session', async (req, res) => {
-    const { price } = req.body;
     const session = await stripe.checkout.sessions.create({
       billing_address_collection: 'required',
       allow_promotion_codes: true,
       payment_method_types: ['card', 'ideal' /* 'sepa_debit', */],
-      line_items: [
-        {
-          price,
-          quantity: 1,
-        },
-      ],
+      line_items: req.body,
       mode: 'payment',
       success_url: `${HOST}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${HOST}/tickets`,

@@ -8,7 +8,7 @@ import { UserContext } from '../../lib/UserContext';
 import withAuth from '../auth';
 import Meta from '../../components/Meta';
 import Loading from '../../components/Loading';
-import scheduleData from '../../schedule';
+import scheduleData from '../../data/schedule';
 
 const meta = {
   title: 'Schedule',

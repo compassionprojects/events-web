@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import ReactMarkdown from 'react-markdown/with-html';
 import Meta from '../components/Meta';
-import terms from '../terms';
+import terms from '../data/terms';
 
 const meta = {
   title: 'Terms',

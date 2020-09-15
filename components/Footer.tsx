@@ -2,7 +2,7 @@ import React from 'react';
 import scrollTo from 'scroll-to-element';
 import Icon from './Icon';
 import Link from './Link';
-import data from '../data';
+import data from '../data/landing';
 import { o } from './Header';
 
 const year = new Date().getFullYear();

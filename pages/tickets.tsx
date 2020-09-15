@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
-import { Button, Container, FormGroup, Label, Input } from 'reactstrap';
+import {
+  Button,
+  Container,
+  FormGroup,
+  Label,
+  Input,
+  UncontrolledCollapse,
+} from 'reactstrap';
 import striptags from 'striptags';
 import styled from 'styled-components';
 import classnames from 'classnames';
 import { loadStripe } from '@stripe/stripe-js';
+import Icon from '../components/Icon';
 import Meta from '../components/Meta';
-import data from '../data';
+import data from '../data/landing';
+import pricing from '../data/pricing';
 
 const PUBLISHABLE_KEY =
   process.env.STRIPE_PUBLISHABLE_KEY ||
@@ -22,11 +31,17 @@ const meta = {
 
 export default function Tickets() {
   const [agreed, setAgreed] = useState(false);
+  const [followup, setFollowup] = useState(false);
   const handleClick = async (e, p) => {
     e.preventDefault();
 
     // When the customer clicks on the button, redirect them to Checkout.
     const stripe = await stripePromise;
+
+    const data = [{ price: p.price, quantity: 1 }];
+    if (followup) {
+      data.push({ price: pricing.add_on.price, quantity: p.multiplier });
+    }
 
     // Call your backend to create the Checkout Session
     const response = await fetch('/create-checkout-session', {
@@ -35,7 +50,7 @@ export default function Tickets() {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ price: p.price }),
+      body: JSON.stringify(data),
     });
 
     const session = await response.json();
@@ -66,18 +81,44 @@ export default function Tickets() {
         <TicketContainer>
           <div className="bg-light rounded p-3 my-3 lead border border-primary">
             <FormGroup check>
-              <Label check>
-                <Check type="checkbox" onChange={() => setAgreed(!agreed)} />{' '}
-                &nbsp;&nbsp; I agree to the{' '}
-                <a href="/terms" target="_blank">
-                  terms and conditions
-                </a>
+              <Label check className="d-flex align-items-top">
+                <Check type="checkbox" onChange={() => setAgreed(!agreed)} />
+                <div className="ml-2">
+                  I agree to the{' '}
+                  <a href="/terms" target="_blank">
+                    terms and conditions{' '}
+                    <Icon shape="external-link" width={16} height={16} />
+                  </a>
+                </div>
+              </Label>
+            </FormGroup>
+          </div>
+          <div className="bg-light rounded p-3 my-3 border">
+            <FormGroup check>
+              <Label check className="d-flex align-items-top">
+                <Check
+                  type="checkbox"
+                  onChange={() => setFollowup(!followup)}
+                />
+                <div className="ml-2">
+                  I would also like to buy the NVC follow up sessions with CNVC
+                  certified trainers for{' '}
+                  <strong>{pricing.add_on.amount}€</strong>{' '}
+                  <a id="followup-details" href="#">
+                    Learn more <Icon shape="chevron-down" />
+                  </a>
+                  <UncontrolledCollapse toggler="#followup-details">
+                    <div className="my-2 text-muted">
+                      {pricing.add_on.details}
+                    </div>
+                  </UncontrolledCollapse>
+                </div>
               </Label>
             </FormGroup>
           </div>
         </TicketContainer>
         <TicketContainer>
-          {data.tickets.map((p, idx) => (
+          {pricing.all.map((p, idx) => (
             <div
               className={classnames('py-4 d-flex align-items-center', {
                 'border-top': idx,
@@ -85,14 +126,31 @@ export default function Tickets() {
               key={p.price}>
               {p.description}
               <div className="ml-auto pl-3 flex-shrink-0">
-                <b>{p.amount}€</b> &nbsp;
-                <Button
-                  color={agreed ? 'primary' : 'secondary'}
-                  disabled={!agreed}
-                  className="rounded-pill px-4"
-                  onClick={(e) => handleClick(e, p)}>
-                  Buy
-                </Button>
+                <div className="d-flex align-items-center">
+                  <div className="mr-2 text-right position-relative">
+                    <h5 className="m-0">
+                      <b>
+                        {!followup
+                          ? p.amount
+                          : p.amount + p.multiplier * pricing.add_on.amount}
+                        €
+                      </b>
+                    </h5>
+                    {followup && (
+                      <Amount>
+                        {p.amount}€ + {p.multiplier > 1 && p.multiplier + '*'}{' '}
+                        {pricing.add_on.amount}€
+                      </Amount>
+                    )}
+                  </div>
+                  <Button
+                    color={agreed ? 'primary' : 'secondary'}
+                    disabled={!agreed}
+                    className="rounded-pill px-4"
+                    onClick={(e) => handleClick(e, p)}>
+                    Buy
+                  </Button>
+                </div>
               </div>
             </div>
           ))}
@@ -115,4 +173,12 @@ const Intro = styled.p`
 const Check = styled(Input)`
   height: 20px;
   width: 20px;
+  margin-top: 0.3rem;
+`;
+
+const Amount = styled.small.attrs({
+  className: 'text-muted position-absolute',
+})`
+  right: 0;
+  width: 120px;
 `;

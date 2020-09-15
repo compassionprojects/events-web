@@ -23,7 +23,7 @@ import Icon from '../components/Icon';
 import media, { sizes } from '../components/Media';
 import Link from '../components/Link';
 import Meta from '../components/Meta';
-import data from '../data';
+import data from '../data/landing';
 
 const start = new Date(2020, 10, 10);
 const end = new Date(2020, 10, 22);
