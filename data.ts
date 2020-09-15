@@ -26,35 +26,28 @@ export default {
   We will send you an email a few days before the course begins so that you can prepare well. If you have any questions, feel free to contact us. Thank you and see you soon!`,
   tickets: [
     {
-      price: 'price_1HPQgRJz3cShRWny8CVEWQWm',
+      price: 'price_1HRIA9Jz3cShRWnyiPFM8L4K',
       amount: 1500,
       quantity: 1,
       description: 'Standard contribution per person',
     },
     {
-      price: 'price_1HMdnFJz3cShRWnyGxfTXeUh',
+      price: 'price_1HRIAoJz3cShRWnyVdSBXFFG',
       amount: 2800,
       quantity: 1,
       description: 'Two people sharing',
     },
     {
-      price: 'price_1HMiHFJz3cShRWnyRedFQnaA',
+      price: 'price_1HRIARJz3cShRWnyol7cSwzD',
       amount: 1125,
       quantity: 1,
       description: 'Registered certification candidate with CNVC',
     },
     {
-      price: 'price_1HMiGcJz3cShRWny3Sm6fRDd',
+      price: 'price_1HRIAYJz3cShRWnyhKl1j8xk',
       amount: 500,
       quantity: 1,
       description: 'Participating CNVC certified trainer',
-    },
-    {
-      price: 'price_1HPQTUJz3cShRWnyA4uErjpy',
-      amount: 1450,
-      quantity: 1,
-      description:
-        'Standard contribution per person (with discount from August course)',
     },
   ],
   cover_image: '/images/cover.jpg',
