@@ -64,11 +64,11 @@ export default function Tickets() {
           Course (VIC) from November 13th - 22nd, 2020
         </Intro>
         <TicketContainer>
-          <div className="bg-light rounded p-3 my-3">
+          <div className="bg-light rounded p-3 my-3 lead border border-primary">
             <FormGroup check>
               <Label check>
-                <Input type="checkbox" onChange={() => setAgreed(!agreed)} /> I
-                agree to the{' '}
+                <Check type="checkbox" onChange={() => setAgreed(!agreed)} />{' '}
+                &nbsp;&nbsp; I agree to the{' '}
                 <a href="/terms" target="_blank">
                   terms and conditions
                 </a>
@@ -87,7 +87,7 @@ export default function Tickets() {
               <div className="ml-auto pl-3 flex-shrink-0">
                 <b>{p.amount}€</b> &nbsp;
                 <Button
-                  color="primary"
+                  color={agreed ? 'primary' : 'secondary'}
                   disabled={!agreed}
                   className="rounded-pill px-4"
                   onClick={(e) => handleClick(e, p)}>
@@ -110,4 +110,9 @@ const TicketContainer = styled.div`
 const Intro = styled.p`
   max-width: 600px;
   margin: 0 auto;
+`;
+
+const Check = styled(Input)`
+  height: 20px;
+  width: 20px;
 `;

@@ -66,6 +66,11 @@ export default function FooterLanding() {
             </a>
           </li>
           <li className="nav-item">
+            <Link className="nav-link text-accent" href="/terms" as="/terms">
+              Terms
+            </Link>
+          </li>
+          <li className="nav-item">
             <a
               className="nav-link text-accent"
               href={data.facebook_event_url}
@@ -113,6 +118,11 @@ export function Footer() {
               href={`mailto:${data.contact_email}`}>
               Help
             </a>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link text-accent" href="/terms" as="/terms">
+              Terms
+            </Link>
           </li>
         </ul>
       </div>
