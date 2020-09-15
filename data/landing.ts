@@ -21,7 +21,7 @@ export default {
 
   We asked for minimal information when booking so that you choose the best moment to fill in more details. Before the start of the course and when you have about 10 minutes free, we invite you to fill in the questionaire.
 
-  <a href="${post_payment_questionaire}" target="_blank" class="btn btn-primary rounded-pill">Help us organise better</a> <a href="/" class="btn btn-link">Back to course content</a>
+  <a href="${post_payment_questionaire}" target="_blank" class="btn btn-primary rounded-pill">Help us organise better</a> <a href="/" class="btn btn-link">Return to course info</a>
 
   We will send you an email a few days before the course begins so that you can prepare well. If you have any questions, feel free to contact us. Thank you and see you soon!`,
   cover_image: '/images/cover.jpg',
