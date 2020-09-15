@@ -1,5 +1,5 @@
 export default `
-These terms and conditions apply to Services provided by Peace Factory (company number 40210163800011 SIRET) of Fonderie de la Dure, 11170 Montolieu, France ("Peace Factory" or "we" or "us").
+These terms and conditions apply to Services provided by Peace Factory (company number 852 416 197 00014 SIRET) of Fonderie de la Dure, 11170 Montolieu, France ("Peace Factory" or "we" or "us").
 
 You may contact us on louise@peacefactory.fr and/or +33 468 24 81 81
 
