@@ -1,9 +1,14 @@
+require('dotenv').config();
+
 // server.js
 
 const express = require('express');
 const next = require('next');
 const fetch = require('node-fetch');
 const helmet = require('helmet');
+const bodyParser = require('body-parser');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const HOST = process.env.HOST_URL;
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -16,6 +21,27 @@ app.prepare().then(() => {
   const server = express();
 
   server.use(helmet());
+  server.use(bodyParser.json());
+
+  server.post('/create-checkout-session', async (req, res) => {
+    const { price } = req.body;
+    const session = await stripe.checkout.sessions.create({
+      billing_address_collection: 'required',
+      allow_promotion_codes: true,
+      payment_method_types: ['card', 'sepa_debit', 'ideal'],
+      line_items: [
+        {
+          price,
+          quantity: 1,
+        },
+      ],
+      mode: 'payment',
+      success_url: `${HOST}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${HOST}/tickets`,
+    });
+
+    res.json({ id: session.id });
+  });
 
   server.get('/auth', async (req, res) => {
     try {
