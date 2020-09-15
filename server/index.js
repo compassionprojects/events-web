@@ -28,7 +28,7 @@ app.prepare().then(() => {
     const session = await stripe.checkout.sessions.create({
       billing_address_collection: 'required',
       allow_promotion_codes: true,
-      payment_method_types: ['card', 'sepa_debit', 'ideal'],
+      payment_method_types: ['card', 'ideal' /* 'sepa_debit', */],
       line_items: [
         {
           price,
