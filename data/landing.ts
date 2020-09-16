@@ -4,7 +4,7 @@ const contact_name = 'Louise';
 const facebook_event_url = 'https://www.facebook.com/events/3210099345744991/';
 const irmtraud_email = 'irmtraudkauschat@gmail.com';
 const post_payment_questionaire =
-  'https://peacefactory.typeform.com/to/SUkHJB7P';
+  'https://peacefactory.typeform.com/to/aIIB8QBn';
 const buy_ticket_url =
   'https://www.eventbrite.co.uk/e/nonviolent-communication-virtual-intensive-course-2020-tickets-112284722628';
 const startDate = moment('2020-11-13T08:30:00Z'); // in UTC
