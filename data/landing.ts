@@ -48,7 +48,7 @@ export default {
 
   **Equipment required**: a webcam, microphone and an internet connection.
 
-  **Language**: English (translation will be available for chosen languages, more info soon).
+  **Language**: English (translation may be available for some other languages, depending on who registers).
   `,
   course: `Through a range of activities, the VIC aims to expand the reach and scope of technology-enabled people-to-people courses sustained over a period of 8 days. With a ratio of about twelve people per trainer, the programme structure is intensive, with some participants who have NVC skills and awareness well beyond the early levels, whilst others are starting their NVC journey.
 
