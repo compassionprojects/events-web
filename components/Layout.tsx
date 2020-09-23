@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 import FooterLanding, { Footer } from './Footer';
 import HeaderLanding, { Header } from './Header';
 import GlobalStyles from './GlobalStyles';
@@ -15,6 +16,15 @@ export default function Layout({ router, ...props }) {
   const { user } = useContext(UserContext);
   const onecol =
     (user && isLanding) || (!user && !isLanding) || (!user && isLanding);
+
+  const { trackPageView } = useMatomo();
+
+  // Track page view
+  useEffect(() => {
+    console.log('ad');
+
+    trackPageView({});
+  }, [activePath]);
 
   return (
     <div className="d-flex flex-column h-100">
