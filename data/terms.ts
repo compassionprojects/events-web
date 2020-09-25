@@ -135,19 +135,32 @@ Breach by you of this clause 7.2 shall allow us to immediately terminate these t
 
 <br>
 
-## 8. Confidentiality
+## 8. Recording
 
-8.1. Each party shall keep the other party’s Confidential Information strictly confidential and not use it other than for the purposes of these terms and conditions, and shall return it on demand and not retain copies of it.
-
-8.2. Either party may disclose Confidential Information to its legal and other advisors for the purposes of obtaining advice from them.
-
-8.3. This clause shall continue notwithstanding termination of these terms and conditions.
+No small group practice sessions will be recorded. All other sessions will be recorded to support our commitment to spreading empathy skills. Those recordings may be published for educational purposes and to promote NVC. We would really like the VIC to be a space in which we can all freely express ourselves and feel safe, so if you have concerns about recording, please read the information available here: recording information
 
 <br>
 
-## 9. Termination
+## 9. Language
 
-9.1. We shall be entitled to terminate these terms and conditions and cease to provide you with any Services with immediate effect in the event that you:
+English is used as our shared common language during community sessions. No translation is envisaged by the organisers, although our experience is that many bilingual people are happy to jump in when necessary on an ad hoc basis. You can also buy a ticket for two and work side by side with your own interpreter.
+If you would like to be informed of other people who speak your language, do check back from time-to-time to see what interpretation is being offered.
+
+<br>
+
+## 10. Confidentiality
+
+10.1. Each party shall keep the other party’s Confidential Information strictly confidential and not use it other than for the purposes of these terms and conditions, and shall return it on demand and not retain copies of it.
+
+10.2. Either party may disclose Confidential Information to its legal and other advisors for the purposes of obtaining advice from them.
+
+10.3. This clause shall continue notwithstanding termination of these terms and conditions.
+
+<br>
+
+## 11. Termination
+
+11.1. We shall be entitled to terminate these terms and conditions and cease to provide you with any Services with immediate effect in the event that you:
 
 
 
@@ -160,11 +173,11 @@ Breach by you of this clause 7.2 shall allow us to immediately terminate these t
 7. commit any criminal offence committed on our premises or where the victim is our employee or student;
 8. are in breach of these terms and conditions.
 
-9.2. On termination clause 6 (liability), 7 (intellectual property rights), 8 (confidentiality) and 10 (restrictions) shall continue notwithstanding such termination.
+11.2. On termination clause 6 (liability), 7 (intellectual property rights), 8 (confidentiality) and 10 (restrictions) shall continue notwithstanding such termination.
 
 <br>
 
-## 10. Assignment
+## 12. Assignment
 
 Any Services provided by us under these terms and conditions are personal to you and cannot be transferred or assigned to any other person.
 
@@ -172,53 +185,47 @@ We shall be entitled to assign these terms and conditions to any other company w
 
 <br>
 
-## 11. Entire Agreement
+## 13. Entire Agreement
 
 These terms and conditions, together with the Website Disclaimer and Course Specific Terms and Conditions are the entire agreement between the parties and supersede any prior agreements and arrangements, whether written or oral. You confirm that you have not relied on any representations in entering into these and any other terms and conditions with us.  Nothing in this clause or terms and conditions shall limit liability for any fraudulent misrepresentation.
 
 <br>
 
-## 12. Force Majeure
+## 14. Force Majeure
 
 Peace Factory shall not be liable to you for any breach of its obligations or termination under these terms and conditions arising from causes beyond its reasonable control, including, but not limited to, fires, floods, earthquakes, volcanoes and other Acts of God, terrorism, strikes, delay caused by transport disputes, failure to provide a course caused by a death in the trainer’s family, illness of the trainer, Government edict or regulation.
 
 <br>
 
-## 13. Assignment
+## 15. Data Protection
 
-We may assign, transfer, sub-contract any of our rights or obligations to any third party at our discretion.
+15.1 The nature of the Services provided by us means that we will obtain, use and disclose (together "Use") certain information about you ("Data"). This statement sets out the principles governing our Use of Data. By purchasing the Services you agree to this Use.
 
-<br>
+15.2 When you register with us you will need to provide certain Data such as your contact details and demographic information. We will store this Data and use it to contact you, provide you with details of the Services you have purchased and otherwise as required during the normal provision of the course.
 
-## 14. Data Protection
+15.3 We may also use the above Data, and similar Data you provide us in response to surveys, to aggregate user profiles and, unless you click on the relevant button on the Registration Form, provide you with communications. We will not pass any personal data onto anyone outside of Peace Factory,
 
-14.1 The nature of the Services provided by us means that we will obtain, use and disclose (together "Use") certain information about you ("Data"). This statement sets out the principles governing our Use of Data. By purchasing the Services you agree to this Use.
+15.3 To enable us to monitor and improve our Services, we gather certain aggregated information about you, including details of your operating system, browser version, domain name and IP address, the URL you came from and go to and the parts of the Website you visit.
 
-14.2 When you register with us you will need to provide certain Data such as your contact details and demographic information. We will store this Data and use it to contact you, provide you with details of the Services you have purchased and otherwise as required during the normal provision of the course.
+15.4. We use information such as your User ID, session identifiers and password to enable us to identify whether you are using our services, assist with the provision of services and to ensure that you have access to relevant products. We will only read cookies from your cookie file placed there through your web browser's interaction with the Website.
 
-14.3 We may also use the above Data, and similar Data you provide us in response to surveys, to aggregate user profiles and, unless you click on the relevant button on the Registration Form, provide you with communications. We will not pass any personal data onto anyone outside of Peace Factory,
+15.5. Our products may link to third party websites and we are not responsible for their data policies or procedures or their content.
 
-14.3 To enable us to monitor and improve our Services, we gather certain aggregated information about you, including details of your operating system, browser version, domain name and IP address, the URL you came from and go to and the parts of the Website you visit.
+15.6. Peace Factory endeavour to take all reasonable steps to protect your personal Data including the use of encryption technology, but cannot guarantee the security of any Data you disclose. You accept the inherent security implications of being and transacting on-line over the internet and will not hold us responsible for any breach of security.
 
-14.4. We use information such as your User ID, session identifiers and password to enable us to identify whether you are using our services, assist with the provision of services and to ensure that you have access to relevant products. We will only read cookies from your cookie file placed there through your web browser's interaction with the Website.
+15.7. Peace Factory may supplement the information that you provide with information we receive from third parties, such as exam registration bodies or your employer.
 
-14.5. Our products may link to third party websites and we are not responsible for their data policies or procedures or their content.
-
-14.6. Peace Factory endeavour to take all reasonable steps to protect your personal Data including the use of encryption technology, but cannot guarantee the security of any Data you disclose. You accept the inherent security implications of being and transacting on-line over the internet and will not hold us responsible for any breach of security.
-
-14.7. Peace Factory may supplement the information that you provide with information we receive from third parties, such as exam registration bodies or your employer.
-
-14.8. If you would like to change or update the data we hold about you, please send an e-mail with the updated data.
+15.8. If you would like to change or update the data we hold about you, please send an e-mail with the updated data.
 
 <br>
 
-## 15. Law and Jurisdiction
+## 16. Law and Jurisdiction
 
 This Agreement is subject to French law and the parties submit to the exclusive jurisdiction of the French court in Carcassonne  in connection with any dispute hereunder.
 
 <br>
 
-## 16. Notices
+## 17. Notices
 
 You can contact us by any of the following methods:
 
