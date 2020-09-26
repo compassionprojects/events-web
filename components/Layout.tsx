@@ -21,8 +21,6 @@ export default function Layout({ router, ...props }) {
 
   // Track page view
   useEffect(() => {
-    console.log('ad');
-
     trackPageView({});
   }, [activePath]);
 
