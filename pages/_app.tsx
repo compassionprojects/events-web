@@ -3,11 +3,9 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { ThemeProvider } from 'styled-components';
 import apolloClient from '../lib/apollo';
 import PropTypes from 'prop-types';
-import { MatomoProvider } from '@datapunt/matomo-tracker-react';
 // import cookies from 'next-cookies';
 import Layout from '../components/Layout';
 import { UserContext } from '../lib/UserContext';
-import matomo from '../lib/matomo';
 import useAuth from '../lib/useAuth';
 import theme from '../lib/theme';
 
@@ -24,11 +22,9 @@ function VicApp({ Component, pageProps, router }) {
     <ApolloProvider client={apolloClient}>
       <UserContext.Provider value={value}>
         <ThemeProvider theme={theme}>
-          <MatomoProvider value={matomo}>
-            <Layout router={router}>
-              <Component {...pageProps} />
-            </Layout>
-          </MatomoProvider>
+          <Layout router={router}>
+            <Component {...pageProps} />
+          </Layout>
         </ThemeProvider>
       </UserContext.Provider>
     </ApolloProvider>
