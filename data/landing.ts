@@ -180,7 +180,7 @@ Through a set of tools for listening to our needs, NVC gives us an opportunity t
     {
       question: 'How is the fee I pay used?',
       answer:
-        'Your contribution enables us to pay CNVC and different service providers we use to make the course work well (like Zoom, Stripe, Cryptpad, Dropbox…), then some resources contribute to special purchases made by the Peace Factory team (lighting, a decent camera…), and the rest of the resources are put into a money pile and shared using Systemic Consensing to make decisions, including some money for Peace Factory to be able to continue funding scholarships and peace projects throughout the world.',
+        'Your contribution enables us to pay CNVC and different service providers we use to make the course work well (like Zoom, Stripe, Cryptpad, Dropbox…), then some resources contribute to special purchases made by the Peace Factory team (lighting, a decent camera…), and the rest of the resources are put into a money pile and shared (using Systemic Consensing to make decisions) between everyone who has worked on the project, according to their needs, including some money for Peace Factory to be able to continue funding scholarships and peace projects throughout the world in a sustainable way.',
     },
     {
       question: 'What are the dates?',
