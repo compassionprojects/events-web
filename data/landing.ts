@@ -307,7 +307,7 @@ When you exchange between yourselves, please make sure you’re muted and please
     },
     {
       question: 'My English is not fluent. Are you sure I can participate?',
-      answer: `Most of the team and participants speak English as a second or third language, so the English spoken is simple and slow. But if you’d like to check it out, please book a 10 minute exchange with Irmtraud by contacting her at ${irmtraud_email}`,
+      answer: `Most of the team and participants speak English as a second or third language, so the English spoken is simple and slow. But if you’d like to check it out, please book a 10 minute exchange with Irmtraud by contacting her at [${irmtraud_email}](mailto:${irmtraud_email})`,
     },
     {
       question: 'What are the VIC cancellations and refunds policies?',
@@ -359,11 +359,11 @@ All VIC participants receive a certificate confirming their participation.
     },
     {
       question: 'Can I join your team?',
-      answer: `Yes! we welcome the support of volunteers, especially for Zoom support and marketing-related tasks. Please write to .${contact_email}.`,
+      answer: `Yes! we welcome the support of volunteers, especially for Zoom support and marketing-related tasks. Please write to .[${contact_email}](mailto:${contact_email}).`,
     },
     {
       question: 'I still have a question',
-      answer: `If you have questions that aren’t included here, you are invited to write to ${contact_email} so that these FAQ get richer!`,
+      answer: `If you have questions that aren’t included here, you are invited to write to [${contact_email}](mailto:${contact_email}) so that these FAQ get richer!`,
     },
   ],
   trainers: [
