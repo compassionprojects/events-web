@@ -359,7 +359,7 @@ All VIC participants receive a certificate confirming their participation.
     },
     {
       question: 'Can I join your team?',
-      answer: `Yes! we welcome the support of volunteers, especially for Zoom support and marketing-related tasks. Please write to .[${contact_email}](mailto:${contact_email}).`,
+      answer: `Yes! we welcome the support of volunteers, especially for Zoom support and marketing-related tasks. Please write to [${contact_email}](mailto:${contact_email}).`,
     },
     {
       question: 'I still have a question',
