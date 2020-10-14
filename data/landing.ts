@@ -102,16 +102,16 @@ The fee to participate for the eight days online course includes access to the V
       <td>Two people sharing the same postal address booked at the same time with one receipt and two certificates of attendance</td>
     </tr>
     <tr>
-      <th scope="row">€750</th>
-      <td>Reduced-resources contribution (please contact <a href="mailto:${irmtraud_email}">Irmtraud</a>)</td>
-    </tr>
-    <tr>
       <th scope="row">€500</th>
       <td>Participating CNVC certified trainer</td>
     </tr>
     <tr>
       <th scope="row">€1125</th>
       <td>Registered certification candidate with CNVC</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>Reduced-resources contribution (please fill out <a href="https://peacefactory.typeform.com/to/JDtABYdF">this form</a>)</td>
     </tr>
   </tbody>
 </table>
