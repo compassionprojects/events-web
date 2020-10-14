@@ -330,6 +330,8 @@ To minimise the chance of disappointing you, we would like you to know that Peac
 3. Previous NVC training (those with more training will generally be given preference over those with less training).
 4. Connection to the CNVC community, and previous contribution to the Peace Factory community.
 5. Except in extraordinary circumstances, reductions are not offered to people who have previously attended an NVC intensive course.
+
+Please fill out this [reduced resources form](https://peacefactory.typeform.com/to/JDtABYdF) if you would like financial support.
       `,
     },
     {
