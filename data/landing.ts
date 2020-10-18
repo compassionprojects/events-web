@@ -209,6 +209,16 @@ The daily schedule is subject to change to take into account your requests made 
       `,
     },
     {
+      question: 'Why does it last for 8 full days with 2 days off?',
+      answer: `The Virtual Intensive Course replaces European Intensive Course which was held at the Peace Factory in France this past 8 years. It was about practising and living NVC every day, being immersed in a language of feelings and needs for 8 full days.
+
+Eating and breathing NVC as an immersive experience.
+
+Science shows that this is exactly what our brains need to break old habits to learn new life-serving habits. Nonviolent Communication is not a thing to DO, it’s a way to BE.
+
+And we’ve taken into account that 8 days in a row would be unmanageable for most of you AND us, so we’ve come up with 2 days off to digest, stretch and MOVE!!`,
+    },
+    {
       question: 'What time does it start?',
       answer: `This course is designed to be convenient for people living in Africa, Europe, the Middle East, and Asia.
 
@@ -229,11 +239,6 @@ On day 1: the scheduled start of the program (first meeting) starts at
 Please check your time using this [time convertor](https://www.timeanddate.com/worldclock/fixedtime.html?msg=Virtual+Intensive+Course+%28VIC%29&iso=20201113T0830&p1=%3A&ah=8&am=10).
       `,
     },
-    /* {
-      question: 'What is the daily schedule and structure?',
-      answer:
-        'The schedule is subject to change. You can find it [here](https://docs.google.com/spreadsheets/d/1az-Z-dDhEgckF5GVmbAKwxNLpoA5vx_XmR2Jg-vFUsY/edit#gid=0)',
-    }, */
     {
       question: 'What is a “Remembering”?',
       answer: `The Remembering Sessions help participants be aware of the purpose underlying NVC. Participants who wish to share may express this remembering with a short exercise, a ceremony, poem, musical selection, a reading, etc. If you would enjoy doing so, please bring materials to contribute to the Remembering Sessions.
