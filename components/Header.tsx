@@ -55,7 +55,7 @@ export default function HeaderLanding() {
                 href="/#about"
                 onClick={() => scrollTo('#about', o)}
                 className="text-accent">
-                About
+                Course
               </NavLink>
             </NavItem>
             {!user && (
@@ -162,7 +162,7 @@ export function Header() {
               <>
                 <NavItem className="pl-md-2 pl-lg-4">
                   <NavLink href="/#about" className="text-accent">
-                    About
+                    Course
                   </NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
@@ -182,8 +182,8 @@ export function Header() {
             {user && (
               <>
                 <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink href="/#about" className="text-accent">
-                    About
+                  <NavLink href="/home" className="text-accent">
+                    Schedule
                   </NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
@@ -192,11 +192,6 @@ export function Header() {
                     className="text-accent">
                     Help
                   </_NavLink>
-                </NavItem>
-                <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink href="/home" className="text-accent">
-                    Schedule
-                  </NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
                   <DropdownToggle nav caret>

@@ -12,18 +12,20 @@ import { UserContext } from '../lib/UserContext';
 export default function Layout({ router, ...props }) {
   const activePath = router.pathname;
   const isLanding = activePath === '/';
+  const isAbout = activePath === '/about';
+  const isOneCol = isLanding || isAbout;
   const { user } = useContext(UserContext);
   const onecol =
-    (user && isLanding) || (!user && !isLanding) || (!user && isLanding);
+    (user && isOneCol) || (!user && !isOneCol) || (!user && isOneCol);
 
   return (
     <div className="d-flex flex-column h-100">
       <GlobalStyles />
-      {isLanding && <SkipLinks />}
+      {isOneCol && <SkipLinks />}
       {isLanding ? <HeaderLanding /> : <Header />}
       {onecol && <main className="flex-shrink-0" role="main" {...props} />}
 
-      {user && !isLanding && (
+      {user && !isOneCol && (
         <main className="flex-shrink-0" role="main">
           <Container className="py-5">
             <Row>
@@ -37,7 +39,7 @@ export default function Layout({ router, ...props }) {
           </Container>
         </main>
       )}
-      {isLanding ? <FooterLanding /> : <Footer />}
+      {isOneCol ? <FooterLanding /> : <Footer />}
     </div>
   );
 }

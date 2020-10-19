@@ -23,20 +23,16 @@ export default function FooterLanding() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link
-              className="nav-link text-accent"
-              href="/#about"
-              as="/#about"
-              onClick={() => scrollTo('#about', o)}>
-              About
+            <Link className="nav-link text-accent" href="/about" as="/about">
+              About us
             </Link>
           </li>
           <li className="nav-item">
             <Link
               className="nav-link text-accent"
-              href="/#course"
-              as="/#course"
-              onClick={() => scrollTo('#course', o)}>
+              href="/#about"
+              as="/#about"
+              onClick={() => scrollTo('#about', o)}>
               Course
             </Link>
           </li>
@@ -95,15 +91,12 @@ export function Footer() {
       <div className="container">
         <ul className="nav justify-content-center">
           <li className="nav-item">
-            <Link className="nav-link text-accent" href="/#about" as="/#about">
-              About
+            <Link className="nav-link text-accent" href="/about" as="/about">
+              About us
             </Link>
           </li>
           <li className="nav-item">
-            <Link
-              className="nav-link text-accent"
-              href="/#course"
-              as="/#course">
+            <Link className="nav-link text-accent" href="/#about" as="/#about">
               Course
             </Link>
           </li>
