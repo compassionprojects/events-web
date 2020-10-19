@@ -7,18 +7,18 @@ import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
 import { Button } from 'reactstrap';
 
-import withAuth from '../../auth';
-import Meta from '../../../components/Meta';
-import Loading from '../../../components/Loading';
+import withAuth from '../../../../auth';
+import Meta from '../../../../../components/Meta';
+import Loading from '../../../../../components/Loading';
 
 const GET_CONTENT = gql`
-  query allContentOnSpaces($id: ID!, $skip: Int, $first: Int) {
+  query allContentOnSpaces($id: ID!, $skip: Int, $first: Int, $courseId: ID) {
     Space(where: { id: $id }) {
       id
       title
     }
     allContents(
-      where: { space: { id: $id } }
+      where: { space: { id: $id }, course: { id: $courseId } }
       sortBy: createdAt_DESC
       first: $first
       skip: $skip
@@ -35,7 +35,7 @@ const GET_CONTENT = gql`
         name
       }
     }
-    _allContentsMeta(where: { space: { id: $id } }) {
+    _allContentsMeta(where: { space: { id: $id }, course: { id: $courseId } }) {
       count
     }
   }
@@ -44,7 +44,12 @@ const GET_CONTENT = gql`
 function Space() {
   const { query } = useRouter();
   const limit = 15;
-  const variables = { id: query.id, first: limit, skip: 0 };
+  const variables = {
+    id: query.id,
+    courseId: query.course_id,
+    first: limit,
+    skip: 0,
+  };
   const { data, loading, fetchMore } = useQuery(GET_CONTENT, {
     variables,
   });

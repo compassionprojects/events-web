@@ -5,9 +5,9 @@ import { useQuery } from '@apollo/react-hooks';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import Router, { useRouter } from 'next/router';
 import { gql } from 'apollo-boost';
-import withAuth from '../auth';
-import Meta from '../../components/Meta';
-import Loading from '../../components/Loading';
+import withAuth from '../../../auth';
+import Meta from '../../../../components/Meta';
+import Loading from '../../../../components/Loading';
 
 const meta = {
   title: 'Interactive tools',
@@ -24,7 +24,7 @@ const GET_CARDS = gql`
 `;
 
 function Cards() {
-  const { query, pathname } = useRouter();
+  const { query } = useRouter();
   const [opened, setOpen] = useState({});
   const { data, loading } = useQuery(GET_CARDS, {
     variables: { type: query.type },
@@ -35,7 +35,7 @@ function Cards() {
   const filter = (e, type) => {
     e.preventDefault();
     Router.push({
-      pathname,
+      pathname: `/home/course/${query.course_id}/cards`,
       query: type ? { type } : {},
     });
   };
@@ -51,7 +51,7 @@ function Cards() {
       <Nav pills className="my-4">
         <NavItem>
           <NavLink
-            href="/home/cards?type=challenge"
+            href={`/home/course/${query.course_id}/cards?type=challenge`}
             active={query.type === 'challenge'}
             onClick={(e) => filter(e, 'challenge')}>
             Daily challenge
@@ -59,7 +59,7 @@ function Cards() {
         </NavItem>
         <NavItem>
           <NavLink
-            href="/home/cards?type=feelings"
+            href={`/home/course/${query.course_id}/cards?type=feelings`}
             active={query.type === 'feelings'}
             onClick={(e) => filter(e, 'feelings')}>
             Feelings
@@ -67,7 +67,7 @@ function Cards() {
         </NavItem>
         <NavItem>
           <NavLink
-            href="/home/cards?type=needs"
+            href={`/home/course/${query.course_id}/cards?type=needs`}
             active={query.type === 'needs'}
             onClick={(e) => filter(e, 'needs')}>
             Needs

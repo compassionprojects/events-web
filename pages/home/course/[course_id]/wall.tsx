@@ -8,11 +8,11 @@ import classnames from 'classnames';
 import moment from 'moment';
 import Gravatar from 'react-gravatar';
 
-import { UserContext } from '../../lib/UserContext';
-import withAuth from '../auth';
-import Meta from '../../components/Meta';
-import Loading from '../../components/Loading';
-import Icon from '../../components/Icon';
+import { UserContext } from '../../../../lib/UserContext';
+import withAuth from '../../../auth';
+import Meta from '../../../../components/Meta';
+import Loading from '../../../../components/Loading';
+import Icon from '../../../../components/Icon';
 
 const limit = 15;
 const limitReplies = 2;
@@ -182,7 +182,7 @@ function Wall() {
   const filter = (e, typeId) => {
     e.preventDefault();
     Router.push({
-      pathname: '/home/wall',
+      pathname: `/home/course/${query.course_id}/wall`,
       query: { type: typeId },
     });
   };
@@ -333,7 +333,7 @@ function Wall() {
         {allMessageTypes.map((item) => (
           <NavItem key={item.id}>
             <NavLink
-              href="/home/wall"
+              href={`/home/course/${query.course_id}/wall`}
               active={query.type === item.id}
               onClick={(e) => filter(e, item.id)}>
               {item.title}

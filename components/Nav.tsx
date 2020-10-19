@@ -21,14 +21,27 @@ const GET_SPACES_AND_MESSAGE_TYPES = gql`
 
 export default function Navigation() {
   const { data, loading } = useQuery(GET_SPACES_AND_MESSAGE_TYPES);
-  const { pathname, asPath } = useRouter();
+  const { pathname, asPath, query } = useRouter();
 
   const [defaultWall = {}] = (data && data.allMessageTypes) || [];
 
   const items = [
-    { path: '/home', title: 'Schedule' },
-    { path: '/home/library', title: 'Library' },
-    { path: `/home/wall?type=${defaultWall.id}`, title: 'Message boards' },
+    { path: `/home`, title: 'Home' },
+    {
+      path: `/home/course/[course_id]/schedule`,
+      as: `/home/course/${query.course_id}/schedule`,
+      title: 'Schedule',
+    },
+    {
+      path: `/home/course/[course_id]/library`,
+      as: `/home/course/${query.course_id}/library`,
+      title: 'Library',
+    },
+    {
+      path: `/home/course/[course_id]/wall?type=${defaultWall.id}`,
+      as: `/home/course/${query.course_id}/wall?type=${defaultWall.id}`,
+      title: 'Message boards',
+    },
   ];
 
   return (
@@ -41,7 +54,7 @@ export default function Navigation() {
                 active: item.path.split('?')[0] === pathname,
               })}
               href={item.path}
-              as={item.path}>
+              as={item.as}>
               {item.title}
             </Link>
           </NavItem>
@@ -50,9 +63,9 @@ export default function Navigation() {
           !loading &&
           data.allSpaces
             .map((s) => ({
-              path: `/home/space/[id]`,
+              path: `/home/course/[course_id]/space/[id]`,
               title: s.title,
-              as: `/home/space/${s.id}`,
+              as: `/home/course/${query.course_id}/space/${s.id}`,
             }))
             .map((item) => (
               <NavItem key={item.as}>
@@ -69,10 +82,10 @@ export default function Navigation() {
         <NavItem>
           <Link
             className={classnames('nav-link', {
-              active: pathname === '/home/cards',
+              active: pathname === `/home/course/[course_id]/cards`,
             })}
-            href="/home/cards?type=challenge"
-            as="/home/cards?type=challenge">
+            href="/home/course/[course_id]/cards?type=challenge"
+            as={`/home/course/${query.course_id}/cards?type=challenge`}>
             Interactive tools
           </Link>
         </NavItem>
