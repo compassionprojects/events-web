@@ -1,0 +1,415 @@
+import React, { useState, useContext } from 'react';
+import styled from 'styled-components';
+import {
+  Collapse,
+  Row,
+  Col,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+} from 'reactstrap';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import ReactMarkdown from 'react-markdown/with-html';
+import moment from 'moment';
+import { gql } from 'apollo-boost';
+import { useQuery } from '@apollo/react-hooks';
+import { useRouter } from 'next/router';
+import striptags from 'striptags';
+
+import { UserContext } from '../../../lib/UserContext';
+
+import media from '../../../components/Media';
+import GetTickets from '../../../components/GetTickets';
+import Icon from '../../../components/Icon';
+import Link from '../../../components/Link';
+import Meta from '../../../components/Meta';
+import Loading from '../../../components/Loading';
+
+interface Trainer {
+  name: string;
+  avatar_url: string;
+  bio: string;
+}
+
+const GET_COURSE = gql`
+  query courseContent($id: ID!) {
+    Course(where: { id: $id }) {
+      id
+      title
+      description
+      about
+      details
+      facebookLink
+      dateStart
+      dateEnd
+      trainers {
+        id
+        name
+        bio
+        avatar_url
+      }
+    }
+    allFAQS(where: { courses_every: { id: $id } }) {
+      id
+      question
+      answer
+    }
+  }
+`;
+
+function CTA() {
+  return (
+    <Link href="/" as="/" className="btn btn-lg rounded-pill my-4 btn-primary">
+      Register
+    </Link>
+  );
+}
+
+function Landing() {
+  const { user } = useContext(UserContext);
+  const [faq, setFAQIsOpen] = useState({});
+  const toggleFAQ = (index) =>
+    setFAQIsOpen((prev) => ({ ...prev, [index]: !prev[index] }));
+
+  const t: Trainer = { name: '', avatar_url: '', bio: '' };
+  const [trainer, setTrainer] = useState(t);
+
+  const [modal, setModal] = useState(false);
+  const toggleModal = () => setModal(!modal);
+  const closeBtn = (
+    <button className="close" onClick={toggleModal}>
+      <Icon shape="x" />
+    </button>
+  );
+
+  const { query } = useRouter();
+  const variables = { id: query.id };
+  const { data, loading } = useQuery(GET_COURSE, {
+    variables,
+  });
+
+  if (loading) return <Loading />;
+
+  const course = data.Course;
+  const faqs = data.allFAQS;
+
+  if (!course) return null;
+
+  const timeZone = moment.tz.guess();
+  const timeZoneOffset = new Date().getTimezoneOffset();
+  const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
+  const startDate = moment(course.dateStart)
+    .tz(tzName)
+    .format('h:mm a z dddd, MMMM Do YYYY');
+  const endDate = moment(course.dateEnd)
+    .tz(tzName)
+    .format('h:mm a z dddd, MMMM Do YYYY');
+  const courseDates = `Starts at ${startDate}
+  until ${endDate}`;
+
+  return (
+    <>
+      {/* title and description for SEO */}
+      <Meta
+        title={striptags(course.title)}
+        description={striptags(course.description)}
+        image_url="/images/social-media-banner.png"
+      />
+
+      {/* Cover section for the fold */}
+      <Cover className="text-center">
+        <Narrow className="px-2 py-sm-5 py-4 mx-auto">
+          <h1 className="pt-4 pt-sm-5">
+            <ReactMarkdown source={course.title} escapeHtml={false} />
+          </h1>
+          <div className="lead py-4">
+            <ReactMarkdown source={course.description} escapeHtml={false} />
+          </div>
+          <PreserveLineBreaks className="my-4">
+            {courseDates}
+          </PreserveLineBreaks>
+          <CTA />
+          <div className="mb-2"></div>
+        </Narrow>
+        <ShapeLeft />
+        <ShapeRight />
+      </Cover>
+
+      <div className="d-flex justify-content-center bg-light py-5 align-items-center">
+        <ImgAffiliates src="/images/logo-pf.svg" alt="Peacefactory logo" />
+        <ImgAffiliates
+          src="/images/logo-cnvc.svg"
+          alt="Center for nonviolent communication logo"
+        />
+      </div>
+
+      {/* {data.before_about && (
+        <div className="container py-5 mt-4 border-bottom">
+          <Narrow className="mx-auto">
+            <ReactMarkdown
+              linkTarget="_blank"
+              source={data.before_about}
+              escapeHtml={false}
+            />
+          </Narrow>
+        </div>
+      )} */}
+
+      <div className="container">
+        {/* About section */}
+        <Section className="mt-4 py-5 border-top-0" id="about" tabIndex={-1}>
+          <Narrow className="mx-auto">
+            <h2 className="text-center py-3">About</h2>
+            <ReactMarkdown
+              linkTarget="_blank"
+              source={course.about}
+              escapeHtml={false}
+            />
+            <div className="pt-3 text-center">
+              <CTA />
+            </div>
+          </Narrow>
+        </Section>
+
+        {/* Course section */}
+        <Section id="course" tabIndex={-1}>
+          <Narrow className="mx-auto">
+            <h2 className="text-center py-3">Course</h2>
+            <ReactMarkdown
+              linkTarget="_blank"
+              source={course.details}
+              escapeHtml={false}
+            />
+            <div className="pt-3 text-center">
+              <CTA />
+            </div>
+          </Narrow>
+        </Section>
+
+        {/* Trainers section */}
+        <Section id="trainers" tabIndex={-1}>
+          <Narrow className="mx-auto">
+            <h2 className="text-center py-3">Trainers</h2>
+            {/* <div className="pb-4 text-center">{data.trainers_intro}</div> */}
+            <Row className="justify-content-center">
+              {course.trainers.map((item, index) => (
+                <Col
+                  key={index}
+                  className="text-center"
+                  xs={6}
+                  sm={6}
+                  md={4}
+                  lg={4}>
+                  <Trainer
+                    {...item}
+                    setTrainer={({ ...args }) => {
+                      setTrainer({ ...args });
+                      toggleModal();
+                    }}
+                  />
+                </Col>
+              ))}
+            </Row>
+          </Narrow>
+          <Modal
+            isOpen={modal}
+            fade={false}
+            toggle={toggleModal}
+            centered
+            size="lg">
+            <ModalHeader toggle={toggleModal} close={closeBtn}>
+              <div className="d-flex">
+                <img
+                  style={{ height: 30, width: 30 }}
+                  alt={trainer.name}
+                  src={trainer.avatar_url}
+                  className="mr-2 img-fluid rounded-circle"
+                />
+                <span>{trainer.name}</span>
+              </div>
+            </ModalHeader>
+            <ModalBody>
+              <ReactMarkdown
+                linkTarget="_blank"
+                source={trainer.bio}
+                escapeHtml={false}
+              />
+            </ModalBody>
+            <ModalFooter>
+              <Button color="secondary" onClick={toggleModal}>
+                Close
+              </Button>
+            </ModalFooter>
+          </Modal>
+          <div className="pt-3 text-center">
+            <CTA />
+          </div>
+        </Section>
+
+        {/* FAQ section */}
+        <Section id="faq" tabIndex={-1}>
+          <h2 className="text-center py-3">Frequently Asked Questions</h2>
+          <Narrow className="mx-auto pl-sm-5">
+            {faqs.map((item, index) => (
+              <div
+                className={classnames('py-2 px-sm-2', {
+                  'bg-light rounded-lg': faq[index],
+                })}
+                key={item.id}>
+                <span
+                  className="d-flex align-items-top"
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => toggleFAQ(index)}>
+                  <Icon
+                    shape={faq[index] ? 'chevron-up' : 'chevron-down'}
+                    className="flex-shrink-0"
+                  />
+                  <span className="font-weight-bold">{item.question}</span>
+                </span>
+                <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
+                  <ReactMarkdown
+                    linkTarget="_blank"
+                    source={item.answer}
+                    escapeHtml={false}
+                  />
+                </Collapse>
+              </div>
+            ))}
+          </Narrow>
+        </Section>
+
+        {/* Video presentation section */}
+        {/* {data.video_embed_url && (
+          <div className="mt-4 py-5" id="video">
+            <div className="embed-responsive embed-responsive-16by9">
+              <iframe
+                title="a video presentation on vic"
+                frameBorder="1"
+                className="embed-responsive-item"
+                sandbox="allow-same-origin allow-scripts"
+                src={data.video_embed_url}
+                allowFullScreen></iframe>
+            </div>
+          </div>
+        )} */}
+
+        {!user && (
+          <Section>
+            <h2 className="text-center pt-3">Register</h2>
+            <Narrow className="px-2 py-4 mx-auto text-center">
+              <ReactMarkdown source={course.description} escapeHtml={false} />
+              <PreserveLineBreaks className="my-2 text-muted">
+                {courseDates}
+              </PreserveLineBreaks>
+              <GetTickets />
+            </Narrow>
+          </Section>
+        )}
+      </div>
+    </>
+  );
+}
+
+export default Landing;
+
+function Trainer({ name, avatar_url, bio, setTrainer }) {
+  const openModal = (e) => {
+    e.preventDefault();
+    setTrainer({ name, avatar_url, bio });
+  };
+  return (
+    <>
+      <div className="my-3">
+        <img
+          alt={name}
+          src={avatar_url}
+          className="img-fluid rounded-circle"
+          style={{ height: 120, margin: '0 auto', cursor: 'pointer' }}
+          onClick={openModal}
+        />
+        <a className="mt-3 h6 d-block" href="" onClick={openModal}>
+          {name}
+        </a>
+      </div>
+    </>
+  );
+}
+
+Trainer.propTypes = {
+  name: PropTypes.string,
+  bio: PropTypes.string,
+  avatar_url: PropTypes.string,
+  setTrainer: PropTypes.func,
+};
+
+const Cover = styled.div`
+  position: relative;
+
+  ${media.up['phone']`
+    h1 span, p span {
+      display: block;
+    }
+  `}
+`;
+
+const Narrow = styled.div`
+  max-width: 700px;
+`;
+
+const Section = styled.section.attrs({
+  className: 'mt-4 py-5 border-top',
+})`
+  outline: none;
+`;
+
+const PreserveLineBreaks = styled.div`
+  white-space: pre-line;
+`;
+
+// Preventing an image from being draggable or selectable without using JS
+// https://stackoverflow.com/a/12906840/232619
+const ImgUnselectable = styled.img`
+  pointer-events: none;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+`;
+
+const Shape = styled(ImgUnselectable).attrs({
+  alt: 'Decorative artwork of semi-circle',
+})`
+  opacity: 0.5;
+  ${// @ts-ignore
+  media.down.tablet`
+    width: 256px;
+    height: 256px;
+  `}
+`;
+
+const ShapeLeft = styled(Shape).attrs({
+  src: '/images/shape-left.svg',
+})`
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+`;
+
+const ShapeRight = styled(Shape).attrs({
+  src: '/images/shape-right.svg',
+})`
+  position: absolute;
+  right: 30px;
+  top: 20px;
+`;
+
+const ImgAffiliates = styled(ImgUnselectable).attrs({
+  className: 'mx-3',
+})`
+  height: 60px;
+`;

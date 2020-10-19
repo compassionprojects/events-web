@@ -18,46 +18,14 @@ const envs = {
 };
 
 export default {
-  add_on: {
-    price: envs[env][240],
-    amount: 240,
-    quantity: 1,
-    description: 'NVC Follow-up sessions with CNVC certified trainers',
-    details: `This optional follow-up programme from December 2020 to July 2021 allows you to join eight monthly telephone mentoring consultations with a CNVC certified trainer.
+  price: envs[env][240],
+  amount: 240,
+  quantity: 1,
+  description: 'NVC Follow-up sessions with CNVC certified trainers',
+  details: `This optional follow-up programme from December 2020 to July 2021 allows you to join eight monthly telephone mentoring consultations with a CNVC certified trainer.
 
 Each session lasts for two hours, and is designed to support and encourage management of learning, maximise your potential, develop skills and improve performance.
 
 In English with Irmtraud Kauschat, or in French with Magdalena Sendor.
       `,
-  },
-  all: [
-    {
-      price: envs[env][1500],
-      amount: 1500,
-      quantity: 1,
-      description: 'Standard contribution per person',
-      multiplier: 1,
-    },
-    {
-      price: envs[env][2800],
-      amount: 2800,
-      quantity: 1,
-      description: 'Two people sharing',
-      multiplier: 2,
-    },
-    {
-      price: envs[env][1125],
-      amount: 1125,
-      quantity: 1,
-      description: 'Registered certification candidate with CNVC',
-      multiplier: 1,
-    },
-    {
-      price: envs[env][500],
-      amount: 500,
-      quantity: 1,
-      description: 'Participating CNVC certified trainer',
-      multiplier: 1,
-    },
-  ],
 };
