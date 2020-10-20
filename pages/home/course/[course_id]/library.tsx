@@ -84,8 +84,10 @@ function Library() {
   const filter = (e, section) => {
     e.preventDefault();
     Router.push({
-      pathname: `/home/course/${query.course_id}/library`,
-      query: section ? { section } : {},
+      pathname: `/home/course/[course_id]/library`,
+      query: section
+        ? { section, course_id: query.course_id }
+        : { course_id: query.course_id },
     });
   };
 

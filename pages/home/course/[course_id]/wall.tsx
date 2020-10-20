@@ -182,8 +182,8 @@ function Wall() {
   const filter = (e, typeId) => {
     e.preventDefault();
     Router.push({
-      pathname: `/home/course/${query.course_id}/wall`,
-      query: { type: typeId },
+      pathname: `/home/course/[course_id]/wall`,
+      query: { type: typeId, course_id: query.course_id },
     });
   };
 
