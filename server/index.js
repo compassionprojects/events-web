@@ -28,10 +28,10 @@ app.prepare().then(() => {
     const session = await stripe.checkout.sessions.create({
       billing_address_collection: 'required',
       allow_promotion_codes: true,
-      payment_method_types: ['card', 'ideal' /* 'sepa_debit', */],
+      payment_method_types: ['card', 'ideal'],
       line_items: req.body,
       mode: 'payment',
-      success_url: `${HOST}/course/${course_id}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${HOST}/course/${course_id}/payment-success?session_id={CHECKOUT_SESSION_ID}&course_id=${course_id}`,
       cancel_url: `${HOST}/course/${course_id}/tickets`,
     });
 
