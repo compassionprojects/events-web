@@ -85,14 +85,17 @@ export default function Tickets() {
     }
 
     // Call your backend to create the Checkout Session
-    const response = await fetch('/create-checkout-session', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
+    const response = await fetch(
+      `/create-checkout-session?course_id=${course.id}`,
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }
+    );
 
     const session = await response.json();
 

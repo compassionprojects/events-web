@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ReactMarkdown from 'react-markdown/with-html';
 import { createGlobalStyle } from 'styled-components';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import striptags from 'striptags';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';

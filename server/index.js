@@ -24,14 +24,15 @@ app.prepare().then(() => {
   server.use(bodyParser.json());
 
   server.post('/create-checkout-session', async (req, res) => {
+    const { course_id } = req.query;
     const session = await stripe.checkout.sessions.create({
       billing_address_collection: 'required',
       allow_promotion_codes: true,
       payment_method_types: ['card', 'ideal' /* 'sepa_debit', */],
       line_items: req.body,
       mode: 'payment',
-      success_url: `${HOST}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${HOST}/tickets`,
+      success_url: `${HOST}/course/${course_id}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${HOST}/course/${course_id}/tickets`,
     });
 
     res.json({ id: session.id });
