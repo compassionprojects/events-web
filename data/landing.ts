@@ -350,10 +350,10 @@ Please fill out this [reduced resources form](https://peacefactory.typeform.com/
     },
     {
       question:
-        'Is attendance of an intensive training like this VIC still required for a CNVC Certified Trainer?',
-      answer: `Please note the changes regarding intensive training and certification. In an effort to support clarity and easy access to information, here is the [updated language from CNVC’s website](https://www.cnvc.org/certification/process#CPP).
+        'Is attendance at an intensive training like this VIC still required to become a CNVC Certified Trainer?',
+      answer: `In an effort to support clarity and easy access to information, here is the updated language from CNVC’s website:
 
-We strongly recommend candidates to attend an International Intensive Training before becoming certified, but we are no longer in integrity with having a "requirement" in the Certification Preparation Packet. So we have come up with the following requests if a candidate does not attend an IIT before becoming certified:
+For those who wish to become CNVC Certified Trainers, contact your assessor to see how a VIT may help you to fulfill the certification requirements for participating in an intensive training. A lot of them request that if a candidate does not attend an IIT before becoming certified, they have:
 
 - Multi-day, in-depth, residential training
 - International NVC experience
@@ -361,7 +361,7 @@ We strongly recommend candidates to attend an International Intensive Training b
 - Significant NVC experience with multiple CNVC certified trainers and mentors
 - Established a connection to CNVC, have a clear priority to support our mission, willing and able to renew annual certification.
 
-All VIC participants receive a certificate confirming their participation.
+All VIC participants receive a certificate confirming their participation in our intensive course.
       `,
     },
     {
