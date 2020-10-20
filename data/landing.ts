@@ -326,7 +326,7 @@ In the event that you cancel your VIC application, Peace Factory will ask how yo
       question: 'Does Peace Factory offer financial support?',
       answer: `Peace Factory has a limited reduced-resources fund for VICs. Below are the criteria which we take into consideration.
 
-Please remember: To be eligible for consideration, please submit your completed reduced-resources fund form. Request at least one month before the start of the VIC. The form is here. Late applications will not be considered.
+Please remember: To be eligible for consideration, please submit your completed [reduced-resources fund form](https://peacefactory.typeform.com/to/JDtABYdF). Request at least one month before the start of the VIC. The form is here. Late applications will not be considered.
 
 To minimise the chance of disappointing you, we would like you to know that Peace Factory’s reduced-resources funding is limited. We do not expect to give reductions to all, or even most, of those who apply. Please note also that Peace Factory rarely offers reductions to applicants other than those from developing countries. We use the following criteria in selecting recipients:
 
