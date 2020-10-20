@@ -50,14 +50,14 @@ export default function HeaderLanding() {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto py-md-3" navbar>
-            <NavItem className="pl-md-2 pl-lg-4">
+            {user && <NavItem className="pl-md-2 pl-lg-4">
               <NavLink
                 href="/#about"
                 onClick={() => scrollTo('#about', o)}
                 className="text-accent">
                 Course
               </NavLink>
-            </NavItem>
+            </NavItem>}
             {!user && (
               <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
                 <DropdownToggle nav caret className="text-accent">
