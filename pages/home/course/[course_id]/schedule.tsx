@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
-import { UserContext } from '../../../../lib/UserContext';
 import withAuth from '../../../auth';
 import Meta from '../../../../components/Meta';
 import Loading from '../../../../components/Loading';
@@ -23,7 +22,6 @@ const GET_SCHEDULE = gql`
 `;
 
 function Home() {
-  const { user } = useContext(UserContext);
   const { data, loading } = useQuery(GET_SCHEDULE);
 
   const [schedule = {}] = data?.allSchedules || [];
@@ -35,7 +33,6 @@ function Home() {
         <span className="pr-2">{meta.title}</span>
         {loading && <Loading color="primary" />}
       </h2>
-      <div>Welcome {user.name}!</div>
 
       <ReactMarkdown
         linkTarget="_blank"
