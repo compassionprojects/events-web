@@ -16,6 +16,8 @@ import ReactMarkdown from 'react-markdown/with-html';
 import { createGlobalStyle } from 'styled-components';
 import moment from 'moment';
 import striptags from 'striptags';
+import { gql } from 'apollo-boost';
+import { useQuery } from '@apollo/react-hooks';
 
 import { UserContext } from '../lib/UserContext';
 import GetTickets from '../components/GetTickets';
@@ -23,14 +25,15 @@ import Icon from '../components/Icon';
 import media, { sizes } from '../components/Media';
 import Link from '../components/Link';
 import Meta from '../components/Meta';
-import data from '../data/landing';
+import Loading from '../components/Loading';
+// import data from '../data/landing';
 
 const start = new Date(2020, 10, 10);
 const end = new Date(2020, 10, 22);
 
 interface Trainer {
   name: string;
-  image_url: string;
+  avatar_url: string;
   bio: string;
 }
 
@@ -41,6 +44,32 @@ const LandingStyles = createGlobalStyle`
   @media (max-width: ${sizes.mini / 16}rem) {
     body {
       padding-top: 50px;
+    }
+  }
+`;
+
+const GET_COURSE = gql`
+  query courseContent($id: ID!) {
+    Course(where: { id: $id }) {
+      id
+      title
+      description
+      about
+      details
+      facebookLink
+      dateStart
+      dateEnd
+      trainers {
+        id
+        name
+        bio
+        avatar_url
+      }
+    }
+    allFAQS(where: { courses_every: { id: $id } }) {
+      id
+      question
+      answer
     }
   }
 `;
@@ -89,8 +118,37 @@ function Landing() {
     </button>
   );
 
-  const t: Trainer = { name: '', image_url: '', bio: '' };
+  const t: Trainer = { name: '', avatar_url: '', bio: '' };
   const [trainer, setTrainer] = useState(t);
+
+  // course id
+  const variables = { id: 1 };
+  const { data, loading } = useQuery(GET_COURSE, {
+    variables,
+  });
+
+  if (loading) return <Loading />;
+
+  const course = data.Course;
+  const faqs = data.allFAQS;
+
+  if (!course) return null;
+
+  const timeZone = moment.tz.guess();
+  const timeZoneOffset = new Date().getTimezoneOffset();
+  const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
+  const startDate = moment(course.dateStart)
+    .tz(tzName)
+    .format('h:mm a z dddd, MMMM Do YYYY');
+  const endDate = moment(course.dateEnd)
+    .tz(tzName)
+    .format('h:mm a z dddd, MMMM Do YYYY');
+  const courseDates = `Starts at ${startDate}
+  until ${endDate}`;
+
+  const cta = (
+    <CTA start={course.dateStart} end={course.dateEnd} course_id={course.id} />
+  );
 
   return (
     <>
@@ -107,16 +165,15 @@ function Landing() {
       <Cover className="text-center">
         <Narrow className="px-2 py-sm-5 py-4 mx-auto">
           <h1 className="pt-4 pt-sm-5">
-            <ReactMarkdown source={data.mission_title} escapeHtml={false} />
+            <ReactMarkdown source={course.title} escapeHtml={false} />
           </h1>
           <div className="lead py-4">
-            <ReactMarkdown
-              source={data.mission_description}
-              escapeHtml={false}
-            />
+            <ReactMarkdown source={course.description} escapeHtml={false} />
           </div>
-          <PreserveLineBreaks className="my-4">{data.dates}</PreserveLineBreaks>
-          <CTA />
+          <PreserveLineBreaks className="my-4">
+            {courseDates}
+          </PreserveLineBreaks>
+          {cta}
           <div className="mb-2"></div>
         </Narrow>
         <ShapeLeft />
@@ -131,7 +188,7 @@ function Landing() {
         />
       </div>
 
-      {data.before_about && (
+      {/* {data.before_about && (
         <div className="container py-5 mt-4 border-bottom">
           <Narrow className="mx-auto">
             <ReactMarkdown
@@ -141,7 +198,7 @@ function Landing() {
             />
           </Narrow>
         </div>
-      )}
+      )} */}
 
       <div className="container">
         {/* About section */}
@@ -150,12 +207,10 @@ function Landing() {
             <h2 className="text-center py-3">About</h2>
             <ReactMarkdown
               linkTarget="_blank"
-              source={data.about}
+              source={course.about}
               escapeHtml={false}
             />
-            <div className="pt-3 text-center">
-              <CTA />
-            </div>
+            <div className="pt-3 text-center">{cta}</div>
           </Narrow>
         </Section>
 
@@ -165,12 +220,10 @@ function Landing() {
             <h2 className="text-center py-3">Course</h2>
             <ReactMarkdown
               linkTarget="_blank"
-              source={data.course}
+              source={course.details}
               escapeHtml={false}
             />
-            <div className="pt-3 text-center">
-              <CTA />
-            </div>
+            <div className="pt-3 text-center">{cta}</div>
           </Narrow>
         </Section>
 
@@ -180,7 +233,7 @@ function Landing() {
             <h2 className="text-center py-3">Trainers</h2>
             <div className="pb-4 text-center">{data.trainers_intro}</div>
             <Row className="justify-content-center">
-              {data.trainers.map((item, index) => (
+              {course.trainers.map((item, index) => (
                 <Col
                   key={index}
                   className="text-center"
@@ -210,14 +263,18 @@ function Landing() {
                 <img
                   style={{ height: 30, width: 30 }}
                   alt={trainer.name}
-                  src={trainer.image_url}
+                  src={trainer.avatar_url}
                   className="mr-2 img-fluid rounded-circle"
                 />
                 <span>{trainer.name}</span>
               </div>
             </ModalHeader>
             <ModalBody>
-              <ReactMarkdown linkTarget="_blank" source={trainer.bio} />
+              <ReactMarkdown
+                linkTarget="_blank"
+                source={trainer.bio}
+                escapeHtml={false}
+              />
             </ModalBody>
             <ModalFooter>
               <Button color="secondary" onClick={toggleModal}>
@@ -225,32 +282,30 @@ function Landing() {
               </Button>
             </ModalFooter>
           </Modal>
-          <div className="pt-3 text-center">
-            <CTA />
-          </div>
+          <div className="pt-3 text-center">{cta}</div>
         </Section>
 
         {/* FAQ section */}
         <Section id="faq" tabIndex={-1}>
           <h2 className="text-center py-3">Frequently Asked Questions</h2>
           <Narrow className="mx-auto pl-sm-5">
-            {data.faqs.map((item, index) => (
+            {faqs.map((item) => (
               <div
                 className={classnames('py-2 px-sm-2', {
-                  'bg-light rounded-lg': faq[index],
+                  'bg-light rounded-lg': faq[item.id],
                 })}
-                key={index}>
+                key={item.id}>
                 <span
                   className="d-flex align-items-top"
                   style={{ cursor: 'pointer' }}
-                  onClick={() => toggleFAQ(index)}>
+                  onClick={() => toggleFAQ(item.id)}>
                   <Icon
-                    shape={faq[index] ? 'chevron-up' : 'chevron-down'}
+                    shape={faq[item.id] ? 'chevron-up' : 'chevron-down'}
                     className="flex-shrink-0"
                   />
                   <span className="font-weight-bold">{item.question}</span>
                 </span>
-                <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
+                <Collapse style={{ marginLeft: 30 }} isOpen={faq[item.id]}>
                   <ReactMarkdown
                     linkTarget="_blank"
                     source={item.answer}
@@ -263,7 +318,7 @@ function Landing() {
         </Section>
 
         {/* Video presentation section */}
-        {data.video_embed_url && (
+        {/* {data.video_embed_url && (
           <div className="mt-4 py-5" id="video">
             <div className="embed-responsive embed-responsive-16by9">
               <iframe
@@ -275,20 +330,27 @@ function Landing() {
                 allowFullScreen></iframe>
             </div>
           </div>
-        )}
+        )} */}
 
         {!user && (
           <Section>
             <h2 className="text-center pt-3">Register</h2>
             <Narrow className="px-2 py-4 mx-auto text-center">
-              <ReactMarkdown
-                source={data.mission_description}
-                escapeHtml={false}
-              />
+              <ReactMarkdown source={course.description} escapeHtml={false} />
               <PreserveLineBreaks className="my-2 text-muted">
-                {data.dates}
+                {courseDates}
               </PreserveLineBreaks>
-              <GetTickets />
+              <div className="d-flex align-items-center justify-content-center">
+                <GetTickets course_id={course.id} />
+                <a
+                  className="nav-link text-accent"
+                  href={course.facebookLink}
+                  target="_blank"
+                  rel="noreferrer">
+                  <Icon shape="facebook" height={18} width={18} />
+                  Facebook
+                </a>
+              </div>
             </Narrow>
           </Section>
         )}
@@ -299,17 +361,17 @@ function Landing() {
 
 export default Landing;
 
-function Trainer({ name, image_url, bio, setTrainer }) {
+function Trainer({ name, avatar_url, bio, setTrainer }) {
   const openModal = (e) => {
     e.preventDefault();
-    setTrainer({ name, image_url, bio });
+    setTrainer({ name, avatar_url, bio });
   };
   return (
     <>
       <div className="my-3">
         <img
           alt={name}
-          src={image_url}
+          src={avatar_url}
           className="img-fluid rounded-circle"
           style={{ height: 120, margin: '0 auto', cursor: 'pointer' }}
           onClick={openModal}
@@ -325,7 +387,7 @@ function Trainer({ name, image_url, bio, setTrainer }) {
 Trainer.propTypes = {
   name: PropTypes.string,
   bio: PropTypes.string,
-  image_url: PropTypes.string,
+  avatar_url: PropTypes.string,
   setTrainer: PropTypes.func,
 };
 

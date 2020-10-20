@@ -66,16 +66,6 @@ export default function FooterLanding() {
               Terms
             </Link>
           </li>
-          <li className="nav-item">
-            <a
-              className="nav-link text-accent"
-              href={data.facebook_event_url}
-              target="_blank"
-              rel="noreferrer">
-              <Icon shape="facebook" height={18} width={18} />
-              Facebook
-            </a>
-          </li>
         </ul>
       </div>
       <div className="py-4 mt-3 small text-muted text-center">

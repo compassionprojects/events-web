@@ -110,9 +110,9 @@ export default function HeaderLanding() {
                     Sign in
                   </Link>
                 </NavItem>
-                <NavItem className="pl-md-2 pl-lg-4 mt-1">
+                {/* <NavItem className="pl-md-2 pl-lg-4 mt-1">
                   <GetTickets size="sm" nav title="Get" />
-                </NavItem>
+                </NavItem> */}
               </>
             )}
             {user && (

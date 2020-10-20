@@ -60,13 +60,20 @@ const GET_COURSE = gql`
   }
 `;
 
-function CTA() {
+function CTA({ course_id }) {
   return (
-    <Link href="/" as="/" className="btn btn-lg rounded-pill my-4 btn-primary">
-      Register
+    <Link
+      href="/course/[course_id]/tickets"
+      as={`/course/${course_id}/tickets`}
+      className="btn btn-lg rounded-pill my-4 btn-primary">
+      Get tickets
     </Link>
   );
 }
+
+CTA.propTypes = {
+  course_id: PropTypes.string,
+};
 
 function Landing() {
   const { user } = useContext(UserContext);
@@ -110,6 +117,8 @@ function Landing() {
   const courseDates = `Starts at ${startDate}
   until ${endDate}`;
 
+  const cta = <CTA course_id={course.id} />;
+
   return (
     <>
       {/* title and description for SEO */}
@@ -131,7 +140,7 @@ function Landing() {
           <PreserveLineBreaks className="my-4">
             {courseDates}
           </PreserveLineBreaks>
-          <CTA />
+          {cta}
           <div className="mb-2"></div>
         </Narrow>
         <ShapeLeft />
@@ -168,9 +177,7 @@ function Landing() {
               source={course.about}
               escapeHtml={false}
             />
-            <div className="pt-3 text-center">
-              <CTA />
-            </div>
+            <div className="pt-3 text-center">{cta}</div>
           </Narrow>
         </Section>
 
@@ -183,9 +190,7 @@ function Landing() {
               source={course.details}
               escapeHtml={false}
             />
-            <div className="pt-3 text-center">
-              <CTA />
-            </div>
+            <div className="pt-3 text-center">{cta}</div>
           </Narrow>
         </Section>
 
@@ -244,9 +249,7 @@ function Landing() {
               </Button>
             </ModalFooter>
           </Modal>
-          <div className="pt-3 text-center">
-            <CTA />
-          </div>
+          <div className="pt-3 text-center">{cta}</div>
         </Section>
 
         {/* FAQ section */}
@@ -304,7 +307,17 @@ function Landing() {
               <PreserveLineBreaks className="my-2 text-muted">
                 {courseDates}
               </PreserveLineBreaks>
-              <GetTickets />
+              <div className="d-flex align-items-center justify-content-center">
+                <GetTickets course_id={course.id} />
+                <a
+                  className="nav-link text-accent"
+                  href={course.facebookLink}
+                  target="_blank"
+                  rel="noreferrer">
+                  <Icon shape="facebook" height={18} width={18} />
+                  Facebook
+                </a>
+              </div>
             </Narrow>
           </Section>
         )}

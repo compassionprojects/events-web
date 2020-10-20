@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { UserContext } from '../lib/UserContext';
 import Loading from '../components/Loading';
 
-export default (Component) => {
+const AuthWrap = (Component) => {
   const Auth = (props) => {
     const router = useRouter();
     const { user, authenticating, error } = useContext(UserContext);
@@ -29,3 +29,5 @@ export default (Component) => {
 
   return Auth;
 };
+
+export default AuthWrap;

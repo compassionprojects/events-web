@@ -64,7 +64,11 @@ export default function Tickets() {
   if (!course) return null;
 
   const meta = {
-    title: `Peace Factory presents ${course.title} - Friday, 13 November 2020 | Sunday, 22 November 2020 - Get your ticket`,
+    title: `Peace Factory presents ${course.title} - ${moment(
+      course.dateStart
+    ).format('Do MMM')} - ${moment(course.dateEnd).format(
+      'Do MMM YYYY'
+    )} - Get your ticket`,
     description: striptags(course.description),
     image_url: '/images/social-media-banner.png',
   };
@@ -115,7 +119,7 @@ export default function Tickets() {
           <ReactMarkdown
             source={course.description}
             escapeHtml={false}
-          /> From {moment(course.dateStart).format('dddd D MMM YYYY')} until{' '}
+          /> From {moment(course.dateStart).format('dddd D MMM')} until{' '}
           {moment(course.dateEnd).format('dddd D MMM YYYY')}
         </Intro>
         <TicketContainer>
