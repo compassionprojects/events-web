@@ -154,8 +154,8 @@ function Landing() {
     <>
       {/* title and description for SEO */}
       <Meta
-        title={striptags(data.mission_title)}
-        description={striptags(data.mission_description)}
+        title={striptags(course.title)}
+        description={striptags(course.description)}
         image_url="/images/social-media-banner.png"
       />
 

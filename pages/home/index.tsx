@@ -32,7 +32,7 @@ function Home() {
       <Meta {...meta} />
       <Container className="py-5">
         <h2>Your courses</h2>
-        Hi {user.name}! Welcome!
+        Hello {user.name}! Welcome!
         <h3 className="pb-2 pt-3 mt-5">Ongoing</h3>
         <Row>
           {ongoing.map((c) => (
