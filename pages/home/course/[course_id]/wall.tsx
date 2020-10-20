@@ -33,9 +33,14 @@ const GET_MESSAGE_TYPES = gql`
 `;
 
 const GET_MESSAGES = gql`
-  query getMessages($typeId: ID!, $skip: Int, $first: Int) {
+  query getMessages($typeId: ID!, $skip: Int, $first: Int, $courseId: ID!) {
     allMessages(
-      where: { type: { id: $typeId }, parent_is_null: true, orphaned_not: true }
+      where: {
+        type: { id: $typeId }
+        parent_is_null: true
+        orphaned_not: true
+        course: { id: $courseId }
+      }
       sortBy: createdAt_DESC
       first: $first
       skip: $skip
@@ -67,7 +72,12 @@ const GET_MESSAGES = gql`
       }
     }
     _allMessagesMeta(
-      where: { type: { id: $typeId }, parent_is_null: true, orphaned_not: true }
+      where: {
+        type: { id: $typeId }
+        parent_is_null: true
+        orphaned_not: true
+        course: { id: $courseId }
+      }
     ) {
       count
     }
@@ -75,8 +85,14 @@ const GET_MESSAGES = gql`
 `;
 
 const CREATE_MESSAGE = gql`
-  mutation createMessage($body: String!, $typeId: ID!) {
-    createMessage(data: { body: $body, type: { connect: { id: $typeId } } }) {
+  mutation createMessage($body: String!, $typeId: ID!, $courseId: ID!) {
+    createMessage(
+      data: {
+        body: $body
+        type: { connect: { id: $typeId } }
+        course: { connect: { id: $courseId } }
+      }
+    ) {
       id
       body
       type {
@@ -159,7 +175,12 @@ const UPDATE_MESSAGE = gql`
 
 function Wall() {
   const { query } = useRouter();
-  const variables = { typeId: query.type, first: limit, skip: 0 };
+  const variables = {
+    typeId: query.type,
+    first: limit,
+    skip: 0,
+    courseId: query.course_id,
+  };
   const [visibleReplies, showAllReplies] = useState([]);
   const [deletingId, setDeleting] = useState(null);
   const [openReplies, setOpenReplies] = useState({});
@@ -190,7 +211,11 @@ function Wall() {
   const post = (e, inputRef) => {
     e.preventDefault();
     create({
-      variables: { body: inputRef.current.value, typeId: query.type },
+      variables: {
+        body: inputRef.current.value,
+        typeId: query.type,
+        courseId: query.course_id,
+      },
       update: (store, { data: { createMessage } }) => {
         // Read the data from our cache for this query.
         const data = store.readQuery({ query: GET_MESSAGES, variables });
