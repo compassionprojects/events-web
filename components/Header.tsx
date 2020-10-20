@@ -181,11 +181,6 @@ export function Header() {
             {user && (
               <>
                 <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink href="/home" className="text-accent">
-                    Schedule
-                  </NavLink>
-                </NavItem>
-                <NavItem className="pl-md-2 pl-lg-4">
                   <_NavLink
                     href={`mailto:${data.contact_email}`}
                     className="text-accent">
