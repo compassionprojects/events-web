@@ -132,7 +132,7 @@ Through a set of tools for listening to our needs, NVC gives us an opportunity t
     },
     {
       question: 'I know nothing about Nonviolent Communication. Can I come?',
-      answer: `You’re so welcome! No experience is required to join and we have a special beginners track for 2 days designed just for you!`,
+      answer: `You’re so welcome because one of our goals is to introduce NVC to new people! No experience is required to join and we have a special beginners track for 2 days designed just for you!`,
     },
     /* {
       question: 'Why limit the number of people for the course?',
@@ -347,6 +347,14 @@ Please fill out this [reduced resources form](https://peacefactory.typeform.com/
     {
       question: 'Why do some people attend the course each year?',
       answer: `Even the more experienced participants don’t find an intensive course repetitive. Course materials are continually evolving, so it’s somewhat different from year to year. Additionally people report that the material is so rich that they hear something different even if a topic is the same! Most important, peer learning is an integral part of our course. Having applied the material in their lives for a year, they enrich and broaden the programme for everybody. They may coach during mediation role-plays, offer empathy and support between training sessions so first-time participants get all the support they could want throughout the course.`,
+    },
+    {
+      question: 'My employer might pay for my course – can you provide them with an invoice?',
+      answer: `Sure thing! As long as we have your permission and details, we can provide an invoice for your course.`
+    },
+    {
+      question: 'What happens if I get sick or can’t attend?',
+      answer: 'Most sessions are recorded, and we’ll work with you to catch up. If you fall too far behind please contact one of our Care Team members and we’ll see what we can do.'
     },
     {
       question:
