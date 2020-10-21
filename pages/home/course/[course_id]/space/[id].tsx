@@ -18,7 +18,7 @@ const GET_CONTENT = gql`
       title
     }
     allContents(
-      where: { space: { id: $id }, course: { id: $courseId } }
+      where: { space: { id: $id }, courses_some: { id: $courseId } }
       sortBy: createdAt_DESC
       first: $first
       skip: $skip
@@ -35,7 +35,9 @@ const GET_CONTENT = gql`
         name
       }
     }
-    _allContentsMeta(where: { space: { id: $id }, course: { id: $courseId } }) {
+    _allContentsMeta(
+      where: { space: { id: $id }, courses_some: { id: $courseId } }
+    ) {
       count
     }
   }

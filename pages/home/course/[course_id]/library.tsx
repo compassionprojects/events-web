@@ -30,7 +30,7 @@ const GET_LIBRARY_CONTENTS = gql`
       where: {
         librarySection: { id: $librarySection }
         librarySection_is_null: false
-        course: { id: $courseId }
+        courses_some: { id: $courseId }
       }
       sortBy: createdAt_DESC
       first: $first
@@ -56,7 +56,7 @@ const GET_LIBRARY_CONTENTS = gql`
       where: {
         librarySection: { id: $librarySection }
         librarySection_is_null: false
-        course: { id: $courseId }
+        courses_some: { id: $courseId }
       }
     ) {
       count
