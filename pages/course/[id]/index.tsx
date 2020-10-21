@@ -13,40 +13,26 @@ import {
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ReactMarkdown from 'react-markdown/with-html';
-import { createGlobalStyle } from 'styled-components';
 import moment from 'moment-timezone';
-import striptags from 'striptags';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
+import { useRouter } from 'next/router';
+import striptags from 'striptags';
 
-import { UserContext } from '../lib/UserContext';
-import GetTickets from '../components/GetTickets';
-import Icon from '../components/Icon';
-import media, { sizes } from '../components/Media';
-import Link from '../components/Link';
-import Meta from '../components/Meta';
-import Loading from '../components/Loading';
-// import data from '../data/landing';
+import { UserContext } from '../../../lib/UserContext';
 
-const start = new Date(2020, 10, 10);
-const end = new Date(2020, 10, 22);
+import media from '../../../components/Media';
+import GetTickets from '../../../components/GetTickets';
+import Icon from '../../../components/Icon';
+import Link from '../../../components/Link';
+import Meta from '../../../components/Meta';
+import Loading from '../../../components/Loading';
 
 interface Trainer {
   name: string;
   avatar_url: string;
   bio: string;
 }
-
-const LandingStyles = createGlobalStyle`
-  body {
-    padding-top: 75px;
-  }
-  @media (max-width: ${sizes.mini / 16}rem) {
-    body {
-      padding-top: 50px;
-    }
-  }
-`;
 
 const GET_COURSE = gql`
   query courseContent($id: ID!) {
@@ -74,41 +60,29 @@ const GET_COURSE = gql`
   }
 `;
 
-function LinkInternal({ path, title }) {
+function CTA({ course_id }) {
   return (
     <Link
-      href={path}
-      as={path}
+      href="/course/[course_id]/tickets"
+      as={`/course/${course_id}/tickets`}
       className="btn btn-lg rounded-pill my-4 btn-primary">
-      {title}
+      Get tickets
     </Link>
   );
 }
 
-LinkInternal.propTypes = {
-  path: PropTypes.string,
-  title: PropTypes.string,
+CTA.propTypes = {
+  course_id: PropTypes.string,
 };
-
-function CTA({ ...props }) {
-  const beforeTheEvent = moment(new Date()).isBefore(start);
-  const duringTheEvent = moment(new Date()).isBetween(start, end);
-  const afterTheEvent = moment(new Date()).isAfter(end);
-
-  const { user } = useContext(UserContext);
-  if (!user && beforeTheEvent) {
-    return <GetTickets {...props} />;
-  } else if ((!user && duringTheEvent) || (!user && afterTheEvent)) {
-    return <LinkInternal path="/signin" title="Sign In" />;
-  }
-  return <LinkInternal path="/home" title="Home" />;
-}
 
 function Landing() {
   const { user } = useContext(UserContext);
   const [faq, setFAQIsOpen] = useState({});
   const toggleFAQ = (index) =>
     setFAQIsOpen((prev) => ({ ...prev, [index]: !prev[index] }));
+
+  const t: Trainer = { name: '', avatar_url: '', bio: '' };
+  const [trainer, setTrainer] = useState(t);
 
   const [modal, setModal] = useState(false);
   const toggleModal = () => setModal(!modal);
@@ -118,11 +92,8 @@ function Landing() {
     </button>
   );
 
-  const t: Trainer = { name: '', avatar_url: '', bio: '' };
-  const [trainer, setTrainer] = useState(t);
-
-  // course id
-  const variables = { id: 1 };
+  const { query } = useRouter();
+  const variables = { id: query.id };
   const { data, loading } = useQuery(GET_COURSE, {
     variables,
   });
@@ -146,9 +117,7 @@ function Landing() {
   const courseDates = `Starts at ${startDate}
   until ${endDate}`;
 
-  const cta = (
-    <CTA start={course.dateStart} end={course.dateEnd} course_id={course.id} />
-  );
+  const cta = <CTA course_id={course.id} />;
 
   return (
     <>
@@ -158,8 +127,6 @@ function Landing() {
         description={striptags(course.description)}
         image_url="/images/social-media-banner.png"
       />
-
-      <LandingStyles />
 
       {/* Cover section for the fold */}
       <Cover className="text-center">
@@ -231,7 +198,7 @@ function Landing() {
         <Section id="trainers" tabIndex={-1}>
           <Narrow className="mx-auto">
             <h2 className="text-center py-3">Trainers</h2>
-            <div className="pb-4 text-center">{data.trainers_intro}</div>
+            {/* <div className="pb-4 text-center">{data.trainers_intro}</div> */}
             <Row className="justify-content-center">
               {course.trainers.map((item, index) => (
                 <Col
@@ -289,23 +256,23 @@ function Landing() {
         <Section id="faq" tabIndex={-1}>
           <h2 className="text-center py-3">Frequently Asked Questions</h2>
           <Narrow className="mx-auto pl-sm-5">
-            {faqs.map((item) => (
+            {faqs.map((item, index) => (
               <div
                 className={classnames('py-2 px-sm-2', {
-                  'bg-light rounded-lg': faq[item.id],
+                  'bg-light rounded-lg': faq[index],
                 })}
                 key={item.id}>
                 <span
                   className="d-flex align-items-top"
                   style={{ cursor: 'pointer' }}
-                  onClick={() => toggleFAQ(item.id)}>
+                  onClick={() => toggleFAQ(index)}>
                   <Icon
-                    shape={faq[item.id] ? 'chevron-up' : 'chevron-down'}
+                    shape={faq[index] ? 'chevron-up' : 'chevron-down'}
                     className="flex-shrink-0"
                   />
                   <span className="font-weight-bold">{item.question}</span>
                 </span>
-                <Collapse style={{ marginLeft: 30 }} isOpen={faq[item.id]}>
+                <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
                   <ReactMarkdown
                     linkTarget="_blank"
                     source={item.answer}

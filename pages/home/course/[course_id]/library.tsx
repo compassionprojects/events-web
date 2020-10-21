@@ -6,17 +6,22 @@ import { Nav, NavItem, NavLink, Button } from 'reactstrap';
 import { useQuery } from '@apollo/react-hooks';
 import moment from 'moment';
 
-import withAuth from '../auth';
-import Meta from '../../components/Meta';
-import Loading from '../../components/Loading';
-import Icon from '../../components/Icon';
+import withAuth from '../../../auth';
+import Meta from '../../../../components/Meta';
+import Loading from '../../../../components/Loading';
+import Icon from '../../../../components/Icon';
 
 const meta = {
   title: 'Library',
 };
 
 const GET_LIBRARY_CONTENTS = gql`
-  query getLibraryContents($librarySection: ID, $skip: Int, $first: Int) {
+  query getLibraryContents(
+    $librarySection: ID
+    $skip: Int
+    $first: Int
+    $courseId: ID
+  ) {
     allLibrarySections {
       id
       title
@@ -25,6 +30,7 @@ const GET_LIBRARY_CONTENTS = gql`
       where: {
         librarySection: { id: $librarySection }
         librarySection_is_null: false
+        courses_some: { id: $courseId }
       }
       sortBy: createdAt_DESC
       first: $first
@@ -50,6 +56,7 @@ const GET_LIBRARY_CONTENTS = gql`
       where: {
         librarySection: { id: $librarySection }
         librarySection_is_null: false
+        courses_some: { id: $courseId }
       }
     ) {
       count
@@ -58,9 +65,14 @@ const GET_LIBRARY_CONTENTS = gql`
 `;
 
 function Library() {
-  const { query, pathname } = useRouter();
+  const { query } = useRouter();
   const limit = 15;
-  const variables = { librarySection: query.section, first: limit, skip: 0 };
+  const variables = {
+    librarySection: query.section,
+    courseId: query.course_id,
+    first: limit,
+    skip: 0,
+  };
   const { data, loading, fetchMore } = useQuery(GET_LIBRARY_CONTENTS, {
     variables,
   });
@@ -72,8 +84,10 @@ function Library() {
   const filter = (e, section) => {
     e.preventDefault();
     Router.push({
-      pathname: pathname,
-      query: section ? { section } : {},
+      pathname: `/home/course/[course_id]/library`,
+      query: section
+        ? { section, course_id: query.course_id }
+        : { course_id: query.course_id },
     });
   };
 
@@ -110,7 +124,7 @@ function Library() {
       <Nav pills className="my-4">
         <NavItem>
           <NavLink
-            href="/home/library"
+            href={`/home/course/${query.course_id}/library`}
             active={!query.section}
             onClick={(e) => filter(e, '')}>
             All
@@ -119,7 +133,7 @@ function Library() {
         {allLibrarySections.map((item) => (
           <NavItem key={item.id}>
             <NavLink
-              href={`/home/library/?section=${item.id}`}
+              href={`/home/course/${query.course_id}/library/?section=${item.id}`}
               active={item.id === query.section}
               onClick={(e) => filter(e, item.id)}>
               {item.title}

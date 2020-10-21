@@ -41,7 +41,7 @@
     "lint-staged": "~10.2.11",
     "moment": "~2.27.0",
     "moment-timezone": "~0.5.31",
-    "next": "~9.4.4",
+    "next": "~9.5.5",
     "next-cookies": "~2.0.3",
     "node-fetch": "~2.6.0",
     "prop-types": "~15.7.2",

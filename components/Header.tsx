@@ -20,7 +20,6 @@ import Link from './Link';
 import media from './Media';
 import { APP_NAME } from '../constants';
 import data from '../data/landing';
-import GetTickets from './GetTickets';
 import { UserContext } from '../lib/UserContext';
 // import { useRouter } from 'next/router';
 
@@ -50,20 +49,25 @@ export default function HeaderLanding() {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto py-md-3" navbar>
-            {user && <NavItem className="pl-md-2 pl-lg-4">
-              <NavLink
-                href="/#about"
-                onClick={() => scrollTo('#about', o)}
-                className="text-accent">
-                Course
-              </NavLink>
-            </NavItem>}
+            {user && (
+              <NavItem className="pl-md-2 pl-lg-4">
+                <NavLink
+                  href="/#about"
+                  onClick={() => scrollTo('#about', o)}
+                  className="text-accent">
+                  Course
+                </NavLink>
+              </NavItem>
+            )}
             {!user && (
               <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
                 <DropdownToggle nav caret className="text-accent">
                   Course
                 </DropdownToggle>
                 <DropdownMenu>
+                  <DropdownItem onClick={() => scrollTo('#about', o)}>
+                    About
+                  </DropdownItem>
                   <DropdownItem onClick={() => scrollTo('#course', o)}>
                     Course
                   </DropdownItem>
@@ -110,9 +114,9 @@ export default function HeaderLanding() {
                     Sign in
                   </Link>
                 </NavItem>
-                <NavItem className="pl-md-2 pl-lg-4 mt-1">
+                {/* <NavItem className="pl-md-2 pl-lg-4 mt-1">
                   <GetTickets size="sm" nav title="Get" />
-                </NavItem>
+                </NavItem> */}
               </>
             )}
             {user && (
@@ -181,11 +185,6 @@ export function Header() {
             )}
             {user && (
               <>
-                <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink href="/home" className="text-accent">
-                    Schedule
-                  </NavLink>
-                </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
                   <_NavLink
                     href={`mailto:${data.contact_email}`}
