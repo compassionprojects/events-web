@@ -20,6 +20,7 @@ import Loading from '../../../components/Loading';
 import Icon from '../../../components/Icon';
 import Meta from '../../../components/Meta';
 import add_on from '../../../data/pricing';
+import d from '../../../data/landing';
 
 const PUBLISHABLE_KEY =
   process.env.STRIPE_PUBLISHABLE_KEY ||
@@ -111,6 +112,24 @@ export default function Tickets() {
       alert(result.error.message);
     }
   };
+
+  const tooLate = moment().isSameOrAfter(course.dateStart);
+
+  if (tooLate) {
+    return (
+      <>
+        <Meta {...meta} />
+        <Container className="py-5">
+          <h1 className="my-3 text-center">Tickets</h1>
+          <Intro className="py-3 text-center">
+            The course <strong>{course.title}</strong> has already started or
+            has happened in the past. If you want to buy this ticket, please
+            contact <a href={`mailto:${d.contact_email}`}>{d.contact_name}</a>.
+          </Intro>
+        </Container>
+      </>
+    );
+  }
 
   return (
     <>
