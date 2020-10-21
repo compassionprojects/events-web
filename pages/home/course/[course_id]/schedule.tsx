@@ -10,7 +10,7 @@ import { useRouter } from 'next/router';
 import withAuth from '../../../auth';
 import Meta from '../../../../components/Meta';
 import Loading from '../../../../components/Loading';
-import scheduleData from '../../../../data/schedule';
+import scheduleData from '../../../../data/schedule/index';
 
 const meta = {
   title: 'Schedule',
