@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Button } from 'reactstrap';
 import ReactMarkdown from 'react-markdown';
+import moment from 'moment';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
+import { useRouter } from 'next/router';
 import withAuth from '../../../auth';
 import Meta from '../../../../components/Meta';
 import Loading from '../../../../components/Loading';
@@ -14,17 +17,36 @@ const meta = {
 };
 
 const GET_SCHEDULE = gql`
-  query getSchedule {
-    allSchedules {
+  query getSchedule($courseId: ID!) {
+    allSchedules(where: { course: { id: $courseId } }) {
       description
     }
   }
 `;
 
 function Home() {
-  const { data, loading } = useQuery(GET_SCHEDULE);
+  const { query } = useRouter();
+  const variables = { courseId: query.course_id };
+  const { data, loading } = useQuery(GET_SCHEDULE, {
+    variables,
+  });
 
   const [schedule = {}] = data?.allSchedules || [];
+
+  const course = scheduleData[query.course_id.toString()]; // array (days)
+
+  let index = 0;
+  if (course) {
+    for (let i = 0; i < course.length; i++) {
+      if (moment().isSame(course[i].startDate, 'day')) {
+        index = i;
+        break;
+      }
+    }
+  }
+
+  const [current, setCurrent] = useState(index);
+  const day = course && course[current]; // object (day)
 
   return (
     <>
@@ -40,14 +62,30 @@ function Home() {
         escapeHtml={false}
       />
 
-      {Object.keys(scheduleData).map((key, idx) => (
-        <div className="py-4" key={idx}>
-          <strong>
-            Day {idx + 1} {scheduleData[key].startDate}
-          </strong>
+      {course && (
+        <div className="py-4">
+          <div className="d-flex justify-content-between">
+            <strong>
+              Day {current + 1} {day.startDateFormatted}
+            </strong>
+            <div>
+              <Button
+                color="warning"
+                onClick={() => setCurrent(current - 1)}
+                disabled={current === 0}>
+                Previous day
+              </Button>{' '}
+              <Button
+                color="warning"
+                onClick={() => setCurrent(current + 1)}
+                disabled={current === course.length - 1}>
+                Next day
+              </Button>
+            </div>
+          </div>
           <Table className="table">
             <tbody>
-              {scheduleData[key].schedule.map((row, idx) => (
+              {day.schedule.map((row, idx) => (
                 <tr key={idx}>
                   <td width="20%">
                     {row.start} - {row.end}
@@ -60,7 +98,7 @@ function Home() {
             </tbody>
           </Table>
         </div>
-      ))}
+      )}
     </>
   );
 }

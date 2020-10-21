@@ -12,8 +12,9 @@ function t(time_in_cest) {
 // Make sure the dates below are in CEST, the code will do its job in
 // displaying it in local timezone of the user
 
-const day1 = {
-  startDate: moment(`2020-08-08T09:30:00+02:00`)
+const course1day1 = {
+  startDate: moment(`2020-08-08T09:30:00+02:00`),
+  startDateFormatted: moment(`2020-08-08T09:30:00+02:00`)
     .tz(tzName)
     .format('dddd, MMMM Do YYYY z'),
   schedule: [
@@ -43,7 +44,6 @@ const day1 = {
 </div>
   `,
     },
-
     {
       start: t('12:35'),
       end: t('14:05'),
@@ -79,8 +79,9 @@ const day1 = {
   ],
 };
 
-const day2 = {
-  startDate: moment(`2020-08-09T07:30:00+02:00`)
+const course1day2 = {
+  startDate: moment(`2020-08-09T07:30:00+02:00`),
+  startDateFormatted: moment(`2020-08-09T07:30:00+02:00`)
     .tz(tzName)
     .format('dddd, MMMM Do YYYY z'),
   schedule: [
@@ -111,11 +112,10 @@ const day2 = {
       body: `<div class="d-flex justify-content-between">
         <div>NVC in schools<br><i>Magda,  <br>4 days +</i></div>
         <div>I am the change <br>I want to see in the world<br><i>Irmtraud,  <br>All levels</i></div>
-        <div>Mr. Rosenberg <br>and the coffee cup<br><i>Frank,  <br>All levels</i></div>
+        <div>Mr. Rosenberg <br>and the coffee cup<br><i>Frank,<br>All levels</i></div>
   </div>
     `,
     },
-
     {
       start: t('12:35'),
       end: t('14:05'),
@@ -151,7 +151,4 @@ const day2 = {
   ],
 };
 
-export default {
-  day1,
-  day2,
-};
+export default { 1: [course1day1, course1day2] };
