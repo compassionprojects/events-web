@@ -14,7 +14,7 @@ export default function Layout({ router, ...props }) {
   const isLanding = activePath === '/';
   const isAbout = activePath === '/about';
   const isHome = activePath === '/home';
-  const isCourse = activePath.startsWith('/courses/');
+  const isCourse = activePath.startsWith('/course/');
   const isOneCol = isLanding || isAbout || isCourse || isHome;
   const { user } = useContext(UserContext);
   const onecol =
