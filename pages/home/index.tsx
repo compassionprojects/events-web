@@ -75,7 +75,7 @@ Home.propTypes = {
 
 function CourseCard({ id, title, description, dateStart, dateEnd }) {
   return (
-    <Card body>
+    <Card body className="my-2">
       <CardTitle>{title}</CardTitle>
       <CardText>
         <ReactMarkdown source={description} escapeHtml={false} />
