@@ -68,7 +68,7 @@ const GET_COURSE = gql`
         avatar_url
       }
     }
-    allFAQS(where: { courses_every: { id: $id } }) {
+    allFAQS(where: { courses_some: { id: $id } }, sortBy: [id_ASC]) {
       id
       question
       answer
