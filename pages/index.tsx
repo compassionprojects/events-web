@@ -31,6 +31,8 @@ import Loading from '../components/Loading';
 const start = new Date(2020, 10, 10);
 const end = new Date(2020, 10, 22);
 
+const COURSE_ID = 2;
+
 interface Trainer {
   name: string;
   avatar_url: string;
@@ -122,7 +124,7 @@ function Landing() {
   const [trainer, setTrainer] = useState(t);
 
   // course id
-  const variables = { id: 1 };
+  const variables = { id: COURSE_ID };
   const { data, loading } = useQuery(GET_COURSE, {
     variables,
   });
