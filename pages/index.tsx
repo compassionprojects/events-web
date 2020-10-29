@@ -190,18 +190,6 @@ function Landing() {
         />
       </div>
 
-      {/* {data.before_about && (
-        <div className="container py-5 mt-4 border-bottom">
-          <Narrow className="mx-auto">
-            <ReactMarkdown
-              linkTarget="_blank"
-              source={data.before_about}
-              escapeHtml={false}
-            />
-          </Narrow>
-        </div>
-      )} */}
-
       <div className="container">
         {/* About section */}
         <Section className="mt-4 py-5 border-top-0" id="about" tabIndex={-1}>
@@ -320,19 +308,17 @@ function Landing() {
         </Section>
 
         {/* Video presentation section */}
-        {/* {data.video_embed_url && (
-          <div className="mt-4 py-5" id="video">
-            <div className="embed-responsive embed-responsive-16by9">
-              <iframe
-                title="a video presentation on vic"
-                frameBorder="1"
-                className="embed-responsive-item"
-                sandbox="allow-same-origin allow-scripts"
-                src={data.video_embed_url}
-                allowFullScreen></iframe>
-            </div>
+        <div className="mt-4 py-5" id="video">
+          <div className="embed-responsive embed-responsive-16by9">
+            <iframe
+              title="a video presentation on vic"
+              frameBorder="1"
+              className="embed-responsive-item"
+              sandbox="allow-same-origin allow-scripts"
+              src="https://www.youtube.com/embed/OrjgFZUWce0"
+              allowFullScreen></iframe>
           </div>
-        )} */}
+        </div>
 
         {!user && (
           <Section>
