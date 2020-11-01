@@ -4,8 +4,8 @@ const timeZone = moment.tz.guess();
 const timeZoneOffset = new Date().getTimezoneOffset();
 const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
 
-function t(time_in_cest) {
-  const startDate = moment(`2020-08-08T${time_in_cest}+02:00`);
+function t(time_in_cet) {
+  const startDate = moment(`2020-08-08T${time_in_cet}+01:00`);
   return startDate.tz(tzName).format('HH:mm');
 }
 
