@@ -40,9 +40,9 @@ export default [
         start: t('10:35'),
         end: t('12:35'),
         body: `<div class="d-flex justify-content-between">
-  <div>Parenting<br><i>Magda, <br>All levels</i></div>
-  <div>Managing conflict<br><i>Irmtraud, <br> Self-empathy, all levels</i></div>
-  <div>Labels<br><i>Frank, <br>5 days +</i></div>
+  <div>Session option 1 1<br><i>Magda, <br>Beginners Track</i></div>
+  <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
+  <div>Session option 3 <br><i> TBA, <br> +</i></div>
 </div>
   `,
       },
@@ -55,9 +55,9 @@ export default [
         start: t('14:05'),
         end: t('16:05'),
         body: `<div class="d-flex justify-content-between">
-        <div>I hate me<br><i>Godfrey, <br>All levels</i></div>
-        <div>Managing conflict<br><i>Irmtraud, <br>Empathy for other, <br>2 days +</i></div>
-        <div>Dealing with monsters<br><i>Frank, <br>5 days +</i></div>
+          <div>Session option 1 1<br><i>Louise, <br>Beginners Track</i></div>
+          <div>Session option 2 <br><i>Godfrey, <br> </i></div>
+          <div>Session option 3 <br><i> TBA, <br> +</i></div>
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
@@ -75,8 +75,13 @@ export default [
       },
       {
         start: t('17:40'),
-        end: t('22:00'),
-        body: `For all other offerings (meditation, yoga, dance, movement, ...)`,
+        end: t('18:00'),
+        body: `Trainers meeting, from participant requests to offerings`,
+      },
+      {
+        start: t('18:00'),
+        end: t('21:00'),
+        body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...)`,
       },
     ],
   },
