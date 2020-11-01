@@ -80,6 +80,15 @@ export default [
       },
       {
         start: t('18:00'),
+        end: t('20:00'),
+        body: `<div class="d-flex justify-content-between">
+  <div>Session option 1 1<br><i> <br> </i></div>
+  <div>Session option 2 <br><i> <br> </i></div>
+</div>
+  `,
+      },
+      {
+        start: t('18:00'),
         end: t('21:00'),
         body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...)`,
       },
