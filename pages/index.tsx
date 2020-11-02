@@ -141,7 +141,7 @@ function Landing() {
   const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
   const startDate = moment(course.dateStart)
     .tz(tzName)
-    .format('h:mm a z dddd, MMMM Do YYYY');
+    .format('h:mm a z dddd, MMMM Do');
   const endDate = moment(course.dateEnd)
     .tz(tzName)
     .format('h:mm a z dddd, MMMM Do YYYY');
