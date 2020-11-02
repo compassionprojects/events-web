@@ -190,6 +190,19 @@ function Landing() {
         />
       </div>
 
+      {/* Video presentation section */}
+      <div className="pt-5 mt-4 container" id="video">
+        <div className="embed-responsive embed-responsive-16by9">
+          <iframe
+            title="a video presentation on vic"
+            frameBorder="1"
+            className="embed-responsive-item"
+            sandbox="allow-same-origin allow-scripts"
+            src="https://www.youtube.com/embed/OrjgFZUWce0"
+            allowFullScreen></iframe>
+        </div>
+      </div>
+
       <div className="container">
         {/* About section */}
         <Section className="mt-4 py-5 border-top-0" id="about" tabIndex={-1}>
@@ -307,19 +320,7 @@ function Landing() {
           </Narrow>
         </Section>
 
-        {/* Video presentation section */}
-        <div className="mt-4 py-5" id="video">
-          <div className="embed-responsive embed-responsive-16by9">
-            <iframe
-              title="a video presentation on vic"
-              frameBorder="1"
-              className="embed-responsive-item"
-              sandbox="allow-same-origin allow-scripts"
-              src="https://www.youtube.com/embed/OrjgFZUWce0"
-              allowFullScreen></iframe>
-          </div>
-        </div>
-
+        {/* Register tickets section */}
         {!user && (
           <Section>
             <h2 className="text-center pt-3">Register</h2>
