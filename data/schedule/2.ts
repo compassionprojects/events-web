@@ -266,8 +266,6 @@ export default [
       .format('dddd, MMMM Do YYYY z'),
     schedule: [
       {
-        start: t('09:30'),
-        end: t('22:00'),
         body: `Day Off`,
       },
       
@@ -443,8 +441,6 @@ export default [
       .format('dddd, MMMM Do YYYY z'),
     schedule: [
       {
-        start: t('09:30'),
-        end: t('22:00'),
         body: `Day Off`,
       },
       
