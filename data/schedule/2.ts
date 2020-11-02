@@ -42,7 +42,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
   <div>Session option 1 1<br><i>Magda, <br>Beginners Track</i></div>
   <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-  <div>Session option 3 <br><i> TBA, <br> +</i></div>
+  <div>Session option 3 <br><i> TBA, <br> </i></div>
 </div>
   `,
       },
@@ -57,7 +57,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
           <div>Session option 1 1<br><i>Louise, <br>Beginners Track</i></div>
           <div>Session option 2 <br><i>Godfrey, <br> </i></div>
-          <div>Session option 3 <br><i> TBA, <br> +</i></div>
+          <div>Session option 3 <br><i> TBA, <br> </i></div>
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
