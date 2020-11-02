@@ -31,6 +31,7 @@ import Loading from '../components/Loading';
 const start = new Date(2020, 10, 10);
 const end = new Date(2020, 10, 22);
 
+// Featured course id
 const COURSE_ID = 2;
 
 interface Trainer {
@@ -59,6 +60,7 @@ const GET_COURSE = gql`
       about
       details
       facebookLink
+      videoUrl
       dateStart
       dateEnd
       trainers {
@@ -191,17 +193,19 @@ function Landing() {
       </div>
 
       {/* Video presentation section */}
-      <div className="pt-5 mt-4 container" id="video">
-        <div className="embed-responsive embed-responsive-16by9">
-          <iframe
-            title="a video presentation on vic"
-            frameBorder="1"
-            className="embed-responsive-item"
-            sandbox="allow-same-origin allow-scripts"
-            src="https://www.youtube.com/embed/OrjgFZUWce0"
-            allowFullScreen></iframe>
+      {course.videoUrl && (
+        <div className="pt-5 mt-4 container" id="video">
+          <div className="embed-responsive embed-responsive-16by9">
+            <iframe
+              title="a video presentation on vic"
+              frameBorder="1"
+              className="embed-responsive-item"
+              sandbox="allow-same-origin allow-scripts"
+              src={course.videoUrl}
+              allowFullScreen></iframe>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="container">
         {/* About section */}
