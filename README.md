@@ -1,4 +1,4 @@
-## VIC web
+## VEP web
 
 Virtual Exchange Platform / app
 
