@@ -103,6 +103,11 @@ export default [
       .format('dddd, MMMM Do YYYY z'),
     schedule: [
       {
+        start: t('07:30'),
+        end: t('09:00'),
+        body: `For all proposals (meditation, yoga, dance, movement)`,
+      },
+      {
         start: t('09:30'),
         end: t('09:45'),
         body: `Community session (settling and logistics)`,
@@ -184,6 +189,11 @@ export default [
       .tz(tzName)
       .format('dddd, MMMM Do YYYY z'),
     schedule: [
+      {
+        start: t('07:30'),
+        end: t('09:00'),
+        body: `For all proposals (meditation, yoga, dance, movement)`,
+      },
       {
         start: t('09:30'),
         end: t('09:45'),
@@ -279,6 +289,11 @@ export default [
       .format('dddd, MMMM Do YYYY z'),
     schedule: [
       {
+        start: t('07:30'),
+        end: t('09:00'),
+        body: `For all proposals (meditation, yoga, dance, movement)`,
+      },
+      {
         start: t('09:30'),
         end: t('09:45'),
         body: `Community session (settling and logistics)`,
@@ -359,6 +374,11 @@ export default [
       .tz(tzName)
       .format('dddd, MMMM Do YYYY z'),
     schedule: [
+      {
+        start: t('07:30'),
+        end: t('09:00'),
+        body: `For all proposals (meditation, yoga, dance, movement)`,
+      },
       {
         start: t('09:30'),
         end: t('09:45'),
@@ -454,6 +474,11 @@ export default [
       .format('dddd, MMMM Do YYYY z'),
     schedule: [
       {
+        start: t('07:30'),
+        end: t('09:00'),
+        body: `For all proposals (meditation, yoga, dance, movement)`,
+      },
+      {
         start: t('09:30'),
         end: t('09:45'),
         body: `Community session (settling and logistics)`,
@@ -535,6 +560,11 @@ export default [
       .format('dddd, MMMM Do YYYY z'),
     schedule: [
       {
+        start: t('07:30'),
+        end: t('09:00'),
+        body: `For all proposals (meditation, yoga, dance, movement)`,
+      },
+      {
         start: t('09:30'),
         end: t('09:45'),
         body: `Community session (settling and logistics)`,
@@ -608,6 +638,11 @@ export default [
       .tz(tzName)
       .format('dddd, MMMM Do YYYY z'),
     schedule: [
+      {
+        start: t('07:30'),
+        end: t('09:00'),
+        body: `For all proposals (meditation, yoga, dance, movement)`,
+      },
       {
         start: t('09:30'),
         end: t('09:45'),
