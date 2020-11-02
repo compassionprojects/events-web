@@ -61,19 +61,39 @@ const GET_COURSE = gql`
   }
 `;
 
-function CTA({ course_id }) {
+function CTA({ course_id, start, end }) {
+  const beforeTheEvent = moment(new Date()).isBefore(start);
+  const duringTheEvent = moment(new Date()).isBetween(start, end);
+  const afterTheEvent = moment(new Date()).isAfter(end);
+
+  const { user } = useContext(UserContext);
+
+  if (!user && beforeTheEvent) {
+    return <GetTickets course_id={course_id} />;
+  } else if ((!user && duringTheEvent) || (!user && afterTheEvent)) {
+    return (
+      <Link
+        href="/signin"
+        as="/signin"
+        className="btn btn-lg rounded-pill my-4 btn-primary">
+        Sign in
+      </Link>
+    );
+  }
   return (
     <Link
-      href="/course/[course_id]/tickets"
-      as={`/course/${course_id}/tickets`}
+      href="/home"
+      as="/home"
       className="btn btn-lg rounded-pill my-4 btn-primary">
-      Get tickets
+      Home
     </Link>
   );
 }
 
 CTA.propTypes = {
   course_id: PropTypes.string,
+  start: PropTypes.string,
+  end: PropTypes.string,
 };
 
 function Landing() {
@@ -117,8 +137,11 @@ function Landing() {
     .format('h:mm a z dddd, MMMM Do YYYY');
   const courseDates = `Starts at ${startDate}
   until ${endDate}`;
+  const isPastEvent = moment(new Date()).isAfter(course.dateEnd);
 
-  const cta = <CTA course_id={course.id} />;
+  const cta = (
+    <CTA course_id={course.id} start={course.dateStart} end={course.dateEnd} />
+  );
 
   return (
     <>
@@ -289,7 +312,7 @@ function Landing() {
         </Section>
 
         {/* Registration section */}
-        {!user && (
+        {!user && !isPastEvent && (
           <Section>
             <h2 className="text-center pt-3">Register</h2>
             <Narrow className="px-2 py-4 mx-auto text-center">

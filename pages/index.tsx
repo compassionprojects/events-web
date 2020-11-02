@@ -26,12 +26,10 @@ import media, { sizes } from '../components/Media';
 import Link from '../components/Link';
 import Meta from '../components/Meta';
 import Loading from '../components/Loading';
-// import data from '../data/landing';
 
-const start = new Date(2020, 10, 10);
-const end = new Date(2020, 10, 22);
-
-// Featured course id
+// Featured course: start date, end date and course id
+const START_DATE = new Date(2020, 10, 10);
+const END_DATE = new Date(2020, 10, 22);
 const COURSE_ID = 2;
 
 interface Trainer {
@@ -95,9 +93,9 @@ LinkInternal.propTypes = {
 };
 
 function CTA({ ...props }) {
-  const beforeTheEvent = moment(new Date()).isBefore(start);
-  const duringTheEvent = moment(new Date()).isBetween(start, end);
-  const afterTheEvent = moment(new Date()).isAfter(end);
+  const beforeTheEvent = moment(new Date()).isBefore(START_DATE);
+  const duringTheEvent = moment(new Date()).isBetween(START_DATE, END_DATE);
+  const afterTheEvent = moment(new Date()).isAfter(END_DATE);
 
   const { user } = useContext(UserContext);
   if (!user && beforeTheEvent) {
