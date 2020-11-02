@@ -419,6 +419,7 @@ const ImgUnselectable = styled.img`
 const Shape = styled(ImgUnselectable).attrs({
   alt: 'Decorative artwork of semi-circle',
 })`
+  z-index: -1;
   opacity: 0.5;
   ${// @ts-ignore
   media.down.tablet`
