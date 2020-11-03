@@ -452,5 +452,5 @@ const ShapeRight = styled(Shape).attrs({
 const ImgAffiliates = styled(ImgUnselectable).attrs({
   className: 'mx-3',
 })`
-  height: 60px;
+  height: 80px;
 `;
