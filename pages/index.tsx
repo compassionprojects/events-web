@@ -146,7 +146,8 @@ function Landing() {
     .tz(tzName)
     .format('h:mm a z dddd, MMMM Do YYYY');
   const courseDates = `Starts at ${startDate}
-  until ${endDate}`;
+  until ${endDate}
+  <small>(with two days off - Monday 16th and Thursday 19th)</small>`;
 
   const cta = (
     <CTA start={course.dateStart} end={course.dateEnd} course_id={course.id} />
@@ -172,9 +173,10 @@ function Landing() {
           <div className="lead py-4">
             <ReactMarkdown source={course.description} escapeHtml={false} />
           </div>
-          <PreserveLineBreaks className="my-4">
-            {courseDates}
-          </PreserveLineBreaks>
+          <PreserveLineBreaks
+            className="my-4"
+            dangerouslySetInnerHTML={{ __html: courseDates }}
+          />
           {cta}
           <div className="mb-2"></div>
         </Narrow>
@@ -328,10 +330,11 @@ function Landing() {
             <h2 className="text-center pt-3">Register</h2>
             <Narrow className="px-2 py-4 mx-auto text-center">
               <ReactMarkdown source={course.description} escapeHtml={false} />
-              <PreserveLineBreaks className="my-2 text-muted">
-                {courseDates}
-              </PreserveLineBreaks>
-              <div className="d-flex align-items-center justify-content-center">
+              <PreserveLineBreaks
+                className="my-2 text-muted"
+                dangerouslySetInnerHTML={{ __html: courseDates }}
+              />
+              <div className="mt-4 d-flex align-items-center justify-content-center">
                 <GetTickets course_id={course.id} />
                 <a
                   className="nav-link text-accent"
