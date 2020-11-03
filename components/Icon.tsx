@@ -26,6 +26,7 @@ Icon.propTypes = {
     'file-text',
     'trash-2',
     'facebook',
+    'linkedin',
   ]),
 };
 

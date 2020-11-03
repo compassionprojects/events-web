@@ -68,7 +68,22 @@ export default function FooterLanding() {
           </li>
         </ul>
       </div>
-      <div className="py-4 mt-3 small text-muted text-center">
+      <div className="py-4 text-center d-flex align-items-center justify-content-center">
+        <a
+          href="https://www.facebook.com/Peace-Factory-563809806979098/"
+          target="_blank"
+          rel="noreferrer">
+          <Icon shape="facebook" className="py-1" /> Facebook
+        </a>
+        <a
+          href="https://www.linkedin.com/company/peace-factory/"
+          target="_blank"
+          className="pl-5"
+          rel="noreferrer">
+          <Icon shape="linkedin" className="py-1" /> Linked In
+        </a>
+      </div>
+      <div className="py-4 small text-muted text-center">
         &copy; {year} peacefactory.fr
       </div>
     </footer>
@@ -108,6 +123,21 @@ export function Footer() {
             </Link>
           </li>
         </ul>
+      </div>
+      <div className="py-4 text-center d-flex align-items-center justify-content-center">
+        <a
+          href="https://www.facebook.com/Peace-Factory-563809806979098/"
+          target="_blank"
+          rel="noreferrer">
+          <Icon shape="facebook" className="py-1" /> Facebook
+        </a>
+        <a
+          href="https://www.linkedin.com/company/peace-factory/"
+          target="_blank"
+          className="pl-5"
+          rel="noreferrer">
+          <Icon shape="linkedin" className="py-1" /> Linked In
+        </a>
       </div>
       <div className="py-4 mt-3 small text-muted text-center">
         &copy; {year} peacefactory.fr
