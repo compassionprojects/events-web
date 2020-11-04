@@ -28,7 +28,7 @@ import Meta from '../components/Meta';
 import Loading from '../components/Loading';
 
 // Featured course: start date, end date and course id
-const START_DATE = new Date(2020, 10, 10);
+const START_DATE = new Date(2020, 10, 11);
 const END_DATE = new Date(2020, 10, 22);
 const COURSE_ID = 2;
 
@@ -327,7 +327,7 @@ function Landing() {
         {/* Register tickets section */}
         {!user && (
           <Section>
-            <h2 className="text-center pt-3">Register</h2>
+            <h2 className="text-center pt-3">Get tickets</h2>
             <Narrow className="px-2 py-4 mx-auto text-center">
               <ReactMarkdown source={course.description} escapeHtml={false} />
               <PreserveLineBreaks
