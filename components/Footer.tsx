@@ -13,16 +13,6 @@ export default function FooterLanding() {
       <div className="container">
         <ul className="nav justify-content-center">
           <li className="nav-item">
-            <Link
-              href="/#"
-              as="/#"
-              className="nav-link text-muted"
-              onClick={() => scrollTo('#top', o)}>
-              <Icon shape="arrow-up" className="p-1" />
-              Back to top
-            </Link>
-          </li>
-          <li className="nav-item">
             <Link className="nav-link text-accent" href="/about" as="/about">
               About us
             </Link>
