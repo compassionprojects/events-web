@@ -42,7 +42,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
   <div>Session option 1 <br><i>Magda, <br>Beginners Track</i></div>
   <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-  <div>Session option 3 <br><i> TBA, <br> </i></div>
+  <div>Session option 3 <br><i> Matthew, <br> </i></div>
 </div>
   `,
       },
@@ -57,7 +57,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
           <div>Session option 1 <br><i>Louise, <br>Beginners Track</i></div>
           <div>Session option 2 <br><i>Godfrey, <br> </i></div>
-          <div>Session option 3 <br><i> TBA, <br> </i></div>
+          <div>Session option 3 <br><i> Nic Burnand, <br> </i></div>
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
@@ -256,8 +256,8 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Godfrey <br> </i>Optional </div>
-  <div>Session option 2 <br><i> <br> </i>Optional </div>
+  <div>Session option 1 <br><i>Godfrey, <br> </i>Optional </div>
+  <div>Session option 2 <br><i>Nic Burnand, <br> </i>Optional </div>
 </div>
   `,
       },
@@ -268,7 +268,7 @@ export default [
       },
     ],
   },
-  // Day off
+  // Day 4
   {
     startDate: moment(`2020-11-16T09:30:00+02:00`),
     startDateFormatted: moment(`2020-11-16T09:30:00+02:00`)
@@ -281,7 +281,7 @@ export default [
       
     ],
   },
-    // Day 4
+    // Day 5
   {
     startDate: moment(`2020-11-17T09:30:00+02:00`),
     startDateFormatted: moment(`2020-11-17T09:30:00+02:00`)
@@ -355,8 +355,8 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>About Certification <br><i>Irmtraud & Frank <br> </i>Optional </div>
-  <div>Session option 2 <br><i>Godfrey <br> </i>Optional </div>
+  <div>About Certification <br><i>Irmtraud & Frank, <br> </i>Optional </div>
+  <div>Session option 2 <br><i>Godfrey, <br> </i>Optional </div>
 </div>
   `,
       },
@@ -367,7 +367,7 @@ export default [
       },
     ],
   },
-  // Day 5
+  // Day 6
   {
     startDate: moment(`2020-11-18T09:30:00+02:00`),
     startDateFormatted: moment(`2020-11-18T09:30:00+02:00`)
@@ -453,7 +453,7 @@ export default [
       },
     ],
   },
-  // Day off
+  // Day 7
   {
     startDate: moment(`2020-11-19T09:30:00+02:00`),
     startDateFormatted: moment(`2020-11-19T09:30:00+02:00`)
@@ -466,7 +466,7 @@ export default [
       
     ],
   },
-  // Day 6
+  // Day 8
   {
     startDate: moment(`2020-11-20T09:30:00+02:00`),
     startDateFormatted: moment(`2020-11-20T09:30:00+02:00`)
@@ -513,7 +513,7 @@ export default [
         start: t('14:05'),
         end: t('16:05'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session option 1 <br><i>Louise, <br> </i></div>
+          <div>Session option 1 <br><i>Liv Larsson, <br> </i></div>
           <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
           <div>Session option 3 <br><i> Frank, <br> </i></div>
     </div>`,
@@ -540,8 +540,8 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Godfrey <br> </i>Optional </div>
-  <div>Session option 2 <br><i> <br> </i>Optional </div>
+  <div>Session option 1 <br><i>Godfrey, <br> </i>Optional </div>
+  <div>Session option 2 <br><i>Nic Burnand, <br> </i>Optional </div>
 </div>
   `,
       },
@@ -552,7 +552,7 @@ export default [
       },
     ],
   },
-  // Day 7
+  // Day 9
   {
     startDate: moment(`2020-11-21T09:30:00+02:00`),
     startDateFormatted: moment(`2020-11-21T09:30:00+02:00`)
@@ -586,7 +586,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
   <div>Session option 1 <br><i>Magda, <br></i></div>
   <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-  <div>Session option 3 <br><i> <br> </i></div>
+  <div>Session option 3 <br><i>Matthew, <br> </i></div>
 </div>
   `,
       },
@@ -631,7 +631,7 @@ export default [
       
     ],
   },
-  // Day 8
+  // Day 10
   {
     startDate: moment(`2020-11-22T09:30:00+02:00`),
     startDateFormatted: moment(`2020-11-22T09:30:00+02:00`)
