@@ -5,7 +5,7 @@ const timeZoneOffset = new Date().getTimezoneOffset();
 const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
 
 function t(time_in_cet) {
-  const startDate = moment(`2020-08-08T${time_in_cet}+01:00`);
+  const startDate = moment(`2020-11-13T${time_in_cet}+01:00`);
   return startDate.tz(tzName).format('HH:mm');
 }
 
@@ -278,10 +278,9 @@ export default [
       {
         body: `Day Off`,
       },
-      
     ],
   },
-    // Day 5
+  // Day 5
   {
     startDate: moment(`2020-11-17T09:30:00+02:00`),
     startDateFormatted: moment(`2020-11-17T09:30:00+02:00`)
@@ -463,7 +462,6 @@ export default [
       {
         body: `Day Off`,
       },
-      
     ],
   },
   // Day 8
@@ -625,10 +623,8 @@ export default [
       {
         start: t('18:00'),
         end: t('21:00'),
-        body: `Community time`
-  
+        body: `Community time`,
       },
-      
     ],
   },
   // Day 10
@@ -677,12 +673,11 @@ export default [
       {
         start: t('14:05'),
         end: t('16:05'),
-        body: `Home Groups`
+        body: `Home Groups`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
       { start: t('16:20'), end: t('17:40'), body: `Harvesting` },
       { start: t('17:40'), end: t('19:30'), body: `Space for participants` },
-      
     ],
   },
 ];
