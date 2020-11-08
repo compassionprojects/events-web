@@ -27,7 +27,9 @@ import Link from '../components/Link';
 import Meta from '../components/Meta';
 import Loading from '../components/Loading';
 
-// Featured course: start date, end date and course id
+// Featured course:
+// a few days before start date to show sign in link,
+// end date and course id
 const START_DATE = new Date(2020, 10, 11);
 const END_DATE = new Date(2020, 10, 22);
 const COURSE_ID = 2;
@@ -129,7 +131,16 @@ function Landing() {
     variables,
   });
 
-  if (loading) return <Loading />;
+  if (loading) {
+    return (
+      <>
+        <LandingStyles />
+        <div className="mt-5 text-center pt-5">
+          <Loading color="primary" />
+        </div>
+      </>
+    );
+  }
 
   const course = data.Course;
   const faqs = data.allFAQS;
