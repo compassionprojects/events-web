@@ -122,9 +122,10 @@ export default function Tickets() {
         <Container className="py-5">
           <h1 className="my-3 text-center">Tickets</h1>
           <Intro className="py-3 text-center">
-            The course <strong>{course.title}</strong> has already started or
-            has happened in the past. If you want to buy this ticket, please
-            contact <a href={`mailto:${d.contact_email}`}>{d.contact_name}</a>.
+            The sale of tickets has closed for this course because it has
+            already started. To register on a course with similar content, you
+            are invited to contact{' '}
+            <a href={`mailto:${d.contact_email}`}>{d.contact_name}</a>.
           </Intro>
         </Container>
       </>
