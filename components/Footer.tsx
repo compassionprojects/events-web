@@ -13,6 +13,9 @@ export default function Footer() {
       <div className="container mt-4">
         <div className="row">
           <ul className="my-3 list-unstyled col-md-3 col-sm-12 order-sm-1 order-md-0">
+            <li>
+              <MenuHeading>About</MenuHeading>
+            </li>
             <li className="my-2">
               <Link href="/about" as="/about">
                 About us
@@ -50,12 +53,16 @@ export default function Footer() {
           </ul>
 
           <div className="my-3 col-md-6 col-lg-5 col-sm-12 pb-4 pb-md-0 order-sm-0 order-md-1">
-            <h5 className="text-muted">Subscribe to our newsletter</h5>
-            <p>Keep me updated on Peace Factory news.</p>
+            <MenuHeading>Subscribe</MenuHeading>
+            <p>
+              We will keep you updated on Nonviolent Communication Courses here
+              at Peace Factory
+            </p>
             <Subscribe id="7315a21229" />
           </div>
 
           <ul className="my-3 list-inline col-md-3 col-sm-12 ml-auto order-2">
+            <MenuHeading>Connect</MenuHeading>
             <li className="list-inline-item">
               <a
                 href="https://www.facebook.com/Peace-Factory-563809806979098/"
@@ -116,5 +123,15 @@ export default function Footer() {
         &copy; {year} peacefactory.fr
       </div>
     </footer>
+  );
+}
+
+function MenuHeading(props) {
+  return (
+    <div
+      className="text-uppercase font-weight-bold mb-3"
+      style={{ color: '#bbb', letterSpacing: 0.5 }}
+      {...props}
+    />
   );
 }

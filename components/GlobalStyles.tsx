@@ -46,4 +46,7 @@ export default createGlobalStyle`
   textarea:invalid {
     box-shadow: none;
   }
+
+  .text-uppercase  { text-transform: uppercase !important; }
+  .text-capitalize { text-transform: capitalize !important; }
 `;

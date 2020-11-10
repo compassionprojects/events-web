@@ -43,7 +43,6 @@ function Subscribe({ id }) {
           <FormGroup>
             <Input
               type="email"
-              bsSize="lg"
               placeholder="E-mail"
               onChange={setEmail}
               value={email}
@@ -76,7 +75,6 @@ function Subscribe({ id }) {
 
           <div className="mt-3">
             <Button
-              size="lg"
               color="primary"
               className="rounded-pill"
               disabled={subscribing || !valid}>
