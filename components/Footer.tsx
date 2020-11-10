@@ -72,8 +72,7 @@ export default function Footer() {
           <div className="my-3 col-md-6 col-sm-12">
             <h5 className="font-weight-bold">Subscribe to our newsletter</h5>
             <p>
-              There will be up to 6 newsletters per year, with many interesting
-              articles and tips.
+              Keep me updated on PeaceFactory news.
             </p>
             <Subscribe id="7315a21229" />
           </div>
