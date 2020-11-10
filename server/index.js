@@ -8,6 +8,7 @@ const fetch = require('node-fetch');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const { subscribe_api_endpoint } = require('./newsletter');
 const HOST = process.env.HOST_URL;
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -58,6 +59,8 @@ app.prepare().then(() => {
     res.clearCookie('keystone.sid');
     res.redirect('/');
   });
+
+  server.post('/newsletter', subscribe_api_endpoint);
 
   server.all('*', (req, res) => {
     return handle(req, res);
