@@ -76,11 +76,13 @@ Home.propTypes = {
 function CourseCard({ id, title, description, dateStart, dateEnd }) {
   return (
     <Card body className="my-2">
-      <CardTitle>{title}</CardTitle>
+      <CardTitle className="font-weight-bold">{title}</CardTitle>
       <CardText>
         <ReactMarkdown source={description} escapeHtml={false} />
-        {moment(dateStart).format('Do MMM')} -{' '}
-        {moment(dateEnd).format('Do MMM YYYY')}
+        <div className="text-muted">
+          {moment(dateStart).format('Do MMM')} -{' '}
+          {moment(dateEnd).format('Do MMM YYYY')}
+        </div>
       </CardText>
       <Link
         href={`/home/course/[course_id]/schedule`}
