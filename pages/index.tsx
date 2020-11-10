@@ -309,7 +309,7 @@ function Landing() {
           <Narrow className="mx-auto pl-sm-5">
             {faqs.map((item) => (
               <div
-                className={classnames('py-2 px-sm-2', {
+                className={classnames('py-2 my-1 px-sm-2', {
                   'bg-light rounded-lg': faq[item.id],
                 })}
                 key={item.id}>
@@ -324,11 +324,13 @@ function Landing() {
                   <span className="font-weight-bold">{item.question}</span>
                 </span>
                 <Collapse style={{ marginLeft: 30 }} isOpen={faq[item.id]}>
-                  <ReactMarkdown
-                    linkTarget="_blank"
-                    source={item.answer}
-                    escapeHtml={false}
-                  />
+                  <Answer>
+                    <ReactMarkdown
+                      linkTarget="_blank"
+                      source={item.answer}
+                      escapeHtml={false}
+                    />
+                  </Answer>
                 </Collapse>
               </div>
             ))}
@@ -469,4 +471,10 @@ const ImgAffiliates = styled(ImgUnselectable).attrs({
   className: 'mx-3',
 })`
   height: 80px;
+`;
+
+const Answer = styled.div`
+  p {
+    margin: 0;
+  }
 `;
