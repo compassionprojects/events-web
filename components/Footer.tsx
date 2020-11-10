@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="footer mt-auto py-5 border-top bg-light">
       <div className="container mt-4">
         <div className="row">
-          <ul className="my-3 list-unstyled col-md-3 col-sm-12 order-sm-1 order-md-0">
+          <ul className="my-3 list-unstyled col-md-3 col-sm-12 order-1 order-sm-1 order-md-0">
             <li>
               <MenuHeading>About</MenuHeading>
             </li>
@@ -52,7 +52,7 @@ export default function Footer() {
             </li>
           </ul>
 
-          <div className="my-3 col-md-6 col-lg-5 col-sm-12 pb-4 pb-md-0 order-sm-0 order-md-1">
+          <div className="my-3 col-md-6 col-lg-5 col-sm-12 pb-4 pb-md-0 order-0 order-sm-0 order-md-1">
             <MenuHeading>Subscribe</MenuHeading>
             <p>
               We will keep you updated on Nonviolent Communication Courses here
