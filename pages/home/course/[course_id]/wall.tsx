@@ -14,7 +14,6 @@ import withAuth from '../../../auth';
 import Meta from '../../../../components/Meta';
 import Loading from '../../../../components/Loading';
 import Icon from '../../../../components/Icon';
-import PreserveLineBreaks from '../../../../components/PreserveLineBreaks';
 
 const limit = 15;
 const limitReplies = 2;
@@ -556,22 +555,21 @@ function Message({
               </a>
             )}
           </div>
-          <PreserveLineBreaks className={verticalSpacing}>
-            <ReactMarkdown
-              source={body}
-              escapeHtml={false}
-              linkTarget="_blank"
-              disallowedTypes={[
-                'root',
-                'image',
-                'heading',
-                'inlineCode',
-                'code',
-                'html',
-                'virtualHtml',
-              ]}
-            />
-          </PreserveLineBreaks>
+          <ReactMarkdown
+            className={verticalSpacing}
+            source={body}
+            escapeHtml={false}
+            linkTarget="_blank"
+            disallowedTypes={[
+              'root',
+              'image',
+              'heading',
+              'inlineCode',
+              'code',
+              'html',
+              'virtualHtml',
+            ]}
+          />
           {children}
         </div>
       </div>
