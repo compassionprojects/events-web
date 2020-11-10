@@ -1,4 +1,5 @@
 import React, { useRef, useContext, useState } from 'react';
+import styled from 'styled-components';
 import { gql } from 'apollo-boost';
 import PropTypes from 'prop-types';
 import { Nav, NavItem, NavLink, Button, Form, FormGroup } from 'reactstrap';
@@ -555,21 +556,23 @@ function Message({
               </a>
             )}
           </div>
-          <ReactMarkdown
-            className={verticalSpacing}
-            source={body}
-            escapeHtml={false}
-            linkTarget="_blank"
-            disallowedTypes={[
-              'root',
-              'image',
-              'heading',
-              'inlineCode',
-              'code',
-              'html',
-              'virtualHtml',
-            ]}
-          />
+          <MessageStyle>
+            <ReactMarkdown
+              className={verticalSpacing}
+              source={body}
+              escapeHtml={false}
+              linkTarget="_blank"
+              disallowedTypes={[
+                'root',
+                'image',
+                'heading',
+                'inlineCode',
+                'code',
+                'html',
+                'virtualHtml',
+              ]}
+            />
+          </MessageStyle>
           {children}
         </div>
       </div>
@@ -594,3 +597,11 @@ Message.propTypes = {
 Message.defaultProps = {
   verticalSpacing: 'py-2',
 };
+
+const MessageStyle = styled.div`
+  p:last-child,
+  ul:last-child,
+  ol:last-child {
+    margin-bottom: 0;
+  }
+`;
