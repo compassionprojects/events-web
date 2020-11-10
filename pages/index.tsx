@@ -348,12 +348,17 @@ function Landing() {
               <div className="mt-4 d-flex align-items-center justify-content-center">
                 <GetTickets course_id={course.id} />
                 <a
-                  className="nav-link text-accent"
+                  className="ml-3"
                   href={course.facebookLink}
                   target="_blank"
                   rel="noreferrer">
-                  <Icon shape="facebook" height={18} width={18} />
-                  Facebook
+                  Check Facebook Event{' '}
+                  <Icon
+                    shape="external-link"
+                    width={20}
+                    height={20}
+                    className="pb-1"
+                  />
                 </a>
               </div>
             </Narrow>

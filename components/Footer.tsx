@@ -61,7 +61,12 @@ export default function Footer() {
                 href="https://www.facebook.com/Peace-Factory-563809806979098/"
                 target="_blank"
                 rel="noreferrer">
-                <img src="/images/icon-facebook.svg" height={30} width={30} />
+                <img
+                  alt="Follow us on Facebook"
+                  src="/images/icon-facebook.svg"
+                  height={30}
+                  width={30}
+                />
               </a>
             </li>
             <li className="list-inline-item">
@@ -69,7 +74,12 @@ export default function Footer() {
                 href="https://www.instagram.com/p/CHFzXGpKV0C/"
                 target="_blank"
                 rel="noreferrer">
-                <img src="/images/icon-instagram.svg" height={30} width={30} />
+                <img
+                  alt="Follow us on Instagram"
+                  src="/images/icon-instagram.svg"
+                  height={30}
+                  width={30}
+                />
               </a>
             </li>
             <li className="list-inline-item">
@@ -77,7 +87,12 @@ export default function Footer() {
                 href="https://www.youtube.com/channel/UCtBY3xN-CtE_-x3rnHgTg_Q"
                 target="_blank"
                 rel="noreferrer">
-                <img src="/images/icon-youtube.svg" height={30} width={30} />
+                <img
+                  alt="Follow us on Youtube"
+                  src="/images/icon-youtube.svg"
+                  height={30}
+                  width={30}
+                />
               </a>
             </li>
             <li className="list-inline-item">
@@ -85,7 +100,12 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/peace-factory/"
                 target="_blank"
                 rel="noreferrer">
-                <img src="/images/icon-linkedin.svg" height={30} width={30} />
+                <img
+                  alt="Follow us on Linkedin"
+                  src="/images/icon-linkedin.svg"
+                  height={30}
+                  width={30}
+                />
               </a>
             </li>
           </ul>
