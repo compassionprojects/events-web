@@ -25,6 +25,8 @@ import { UserContext } from '../lib/UserContext';
 
 export const o = { duration: 300, offset: -70 };
 
+/* @todo: simplify header, use one for logged in and another for visitors */
+
 export default function HeaderLanding() {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -100,19 +102,14 @@ export default function HeaderLanding() {
               </_NavLink>
             </NavItem>
             {!user && (
-              <>
-                <NavItem className="pl-md-2 pl-lg-4">
-                  <Link
-                    href="/signin"
-                    as="/signin"
-                    className="text-accent nav-link">
-                    Sign in
-                  </Link>
-                </NavItem>
-                {/* <NavItem className="pl-md-2 pl-lg-4 mt-1">
-                  <GetTickets size="sm" nav title="Get" />
-                </NavItem> */}
-              </>
+              <NavItem className="pl-md-2 pl-lg-4">
+                <Link
+                  href="/signin"
+                  as="/signin"
+                  className="text-accent nav-link">
+                  Sign in
+                </Link>
+              </NavItem>
             )}
             {user && (
               <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
@@ -180,6 +177,14 @@ export function Header() {
                     className="text-accent">
                     Contact
                   </_NavLink>
+                </NavItem>
+                <NavItem className="pl-md-2 pl-lg-4">
+                  <Link
+                    href="/signin"
+                    as="/signin"
+                    className="text-accent nav-link">
+                    Sign in
+                  </Link>
                 </NavItem>
               </>
             )}

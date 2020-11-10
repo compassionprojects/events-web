@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
-import FooterLanding, { Footer } from './Footer';
+import Footer from './Footer';
 import HeaderLanding, { Header } from './Header';
 import GlobalStyles from './GlobalStyles';
 import Affix from './Affix';
@@ -41,7 +41,7 @@ export default function Layout({ router, ...props }) {
           </Container>
         </main>
       )}
-      {isOneCol ? <FooterLanding /> : <Footer />}
+      <Footer />
     </div>
   );
 }
