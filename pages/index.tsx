@@ -26,6 +26,7 @@ import media, { sizes } from '../components/Media';
 import Link from '../components/Link';
 import Meta from '../components/Meta';
 import Loading from '../components/Loading';
+import PreserveLineBreaks from '../components/PreserveLineBreaks';
 
 // Featured course:
 // a few days before start date to show sign in link,
@@ -421,10 +422,6 @@ const Section = styled.section.attrs({
   className: 'mt-4 py-5 border-top',
 })`
   outline: none;
-`;
-
-const PreserveLineBreaks = styled.div`
-  white-space: pre-line;
 `;
 
 // Preventing an image from being draggable or selectable without using JS

@@ -7,12 +7,14 @@ import Router, { useRouter } from 'next/router';
 import classnames from 'classnames';
 import moment from 'moment';
 import Gravatar from 'react-gravatar';
+import ReactMarkdown from 'react-markdown/with-html';
 
 import { UserContext } from '../../../../lib/UserContext';
 import withAuth from '../../../auth';
 import Meta from '../../../../components/Meta';
 import Loading from '../../../../components/Loading';
 import Icon from '../../../../components/Icon';
+import PreserveLineBreaks from '../../../../components/PreserveLineBreaks';
 
 const limit = 15;
 const limitReplies = 2;
@@ -554,7 +556,22 @@ function Message({
               </a>
             )}
           </div>
-          <div className={verticalSpacing}>{body}</div>
+          <PreserveLineBreaks className={verticalSpacing}>
+            <ReactMarkdown
+              source={body}
+              escapeHtml={false}
+              linkTarget="_blank"
+              disallowedTypes={[
+                'root',
+                'image',
+                'heading',
+                'inlineCode',
+                'code',
+                'html',
+                'virtualHtml',
+              ]}
+            />
+          </PreserveLineBreaks>
           {children}
         </div>
       </div>
