@@ -10,7 +10,7 @@ export default function Affix(props: {
   const element = useRef(null);
   const oldStyles = {
     position: '',
-    top: '',
+    top: 0,
     width: '',
   };
   // Offset could make the element fixed ealier or later

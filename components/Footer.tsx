@@ -119,7 +119,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="py-4 my-5 small text-muted text-center">
+      <div className="py-4 mt-5 mb-3 small text-muted text-center">
         &copy; {year} peacefactory.fr
       </div>
     </footer>
