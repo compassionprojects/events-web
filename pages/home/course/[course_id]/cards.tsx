@@ -89,15 +89,18 @@ function Cards() {
               <CardFront>
                 <img
                   style={{ height: 175 }}
-                  src="/images/hedgehog.png"
+                  src={`/images/card-${card.type}.png`}
                   alt="Smiling hedgehog"
                   className="img-fluid border rounded-circle p-3"
                 />
               </CardFront>
-              <CardBack className="border rounded-circle bg-light">
-                <div className="d-flex align-items-center h-100 justify-content-center">
-                  {card.text}
-                </div>
+              <CardBack
+                className={classnames('border rounded-circle', card.type)}>
+                <CardBackBorder className="border rounded-circle">
+                  <div className="d-flex align-items-center h-100 justify-content-center">
+                    {card.text}
+                  </div>
+                </CardBackBorder>
               </CardBack>
             </CardInner>
           </Card>
@@ -143,4 +146,25 @@ const CardFront = styled(CardFrontBack)`
 const CardBack = styled(CardFrontBack)`
   transform: rotateY(180deg);
   padding: 1rem;
+  &.challenge {
+    color: white;
+    background-color: #00a8e8;
+  }
+  &.feelings {
+    color: #555;
+    background-color: #f9cde0;
+  }
+  &.needs {
+    color: white;
+    background-color: #1ca9e5;
+  }
+`;
+
+const CardBackBorder = styled(CardFrontBack)`
+  top: -5%;
+  left: -5%;
+  padding: 1rem;
+  width: 110%;
+  height: 110%;
+  background: transparent;
 `;
