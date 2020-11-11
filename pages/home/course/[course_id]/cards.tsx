@@ -89,8 +89,8 @@ function Cards() {
               <CardFront>
                 <img
                   style={{ height: 175 }}
-                  src={`/images/card-${card.type}.png`}
-                  alt="Smiling hedgehog"
+                  src={`/images/card-${card.type}.svg`}
+                  alt={card.type}
                   className="img-fluid border rounded-circle p-3"
                 />
               </CardFront>
