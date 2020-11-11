@@ -31,9 +31,9 @@ function Home() {
     <>
       <Meta {...meta} />
       <Container className="py-5">
-        <h2>Your courses</h2>
+        <h1>Your courses</h1>
         Hello {user.name}! Welcome!
-        <h3 className="pb-2 pt-3 mt-5">Ongoing</h3>
+        <h2 className="pb-2 pt-4 mt-5">Ongoing</h2>
         <Row>
           {ongoing.map((c) => (
             <Col sm={12} md={6} lg={4} key={c.id}>
@@ -44,7 +44,7 @@ function Home() {
         {!ongoing.length && (
           <div className="text-muted">No ongoing courses</div>
         )}
-        <h3 className="pb-2 pt-3 mt-5">Upcoming</h3>
+        <h2 className="pb-2 pt-4 mt-5">Upcoming</h2>
         <Row>
           {upcoming.map((c) => (
             <Col sm={12} md={6} lg={4} key={c.id}>
@@ -55,7 +55,7 @@ function Home() {
         {!upcoming.length && (
           <div className="text-muted">No upcoming courses</div>
         )}
-        <h3 className="pb-2 pt-3 mt-5">Past</h3>
+        <h2 className="pb-2 pt-4 mt-5">Past</h2>
         <Row>
           {past.map((c) => (
             <Col sm={12} md={6} lg={4} key={c.id}>
