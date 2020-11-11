@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import classnames from 'classnames';
 import { useQuery } from '@apollo/react-hooks';
-import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Button, Nav, NavItem, NavLink } from 'reactstrap';
 import Router, { useRouter } from 'next/router';
 import { gql } from 'apollo-boost';
 import withAuth from '../../../auth';
@@ -40,14 +40,32 @@ function Cards() {
     });
   };
 
+  const toggleAll = (e, open) => {
+    e.preventDefault();
+    const toggled = cards.reduce((obj, c) => {
+      obj[c.id] = open;
+      return obj;
+    }, {});
+    setOpen(toggled);
+  };
+
   return (
     <>
       <Meta {...meta} />
-      <h2 className="d-flex align-items-center">
-        <span className="pr-2">{meta.title}</span>
-        {loading && <Loading color="primary" />}
-      </h2>
-
+      <div className="d-flex">
+        <h2 className="d-flex align-items-center">
+          <span className="pr-2">{meta.title}</span>
+          {loading && <Loading color="primary" />}
+        </h2>
+        <div className="ml-auto">
+          <Button size="sm" onClick={(e) => toggleAll(e, true)}>
+            Open All
+          </Button>{' '}
+          <Button size="sm" onClick={(e) => toggleAll(e, false)}>
+            Close All
+          </Button>
+        </div>
+      </div>
       <Nav pills className="my-4">
         <NavItem>
           <NavLink
@@ -74,9 +92,7 @@ function Cards() {
           </NavLink>
         </NavItem>
       </Nav>
-
       <div className="row">
-        {/* Sort the cards randomly */}
         {cards.map((card) => (
           <Card
             key={card.id}
