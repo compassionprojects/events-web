@@ -79,7 +79,7 @@ export default function Footer() {
             </li>
             <li className="list-inline-item">
               <a
-                href="https://www.instagram.com/p/CHFzXGpKV0C/"
+                href="https://www.instagram.com/louise_romain/"
                 target="_blank"
                 rel="noreferrer">
                 <IconSocial
