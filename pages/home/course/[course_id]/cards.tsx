@@ -78,9 +78,14 @@ function Cards() {
       <div className="row">
         {/* Sort the cards randomly */}
         {cards.map((card) => (
-          <Card key={card.id} className="col-6 col-md-6 col-lg-4 col-xl-3 my-3">
+          <Card
+            key={card.id}
+            className={classnames('col-6 col-md-6 my-3', {
+              'col-lg-4 col-xl-3': card.type === 'challenge',
+              'col-lg-6 col-xl-4': card.type !== 'challenge',
+            })}>
             <CardInner
-              className={classnames({
+              className={classnames(card.type, {
                 open: opened[card.id],
               })}
               onClick={() =>
@@ -88,15 +93,28 @@ function Cards() {
               }>
               <CardFront>
                 <img
-                  style={{ height: 175 }}
+                  style={{
+                    height: 175,
+                    width: card.type !== 'challenge' && 250,
+                  }}
                   src={`/images/card-${card.type}.svg`}
                   alt={card.type}
-                  className="img-fluid border rounded-circle p-3"
+                  className={classnames('img-fluid border p-3', {
+                    'rounded-circle': card.type === 'challenge',
+                    rounded: card.type !== 'challenge',
+                  })}
                 />
               </CardFront>
               <CardBack
-                className={classnames('border rounded-circle', card.type)}>
-                <CardBackBorder className="border rounded-circle">
+                className={classnames('border', card.type, {
+                  'rounded-circle': card.type === 'challenge',
+                  rounded: card.type !== 'challenge',
+                })}>
+                <CardBackBorder
+                  className={classnames('border', {
+                    'rounded-circle': card.type === 'challenge',
+                    rounded: card.type !== 'challenge',
+                  })}>
                   <div className="d-flex align-items-center h-100 justify-content-center">
                     {card.text}
                   </div>
@@ -123,6 +141,10 @@ const CardInner = styled.div`
 
   &.open {
     transform: rotateY(180deg);
+  }
+  &.feelings,
+  &.needs {
+    width: 250px !important;
   }
 `;
 
