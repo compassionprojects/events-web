@@ -31,7 +31,7 @@ import PreserveLineBreaks from '../components/PreserveLineBreaks';
 // Featured course:
 // a few days before start date to show sign in link,
 // end date and course id
-const START_DATE = new Date(2020, 10, 11);
+const START_DATE = new Date(2020, 10, 12);
 const END_DATE = new Date(2020, 10, 22);
 const COURSE_ID = 2;
 
