@@ -82,8 +82,8 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i> <br> </i>Optional </div>
-  <div>Session option 2 <br><i> <br> </i>Optional </div>
+  <div>Session option 1 <br><i>Mathew <br> </i>Optional </div>
+  <div>Session option 2 <br><i>Nic Burnand <br> </i>Optional </div>
 </div>
   `,
       },
