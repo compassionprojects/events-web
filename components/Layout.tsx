@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
+import Cookies from 'js-cookie';
 import Footer from './Footer';
 import HeaderLanding, { Header } from './Header';
 import GlobalStyles from './GlobalStyles';
@@ -17,6 +18,14 @@ export default function Layout({ router, ...props }) {
   const onecol =
     (user && isOneCol) || (!user && !isOneCol) || (!user && isOneCol);
 
+  const challenge = Cookies.get('challenge');
+
+  const clearChallenge = (e) => {
+    e.preventDefault();
+    Cookies.remove('challenge');
+    window.location.reload();
+  };
+
   return (
     <div className="d-flex flex-column h-100">
       <GlobalStyles />
@@ -26,6 +35,14 @@ export default function Layout({ router, ...props }) {
 
       {user && !isOneCol && (
         <main className="flex-shrink-0" role="main">
+          {challenge && (
+            <div className="bg-light text-black-50 border-bottom py-3 text-center">
+              Daily challenge you have chosen: {challenge} &nbsp;&nbsp;{' '}
+              <a href="" onClick={clearChallenge}>
+                clear
+              </a>
+            </div>
+          )}
           <Container className="py-5">
             <Row>
               <Col md={4} lg={3}>

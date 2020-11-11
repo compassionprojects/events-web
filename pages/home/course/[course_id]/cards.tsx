@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { Button, Nav, NavItem, NavLink } from 'reactstrap';
 import Router, { useRouter } from 'next/router';
 import { gql } from 'apollo-boost';
+import Cookies from 'js-cookie';
 import withAuth from '../../../auth';
 import Meta from '../../../../components/Meta';
 import Loading from '../../../../components/Loading';
@@ -47,6 +48,19 @@ function Cards() {
       return obj;
     }, {});
     setOpen(toggled);
+  };
+
+  const choose = (e, text) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // 1 minute
+    // const expires = new Date(new Date().getTime() + 1 * 60 * 1000);
+
+    // end of day
+    const expires = new Date();
+    expires.setUTCHours(23, 59, 59, 999);
+    Cookies.set('challenge', text, { expires });
+    window.location.reload();
   };
 
   return (
@@ -134,6 +148,9 @@ function Cards() {
                   <div className="d-flex align-items-center h-100 justify-content-center">
                     {card.text}
                   </div>
+                  <Button size="sm" onClick={(e) => choose(e, card.text)}>
+                    Choose
+                  </Button>
                 </CardBackBorder>
               </CardBack>
             </CardInner>
