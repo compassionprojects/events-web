@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import scrollTo from 'scroll-to-element';
 import Link from './Link';
 import data from '../data/landing';
@@ -68,7 +69,7 @@ export default function Footer() {
                 href="https://www.facebook.com/Peace-Factory-563809806979098/"
                 target="_blank"
                 rel="noreferrer">
-                <img
+                <IconSocial
                   alt="Follow us on Facebook"
                   src="/images/icon-facebook.svg"
                   height={30}
@@ -81,7 +82,7 @@ export default function Footer() {
                 href="https://www.instagram.com/p/CHFzXGpKV0C/"
                 target="_blank"
                 rel="noreferrer">
-                <img
+                <IconSocial
                   alt="Follow us on Instagram"
                   src="/images/icon-instagram.svg"
                   height={30}
@@ -94,7 +95,7 @@ export default function Footer() {
                 href="https://www.youtube.com/channel/UCtBY3xN-CtE_-x3rnHgTg_Q"
                 target="_blank"
                 rel="noreferrer">
-                <img
+                <IconSocial
                   alt="Follow us on Youtube"
                   src="/images/icon-youtube.svg"
                   height={30}
@@ -107,7 +108,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/peace-factory/"
                 target="_blank"
                 rel="noreferrer">
-                <img
+                <IconSocial
                   alt="Follow us on Linkedin"
                   src="/images/icon-linkedin.svg"
                   height={30}
@@ -135,3 +136,8 @@ function MenuHeading(props) {
     />
   );
 }
+
+const IconSocial = styled.img`
+  filter: grayscale(100%);
+  opacity: 0.8;
+`;
