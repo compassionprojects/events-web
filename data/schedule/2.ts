@@ -52,7 +52,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
           <div>Session option 1 <br><i>Magdalena, <br>Beginners Track</i></div>
           <div>Session option 2 <br><i>Matthew, <br> </i></div>
-          <div>Session option 3 <br><i> Nic Burnand, <br> </i></div>
+          <div>Session option 3 <br><i> Nic, <br> </i></div>
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
