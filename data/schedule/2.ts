@@ -110,7 +110,7 @@ export default [
       {
         start: t('09:45'),
         end: t('10:05'),
-        body: `Remembering and feedback linked to the Remembering`,
+        body: `[Remembering](https://drive.google.com/file/d/1QWk0NyPzxmTTpZ_2AMOJ8SpmB1rO9tZV/view) and feedback linked to the Remembering`,
       },
       {
         start: t('10:05'),
@@ -123,8 +123,8 @@ export default [
         end: t('12:35'),
         body: `<div class="d-flex justify-content-between">
   <div>Session option 1 <br><i>Magda, <br>Beginners Track</i></div>
-  <div>Session option 2 <br><i>Genevieve, <br> </i></div>
-  <div>Session option 3 <br><i> TBA, <br> </i></div>
+  <div>Session option 2 <br><i>Genevieve<br> </i></div>
+  <div>Session option 3 <br><i> TBA<br> </i></div>
 </div>
   `,
       },
@@ -138,8 +138,8 @@ export default [
         end: t('16:05'),
         body: `<div class="d-flex justify-content-between">
           <div>Session option 1 <br><i>Louise, <br>Beginners Track</i></div>
-          <div>Session option 2 <br><i>Godfrey, <br> </i></div>
-          <div>Session option 3 <br><i> TBA, <br> </i></div>
+          <div>Session option 2 <br><i>Godfrey<br> </i></div>
+          <div>Session option 3 <br><i>TBA<br> </i></div>
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
@@ -210,8 +210,8 @@ export default [
         end: t('12:35'),
         body: `<div class="d-flex justify-content-between">
   <div>Session option 1 <br><i>Magda, <br>Beginners Track</i></div>
-  <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-  <div>Session option 3 <br><i> Frank, <br> </i></div>
+  <div>Session option 2 <br><i>Irmtraud<br> </i></div>
+  <div>Session option 3 <br><i> Frank<br> </i></div>
 </div>
   `,
       },
@@ -225,8 +225,8 @@ export default [
         end: t('16:05'),
         body: `<div class="d-flex justify-content-between">
           <div>Session option 1 <br><i>Louise, <br>Beginners Track</i></div>
-          <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-          <div>Session option 3 <br><i> Frank, <br> </i></div>
+          <div>Session option 2 <br><i>Irmtraud<br> </i></div>
+          <div>Session option 3 <br><i> Frank<br> </i></div>
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
@@ -251,8 +251,8 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Godfrey, <br> </i>Optional </div>
-  <div>Session option 2 <br><i>Nic Burnand, <br> </i>Optional </div>
+  <div>Session option 1 <br><i>Godfrey<br> </i>Optional </div>
+  <div>Session option 2 <br><i>Nic<br> </i>(Optional)</div>
 </div>
   `,
       },
@@ -307,9 +307,9 @@ export default [
         start: t('10:35'),
         end: t('12:35'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Magda, <br></i></div>
-  <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-  <div>Session option 3 <br><i> Frank, <br> </i></div>
+  <div>Session option 1 <br><i>Magda<br></i></div>
+  <div>Session option 2 <br><i>Irmtraud<br> </i></div>
+  <div>Session option 3 <br><i> Frank<br> </i></div>
 </div>
   `,
       },
@@ -322,9 +322,9 @@ export default [
         start: t('14:05'),
         end: t('16:05'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session option 1 <br><i>Louise, <br> </i></div>
-          <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-          <div>Session option 3 <br><i> Frank, <br> </i></div>
+          <div>Session option 1 <br><i>Louise<br> </i></div>
+          <div>Session option 2 <br><i>Irmtraud<br> </i></div>
+          <div>Session option 3 <br><i> Frank<br> </i></div>
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
@@ -393,9 +393,9 @@ export default [
         start: t('10:35'),
         end: t('12:35'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Magda, <br></i></div>
-  <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-  <div>Session option 3 <br><i> Frank, <br> </i></div>
+  <div>Session option 1 <br><i>Magda<br></i></div>
+  <div>Session option 2 <br><i>Irmtraud<br> </i></div>
+  <div>Session option 3 <br><i> Frank<br> </i></div>
 </div>
   `,
       },
@@ -408,9 +408,9 @@ export default [
         start: t('14:05'),
         end: t('16:05'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session option 1 <br><i>Louise, <br> </i></div>
-          <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-          <div>Session option 3 <br><i> Frank, <br> </i></div>
+          <div>Session option 1 <br><i>Louise<br> </i></div>
+          <div>Session option 2 <br><i>Irmtraud<br> </i></div>
+          <div>Session option 3 <br><i>Frank<br> </i></div>
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
@@ -435,8 +435,8 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Godfrey <br> </i>Optional </div>
-  <div>Session option 2 <br><i> <br> </i>Optional </div>
+  <div>Session option 1 <br><i>Godfrey <br> </i>(Optional)</div>
+  <div>Session option 2 <br><i>Ramanusha<br> </i>(Optional)</div>
 </div>
   `,
       },
