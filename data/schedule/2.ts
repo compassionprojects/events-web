@@ -28,7 +28,7 @@ export default [
       {
         start: t('09:45'),
         end: t('10:05'),
-        body: `Remembering and feedback linked to the Remembering`,
+        body: `[Remembering](https://drive.google.com/file/d/1QWk0NyPzxmTTpZ_2AMOJ8SpmB1rO9tZV/view) and feedback linked to the Remembering`,
       },
       {
         start: t('10:05'),
