@@ -36,7 +36,7 @@ export default function Layout({ router, ...props }) {
       {user && !isOneCol && (
         <main className="flex-shrink-0" role="main">
           {challenge && (
-            <div className="bg-light text-black-50 border-bottom py-3 text-center">
+            <div className="bg-light border-bottom py-3 text-center">
               Daily challenge you have chosen: {challenge} &nbsp;&nbsp;{' '}
               <a href="" onClick={clearChallenge}>
                 clear
