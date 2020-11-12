@@ -39,12 +39,7 @@ export default [
       {
         start: t('10:35'),
         end: t('12:35'),
-        body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Magda, <br>Beginners Track</i></div>
-  <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-  <div>Session option 3 <br><i> , <br> </i></div>
-</div>
-  `,
+        body: `Introduction to the VIC`,
       },
       {
         start: t('12:35'),
@@ -55,8 +50,8 @@ export default [
         start: t('14:05'),
         end: t('16:05'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session option 1 <br><i>Louise, <br>Beginners Track</i></div>
-          <div>Session option 2 <br><i>Godfrey, <br> </i></div>
+          <div>Session option 1 <br><i>Magdalena, <br>Beginners Track</i></div>
+          <div>Session option 2 <br><i>Matthew, <br> </i></div>
           <div>Session option 3 <br><i> Nic Burnand, <br> </i></div>
     </div>`,
       },
