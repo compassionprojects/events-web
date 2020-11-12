@@ -42,7 +42,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
   <div>Session option 1 <br><i>Magda, <br>Beginners Track</i></div>
   <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-  <div>Session option 3 <br><i> Matthew, <br> </i></div>
+  <div>Session option 3 <br><i> , <br> </i></div>
 </div>
   `,
       },
