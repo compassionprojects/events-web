@@ -148,9 +148,11 @@ function Cards() {
                   <div className="d-flex align-items-center h-100 justify-content-center">
                     {card.text}
                   </div>
-                  <Button size="sm" onClick={(e) => choose(e, card.text)}>
-                    Choose
-                  </Button>
+                  {card.type === 'challenge' && (
+                    <Button size="sm" onClick={(e) => choose(e, card.text)}>
+                      Choose
+                    </Button>
+                  )}
                 </CardBackBorder>
               </CardBack>
             </CardInner>
