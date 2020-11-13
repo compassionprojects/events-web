@@ -23,7 +23,7 @@ export default [
       {
         start: t('09:30'),
         end: t('09:45'),
-        body: `Community session (settling and logistics)`,
+        body: `[Community session](https://zoom.us/j/96235491106) (settling and logistics)`,
       },
       {
         start: t('09:45'),
