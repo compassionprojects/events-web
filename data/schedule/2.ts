@@ -33,7 +33,7 @@ export default [
       {
         start: t('10:05'),
         end: t('10:20'),
-        body: `Presentation of trainer offerings`,
+        body: `Coming back together`,
       },
       { start: t('10:20'), end: t('10:35'), body: `Break` },
       {
