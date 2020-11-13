@@ -265,7 +265,7 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Godfrey<br> </i>Optional </div>
+  <div>Session option 1 <br><i>Godfrey<br> </i>(Optional)</div>
   <div>Session option 2 <br><i>Nic<br> </i>(Optional)</div>
 </div>
   `,
