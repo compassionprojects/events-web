@@ -145,7 +145,7 @@ export default [
   </div>
   <div>Session 1 option 2 <br><i>Genevieve<br></i><br>
   <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a></div>
-  <div>Session 1 option 3 <br><i>Lorna<br> </i><br>
+  <div>Session 1 option 3 <br><i>Lorna<br> Empathy at work</i><br>
   <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a></div></div>
 </div>
   `,
