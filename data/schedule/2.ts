@@ -23,23 +23,23 @@ export default [
       {
         start: t('09:30'),
         end: t('09:45'),
-        body: `Community session (settling and logistics) - [zoom link](https://zoom.us/j/96235491106)`,
+        body: `Community session (settling and logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('09:45'),
         end: t('10:05'),
-        body: `[Remembering](https://drive.google.com/file/d/1QWk0NyPzxmTTpZ_2AMOJ8SpmB1rO9tZV/view) and feedback linked to the Remembering - [zoom link](https://zoom.us/j/96235491106)`,
+        body: `[Remembering](https://drive.google.com/file/d/1QWk0NyPzxmTTpZ_2AMOJ8SpmB1rO9tZV/view) and feedback linked to the Remembering - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('10:05'),
         end: t('10:20'),
-        body: `Coming back together - [zoom link](https://zoom.us/j/96235491106)`,
+        body: `Coming back together - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       { start: t('10:20'), end: t('10:35'), body: `Break` },
       {
         start: t('10:35'),
         end: t('12:35'),
-        body: `Introduction to the VIC - [zoom link](https://zoom.us/j/96235491106)`,
+        body: `Introduction to the VIC - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('12:35'),
@@ -62,26 +62,30 @@ export default [
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
-      { start: t('16:20'), end: t('17:05'), body: `[Home Groups](https://drive.google.com/file/d/1A1fXes5DX9GuB0cE10BDhbF3Du2bw0_a/view) - [zoom link](https://zoom.us/j/96235491106)` },
+      {
+        start: t('16:20'),
+        end: t('17:05'),
+        body: `[Home Groups](https://drive.google.com/file/d/1A1fXes5DX9GuB0cE10BDhbF3Du2bw0_a/view) - [zoom link](https://bit.ly/2UnO7GC)`,
+      },
       {
         start: t('17:05'),
         end: t('17:10'),
-        body: `Back to plenary session - [zoom link](https://zoom.us/j/96235491106)`,
+        body: `Back to plenary session - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:10'),
         end: t('17:30'),
-        body: `Feedback of the day (harvesting) - [zoom link](https://zoom.us/j/96235491106)`,
+        body: `Feedback of the day (harvesting) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:30'),
         end: t('17:40'),
-        body: `Community session (logistics) - [zoom link](https://zoom.us/j/96235491106)`,
+        body: `Community session (logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:40'),
         end: t('18:00'),
-        body: `Trainers meeting, from participant requests to offerings - [zoom link](https://zoom.us/j/96235491106)`,
+        body: `Trainers meeting, from participant requests to offerings - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('18:00'),
@@ -99,7 +103,7 @@ export default [
       {
         start: t('18:00'),
         end: t('22:00'),
-        body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...) - [zoom link](https://zoom.us/j/96235491106)`,
+        body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
     ],
   },
@@ -114,22 +118,22 @@ export default [
       {
         start: t('07:30'),
         end: t('09:00'),
-        body: `For all proposals (meditation, yoga, dance, movement)`,
+        body: `For all proposals (meditation, yoga, dance, movement) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('09:30'),
         end: t('09:45'),
-        body: `Community session (settling and logistics)`,
+        body: `Community session (settling and logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('09:45'),
         end: t('10:05'),
-        body: `[Remembering](https://drive.google.com/file/d/1QWk0NyPzxmTTpZ_2AMOJ8SpmB1rO9tZV/view) and feedback linked to the Remembering`,
+        body: `[Remembering](https://drive.google.com/file/d/1QWk0NyPzxmTTpZ_2AMOJ8SpmB1rO9tZV/view) and feedback linked to the Remembering - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('10:05'),
         end: t('10:20'),
-        body: `Presentation of trainer offerings`,
+        body: `Presentation of trainer offerings - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       { start: t('10:20'), end: t('10:35'), body: `Break` },
       {
@@ -157,22 +161,30 @@ export default [
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
-      { start: t('16:20'), end: t('17:05'), body: `Home Groups` },
-      { start: t('17:05'), end: t('17:10'), body: `Back to plenary session` },
+      {
+        start: t('16:20'),
+        end: t('17:05'),
+        body: `Home Groups - [zoom link](https://bit.ly/2UnO7GC)`,
+      },
+      {
+        start: t('17:05'),
+        end: t('17:10'),
+        body: `Back to plenary session - [zoom link](https://bit.ly/2UnO7GC)`,
+      },
       {
         start: t('17:10'),
         end: t('17:30'),
-        body: `Feedback of the day (harvesting)`,
+        body: `Feedback of the day (harvesting) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:30'),
         end: t('17:40'),
-        body: `Community session (logistics)`,
+        body: `Community session (logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:40'),
         end: t('18:00'),
-        body: `Trainers meeting, from participant requests to offerings`,
+        body: `Trainers meeting, from participant requests to offerings - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('18:00'),
@@ -186,7 +198,7 @@ export default [
       {
         start: t('18:00'),
         end: t('22:00'),
-        body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...)`,
+        body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
     ],
   },
