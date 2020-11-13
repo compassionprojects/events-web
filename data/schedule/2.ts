@@ -23,23 +23,23 @@ export default [
       {
         start: t('09:30'),
         end: t('09:45'),
-        body: `[Community session](https://zoom.us/j/96235491106) (settling and logistics)`,
+        body: `Community session (settling and logistics) - [zoom link](https://zoom.us/j/96235491106)`,
       },
       {
         start: t('09:45'),
         end: t('10:05'),
-        body: `[Remembering](https://drive.google.com/file/d/1QWk0NyPzxmTTpZ_2AMOJ8SpmB1rO9tZV/view) and feedback linked to the Remembering`,
+        body: `[Remembering](https://drive.google.com/file/d/1QWk0NyPzxmTTpZ_2AMOJ8SpmB1rO9tZV/view) and feedback linked to the Remembering - [zoom link](https://zoom.us/j/96235491106)`,
       },
       {
         start: t('10:05'),
         end: t('10:20'),
-        body: `[Coming back together](https://zoom.us/j/96235491106)`,
+        body: `Coming back together - [zoom link](https://zoom.us/j/96235491106)`,
       },
       { start: t('10:20'), end: t('10:35'), body: `Break` },
       {
         start: t('10:35'),
         end: t('12:35'),
-        body: `[Introduction to the VIC](https://zoom.us/j/96235491106)`,
+        body: `Introduction to the VIC - [zoom link](https://zoom.us/j/96235491106)`,
       },
       {
         start: t('12:35'),
@@ -60,17 +60,17 @@ export default [
       {
         start: t('17:05'),
         end: t('17:10'),
-        body: `[Back to plenary session](https://zoom.us/j/96235491106)`,
+        body: `Back to plenary session - [zoom link](https://zoom.us/j/96235491106)`,
       },
       {
         start: t('17:10'),
         end: t('17:30'),
-        body: `[Feedback of the day](https://zoom.us/j/96235491106) (harvesting)`,
+        body: `Feedback of the day (harvesting) - [zoom link](https://zoom.us/j/96235491106)`,
       },
       {
         start: t('17:30'),
         end: t('17:40'),
-        body: `[Community session](https://zoom.us/j/96235491106) (logistics)`,
+        body: `Community session (logistics) - [zoom link](https://zoom.us/j/96235491106)`,
       },
       {
         start: t('17:40'),
