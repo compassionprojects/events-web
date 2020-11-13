@@ -137,8 +137,8 @@ export default [
         end: t('12:35'),
         body: `<div class="d-flex justify-content-between">
   <div>Session option 1 <br><i>Magda, <br>Beginners Track</i></div>
-  <div>Session option 2 <br><i>Genevieve<br> </i></div>
-  <div>Session option 3 <br><i> TBA<br> </i></div>
+  <div>Session option 2 <br><i>Genevieve<br></i></div>
+  <div>Session option 3 <br><i>Lorna<br> </i></div>
 </div>
   `,
       },
@@ -153,7 +153,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
           <div>Session option 1 <br><i>Louise, <br>Beginners Track</i></div>
           <div>Session option 2 <br><i>Godfrey<br> </i></div>
-          <div>Session option 3 <br><i>TBA<br> </i></div>
+          <div>Session option 3 <br><i>Ramanusha<br> </i></div>
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
@@ -178,8 +178,8 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i> <br> </i>Optional </div>
-  <div>Session option 2 <br><i> <br> </i>Optional </div>
+  <div>Session option 1 <br><i>Giorgos,<br> </i>(Optional)</div>
+  <div>Session option 2 <br><i>Thibault,<br> </i>(Optional)</div>
 </div>
   `,
       },
