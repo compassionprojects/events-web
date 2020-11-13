@@ -57,7 +57,11 @@ export default [
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
       { start: t('16:20'), end: t('17:05'), body: `Home Groups` },
-      { start: t('17:05'), end: t('17:10'), body: `Back to plenary session` },
+      {
+        start: t('17:05'),
+        end: t('17:10'),
+        body: `[Back to plenary session](https://zoom.us/j/96235491106)`,
+      },
       {
         start: t('17:10'),
         end: t('17:30'),
