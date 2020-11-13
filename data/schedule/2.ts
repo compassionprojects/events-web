@@ -140,9 +140,13 @@ export default [
         start: t('10:35'),
         end: t('12:35'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Magda, <br>Beginners Track</i></div>
-  <div>Session option 2 <br><i>Genevieve<br></i></div>
-  <div>Session option 3 <br><i>Lorna<br> </i></div>
+  <div>Session 1 option 1 <br><i>Magda, <br>Beginners Track</i><br>
+  <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+  </div>
+  <div>Session 1 option 2 <br><i>Genevieve<br></i><br>
+  <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a></div>
+  <div>Session 1 option 3 <br><i>Lorna<br> </i><br>
+  <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a></div></div>
 </div>
   `,
       },
@@ -155,9 +159,12 @@ export default [
         start: t('14:05'),
         end: t('16:05'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session option 1 <br><i>Louise, <br>Beginners Track</i></div>
-          <div>Session option 2 <br><i>Godfrey<br> </i></div>
-          <div>Session option 3 <br><i>Ramanusha<br> </i></div>
+          <div>Session 2 option 1 <br><i>Louise, <br>Beginners Track</i><br>
+          <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a></div>
+          <div>Session 2 option 2 <br><i>Godfrey<br> </i><br>
+          <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a></div>
+          <div>Session 2 option 3 <br><i>Ramanusha<br> </i><br>
+          <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a></div>
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
@@ -190,8 +197,10 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Giorgos,<br> </i>(Optional)</div>
-  <div>Session option 2 <br><i>Thibault,<br> </i>(Optional)</div>
+  <div>Session 3 option 1 <br><i>Giorgos,<br> </i>(Optional)<br>
+  <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a></div>
+  <div>Session 3 option 2 <br><i>Thibault,<br> </i>(Optional)<br>
+  <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a></div>
 </div>
   `,
       },
