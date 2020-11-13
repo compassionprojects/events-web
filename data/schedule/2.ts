@@ -62,7 +62,7 @@ export default [
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
-      { start: t('16:20'), end: t('17:05'), body: `Home Groups` },
+      { start: t('16:20'), end: t('17:05'), body: `Home Groups[zoom link](https://zoom.us/j/96235491106)` },
       {
         start: t('17:05'),
         end: t('17:10'),
