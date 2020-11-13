@@ -33,13 +33,13 @@ export default [
       {
         start: t('10:05'),
         end: t('10:20'),
-        body: `Coming back together`,
+        body: `[Coming back together](https://zoom.us/j/96235491106)`,
       },
       { start: t('10:20'), end: t('10:35'), body: `Break` },
       {
         start: t('10:35'),
         end: t('12:35'),
-        body: `Introduction to the VIC`,
+        body: `[Introduction to the VIC](https://zoom.us/j/96235491106)`,
       },
       {
         start: t('12:35'),
@@ -61,17 +61,17 @@ export default [
       {
         start: t('17:10'),
         end: t('17:30'),
-        body: `Feedback of the day (harvesting)`,
+        body: `[Feedback of the day](https://zoom.us/j/96235491106) (harvesting)`,
       },
       {
         start: t('17:30'),
         end: t('17:40'),
-        body: `Community session (logistics)`,
+        body: `[Community session](https://zoom.us/j/96235491106) (logistics)`,
       },
       {
         start: t('17:40'),
         end: t('18:00'),
-        body: `Trainers meeting, from participant requests to offerings`,
+        body: `Trainers meeting, from participant requests to offerings - [zoom link](https://zoom.us/j/96235491106)`,
       },
       {
         start: t('18:00'),
@@ -85,7 +85,7 @@ export default [
       {
         start: t('18:00'),
         end: t('22:00'),
-        body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...)`,
+        body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...) - [zoom link](https://zoom.us/j/96235491106)`,
       },
     ],
   },
