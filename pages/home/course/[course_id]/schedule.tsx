@@ -91,7 +91,11 @@ function Home() {
                     {row.start} - {row.end}
                   </td>
                   <td>
-                    <ReactMarkdown source={row.body} escapeHtml={false} />
+                    <ReactMarkdown
+                      source={row.body}
+                      escapeHtml={false}
+                      linkTarget="_blank"
+                    />
                   </td>
                 </tr>
               ))}

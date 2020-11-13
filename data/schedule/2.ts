@@ -50,9 +50,15 @@ export default [
         start: t('14:05'),
         end: t('16:05'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session option 1 <br><i>Magdalena,<br>Beginners Track</i></div>
-          <div>Session option 2 <br><i>Matthew<br> </i></div>
-          <div>Session option 3 <br><i>Nic<br> </i></div>
+          <div>Session option 1 <br><i>Magdalena,<br>Beginners Track</i><br>
+            <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+          </div>
+          <div>Session option 2 <br><i>Matthew<br></i>
+          <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
+          </div>
+          <div>Session option 3 <br><i>Nic<br></i>
+          <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
+          </div>
     </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break` },
@@ -81,8 +87,12 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Matthew<br> </i>(Optional)</div>
-  <div>Session option 2 <br><i>Nic<br> </i>(Optional)</div>
+  <div>Session option 1 <br><i>Matthew<br></i>(Optional)<br>
+  <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+  </div>
+  <div>Session option 2 <br><i>Nic<br> </i>(Optional)<br>
+  <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
+  </div>
 </div>
   `,
       },
