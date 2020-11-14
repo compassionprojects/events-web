@@ -206,7 +206,7 @@ export default [
       },
       {
         start: t('18:00'),
-        end: t('22:00'),
+        end: t('21:00'),
         body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
     ],
