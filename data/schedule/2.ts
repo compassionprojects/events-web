@@ -143,7 +143,7 @@ export default [
   <div>Session 1 option 1 <br><i>Magda, <br>Beginners Track</i><br>
   <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
   </div>
-  <div>Session 1 option 2 <br><i>Genevieve<br></i><br>
+  <div>Session 1 option 2 <br><i>Genevieve<br>Parenting in NVC</i><br>
   <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a></div>
   <div>Session 1 option 3 <br><i>Lorna<br> Empathy at work</i><br>
   <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a></div></div>
@@ -161,9 +161,9 @@ export default [
         body: `<div class="d-flex justify-content-between">
           <div>Session 2 option 1 <br><i>Louise, <br>Beginners Track</i><br>
           <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a></div>
-          <div>Session 2 option 2 <br><i>Godfrey<br> </i><br>
+          <div>Session 2 option 2 <br><i>Godfrey<br>Fury! Rage! Helplessness...</i><br>
           <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a></div>
-          <div>Session 2 option 3 <br><i>Ramanusha<br> </i><br>
+          <div>Session 2 option 3 <br><i>Ramanusha<br>Empathy at Home</i><br>
           <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a></div>
     </div>`,
       },
@@ -197,9 +197,9 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session 3 option 1 <br><i>Giorgos,<br> </i>(Optional)<br>
+  <div>Session 3 option 1 <br><i>Giorgos,<br> </i>(Optional)<br>Dialogues with our shame<br>
   <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a></div>
-  <div>Session 3 option 2 <br><i>Thibault,<br> </i>(Optional)<br>
+  <div>Session 3 option 2 <br><i>Thibault,<br> </i>(Optional)<br>NVC that works for all <br>
   <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a></div>
 </div>
   `,
