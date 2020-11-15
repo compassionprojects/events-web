@@ -194,7 +194,7 @@ function Wall() {
   });
   const { data: dataMessages, loading: lm, fetchMore } = useQuery(
     GET_MESSAGES,
-    { variables }
+    { variables, fetchPolicy: 'cache-and-network' }
   );
   const loading = lt || lm;
 
