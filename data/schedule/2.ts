@@ -300,9 +300,9 @@ export default [
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session Choice 1 <br><i>Godfrey<br> </i>(Optional)<br>
+  <div>Session Choice 1 <br><i>Godfrey<br> </i>(Optional)<br>Regrets<br>
   <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a></div>
-  <div>Session Choice 2 <br><i>Nic<br> </i>(Optional)<br>
+  <div>Session Choice 2 <br><i>Nic<br> </i>(Optional)<br>Relax and unwind<br>
   <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a></div>
 </div>
   `,
