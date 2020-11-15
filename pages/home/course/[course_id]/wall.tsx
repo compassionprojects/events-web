@@ -524,7 +524,7 @@ function Message({
 }) {
   const { user } = useContext(UserContext);
   return (
-    <div style={style}>
+    <div style={style} id={id}>
       <div
         className={classnames('d-flex', className, verticalSpacing, {
           'bg-deleting': deletingId === +id,
@@ -546,7 +546,12 @@ function Message({
             <span className="mr-auto">
               <b>
                 {createdBy.name}
-                {!parent && <> (#{id})</>}
+                {!parent && (
+                  <>
+                    &nbsp;
+                    <a href={`#${id}`}>#{id}</a>
+                  </>
+                )}
               </b>
             </span>
             {createdBy.id === user.id && (
