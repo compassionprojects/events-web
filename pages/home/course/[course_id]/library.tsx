@@ -75,6 +75,7 @@ function Library() {
   };
   const { data, loading, fetchMore } = useQuery(GET_LIBRARY_CONTENTS, {
     variables,
+    fetchPolicy: 'cache-and-network',
   });
 
   const { allLibrarySections = [], allContents = [] } = data || {};

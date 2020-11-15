@@ -54,6 +54,7 @@ function Space() {
   };
   const { data, loading, fetchMore } = useQuery(GET_CONTENT, {
     variables,
+    fetchPolicy: 'cache-and-network',
   });
 
   const { Space = {}, allContents = [] } = data || {};
