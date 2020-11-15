@@ -248,7 +248,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
   <div>Session Choice 1 <br><i>Magda, <br>Beginners Track<br>From judging myself to making powerful request to myself <br>(or others)</i><br>
   <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a></div>
-  <div>Session Choice 2 <br><i>Irmtraud<br>(White) fragility versus empathic responsibility (part 2)</i><br>
+  <div>Session Choice 2 <br><i>Irmtraud<br>(White) fragility versus empathic responsibility (part 1)</i><br>
   <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a></div>
   <div>Session Choice 3 <br><i> Frank<br>Mr. Rosenberg and the coffee cup</i><br>
   <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a></div>
