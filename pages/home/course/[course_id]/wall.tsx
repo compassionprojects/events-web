@@ -543,7 +543,12 @@ function Message({
         </div>
         <div className="w-100">
           <div className="d-flex align-items-center">
-            <b className="mr-auto">{createdBy.name}</b>
+            <span className="mr-auto">
+              <b>
+                {createdBy.name}
+                {!parent && <> (#{id})</>}
+              </b>
+            </span>
             {createdBy.id === user.id && (
               <a href="" onClick={(e) => removeMessage(e, { id: +id, parent })}>
                 <Icon
