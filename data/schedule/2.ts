@@ -35,7 +35,7 @@ export default [
         end: t('10:20'),
         body: `Coming back together - [zoom link](https://bit.ly/2UnO7GC)`,
       },
-      { start: t('10:20'), end: t('10:35'), body: `Break` },
+      { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
@@ -45,6 +45,7 @@ export default [
         start: t('12:35'),
         end: t('14:05'),
         body: `Break for lunch (including time to cook and eat together)`,
+        type: 'break',
       },
       {
         start: t('14:05'),
@@ -61,7 +62,7 @@ export default [
           </div>
     </div>`,
       },
-      { start: t('16:05'), end: t('16:20'), body: `Break` },
+      { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
       {
         start: t('16:20'),
         end: t('17:05'),
@@ -102,7 +103,7 @@ export default [
       },
       {
         start: t('18:00'),
-        end: t('22:00'),
+        end: t('21:00'),
         body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
     ],
@@ -135,7 +136,7 @@ export default [
         end: t('10:20'),
         body: `Presentation of trainer offerings - [zoom link](https://bit.ly/2UnO7GC)`,
       },
-      { start: t('10:20'), end: t('10:35'), body: `Break` },
+      { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
@@ -154,6 +155,7 @@ export default [
         start: t('12:35'),
         end: t('14:05'),
         body: `Break for lunch (including time to cook and eat together)`,
+        type: 'break',
       },
       {
         start: t('14:05'),
@@ -167,7 +169,7 @@ export default [
           <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a></div>
     </div>`,
       },
-      { start: t('16:05'), end: t('16:20'), body: `Break` },
+      { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
       {
         start: t('16:20'),
         end: t('17:05'),
@@ -239,7 +241,7 @@ export default [
         end: t('10:20'),
         body: `Presentation of trainer offerings - [zoom link](https://bit.ly/2UnO7GC)`,
       },
-      { start: t('10:20'), end: t('10:35'), body: `Break` },
+      { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
@@ -257,6 +259,7 @@ export default [
         start: t('12:35'),
         end: t('14:05'),
         body: `Break for lunch (including time to cook and eat together)`,
+        type: 'break',
       },
       {
         start: t('14:05'),
@@ -270,7 +273,7 @@ export default [
           <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a></div>
     </div>`,
       },
-      { start: t('16:05'), end: t('16:20'), body: `Break` },
+      { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
       {
         start: t('16:20'),
         end: t('17:05'),
@@ -324,6 +327,7 @@ export default [
     schedule: [
       {
         body: `Day Off`,
+        type: 'break',
       },
     ],
   },
@@ -354,7 +358,7 @@ export default [
         end: t('10:20'),
         body: `Presentation of trainer offerings`,
       },
-      { start: t('10:20'), end: t('10:35'), body: `Break` },
+      { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
@@ -369,6 +373,7 @@ export default [
         start: t('12:35'),
         end: t('14:05'),
         body: `Break for lunch (including time to cook and eat together)`,
+        type: 'break',
       },
       {
         start: t('14:05'),
@@ -379,7 +384,7 @@ export default [
           <div>Session option 3 <br><i> Frank<br> </i></div>
     </div>`,
       },
-      { start: t('16:05'), end: t('16:20'), body: `Break` },
+      { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
       { start: t('16:20'), end: t('17:05'), body: `Home Groups` },
       { start: t('17:05'), end: t('17:10'), body: `Back to plenary session` },
       {
@@ -408,7 +413,7 @@ export default [
       },
       {
         start: t('18:00'),
-        end: t('22:00'),
+        end: t('21:00'),
         body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...)`,
       },
     ],
@@ -440,7 +445,7 @@ export default [
         end: t('10:20'),
         body: `Presentation of trainer offerings`,
       },
-      { start: t('10:20'), end: t('10:35'), body: `Break` },
+      { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
@@ -455,6 +460,7 @@ export default [
         start: t('12:35'),
         end: t('14:05'),
         body: `Break for lunch (including time to cook and eat together)`,
+        type: 'break',
       },
       {
         start: t('14:05'),
@@ -465,7 +471,7 @@ export default [
           <div>Session option 3 <br><i>Frank<br> </i></div>
     </div>`,
       },
-      { start: t('16:05'), end: t('16:20'), body: `Break` },
+      { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
       { start: t('16:20'), end: t('17:05'), body: `Home Groups` },
       { start: t('17:05'), end: t('17:10'), body: `Back to plenary session` },
       {
@@ -494,7 +500,7 @@ export default [
       },
       {
         start: t('18:00'),
-        end: t('22:00'),
+        end: t('21:00'),
         body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...)`,
       },
     ],
@@ -538,7 +544,7 @@ export default [
         end: t('10:20'),
         body: `Presentation of trainer offerings`,
       },
-      { start: t('10:20'), end: t('10:35'), body: `Break` },
+      { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
@@ -553,6 +559,7 @@ export default [
         start: t('12:35'),
         end: t('14:05'),
         body: `Break for lunch (including time to cook and eat together)`,
+        type: 'break',
       },
       {
         start: t('14:05'),
@@ -563,7 +570,7 @@ export default [
           <div>Session option 3 <br><i> Frank, <br> </i></div>
     </div>`,
       },
-      { start: t('16:05'), end: t('16:20'), body: `Break` },
+      { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
       { start: t('16:20'), end: t('17:05'), body: `Home Groups` },
       { start: t('17:05'), end: t('17:10'), body: `Back to plenary session` },
       {
@@ -592,11 +599,12 @@ export default [
       },
       {
         start: t('18:00'),
-        end: t('22:00'),
+        end: t('21:00'),
         body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...)`,
       },
     ],
   },
+
   // Day 9
   {
     startDate: moment(`2020-11-21T09:30:00+02:00`),
@@ -624,7 +632,7 @@ export default [
         end: t('10:20'),
         body: `Presentation of trainer offerings`,
       },
-      { start: t('10:20'), end: t('10:35'), body: `Break` },
+      { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
@@ -639,6 +647,7 @@ export default [
         start: t('12:35'),
         end: t('14:05'),
         body: `Break for lunch (including time to cook and eat together)`,
+        type: 'break',
       },
       {
         start: t('14:05'),
@@ -649,7 +658,7 @@ export default [
           <div>Session option 3 <br><i>Godfrey <br> </i></div>
     </div>`,
       },
-      { start: t('16:05'), end: t('16:20'), body: `Break` },
+      { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
       { start: t('16:20'), end: t('17:05'), body: `Home Groups` },
       { start: t('17:05'), end: t('17:10'), body: `Back to plenary session` },
       {
@@ -666,6 +675,7 @@ export default [
         start: t('17:40'),
         end: t('18:00'),
         body: `Break`,
+        type: 'break',
       },
       {
         start: t('18:00'),
@@ -674,6 +684,7 @@ export default [
       },
     ],
   },
+
   // Day 10
   {
     startDate: moment(`2020-11-22T09:30:00+02:00`),
@@ -701,7 +712,7 @@ export default [
         end: t('10:20'),
         body: `Explain the day`,
       },
-      { start: t('10:20'), end: t('10:35'), body: `Break` },
+      { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
@@ -716,13 +727,14 @@ export default [
         start: t('12:35'),
         end: t('14:05'),
         body: `Break for lunch (including time to cook and eat together)`,
+        type: 'break',
       },
       {
         start: t('14:05'),
         end: t('16:05'),
         body: `Home Groups`,
       },
-      { start: t('16:05'), end: t('16:20'), body: `Break` },
+      { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
       { start: t('16:20'), end: t('17:40'), body: `Harvesting` },
       { start: t('17:40'), end: t('19:30'), body: `Space for participants` },
     ],

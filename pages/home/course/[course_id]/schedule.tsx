@@ -86,7 +86,14 @@ function Home() {
           <Table className="table">
             <tbody>
               {day.schedule.map((row, idx) => (
-                <tr key={idx}>
+                <tr
+                  key={idx}
+                  style={{
+                    background:
+                      row.type && row.type === 'break'
+                        ? 'rgb(252, 248, 227)'
+                        : 'transparent',
+                  }}>
                   <td width="20%">
                     {row.start} - {row.end}
                   </td>
