@@ -432,7 +432,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
   <div>About Certification <br><i>Irmtraud & Frank, <br> </i>Optional <br>
   <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a></div>
-  <div>Session choice 2 <br><i>Godfrey, <br> </i>Optional <br>
+  <div>Session choice 2 <br><i>Godfrey, <br>Addictions<br> </i>(Optional)<br>
   <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a></div>
 </div>
   `,
