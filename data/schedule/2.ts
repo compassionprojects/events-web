@@ -444,6 +444,7 @@ export default [
       },
     ],
   },
+
   // Day 6
   {
     startDate: moment(`2020-11-18T09:30:00+02:00`),
@@ -454,33 +455,41 @@ export default [
       {
         start: t('07:30'),
         end: t('09:00'),
-        body: `For all proposals (meditation, yoga, dance, movement)`,
+        body: `For all proposals (meditation, yoga, dance, movement) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('09:30'),
         end: t('09:45'),
-        body: `Community session (settling and logistics)`,
+        body: `Community session (settling and logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('09:45'),
         end: t('10:05'),
-        body: `Remembering and feedback linked to the Remembering`,
+        body: `Remembering and feedback linked to the Remembering - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('10:05'),
         end: t('10:20'),
-        body: `Presentation of trainer offerings`,
+        body: `Presentation of trainer offerings - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Magda<br></i></div>
-  <div>Session option 2 <br><i>Irmtraud<br> </i></div>
-  <div>Session option 3 <br><i> Frank<br> </i></div>
-</div>
-  `,
+          <div>Session Choice 1 <br>
+          <i>Godfrey, <br>NVC's view on good manners</i><br>
+          <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+          </div>
+          <div>Session Choice 2 <br>
+          <i>Irmtraud<br>Transforming old pain</i><br>
+          <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
+          </div>
+          <div>Session Choice 3 <br>
+          <i>Frank<br>Labels</i><br>
+          <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
+          </div>
+        </div>`,
       },
       {
         start: t('12:35'),
@@ -492,45 +501,76 @@ export default [
         start: t('14:05'),
         end: t('16:05'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session option 1 <br><i>Louise<br> </i></div>
-          <div>Session option 2 <br><i>Irmtraud<br> </i></div>
-          <div>Session option 3 <br><i>Frank<br> </i></div>
-    </div>`,
+        <div>Session Choice 1 <br>
+        <i>Geneviève, <br>Identifying and transforming core beliefs</i><br>
+        <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+        </div>
+        <div>Session Choice 2 <br>
+        <i>Irmtraud<br>Nonviolence, it's meaning and activism</i><br>
+        <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
+        </div>
+        <div>Session Choice 3 <br>
+        <i>Frank<br>The four themes of life</i><br>
+        <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
+        </div>
+        <div>Session Choice 4 <br>
+        <i>Louise<br>Sex, sexuality and consent</i><br>
+        <a href="https://zoom.us/j/2595001016" target="_blank">zoom link</a>
+        </div>
+      </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
-      { start: t('16:20'), end: t('17:05'), body: `Home Groups` },
-      { start: t('17:05'), end: t('17:10'), body: `Back to plenary session` },
+      {
+        start: t('16:20'),
+        end: t('17:05'),
+        body: `Home Groups - [zoom link](https://bit.ly/2UnO7GC)`,
+      },
+      {
+        start: t('17:05'),
+        end: t('17:10'),
+        body: `Back to plenary session - [zoom link](https://bit.ly/2UnO7GC)`,
+      },
       {
         start: t('17:10'),
         end: t('17:30'),
-        body: `Feedback of the day (harvesting)`,
+        body: `Feedback of the day (harvesting) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:30'),
         end: t('17:40'),
-        body: `Community session (logistics)`,
+        body: `Community session (logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:40'),
         end: t('18:00'),
-        body: `Trainers meeting, from participant requests to offerings`,
+        body: `Trainers meeting, from participant requests to offerings - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('18:00'),
         end: t('20:00'),
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Godfrey <br> </i>(Optional)</div>
-  <div>Session option 2 <br><i>Ramanusha<br> </i>(Optional)</div>
-</div>
-  `,
+          <div>Session Choice 1 <br>
+          <i>Lev and Anish, <br>Men's circle</i><br>
+          <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+          </div>
+          <div>Session Choice 2 <br>
+          <i>Ramanusha<br>Learning from our pain</i><br>
+          <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
+          </div>
+          <div>Session Choice 3 <br>
+          <i>Tamara<br>Women's circle</i><br>
+          <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
+          </div>
+        </div>`,
       },
       {
         start: t('18:00'),
         end: t('21:00'),
-        body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...)`,
+        body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
     ],
   },
+
   // Day 7
   {
     startDate: moment(`2020-11-19T09:30:00+02:00`),
