@@ -96,6 +96,12 @@ function Home() {
                   }}>
                   <td width="20%">
                     {row.start} - {row.end}
+                    {row.session && (
+                      <>
+                        <br />
+                        Session {row.session}
+                      </>
+                    )}
                   </td>
                   <td>
                     <ReactMarkdown

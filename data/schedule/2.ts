@@ -460,6 +460,7 @@ export default [
       {
         start: t('09:30'),
         end: t('09:45'),
+        session: 1,
         body: `Community session (settling and logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
@@ -476,16 +477,17 @@ export default [
       {
         start: t('10:35'),
         end: t('12:35'),
+        session: 2,
         body: `<div class="d-flex justify-content-between">
-          <div>Session Choice 1 <br>
+          <div>Choice 1 <br>
           <i>Godfrey, <br>NVC's view on good manners</i><br>
           <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
           </div>
-          <div>Session Choice 2 <br>
+          <div>Choice 2 <br>
           <i>Irmtraud<br>Transforming old pain</i><br>
           <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
           </div>
-          <div>Session Choice 3 <br>
+          <div>Choice 3 <br>
           <i>Frank<br>Labels</i><br>
           <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
           </div>
@@ -500,20 +502,21 @@ export default [
       {
         start: t('14:05'),
         end: t('16:05'),
+        session: 3,
         body: `<div class="d-flex justify-content-between">
-        <div>Session Choice 1 <br>
+        <div>Choice 1 <br>
         <i>Geneviève, <br>Identifying and transforming core beliefs</i><br>
         <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
         </div>
-        <div>Session Choice 2 <br>
+        <div>Choice 2 <br>
         <i>Irmtraud<br>Nonviolence, it's meaning and activism</i><br>
         <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
         </div>
-        <div>Session Choice 3 <br>
+        <div>Choice 3 <br>
         <i>Frank<br>The four themes of life</i><br>
         <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
         </div>
-        <div>Session Choice 4 <br>
+        <div>Choice 4 <br>
         <i>Louise<br>Sex, sexuality and consent</i><br>
         <a href="https://zoom.us/j/2595001016" target="_blank">zoom link</a>
         </div>
@@ -523,16 +526,18 @@ export default [
       {
         start: t('16:20'),
         end: t('17:05'),
+        session: 4,
         body: `Home Groups - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:05'),
         end: t('17:10'),
-        body: `Back to plenary session - [zoom link](https://bit.ly/2UnO7GC)`,
+        body: `Back to plenary session- [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:10'),
         end: t('17:30'),
+        session: 5,
         body: `Feedback of the day (harvesting) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
@@ -548,16 +553,17 @@ export default [
       {
         start: t('18:00'),
         end: t('20:00'),
+        session: 6,
         body: `<div class="d-flex justify-content-between">
-          <div>Session Choice 1 <br>
+          <div>Choice 1 <br>
           <i>Lev and Anish, <br>Men's circle</i><br>
           <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
           </div>
-          <div>Session Choice 2 <br>
+          <div>Choice 2 <br>
           <i>Ramanusha<br>Learning from our pain</i><br>
           <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
           </div>
-          <div>Session Choice 3 <br>
+          <div>Choice 3 <br>
           <i>Tamara<br>Women's circle</i><br>
           <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
           </div>
