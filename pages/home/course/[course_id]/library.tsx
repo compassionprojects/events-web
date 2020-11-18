@@ -152,7 +152,8 @@ function Library() {
             </a>
           )}
           <div className="text-muted small py-1">
-            {moment(item.createdAt).fromNow()} by {item.createdBy.name}
+            {moment(item.createdAt).fromNow()} by {item.createdBy.name} in{' '}
+            {item.librarySection.title}
           </div>
           <ReactMarkdown
             linkTarget="_blank"
