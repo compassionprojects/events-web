@@ -606,6 +606,7 @@ Message.propTypes = {
 
 Message.defaultProps = {
   verticalSpacing: 'py-2',
+  createdBy: {},
 };
 
 const MessageStyle = styled.div`
