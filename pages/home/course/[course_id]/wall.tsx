@@ -536,7 +536,7 @@ function Message({
           })}
           style={{ width: parent ? 30 : 50 }}>
           <Gravatar
-            email={createdBy.email}
+            email={createdBy && createdBy.email}
             default="monsterid"
             className="rounded-circle img-fluid"
           />
@@ -545,7 +545,7 @@ function Message({
           <div className="d-flex align-items-center">
             <span className="mr-auto">
               <b>
-                {createdBy.name}
+                {(createdBy && createdBy.name) || 'User'}
                 {!parent && (
                   <>
                     &nbsp;
@@ -554,7 +554,7 @@ function Message({
                 )}
               </b>
             </span>
-            {createdBy.id === user.id && (
+            {createdBy && createdBy.id === user.id && (
               <a href="" onClick={(e) => removeMessage(e, { id: +id, parent })}>
                 <Icon
                   shape="trash-2"
