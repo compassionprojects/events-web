@@ -625,7 +625,7 @@ export default [
         session: 2,
         body: `<div class="d-flex justify-content-between">
           <div>Choice 1 <br>
-          <i>Magdalena, <br>Dealing with guilt/shame concerning the past decision that you regret</i><br>
+          <i>Magdalena <br>Dealing with guilt/shame concerning the past decision that you regret</i><br>
           <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
           </div>
           <div>Choice 2 <br>
@@ -650,7 +650,7 @@ export default [
         session: 3,
         body: `<div class="d-flex justify-content-between">
           <div>Choice 1 <br>
-          <i>Liv Larsson, <br>From shame to vulnerability</i><br>
+          <i>Liv Larsson <br>From shame to vulnerability</i><br>
           <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
           </div>
           <div>Choice 2 <br>
@@ -702,7 +702,7 @@ export default [
         session: 6,
         body: `<div class="d-flex justify-content-between">
           <div>Choice 1 <br>
-          <i>Godfrey (& Sharon?), <br>Inner and outer mediation</i><br>
+          <i>Godfrey (& Sharon?) <br>Inner and outer mediation</i><br>
           <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
           </div>
           <div>Choice 2 <br>
