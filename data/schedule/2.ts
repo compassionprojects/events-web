@@ -589,6 +589,7 @@ export default [
       },
     ],
   },
+
   // Day 8
   {
     startDate: moment(`2020-11-20T09:30:00+02:00`),
@@ -599,33 +600,43 @@ export default [
       {
         start: t('07:30'),
         end: t('09:00'),
-        body: `For all proposals (meditation, yoga, dance, movement)`,
+        body: `For all proposals (meditation, yoga, dance, movement) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('09:30'),
         end: t('09:45'),
-        body: `Community session (settling and logistics)`,
+        session: 1,
+        body: `Community session (settling and logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('09:45'),
         end: t('10:05'),
-        body: `Remembering and feedback linked to the Remembering`,
+        body: `Remembering and feedback linked to the Remembering - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('10:05'),
         end: t('10:20'),
-        body: `Presentation of trainer offerings`,
+        body: `Presentation of trainer offerings - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
+        session: 2,
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Magda, <br></i></div>
-  <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-  <div>Session option 3 <br><i> Frank, <br> </i></div>
-</div>
-  `,
+          <div>Choice 1 <br>
+          <i>Magdalena, <br>Dealing with guilt/shame concerning the past decision that you regret</i><br>
+          <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 2 <br>
+          <i>Irmtraud<br>Mediation (part 1) - theory and demonstration</i><br>
+          <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 3 <br>
+          <i>Frank<br>Mediation with children</i><br>
+          <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
+          </div>
+        </div>`,
       },
       {
         start: t('12:35'),
@@ -636,43 +647,78 @@ export default [
       {
         start: t('14:05'),
         end: t('16:05'),
+        session: 3,
         body: `<div class="d-flex justify-content-between">
-          <div>Session option 1 <br><i>Liv Larsson, <br> </i></div>
-          <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-          <div>Session option 3 <br><i> Frank, <br> </i></div>
-    </div>`,
+          <div>Choice 1 <br>
+          <i>Liv Larsson, <br>From shame to vulnerability</i><br>
+          <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 2 <br>
+          <i>Irmtraud<br>Mediation (part 2)</i><br>
+          <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 3 <br>
+          <i>Frank<br>Judge and choose</i><br>
+          <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
+          </div>
+        </div>`,
       },
-      { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
-      { start: t('16:20'), end: t('17:05'), body: `Home Groups` },
-      { start: t('17:05'), end: t('17:10'), body: `Back to plenary session` },
+      {
+        start: t('16:05'),
+        end: t('16:20'),
+        body: `Break - [zoom link](https://bit.ly/2UnO7GC)`,
+        type: 'break',
+      },
+      {
+        start: t('16:20'),
+        end: t('17:05'),
+        session: 4,
+        body: `Home Groups - [zoom link](https://bit.ly/2UnO7GC)`,
+      },
+      {
+        start: t('17:05'),
+        end: t('17:10'),
+        body: `Back to plenary session - [zoom link](https://bit.ly/2UnO7GC)`,
+      },
       {
         start: t('17:10'),
         end: t('17:30'),
-        body: `Feedback of the day (harvesting)`,
+        session: 5,
+        body: `Feedback of the day (harvesting) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:30'),
         end: t('17:40'),
-        body: `Community session (logistics)`,
+        body: `Community session (logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:40'),
         end: t('18:00'),
-        body: `Trainers meeting, from participant requests to offerings`,
+        body: `Trainers meeting, from participant requests to offerings - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('18:00'),
         end: t('20:00'),
+        session: 6,
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Godfrey, <br> </i>Optional </div>
-  <div>Session option 2 <br><i>Nic Burnand, <br> </i>Optional </div>
-</div>
-  `,
+          <div>Choice 1 <br>
+          <i>Godfrey (& Sharon?), <br>Inner and outer mediation</i><br>
+          <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 2 <br>
+          <i>Matthew<br>NVC and spirituality</i><br>
+          <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 3 <br>
+          <i>Natalia<br>Listening others with empathy (practice session)</i><br>
+          <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
+          </div>
+        </div>`,
       },
       {
         start: t('18:00'),
         end: t('21:00'),
-        body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...)`,
+        body: `For all other offerings (meditation, workshops, yoga, dance, movement, ...) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
     ],
   },
