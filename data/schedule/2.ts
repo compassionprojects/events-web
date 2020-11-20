@@ -733,33 +733,43 @@ export default [
       {
         start: t('07:30'),
         end: t('09:00'),
-        body: `For all proposals (meditation, yoga, dance, movement)`,
+        body: `For all proposals (meditation, yoga, dance, movement) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('09:30'),
         end: t('09:45'),
-        body: `Community session (settling and logistics)`,
+        session: 1,
+        body: `Community session (settling and logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('09:45'),
         end: t('10:05'),
-        body: `Remembering and feedback linked to the Remembering`,
+        body: `Remembering and feedback linked to the Remembering - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('10:05'),
         end: t('10:20'),
-        body: `Presentation of trainer offerings`,
+        body: `Presentation of trainer offerings - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
+        session: 2,
         body: `<div class="d-flex justify-content-between">
-  <div>Session option 1 <br><i>Magda, <br></i></div>
-  <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-  <div>Session option 3 <br><i>Matthew, <br> </i></div>
-</div>
-  `,
+          <div>Choice 1 <br>
+          <i>Magdalena <br>She/he/[insert gender] is so needy</i><br>
+          <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 2 <br>
+          <i>Irmtraud<br>Empathy for someone very ill who is afraid of dying</i><br>
+          <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 3 <br>
+          <i>Matthew<br>NVC boundaries/rules when working with children</i><br>
+          <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
+          </div>
+        </div>`,
       },
       {
         start: t('12:35'),
@@ -770,11 +780,21 @@ export default [
       {
         start: t('14:05'),
         end: t('16:05'),
+        session: 3,
         body: `<div class="d-flex justify-content-between">
-          <div>Money pile <br><i>Louise, <br> </i></div>
-          <div>Session option 2 <br><i>Irmtraud, <br> </i></div>
-          <div>Session option 3 <br><i>Godfrey <br> </i></div>
-    </div>`,
+          <div>Choice 1 <br>
+          <i>Frank <br>Punishment & Reward</i><br>
+          <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 2 <br>
+          <i>Irmtraud<br>Sharing NVC - Introducing NVC</i><br>
+          <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 3 <br>
+          <i>Godfrey<br>Loneliness</i><br>
+          <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
+          </div>
+        </div>`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
       { start: t('16:20'), end: t('17:05'), body: `Home Groups` },
@@ -782,12 +802,14 @@ export default [
       {
         start: t('17:10'),
         end: t('17:30'),
-        body: `Feedback of the day (harvesting)`,
+        session: 4,
+        body: `Feedback of the day (harvesting) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:30'),
         end: t('17:40'),
-        body: `Community session (logistics)`,
+        session: 5,
+        body: `Community session (logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('17:40'),
@@ -798,7 +820,8 @@ export default [
       {
         start: t('18:00'),
         end: t('21:00'),
-        body: `Community time`,
+        session: 6,
+        body: `Community time - [zoom link](https://bit.ly/2UnO7GC)`,
       },
     ],
   },
