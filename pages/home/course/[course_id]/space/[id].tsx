@@ -92,7 +92,7 @@ function Space() {
         {loading && <Loading color="primary" />}
       </h2>
       {allContents.map((item) => (
-        <div className="py-4 border-top" key={item.id}>
+        <div className="py-5 border-top" key={item.id}>
           <b>{item.title}</b>
           <div className="text-muted small py-1">
             {moment(item.createdAt).fromNow()} by {item.createdBy.name}
