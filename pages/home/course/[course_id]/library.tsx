@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import Router, { useRouter } from 'next/router';
 import { gql } from 'apollo-boost';
@@ -155,11 +156,13 @@ function Library() {
             {moment(item.createdAt).fromNow()} by {item.createdBy.name} in{' '}
             {item.librarySection.title}
           </div>
-          <ReactMarkdown
-            linkTarget="_blank"
-            source={item.description}
-            escapeHtml={false}
-          />
+          <ContentBlock>
+            <ReactMarkdown
+              linkTarget="_blank"
+              source={item.description}
+              escapeHtml={false}
+            />
+          </ContentBlock>
           {item.contentType === 'image' && item.url && (
             <img src={item.url} className="img-fluid rounded" />
           )}
@@ -202,3 +205,9 @@ function Library() {
 }
 
 export default withAuth(Library);
+
+const ContentBlock = styled.div`
+  p:last-child {
+    margin-bottom: 0;
+  }
+`;
