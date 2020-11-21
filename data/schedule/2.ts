@@ -836,33 +836,47 @@ export default [
       {
         start: t('07:30'),
         end: t('09:00'),
-        body: `For all proposals (meditation, yoga, dance, movement)`,
+        body: `For all proposals (meditation, yoga, dance, movement) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('09:30'),
         end: t('09:45'),
-        body: `Community session (settling and logistics)`,
+        session: 1,
+        body: `Community session (settling and logistics) - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('09:45'),
         end: t('10:05'),
-        body: `Remembering and feedback linked to the Remembering`,
+        body: `Remembering and feedback linked to the Remembering - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       {
         start: t('10:05'),
         end: t('10:20'),
-        body: `Explain the day`,
+        body: `Trainer offerings - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       { start: t('10:20'), end: t('10:35'), body: `Break`, type: 'break' },
       {
         start: t('10:35'),
         end: t('12:35'),
+        session: 2,
         body: `<div class="d-flex justify-content-between">
-  <div>Landing after the course <br><i>Irmtraud, <br></i></div>
-  <div>Landing after the course <br><i>Louise, <br> </i></div>
-  <div>Session option 3 <br><i>Magdalena <br> </i></div>
-</div>
-  `,
+          <div>Choice 1 <br>
+          <i>Irmtraud <br>Gratitude and expressing appreciation</i><br>
+          <a href="https://zoom.us/j/99648483527" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 2 <br>
+          <i>Louise<br>Landing after the course</i><br>
+          <a href="https://zoom.us/j/99371168739" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 3 <br>
+          <i>Magdalena<br>Working with big groups</i><br>
+          <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
+          </div>
+          <div>Choice 4 <br>
+          <i>Godfrey<br>Feedback / feedforward</i><br>
+          <a href="https://zoom.us/j/2595001016" target="_blank">zoom link</a>
+          </div>
+        </div>`,
       },
       {
         start: t('12:35'),
@@ -873,11 +887,21 @@ export default [
       {
         start: t('14:05'),
         end: t('16:05'),
-        body: `Home Groups`,
+        session: 3,
+        body: `Home Groups - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
-      { start: t('16:20'), end: t('17:40'), body: `Harvesting` },
-      { start: t('17:40'), end: t('19:30'), body: `Space for participants` },
+      {
+        start: t('16:20'),
+        end: t('17:40'),
+        session: 4,
+        body: `Harvesting - [zoom link](https://bit.ly/2UnO7GC)`,
+      },
+      {
+        start: t('17:40'),
+        end: t('19:30'),
+        body: `Space for participants - [zoom link](https://bit.ly/2UnO7GC)`,
+      },
     ],
   },
 ];
