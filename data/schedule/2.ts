@@ -873,7 +873,7 @@ export default [
           <a href="https://zoom.us/j/92224089535" target="_blank">zoom link</a>
           </div>
           <div>Choice 4 <br>
-          <i>Godfrey<br>Feedback / feedforward</i><br>
+          <i>Lev & Godfrey<br>Feedback / feedforward</i><br>
           <a href="https://zoom.us/j/2595001016" target="_blank">zoom link</a>
           </div>
         </div>`,
