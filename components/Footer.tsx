@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import scrollTo from 'scroll-to-element';
 import Link from './Link';
 import data from '../data/landing';
-import { o } from './Header';
 import Subscribe from './Subscribe';
 
 const year = new Date().getFullYear();
@@ -23,25 +21,12 @@ export default function Footer() {
               </Link>
             </li>
             <li className="my-2">
-              <Link
-                href="/#about"
-                as="/#about"
-                onClick={() => scrollTo('#about', o)}>
-                Course
-              </Link>
-            </li>
-            <li className="my-2">
-              <Link
-                href="/#trainers"
-                as="/#trainers"
-                onClick={() => scrollTo('#trainers', o)}>
-                Trainers
-              </Link>
-            </li>
-            <li className="my-2">
-              <Link href="/#faq" as="/#faq" onClick={() => scrollTo('#faq', o)}>
-                FAQ&apos;s
-              </Link>
+              <a
+                href="https://community.peacefactory.fr"
+                target="_blank"
+                rel="noreferrer">
+                Community
+              </a>
             </li>
             <li className="my-2">
               <a href={`mailto:${data.contact_email}`}>Contact</a>
