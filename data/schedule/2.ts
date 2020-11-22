@@ -888,7 +888,7 @@ export default [
         start: t('14:05'),
         end: t('16:05'),
         session: 3,
-        body: `Home Groups - [zoom link](https://bit.ly/2UnO7GC)`,
+        body: `First 10 minutes together and then to Home Groups - [zoom link](https://bit.ly/2UnO7GC)`,
       },
       { start: t('16:05'), end: t('16:20'), body: `Break`, type: 'break' },
       {
