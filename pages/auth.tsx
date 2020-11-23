@@ -24,6 +24,20 @@ const AuthWrap = (Component) => {
       return null;
     }
 
+    // If user is not part of the course, send him back to /home
+    if (
+      user &&
+      router.query.course_id &&
+      !user.courses.map((c) => c.id).includes(router.query.course_id)
+    ) {
+      return (
+        <div>
+          Sorry, you are not part of this course. If you think this is a
+          mistake, contact us!
+        </div>
+      );
+    }
+
     if (user) return <Component {...props} />;
   };
 
