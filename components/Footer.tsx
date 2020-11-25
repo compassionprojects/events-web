@@ -101,6 +101,19 @@ export default function Footer() {
                 />
               </a>
             </li>
+            <li className="list-inline-item">
+              <a
+                href="https://peacefactory.fr"
+                target="_blank"
+                rel="noreferrer">
+                <IconSocial
+                  alt="Visit Peace Factory website"
+                  src="/images/icon-website.svg"
+                  height={30}
+                  width={30}
+                />
+              </a>
+            </li>
           </ul>
         </div>
       </div>
