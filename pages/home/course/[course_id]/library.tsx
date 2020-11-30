@@ -175,7 +175,11 @@ function Library() {
                   allowFullScreen></iframe>
               )}
               {item.isOneDrive && (
-                <video width="auto" height="auto" controls>
+                <video
+                  width="auto"
+                  height="auto"
+                  controls
+                  controlsList="nodownload">
                   <source src={item.url} type="video/mp4" />
                 </video>
               )}
