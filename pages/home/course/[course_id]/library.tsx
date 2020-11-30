@@ -176,6 +176,7 @@ function Library() {
               )}
               {item.isOneDrive && (
                 <video
+                  onContextMenu={disableRightClick}
                   width="auto"
                   height="auto"
                   controls
@@ -209,6 +210,11 @@ function Library() {
 }
 
 export default withAuth(Library);
+
+function disableRightClick(e) {
+  e.preventDefault();
+  return false;
+}
 
 const ContentBlock = styled.div`
   p:last-child {
