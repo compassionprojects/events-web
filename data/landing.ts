@@ -1,7 +1,8 @@
-const contact_email = 'louise@peacefactory.fr';
-const contact_name = 'Louise';
+const contact_email = 'natalia@peacefactory.fr';
+const contact_name = 'Natalia Menon';
 const post_payment_questionaire =
   'https://peacefactory.typeform.com/to/aIIB8QBn';
+const ticket_url = '';
 
 export default {
   payment_thank_you: `
@@ -16,4 +17,5 @@ export default {
   We will send you an email a few days before the course begins so that you can prepare well. If you have any questions, feel free to contact us. Thank you and see you soon!`,
   contact_email,
   contact_name,
+  ticket_url,
 };

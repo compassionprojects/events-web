@@ -27,6 +27,7 @@ import Icon from '../../../components/Icon';
 import Link from '../../../components/Link';
 import Meta from '../../../components/Meta';
 import Loading from '../../../components/Loading';
+import scheduleData from '../../../data/schedule/index';
 
 interface Trainer {
   name: string;
@@ -118,6 +119,21 @@ function Landing() {
   const { data, loading } = useQuery(GET_COURSE, {
     variables,
   });
+
+  const schedule = scheduleData[query.id.toString()]; // array (days)
+
+  let index = 0;
+  if (schedule) {
+    for (let i = 0; i < schedule.length; i++) {
+      if (moment().isSame(schedule[i].startDate, 'day')) {
+        index = i;
+        break;
+      }
+    }
+  }
+
+  const [current, setCurrent] = useState(index);
+  const day = schedule && schedule[current]; // object (day)
 
   if (loading) return <Loading />;
 
@@ -220,6 +236,63 @@ function Landing() {
             <div className="pt-3 text-center">{cta}</div>
           </Narrow>
         </Section>
+
+        {/* Schedule */}
+        {schedule && (
+          <Section id="schedule" tabIndex={-1}>
+            <h2 className="text-center py-3">Schedule</h2>
+            <div className="d-flex justify-content-between">
+              <strong>
+                Day {current + 1} {day.startDateFormatted}
+              </strong>
+              <div>
+                <Button
+                  color="warning"
+                  onClick={() => setCurrent(current - 1)}
+                  disabled={current === 0}>
+                  Previous day
+                </Button>{' '}
+                <Button
+                  color="warning"
+                  onClick={() => setCurrent(current + 1)}
+                  disabled={current === course.length - 1}>
+                  Next day
+                </Button>
+              </div>
+            </div>
+            <Table className="table">
+              <tbody>
+                {day.schedule.map((row, idx) => (
+                  <tr
+                    key={idx}
+                    style={{
+                      background:
+                        row.type && row.type === 'break'
+                          ? 'rgb(252, 248, 227)'
+                          : 'transparent',
+                    }}>
+                    <td width="20%">
+                      {row.start} - {row.end}
+                      {row.session && (
+                        <>
+                          <br />
+                          Session {row.session}
+                        </>
+                      )}
+                    </td>
+                    <td>
+                      <ReactMarkdown
+                        source={row.body}
+                        escapeHtml={false}
+                        linkTarget="_blank"
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </Section>
+        )}
 
         {/* Trainers section */}
         <Section id="trainers" tabIndex={-1}>
@@ -438,4 +511,10 @@ const ImgAffiliates = styled(ImgUnselectable).attrs({
   className: 'mx-3',
 })`
   height: 60px;
+`;
+
+const Table = styled.table`
+  td p {
+    margin: 0 !important;
+  }
 `;
