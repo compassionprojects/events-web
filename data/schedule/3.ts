@@ -80,11 +80,4 @@ export default [
       },
     ],
   },
-
-  // Day 2
-  {
-    startDate: moment(`2020-11-14T09:30:00+02:00`),
-    startDateFormatted: moment(`2020-11-14T09:30:00+02:00`)
-      .tz(tzName)
-      .format('dddd, MMMM Do YYYY z'),
-    schedule: [
+]
