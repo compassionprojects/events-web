@@ -30,11 +30,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 1 <br><i><br>Beginners Track</i><br>
+          <div>Session 1 <br><i><br></i><br>
           </div>
           <div>Session 2 <br><i><br></i>
           </div>
-          <div>Session 3 <br><i>Nic<br></i>
+          <div>Session 3 <br><i><br></i>
           </div>
     </div>`,
       },
@@ -48,11 +48,11 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 4 <br><i><br>Beginners Track</i><br>
+          <div>Session 4 <br><i><br></i><br>
           </div>
-          <div>Session 5 <br><i>Matthew<br></i>
+          <div>Session 5 <br><i><br></i>
           </div>
-          <div>Session 6 <br><i>Nic<br></i>
+          <div>Session 6 <br><i><br></i>
           </div>
     </div>`,
       },
@@ -61,11 +61,11 @@ export default [
         start: t('12:00'),
         end: t('14:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 7 <br><i><br>Beginners Track</i><br>
+          <div>Session 7 <br><i><br></i><br>
           </div>
           <div>Session 8 <br><i><br></i>
           </div>
-          <div>Session 9 <br><i>Nic<br></i>
+          <div>Session 9 <br><i><br></i>
           </div>
     </div>`,
       },
@@ -97,11 +97,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 1 <br><i><br>Beginners Track</i><br>
+          <div>Session 10 <br><i><br></i><br>
           </div>
-          <div>Session 2 <br><i><br></i>
+          <div>Session 11 <br><i><br></i>
           </div>
-          <div>Session 3 <br><i>Nic<br></i>
+          <div>Session 12 <br><i><br></i>
           </div>
     </div>`,
       },
@@ -115,11 +115,11 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 4 <br><i><br>Beginners Track</i><br>
+          <div>Session 13 <br><i><br></i><br>
           </div>
-          <div>Session 5 <br><i>Matthew<br></i>
+          <div>Session 14 <br><i><br></i>
           </div>
-          <div>Session 6 <br><i>Nic<br></i>
+          <div>Session 15 <br><i><br></i>
           </div>
     </div>`,
       },
@@ -128,11 +128,11 @@ export default [
         start: t('12:00'),
         end: t('14:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 7 <br><i><br>Beginners Track</i><br>
+          <div>Session 16 <br><i><br></i><br>
           </div>
-          <div>Session 8 <br><i><br></i>
+          <div>Session 17 <br><i><br></i>
           </div>
-          <div>Session 9 <br><i>Nic<br></i>
+          <div>Session 18 <br><i><br></i>
           </div>
     </div>`,
       },
@@ -164,11 +164,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 1 <br><i><br>Beginners Track</i><br>
+          <div>Session 19 <br><i><br></i><br>
           </div>
-          <div>Session 2 <br><i><br></i>
+          <div>Session 20 <br><i><br></i>
           </div>
-          <div>Session 3 <br><i>Nic<br></i>
+          <div>Session 21 <br><i><br></i>
           </div>
     </div>`,
       },
@@ -182,11 +182,11 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 4 <br><i><br>Beginners Track</i><br>
+          <div>Session 22 <br><i><br></i><br>
           </div>
-          <div>Session 5 <br><i>Matthew<br></i>
+          <div>Session 23 <br><i><br></i>
           </div>
-          <div>Session 6 <br><i>Nic<br></i>
+          <div>Session 24 <br><i><br></i>
           </div>
     </div>`,
       },
@@ -194,23 +194,7 @@ export default [
       {
         start: t('12:00'),
         end: t('14:00'),
-        body: `<div class="d-flex justify-content-between">
-          <div>Session 7 <br><i><br>Beginners Track</i><br>
-          </div>
-          <div>Session 8 <br><i><br></i>
-          </div>
-          <div>Session 9 <br><i>Nic<br></i>
-          </div>
-    </div>`,
-      },
-      {
-        start: t('14:00'),
-        end: t('14:15'),
-        body: `Break`, type: 'break' },
-      {
-        start: t('14:15'),
-        end: t('15:00'),
-        body: `Feedback of the day (harvesting)`,
+        body: `Closing session`,
       },
     ],
   },
