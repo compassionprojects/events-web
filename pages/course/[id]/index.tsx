@@ -43,6 +43,7 @@ const GET_COURSE = gql`
       about
       details
       facebookLink
+      ticketUrl
       videoUrl
       dateStart
       dateEnd
@@ -61,7 +62,7 @@ const GET_COURSE = gql`
   }
 `;
 
-function CTA({ course_id, start, end }) {
+function CTA({ course_id, start, end, ticketUrl }) {
   const beforeTheEvent = moment(new Date()).isBefore(start);
   const duringTheEvent = moment(new Date()).isBetween(start, end);
   const afterTheEvent = moment(new Date()).isAfter(end);
@@ -69,7 +70,7 @@ function CTA({ course_id, start, end }) {
   const { user } = useContext(UserContext);
 
   if (!user && beforeTheEvent) {
-    return <GetTickets course_id={course_id} />;
+    return <GetTickets course_id={course_id} ticket_url={ticketUrl} />;
   } else if ((!user && duringTheEvent) || (!user && afterTheEvent)) {
     return (
       <Link
@@ -94,6 +95,7 @@ CTA.propTypes = {
   course_id: PropTypes.string,
   start: PropTypes.string,
   end: PropTypes.string,
+  ticketUrl: PropTypes.string,
 };
 
 function Landing() {
@@ -140,7 +142,12 @@ function Landing() {
   const isPastEvent = moment(new Date()).isAfter(course.dateEnd);
 
   const cta = (
-    <CTA course_id={course.id} start={course.dateStart} end={course.dateEnd} />
+    <CTA
+      course_id={course.id}
+      start={course.dateStart}
+      end={course.dateEnd}
+      ticketUrl={course.ticketUrl}
+    />
   );
 
   return (
@@ -280,36 +287,38 @@ function Landing() {
         </Section>
 
         {/* FAQ section */}
-        <Section id="faq" tabIndex={-1}>
-          <h2 className="text-center py-3">Frequently Asked Questions</h2>
-          <Narrow className="mx-auto pl-sm-5">
-            {faqs.map((item, index) => (
-              <div
-                className={classnames('py-2 px-sm-2', {
-                  'bg-light rounded-lg': faq[index],
-                })}
-                key={item.id}>
-                <span
-                  className="d-flex align-items-top"
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => toggleFAQ(index)}>
-                  <Icon
-                    shape={faq[index] ? 'chevron-up' : 'chevron-down'}
-                    className="flex-shrink-0"
-                  />
-                  <span className="font-weight-bold">{item.question}</span>
-                </span>
-                <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
-                  <ReactMarkdown
-                    linkTarget="_blank"
-                    source={item.answer}
-                    escapeHtml={false}
-                  />
-                </Collapse>
-              </div>
-            ))}
-          </Narrow>
-        </Section>
+        {faqs.length > 0 && (
+          <Section id="faq" tabIndex={-1}>
+            <h2 className="text-center py-3">Frequently Asked Questions</h2>
+            <Narrow className="mx-auto pl-sm-5">
+              {faqs.map((item, index) => (
+                <div
+                  className={classnames('py-2 px-sm-2', {
+                    'bg-light rounded-lg': faq[index],
+                  })}
+                  key={item.id}>
+                  <span
+                    className="d-flex align-items-top"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => toggleFAQ(index)}>
+                    <Icon
+                      shape={faq[index] ? 'chevron-up' : 'chevron-down'}
+                      className="flex-shrink-0"
+                    />
+                    <span className="font-weight-bold">{item.question}</span>
+                  </span>
+                  <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
+                    <ReactMarkdown
+                      linkTarget="_blank"
+                      source={item.answer}
+                      escapeHtml={false}
+                    />
+                  </Collapse>
+                </div>
+              ))}
+            </Narrow>
+          </Section>
+        )}
 
         {/* Registration section */}
         {!user && !isPastEvent && (
@@ -320,8 +329,11 @@ function Landing() {
               <PreserveLineBreaks className="my-2 text-muted">
                 {courseDates}
               </PreserveLineBreaks>
-              <div className="d-flex align-items-center justify-content-center">
-                <GetTickets course_id={course.id} />
+              <div className="mt-4 d-flex align-items-center justify-content-center">
+                <GetTickets
+                  course_id={course.id}
+                  ticket_url={course.ticketUrl}
+                />
                 <a
                   className="nav-link text-accent"
                   href={course.facebookLink}

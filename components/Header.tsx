@@ -157,16 +157,6 @@ export function Header() {
             {!user && (
               <>
                 <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink href="/#about" className="text-accent">
-                    Course
-                  </NavLink>
-                </NavItem>
-                <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink href="/#faq" className="text-accent">
-                    FAQ&apos;s
-                  </NavLink>
-                </NavItem>
-                <NavItem className="pl-md-2 pl-lg-4">
                   <NavLink href="/about" className="text-accent">
                     About us
                   </NavLink>
