@@ -27,7 +27,6 @@ import Icon from '../../../components/Icon';
 import Link from '../../../components/Link';
 import Meta from '../../../components/Meta';
 import Loading from '../../../components/Loading';
-import scheduleData from '../../../data/schedule/index';
 
 interface Trainer {
   name: string;
@@ -44,6 +43,7 @@ const GET_COURSE = gql`
       about
       details
       facebookLink
+      ticketUrl
       videoUrl
       dateStart
       dateEnd
@@ -62,7 +62,7 @@ const GET_COURSE = gql`
   }
 `;
 
-function CTA({ course_id, start, end }) {
+function CTA({ course_id, start, end, ticketUrl }) {
   const beforeTheEvent = moment(new Date()).isBefore(start);
   const duringTheEvent = moment(new Date()).isBetween(start, end);
   const afterTheEvent = moment(new Date()).isAfter(end);
@@ -70,7 +70,7 @@ function CTA({ course_id, start, end }) {
   const { user } = useContext(UserContext);
 
   if (!user && beforeTheEvent) {
-    return <GetTickets course_id={course_id} />;
+    return <GetTickets course_id={course_id} ticket_url={ticketUrl} />;
   } else if ((!user && duringTheEvent) || (!user && afterTheEvent)) {
     return (
       <Link
@@ -95,6 +95,7 @@ CTA.propTypes = {
   course_id: PropTypes.string,
   start: PropTypes.string,
   end: PropTypes.string,
+  ticketUrl: PropTypes.string,
 };
 
 function Landing() {
@@ -120,21 +121,6 @@ function Landing() {
     variables,
   });
 
-  const schedule = scheduleData[query.id.toString()]; // array (days)
-
-  let index = 0;
-  if (schedule) {
-    for (let i = 0; i < schedule.length; i++) {
-      if (moment().isSame(schedule[i].startDate, 'day')) {
-        index = i;
-        break;
-      }
-    }
-  }
-
-  const [current, setCurrent] = useState(index);
-  const day = schedule && schedule[current]; // object (day)
-
   if (loading) return <Loading />;
 
   const course = data.Course;
@@ -156,7 +142,12 @@ function Landing() {
   const isPastEvent = moment(new Date()).isAfter(course.dateEnd);
 
   const cta = (
-    <CTA course_id={course.id} start={course.dateStart} end={course.dateEnd} />
+    <CTA
+      course_id={course.id}
+      start={course.dateStart}
+      end={course.dateEnd}
+      ticketUrl={course.ticketUrl}
+    />
   );
 
   return (
@@ -236,63 +227,6 @@ function Landing() {
             <div className="pt-3 text-center">{cta}</div>
           </Narrow>
         </Section>
-
-        {/* Schedule */}
-        {schedule && (
-          <Section id="schedule" tabIndex={-1}>
-            <h2 className="text-center py-3">Schedule</h2>
-            <div className="d-flex justify-content-between">
-              <strong>
-                Day {current + 1} {day.startDateFormatted}
-              </strong>
-              <div>
-                <Button
-                  color="warning"
-                  onClick={() => setCurrent(current - 1)}
-                  disabled={current === 0}>
-                  Previous day
-                </Button>{' '}
-                <Button
-                  color="warning"
-                  onClick={() => setCurrent(current + 1)}
-                  disabled={current === course.length - 1}>
-                  Next day
-                </Button>
-              </div>
-            </div>
-            <Table className="table">
-              <tbody>
-                {day.schedule.map((row, idx) => (
-                  <tr
-                    key={idx}
-                    style={{
-                      background:
-                        row.type && row.type === 'break'
-                          ? 'rgb(252, 248, 227)'
-                          : 'transparent',
-                    }}>
-                    <td width="20%">
-                      {row.start} - {row.end}
-                      {row.session && (
-                        <>
-                          <br />
-                          Session {row.session}
-                        </>
-                      )}
-                    </td>
-                    <td>
-                      <ReactMarkdown
-                        source={row.body}
-                        escapeHtml={false}
-                        linkTarget="_blank"
-                      />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
-          </Section>
-        )}
 
         {/* Trainers section */}
         <Section id="trainers" tabIndex={-1}>
@@ -394,7 +328,10 @@ function Landing() {
                 {courseDates}
               </PreserveLineBreaks>
               <div className="d-flex align-items-center justify-content-center">
-                <GetTickets course_id={course.id} />
+                <GetTickets
+                  course_id={course.id}
+                  ticket_url={course.ticketUrl}
+                />
                 <a
                   className="nav-link text-accent"
                   href={course.facebookLink}
@@ -511,10 +448,4 @@ const ImgAffiliates = styled(ImgUnselectable).attrs({
   className: 'mx-3',
 })`
   height: 60px;
-`;
-
-const Table = styled.table`
-  td p {
-    margin: 0 !important;
-  }
 `;
