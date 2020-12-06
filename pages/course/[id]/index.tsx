@@ -327,7 +327,7 @@ function Landing() {
               <PreserveLineBreaks className="my-2 text-muted">
                 {courseDates}
               </PreserveLineBreaks>
-              <div className="d-flex align-items-center justify-content-center">
+              <div className="mt-4 d-flex align-items-center justify-content-center">
                 <GetTickets
                   course_id={course.id}
                   ticket_url={course.ticketUrl}
