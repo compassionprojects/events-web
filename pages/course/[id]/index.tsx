@@ -156,7 +156,6 @@ function Landing() {
       <Meta
         title={striptags(course.title)}
         description={striptags(course.description)}
-        image_url="/images/social-media-banner.png"
       />
 
       {/* Cover section for the fold */}
