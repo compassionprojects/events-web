@@ -287,36 +287,38 @@ function Landing() {
         </Section>
 
         {/* FAQ section */}
-        <Section id="faq" tabIndex={-1}>
-          <h2 className="text-center py-3">Frequently Asked Questions</h2>
-          <Narrow className="mx-auto pl-sm-5">
-            {faqs.map((item, index) => (
-              <div
-                className={classnames('py-2 px-sm-2', {
-                  'bg-light rounded-lg': faq[index],
-                })}
-                key={item.id}>
-                <span
-                  className="d-flex align-items-top"
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => toggleFAQ(index)}>
-                  <Icon
-                    shape={faq[index] ? 'chevron-up' : 'chevron-down'}
-                    className="flex-shrink-0"
-                  />
-                  <span className="font-weight-bold">{item.question}</span>
-                </span>
-                <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
-                  <ReactMarkdown
-                    linkTarget="_blank"
-                    source={item.answer}
-                    escapeHtml={false}
-                  />
-                </Collapse>
-              </div>
-            ))}
-          </Narrow>
-        </Section>
+        {faqs.length > 0 && (
+          <Section id="faq" tabIndex={-1}>
+            <h2 className="text-center py-3">Frequently Asked Questions</h2>
+            <Narrow className="mx-auto pl-sm-5">
+              {faqs.map((item, index) => (
+                <div
+                  className={classnames('py-2 px-sm-2', {
+                    'bg-light rounded-lg': faq[index],
+                  })}
+                  key={item.id}>
+                  <span
+                    className="d-flex align-items-top"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => toggleFAQ(index)}>
+                    <Icon
+                      shape={faq[index] ? 'chevron-up' : 'chevron-down'}
+                      className="flex-shrink-0"
+                    />
+                    <span className="font-weight-bold">{item.question}</span>
+                  </span>
+                  <Collapse style={{ marginLeft: 30 }} isOpen={faq[index]}>
+                    <ReactMarkdown
+                      linkTarget="_blank"
+                      source={item.answer}
+                      escapeHtml={false}
+                    />
+                  </Collapse>
+                </div>
+              ))}
+            </Narrow>
+          </Section>
+        )}
 
         {/* Registration section */}
         {!user && !isPastEvent && (

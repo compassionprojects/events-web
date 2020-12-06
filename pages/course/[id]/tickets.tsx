@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  Container,
-  FormGroup,
-  Label,
-  Input,
-  UncontrolledCollapse,
-} from 'reactstrap';
+import { Button, Container, FormGroup, Label, Input } from 'reactstrap';
 import striptags from 'striptags';
 import styled from 'styled-components';
 import classnames from 'classnames';
@@ -16,10 +9,10 @@ import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown/with-html';
 import moment from 'moment';
 import { loadStripe } from '@stripe/stripe-js';
+import GetTickets from '../../../components/GetTickets';
 import Loading from '../../../components/Loading';
 import Icon from '../../../components/Icon';
 import Meta from '../../../components/Meta';
-import add_on from '../../../data/pricing';
 import d from '../../../data/landing';
 
 const PUBLISHABLE_KEY =
@@ -36,6 +29,7 @@ const GET_COURSE = gql`
       description
       dateStart
       dateEnd
+      ticketUrl
     }
     allPricings(where: { course: { id: $id } }) {
       id
@@ -55,7 +49,6 @@ export default function Tickets() {
   });
 
   const [agreed, setAgreed] = useState(false);
-  const [followup, setFollowup] = useState(false);
 
   if (loading) return <Loading />;
 
@@ -81,9 +74,6 @@ export default function Tickets() {
     const stripe = await stripePromise;
 
     const data = [{ price: p.stripePriceId, quantity: 1 }];
-    if (followup) {
-      data.push({ price: add_on.price, quantity: p.peopleEquivalent || 1 });
-    }
 
     // Call your backend to create the Checkout Session
     const response = await fetch(
@@ -160,67 +150,43 @@ export default function Tickets() {
               </Label>
             </FormGroup>
           </div>
-          <div className="bg-light rounded p-3 my-3 border">
-            <FormGroup check>
-              <Label check className="d-flex align-items-top">
-                <Check
-                  type="checkbox"
-                  onChange={() => setFollowup(!followup)}
-                />
-                <div className="ml-2">
-                  I would also like to buy the NVC follow up sessions with CNVC
-                  certified trainers for <strong>{add_on.amount}€</strong>{' '}
-                  <a id="followup-details" href="#">
-                    Learn more <Icon shape="chevron-down" />
-                  </a>
-                  <UncontrolledCollapse toggler="#followup-details">
-                    <div className="my-2 text-muted">{add_on.details}</div>
-                  </UncontrolledCollapse>
-                </div>
-              </Label>
-            </FormGroup>
-          </div>
         </TicketContainer>
-        <TicketContainer>
-          {pricing.map((p, idx) => (
-            <div
-              className={classnames('py-4 d-flex align-items-center', {
-                'border-top': idx,
-              })}
-              key={p.id}>
-              {p.title}
-              <div className="ml-auto pl-3 flex-shrink-0">
-                <div className="d-flex align-items-center">
-                  <div className="mr-2 text-right position-relative">
-                    <h5 className="m-0">
-                      <b>
-                        {!followup
-                          ? p.price
-                          : p.price + (p.peopleEquivalent || 1) * add_on.amount}
-                        €
-                      </b>
-                    </h5>
-                    {followup && (
-                      <Amount>
-                        {p.price}€ +{' '}
-                        {(p.peopleEquivalent || 1) > 1 &&
-                          (p.peopleEquivalent || 1) + '*'}{' '}
-                        {add_on.amount}€
-                      </Amount>
-                    )}
+
+        {course.ticketUrl && (
+          <div className="text-center my-5">
+            <GetTickets course_id={course.id} ticket_url={course.ticketUrl} />
+          </div>
+        )}
+
+        {pricing.length > 0 && (
+          <TicketContainer>
+            {pricing.map((p, idx) => (
+              <div
+                className={classnames('py-4 d-flex align-items-center', {
+                  'border-top': idx,
+                })}
+                key={p.id}>
+                {p.title}
+                <div className="ml-auto pl-3 flex-shrink-0">
+                  <div className="d-flex align-items-center">
+                    <div className="mr-2 text-right position-relative">
+                      <h5 className="m-0">
+                        <b>{p.price}€</b>
+                      </h5>
+                    </div>
+                    <Button
+                      color={agreed ? 'primary' : 'secondary'}
+                      disabled={!agreed}
+                      className="rounded-pill px-4"
+                      onClick={(e) => handleClick(e, p)}>
+                      Buy
+                    </Button>
                   </div>
-                  <Button
-                    color={agreed ? 'primary' : 'secondary'}
-                    disabled={!agreed}
-                    className="rounded-pill px-4"
-                    onClick={(e) => handleClick(e, p)}>
-                    Buy
-                  </Button>
                 </div>
               </div>
-            </div>
-          ))}
-        </TicketContainer>
+            ))}
+          </TicketContainer>
+        )}
       </Container>
     </>
   );
@@ -240,11 +206,4 @@ const Check = styled(Input)`
   height: 20px;
   width: 20px;
   margin-top: 0.3rem;
-`;
-
-const Amount = styled.small.attrs({
-  className: 'text-muted position-absolute',
-})`
-  right: 0;
-  width: 120px;
 `;
