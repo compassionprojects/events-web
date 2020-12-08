@@ -30,7 +30,7 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 1 <br><i>Manasi,<br>NVC- An Overview एन.वी. सी. - अहिंसक बोली, सोच, और जुड़ाव </i><br>
+          <div>Session 1 <br><i>Manasi,<br>NVC- An Overview <br> एन.वी. सी. अहिंसक बोली, सोच, और जुड़ाव<br></i><br>
           </div>
           <div>Session 2 <br><i>TBA<br></i>
           </div>
@@ -50,7 +50,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
           <div>Session 4 <br><i>Manasi,<br>Self-Empathy खुद के लिए समानभूति</i><br>
           </div>
-          <div>Session 5 <br><i>Olga,<br>Sync ofverbal and non-verbal empathy</i>
+          <div>Session 5 <br><i>Olga,<br>Why our empathy sometimes falls flat</i>
           </div>
           <div>Session 6 <br><i>Kate,<br>Postcards from the Heart</i>
           </div>
@@ -65,7 +65,7 @@ export default [
           </div>
           <div>Session 8 <br><i>Yi Liu,<br></i>
           </div>
-          <div>Session 9 <br><i>Olga,<br>Supporting organisations during pandemic</i>
+          <div>Session 9 <br><i>Olga,<br>Working with NVC at systemic level<br> to increase connection<br></i>
           </div>
     </div>`,
       },
