@@ -50,7 +50,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
           <div>Session 4 <br><i>Manasi,</i><br>Self-Empathy <br>खुद के लिए समानभूति<br>
           </div>
-          <div>Session 5 <br><i>Olga,</i><br>Why our empathy sometimes falls flat
+          <div>Session 5 <br><i>Olga,</i><br>Why our empathy<br> sometimes falls flat
           </div>
           <div>Session 6 <br><i>Kate,</i><br>Postcards from the Heart
           </div>
@@ -61,11 +61,11 @@ export default [
         start: t('12:00'),
         end: t('14:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 7 <br><i>Kanya,</i><br>Observation<br> 1st component of NVC<br>
+          <div>Session 7 <br><i>Kanya,</i><br>Observation 1st<br>component of NVC<br>
           </div>
-          <div>Session 8 <br><i>Yi Liu,</i><br>Role-play to deepen empathy<br> and dissolve enemy energy
+          <div>Session 8 <br><i>Yi Liu,</i><br>Role-play to deepen empathy<br>and dissolve enemy energy
           </div>
-          <div>Session 9 <br><i>Olga,</i><br>Working with NVC at systemic level<br> to increase connection<br>
+          <div>Session 9 <br><i>Olga,</i><br>Working with NVC<br> at systemic level<br> to increase connection<br>
           </div>
     </div>`,
       },
@@ -97,11 +97,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 10 <br><i>TBA<br></i><br>
+          <div>Session 10 <br><i>To Be Added<br></i><br>
           </div>
-          <div>Session 11 <br><i>Stefan and Kate,<br>Harvesting the Fight</i>
+          <div>Session 11 <br><i>Stefan and Kate,</i><br>Harvesting the Fight
           </div>
-          <div>Session 12 <br><i>Ramanusha & Chris,<br>Empathy @ home</i>
+          <div>Session 12 <br><i>Ramanusha & Chris,</i><br>Empathy @ home
           </div>
     </div>`,
       },
@@ -115,11 +115,11 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 13 <br><i>Manasi,<br>Empathy समानभूति / दूसरे को समझना</i><br>
+          <div>Session 13 <br><i>Manasi,</i><br>Empathy <br>समानभूति / दूसरे को समझना<br>
           </div>
-          <div>Session 14 <br><i>Ramanusha & Chris,<br>Saying No without losing relationship</i>
+          <div>Session 14 <br><i>Ramanusha & Chris,</i><br>Saying No <br>without losing relationship
           </div>
-          <div>Session 15 <br><i>Kanya,<br>Receiving Feedback</i>
+          <div>Session 15 <br><i>Kanya,</i><br>Receiving Feedback
           </div>
     </div>`,
       },
@@ -128,11 +128,11 @@ export default [
         start: t('12:00'),
         end: t('14:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 16 <br><i>Manasi,<br>Self-expression अभिव्यक्ति</i><br>
+          <div>Session 16 <br><i>Manasi,</i><br>Self-expression <br>अभिव्यक्ति<br>
           </div>
-          <div>Session 17 <br><i>Sudha,<br>My Anger, My Friend</i>
+          <div>Session 17 <br><i>Sudha,</i><br>My Anger, My Friend
           </div>
-          <div>Session 18 <br><i>Samuel,<br>Reflecting on Culture</i>
+          <div>Session 18 <br><i>Samuel,</i><br>Reflecting on Culture
           </div>
     </div>`,
       },
@@ -164,11 +164,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 19 <br><i>TBA<br></i><br>
+          <div>Session 19 <br><i>To Be Added<br></i><br>
           </div>
-          <div>Session 20 <br><i>Stefan,<br>NVC Skills in Group Facilitation</i>
+          <div>Session 20 <br><i>Stefan,</i><br>NVC Skills in Group Facilitation
           </div>
-          <div>Session 21 <br><i>TBA<br></i>
+          <div>Session 21 <br><i>To Be Added<br></i>
           </div>
     </div>`,
       },
@@ -182,11 +182,11 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 22 <br><i>Sudha,<br>Mourning and Forgiveness</i><br>
+          <div>Session 22 <br><i>Sudha,</i><br>Mourning and Forgiveness<br>
           </div>
-          <div>Session 23 <br><i>Samuel,<br>My 'No go' Zones</i>
+          <div>Session 23 <br><i>Samuel,</i><br>My 'No go' Zones
           </div>
-          <div>Session 24 <br><i>Jeannine<br>Power dynamics & NVC</i>
+          <div>Session 24 <br><i>Jeannine</i><br>Power dynamics & NVC
           </div>
     </div>`,
       },
