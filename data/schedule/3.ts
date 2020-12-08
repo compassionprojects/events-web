@@ -30,11 +30,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 1 <br><i>Manasi,<br>NVC- An Overview <br> एन.वी. सी. अहिंसक बोली, सोच, और जुड़ाव<br></i><br>
+          <div>Session 1 <br><i>Manasi,</i><br>NVC- An Overview <br> एन.वी. सी. अहिंसक बोली, <br> सोच, और जुड़ाव<br>
           </div>
-          <div>Session 2 <br><i>TBA<br></i>
+          <div>Session 2 <br><i>To Be Added<br></i>
           </div>
-          <div>Session 3 <br><i>Ramanusha & Chris,<br>Hearing Yes behind the No</i>
+          <div>Session 3 <br><i>Ramanusha & Chris,</i><br>Hearing Yes behind the No
           </div>
     </div>`,
       },
@@ -48,11 +48,11 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 4 <br><i>Manasi,<br>Self-Empathy खुद के लिए समानभूति</i><br>
+          <div>Session 4 <br><i>Manasi,</i><br>Self-Empathy <br>खुद के लिए समानभूति<br>
           </div>
-          <div>Session 5 <br><i>Olga,<br>Why our empathy sometimes falls flat</i>
+          <div>Session 5 <br><i>Olga,</i><br>Why our empathy sometimes falls flat
           </div>
-          <div>Session 6 <br><i>Kate,<br>Postcards from the Heart</i>
+          <div>Session 6 <br><i>Kate,</i><br>Postcards from the Heart
           </div>
     </div>`,
       },
@@ -61,11 +61,11 @@ export default [
         start: t('12:00'),
         end: t('14:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 7 <br><i>Kanya,<br>Observation. 1st component of NVC</i><br>
+          <div>Session 7 <br><i>Kanya,</i><br>Observation<br> 1st component of NVC<br>
           </div>
-          <div>Session 8 <br><i>Yi Liu,<br></i>
+          <div>Session 8 <br><i>Yi Liu,</i><br>Role-play to deepen empathy<br> and dissolve enemy energy
           </div>
-          <div>Session 9 <br><i>Olga,<br>Working with NVC at systemic level<br> to increase connection<br></i>
+          <div>Session 9 <br><i>Olga,</i><br>Working with NVC at systemic level<br> to increase connection<br>
           </div>
     </div>`,
       },
