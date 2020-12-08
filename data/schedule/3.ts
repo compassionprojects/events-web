@@ -30,11 +30,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 1 <br><i><br></i><br>
+          <div>Session 1 <br><i>Manasi,<br>NVC- An Overview एन.वी. सी. - अहिंसक बोली, सोच, और जुड़ाव </i><br>
           </div>
-          <div>Session 2 <br><i><br></i>
+          <div>Session 2 <br><i>TBA<br></i>
           </div>
-          <div>Session 3 <br><i><br></i>
+          <div>Session 3 <br><i>Ramanusha & Chris,<br>Hearing Yes behind the No</i>
           </div>
     </div>`,
       },
@@ -48,11 +48,11 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 4 <br><i><br></i><br>
+          <div>Session 4 <br><i>Manasi,<br>Self-Empathy खुद के लिए समानभूति</i><br>
           </div>
-          <div>Session 5 <br><i><br></i>
+          <div>Session 5 <br><i>Olga,<br>Sync ofverbal and non-verbal empathy</i>
           </div>
-          <div>Session 6 <br><i><br></i>
+          <div>Session 6 <br><i>Kate,<br>Postcards from the Heart</i>
           </div>
     </div>`,
       },
@@ -61,11 +61,11 @@ export default [
         start: t('12:00'),
         end: t('14:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 7 <br><i><br></i><br>
+          <div>Session 7 <br><i>Kanya,<br>Observation. 1st component of NVC</i><br>
           </div>
-          <div>Session 8 <br><i><br></i>
+          <div>Session 8 <br><i>Yi Liu,<br></i>
           </div>
-          <div>Session 9 <br><i><br></i>
+          <div>Session 9 <br><i>Olga,<br>Supporting organisations during pandemic</i>
           </div>
     </div>`,
       },
@@ -97,11 +97,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 10 <br><i><br></i><br>
+          <div>Session 10 <br><i>TBA<br></i><br>
           </div>
-          <div>Session 11 <br><i><br></i>
+          <div>Session 11 <br><i>Stefan and Kate,<br>Harvesting the Fight</i>
           </div>
-          <div>Session 12 <br><i><br></i>
+          <div>Session 12 <br><i>Ramanusha & Chris,<br>Empathy @ home</i>
           </div>
     </div>`,
       },
@@ -115,11 +115,11 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 13 <br><i><br></i><br>
+          <div>Session 13 <br><i>Manasi,<br>Empathy समानभूति / दूसरे को समझना</i><br>
           </div>
-          <div>Session 14 <br><i><br></i>
+          <div>Session 14 <br><i>Ramanusha & Chris,<br>Saying No without losing relationship</i>
           </div>
-          <div>Session 15 <br><i><br></i>
+          <div>Session 15 <br><i>Kanya,<br>Receiving Feedback</i>
           </div>
     </div>`,
       },
@@ -128,11 +128,11 @@ export default [
         start: t('12:00'),
         end: t('14:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 16 <br><i><br></i><br>
+          <div>Session 16 <br><i>Manasi,<br>Self-expression अभिव्यक्ति</i><br>
           </div>
-          <div>Session 17 <br><i><br></i>
+          <div>Session 17 <br><i>Sudha,<br>My Anger, My Friend</i>
           </div>
-          <div>Session 18 <br><i><br></i>
+          <div>Session 18 <br><i>Samuel,<br>Reflecting on Culture</i>
           </div>
     </div>`,
       },
@@ -164,11 +164,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 19 <br><i><br></i><br>
+          <div>Session 19 <br><i>TBA<br></i><br>
           </div>
-          <div>Session 20 <br><i><br></i>
+          <div>Session 20 <br><i>Stefan,<br>NVC Skills in Group Facilitation</i>
           </div>
-          <div>Session 21 <br><i><br></i>
+          <div>Session 21 <br><i>TBA<br></i>
           </div>
     </div>`,
       },
@@ -182,11 +182,11 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 22 <br><i><br></i><br>
+          <div>Session 22 <br><i>Sudha,<br>Mourning and Forgiveness</i><br>
           </div>
-          <div>Session 23 <br><i><br></i>
+          <div>Session 23 <br><i>Samuel,<br>My 'No go' Zones</i>
           </div>
-          <div>Session 24 <br><i><br></i>
+          <div>Session 24 <br><i>Jeannine<br>Power dynamics & NVC</i>
           </div>
     </div>`,
       },
