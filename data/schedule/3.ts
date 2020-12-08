@@ -21,9 +21,9 @@ export default [
       .format('dddd, MMMM Do YYYY z'),
     schedule: [
       {
-        start: t('05:30'),
+        start: t('05:00'),
         end: t('06:15'),
-        body: `Community session (settling and logistics)`,
+        body: `Opening session (settling, logistics and remembering)`,
       },
       { start: t('06:15'), end: t('06:30'), body: `Break`, type: 'break' },
       {
@@ -90,7 +90,7 @@ export default [
       {
         start: t('05:30'),
         end: t('06:15'),
-        body: `Community session (settling and logistics)`,
+        body: `Opening session (logistics and remembering)`,
       },
       { start: t('06:15'), end: t('06:30'), body: `Break`, type: 'break' },
       {
@@ -157,7 +157,7 @@ export default [
       {
         start: t('05:30'),
         end: t('06:15'),
-        body: `Community session (settling and logistics)`,
+        body: `Opening session (logistics and remembering)`,
       },
       { start: t('06:15'), end: t('06:30'), body: `Break`, type: 'break' },
       {
@@ -168,7 +168,7 @@ export default [
           </div>
           <div>Session 20 <br><i>Stefan,</i><br>NVC Skills in Group Facilitation
           </div>
-          <div>Session 21 <br><i>To Be Added<br></i>
+          <div>Session 21 <br><i>Ranjitha</i><br>Open session
           </div>
     </div>`,
       },
