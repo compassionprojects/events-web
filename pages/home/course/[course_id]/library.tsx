@@ -23,7 +23,7 @@ const GET_LIBRARY_CONTENTS = gql`
     $first: Int
     $courseId: ID
   ) {
-    allLibrarySections {
+    allLibrarySections(where: { courses_some: { id: $courseId } }) {
       id
       title
     }

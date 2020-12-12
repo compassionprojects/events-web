@@ -23,8 +23,8 @@ const meta = {
 };
 
 const GET_MESSAGE_TYPES = gql`
-  query getMessageTypes($typeId: ID!) {
-    allMessageTypes {
+  query getMessageTypes($typeId: ID!, $courseId: ID) {
+    allMessageTypes(where: { courses_some: { id: $courseId } }) {
       id
       title
     }
@@ -190,7 +190,7 @@ function Wall() {
   const [deleteMessage, { loading: dm }] = useMutation(DELETE_MESSAGE);
   const [create, { loading: cm }] = useMutation(CREATE_MESSAGE);
   const { data: dataMessageTypes, loading: lt } = useQuery(GET_MESSAGE_TYPES, {
-    variables: { typeId: query.type },
+    variables: { typeId: query.type, courseId: query.courseId },
   });
   const { data: dataMessages, loading: lm, fetchMore } = useQuery(
     GET_MESSAGES,

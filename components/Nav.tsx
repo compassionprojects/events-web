@@ -7,12 +7,15 @@ import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
 
 const GET_SPACES_AND_MESSAGE_TYPES = gql`
-  query allSpacesAndMessageTypes {
-    allSpaces(sortBy: position_ASC) {
+  query allSpacesAndMessageTypes($courseId: ID) {
+    allSpaces(
+      where: { courses_some: { id: $courseId } }
+      sortBy: position_ASC
+    ) {
       id
       title
     }
-    allMessageTypes {
+    allMessageTypes(where: { courses_some: { id: $courseId } }) {
       id
       title
     }
@@ -20,8 +23,10 @@ const GET_SPACES_AND_MESSAGE_TYPES = gql`
 `;
 
 export default function Navigation() {
-  const { data, loading } = useQuery(GET_SPACES_AND_MESSAGE_TYPES);
   const { pathname, asPath, query } = useRouter();
+  const { data, loading } = useQuery(GET_SPACES_AND_MESSAGE_TYPES, {
+    variables: { courseId: query.course_id },
+  });
 
   const [defaultWall = {}] = (data && data.allMessageTypes) || [];
 
