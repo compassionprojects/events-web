@@ -190,7 +190,7 @@ function Wall() {
   const [deleteMessage, { loading: dm }] = useMutation(DELETE_MESSAGE);
   const [create, { loading: cm }] = useMutation(CREATE_MESSAGE);
   const { data: dataMessageTypes, loading: lt } = useQuery(GET_MESSAGE_TYPES, {
-    variables: { typeId: query.type, courseId: query.courseId },
+    variables: { typeId: query.type, courseId: query.course_id },
   });
   const { data: dataMessages, loading: lm, fetchMore } = useQuery(
     GET_MESSAGES,
