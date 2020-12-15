@@ -30,11 +30,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 1 <br><i>Manasi,</i><br>NVC- An Overview <br> एन.वी. सी. अहिंसक बोली, <br> सोच, और जुड़ाव<br>
+          <div>Session 1 <br><i>Manasi, En&Hi</i><br>NVC- An Overview <br> एन.वी. सी. अहिंसक बोली, <br> सोच, और जुड़ाव<br>
           </div>
-          <div>Session 2 <br><i>To Be Added<br></i>
+          <div>Session 2 <br><i>Hemma,</i><br>To Be Added
           </div>
-          <div>Session 3 <br><i>Ramanusha & Chris,</i><br>Hearing Yes behind the No
+          <div>Session 3 <br><i>Ramanusha & Chris, En&Ta</i><br>Hearing Yes behind the No
           </div>
     </div>`,
       },
@@ -48,7 +48,7 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 4 <br><i>Manasi,</i><br>Self-Empathy <br>खुद के लिए समानभूति<br>
+          <div>Session 4 <br><i>Manasi, En&Hi</i><br>Self-Empathy <br>खुद के लिए समानभूति<br>
           </div>
           <div>Session 5 <br><i>Olga,</i><br>Why our empathy<br> sometimes falls flat
           </div>
@@ -97,11 +97,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 10 <br><i>To Be Added<br></i><br>
+          <div>Session 10 <br><i>Hemma,</i><br>To Be Added
           </div>
           <div>Session 11 <br><i>Stefan and Kate,</i><br>Harvesting the Fight
           </div>
-          <div>Session 12 <br><i>Ramanusha & Chris,</i><br>Empathy @ home
+          <div>Session 12 <br><i>Ramanusha & Chris, En&Ta</i><br>Empathy @ home
           </div>
     </div>`,
       },
@@ -115,9 +115,9 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 13 <br><i>Manasi,</i><br>Empathy <br>समानभूति / दूसरे को समझना<br>
+          <div>Session 13 <br><i>Manasi, En&Hi</i><br>Empathy <br>समानभूति / दूसरे को समझना<br>
           </div>
-          <div>Session 14 <br><i>Ramanusha & Chris,</i><br>Saying No <br>without losing relationship
+          <div>Session 14 <br><i>Ramanusha & Chris, En&Ta</i><br>Saying No <br>without losing relationship
           </div>
           <div>Session 15 <br><i>Kanya,</i><br>Receiving Feedback
           </div>
@@ -128,7 +128,7 @@ export default [
         start: t('12:00'),
         end: t('14:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 16 <br><i>Manasi,</i><br>Self-expression <br>अभिव्यक्ति<br>
+          <div>Session 16 <br><i>Manasi, En&Hi</i><br>Self-expression <br>अभिव्यक्ति<br>
           </div>
           <div>Session 17 <br><i>Sudha,</i><br>My Anger, My Friend
           </div>
@@ -164,11 +164,11 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 19 <br><i>To Be Added<br></i><br>
+          <div>Session 19 <br><i>Kanya</i><br>Requests<br>
           </div>
           <div>Session 20 <br><i>Stefan,</i><br>NVC Skills in Group Facilitation
           </div>
-          <div>Session 21 <br><i>Ranjitha</i><br>Open session
+          <div>Session 21 <br><i>Ranjitha& Manasi, En&Hi</i><br>Open session
           </div>
     </div>`,
       },
