@@ -32,7 +32,7 @@ export default [
         body: `<div class="d-flex justify-content-between">
           <div>Session 1 <br><i>Manasi, En&Hi</i><br>NVC- An Overview <br> एन.वी. सी. अहिंसक बोली, <br> सोच, और जुड़ाव<br>
           </div>
-          <div>Session 2 <br><i>Hemma,</i><br>To Be Added
+          <div>Session 2 <br><i>Hemma,</i><br>The Making of Our Lives
           </div>
           <div>Session 3 <br><i>Ramanusha & Chris, En&Ta</i><br>Hearing Yes behind the No
           </div>
