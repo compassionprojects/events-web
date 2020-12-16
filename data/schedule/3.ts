@@ -97,7 +97,7 @@ export default [
         start: t('06:30'),
         end: t('08:00'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 10 <br><i>Hemma,</i><br>To Be Added
+          <div>Session 10 <br><i>Hemma,</i><br>Gratitude 
           </div>
           <div>Session 11 <br><i>Stefan and Kate,</i><br>Harvesting the Fight
           </div>
