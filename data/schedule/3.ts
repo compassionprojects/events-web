@@ -115,7 +115,7 @@ export default [
         start: t('09:30'),
         end: t('11:30'),
         body: `<div class="d-flex justify-content-between">
-          <div>Session 13 <br><i>Manasi, En&Hi</i><br>Empathy <br>समानभूति / दूसरे को समझना<br>
+          <div>Session 13 <br><i>Manasi, En&Hi</i><br>Empathy <br>शुरुआती ट्रैक:समानभूति"<br>
           </div>
           <div>Session 14 <br><i>Ramanusha & Chris, En&Ta</i><br>Saying No <br>without losing relationship
           </div>
