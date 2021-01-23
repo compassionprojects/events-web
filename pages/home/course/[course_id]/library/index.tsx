@@ -7,10 +7,11 @@ import { Nav, NavItem, NavLink, Button } from 'reactstrap';
 import { useQuery } from '@apollo/react-hooks';
 import moment from 'moment';
 
-import withAuth from '../../../auth';
-import Meta from '../../../../components/Meta';
-import Loading from '../../../../components/Loading';
-import Icon from '../../../../components/Icon';
+import withAuth from '../../../../auth';
+import Meta from '../../../../../components/Meta';
+import Loading from '../../../../../components/Loading';
+import Icon from '../../../../../components/Icon';
+import Link from '../../../../../components/Link';
 
 const meta = {
   title: 'Library',
@@ -154,7 +155,12 @@ function Library() {
           )}
           <div className="text-muted small py-1">
             {moment(item.createdAt).fromNow()} by {item.createdBy.name} in{' '}
-            {item.librarySection.title}
+            {item.librarySection.title}{' '}
+            <Link
+              href={`/home/course/[course_id]/library/content/[content_id]`}
+              as={`/home/course/${query.course_id}/library/content/${item.id}`}>
+              view
+            </Link>
           </div>
           <ContentBlock>
             <ReactMarkdown
@@ -211,12 +217,12 @@ function Library() {
 
 export default withAuth(Library);
 
-function disableRightClick(e) {
+export function disableRightClick(e) {
   e.preventDefault();
   return false;
 }
 
-const ContentBlock = styled.div`
+export const ContentBlock = styled.div`
   p:last-child {
     margin-bottom: 0;
   }
