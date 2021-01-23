@@ -77,12 +77,7 @@ function Content() {
             )}
             <div className="text-muted small py-1">
               {moment(item.createdAt).fromNow()} by {item.createdBy.name} in{' '}
-              {item.librarySection.title}{' '}
-              <Link
-                href={`/home/course/[course_id]/library/content/[content_id]`}
-                as={`/home/course/${query.course_id}/library/content/${item.id}`}>
-                view
-              </Link>
+              {item.librarySection.title}
             </div>
             <ContentBlock>
               <ReactMarkdown
