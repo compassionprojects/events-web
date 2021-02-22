@@ -69,6 +69,7 @@ const strings: Strings = {
     NEEDS: 'Needs',
     CHOOSE: 'Choose',
     SHARE: 'Share',
+    CONFIRM_DELETE_MSG: 'Are you sure you want to delete this message?',
   },
   fr: {
     COURSE_DATES: `Commence à {startDate}

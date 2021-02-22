@@ -265,7 +265,7 @@ function Wall() {
   const remove = (e, message) => {
     setDeleting(message.id);
     e.preventDefault();
-    if (!window.confirm('Are you sure you want to delete this message?')) {
+    if (!window.confirm(t('CONFIRM_DELETE_MSG'))) {
       setDeleting(null);
       return;
     }
