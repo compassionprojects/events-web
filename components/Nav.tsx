@@ -93,7 +93,7 @@ export default function Navigation() {
             })}
             href="/[lang]/home/course/[course_id]/cards?type=challenge"
             as={`/${locale}/home/course/${query.course_id}/cards?type=challenge`}>
-            Interactive tools
+            {t('INTERACTIVE_TOOLS')}
           </Link>
         </NavItem>
       </Nav>

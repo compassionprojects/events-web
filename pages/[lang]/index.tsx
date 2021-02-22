@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ReactMarkdown from 'react-markdown/with-html';
 import { createGlobalStyle } from 'styled-components';
-import moment from 'moment-timezone';
+import moment, { locale } from 'moment-timezone';
 import striptags from 'striptags';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
@@ -32,8 +32,8 @@ import useTranslation from 'hooks/useTranslation';
 // Featured course:
 // a few days before start date to show sign in link,
 // end date and course id
-const START_DATE = new Date(2020, 10, 12);
-const END_DATE = new Date(2020, 10, 22);
+const START_DATE = new Date(2021, 1, 24);
+const END_DATE = new Date(2021, 1, 28);
 const COURSE_ID = 2;
 
 interface Trainer {
@@ -112,7 +112,7 @@ function CTA({ ...props }) {
 }
 
 function Landing() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const { user } = useContext(UserContext);
   const [faq, setFAQIsOpen] = useState({});
   const toggleFAQ = (index) =>
@@ -151,6 +151,9 @@ function Landing() {
 
   if (!course) return null;
 
+  // Set moment locale
+  moment.locale(locale);
+
   const timeZone = moment.tz.guess();
   const timeZoneOffset = new Date().getTimezoneOffset();
   const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
@@ -160,8 +163,7 @@ function Landing() {
   const endDate = moment(course.dateEnd)
     .tz(tzName)
     .format('h:mm a z dddd, MMMM Do YYYY');
-  const courseDates = `Starts at ${startDate}
-  until ${endDate}`;
+  const courseDates = t('COURSE_DATES', { startDate, endDate });
 
   const cta = (
     <CTA start={course.dateStart} end={course.dateEnd} course_id={course.id} />

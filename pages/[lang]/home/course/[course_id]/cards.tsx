@@ -95,7 +95,7 @@ function Cards() {
             href={`/${lang}/home/course/${query.course_id}/cards?type=feelings`}
             active={query.type === 'feelings'}
             onClick={(e) => filter(e, 'feelings')}>
-            Feelings
+            {t('FEELINGS')}
           </NavLink>
         </NavItem>
         <NavItem>
@@ -103,7 +103,7 @@ function Cards() {
             href={`/${lang}/home/course/${query.course_id}/cards?type=needs`}
             active={query.type === 'needs'}
             onClick={(e) => filter(e, 'needs')}>
-            Needs
+            {t('NEEDS')}
           </NavLink>
         </NavItem>
       </Nav>

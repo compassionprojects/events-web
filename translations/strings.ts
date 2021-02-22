@@ -2,6 +2,8 @@ import { Strings } from './types';
 
 const strings: Strings = {
   en: {
+    COURSE_DATES: `Starts at {startDate}
+    until {endDate}`,
     ABOUT_US: 'About us',
     COURSE: 'Course',
     ABOUT: 'About',
@@ -69,6 +71,8 @@ const strings: Strings = {
     SHARE: 'Share',
   },
   fr: {
+    COURSE_DATES: `Commence à {startDate}
+    et fini à {endDate}`,
     ABOUT_US: 'À propos de nous',
   },
 };
