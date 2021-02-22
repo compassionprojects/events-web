@@ -7,7 +7,7 @@ import { Nav, NavItem, NavLink, Button } from 'reactstrap';
 import { useQuery } from '@apollo/react-hooks';
 import moment from 'moment';
 
-import withAuth from '../../../../auth';
+import withAuth from '../../../../../hocs/auth';
 import Meta from '../../../../../components/Meta';
 import Loading from '../../../../../components/Loading';
 import Icon from '../../../../../components/Icon';

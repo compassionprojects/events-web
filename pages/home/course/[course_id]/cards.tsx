@@ -6,7 +6,7 @@ import { Button, Nav, NavItem, NavLink } from 'reactstrap';
 import Router, { useRouter } from 'next/router';
 import { gql } from 'apollo-boost';
 import Cookies from 'js-cookie';
-import withAuth from '../../../auth';
+import withAuth from '../../../../hocs/auth';
 import Meta from '../../../../components/Meta';
 import Loading from '../../../../components/Loading';
 

@@ -7,7 +7,7 @@ import moment from 'moment';
 import ReactMarkdown from 'react-markdown';
 import { useQuery } from '@apollo/react-hooks';
 // import { UserContext } from '../../../../../../../lib/UserContext';
-import withAuth from '../../../../../../auth';
+import withAuth from '../../../../../../../hocs/auth';
 import Meta from '../../../../../../../components/Meta';
 import Loading from '../../../../../../../components/Loading';
 import Link from '../../../../../../../components/Link';

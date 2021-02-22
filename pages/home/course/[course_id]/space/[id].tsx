@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
 import { Button } from 'reactstrap';
 
-import withAuth from '../../../../auth';
+import withAuth from '../../../../../hocs/auth';
 import Meta from '../../../../../components/Meta';
 import Loading from '../../../../../components/Loading';
 

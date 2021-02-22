@@ -11,7 +11,7 @@ import Gravatar from 'react-gravatar';
 import ReactMarkdown from 'react-markdown/with-html';
 
 import { UserContext } from '../../../../lib/UserContext';
-import withAuth from '../../../auth';
+import withAuth from '../../../../hocs/auth';
 import Meta from '../../../../components/Meta';
 import Loading from '../../../../components/Loading';
 import Icon from '../../../../components/Icon';
