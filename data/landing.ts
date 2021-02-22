@@ -1,5 +1,5 @@
-const contact_email = 'natalia@peacefactory.fr';
-const contact_name = 'Natalia Menon';
+const contact_email = 'louise@peacefactory.fr';
+const contact_name = 'Louise Romain';
 const post_payment_questionaire =
   'https://peacefactory.typeform.com/to/aIIB8QBn';
 
