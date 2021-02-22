@@ -40,14 +40,15 @@ app.prepare().then(() => {
   });
 
   server.get('/auth', async (req, res) => {
+    const { lang } = req.query;
     try {
       // Set token if validation succeeds
       const session = await validateToken(req.query.token);
       res.setHeader('Set-Cookie', `${session}; Domain=${domain}`);
-      res.redirect('/home');
+      res.redirect(`/${lang}/home`);
     } catch (e) {
       res.clearCookie('keystone.sid');
-      res.redirect('/signin?fail=1');
+      res.redirect(`/${lang}/signin?fail=1`);
       console.log(e);
     }
   });
