@@ -3,13 +3,11 @@ import { Container, Row, Col } from 'reactstrap';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import ReactMarkdown from 'react-markdown/with-html';
-import Meta from '../components/Meta';
-import Loading from '../components/Loading';
+import Meta from 'components/Meta';
+import Loading from 'components/Loading';
+import useTranslation from 'hooks/useTranslation';
 
 const CONTENT_ID = 133;
-const meta = {
-  title: 'About us',
-};
 
 const GET_CONTENT = gql`
   query Content($id: ID!) {
@@ -21,6 +19,10 @@ const GET_CONTENT = gql`
 `;
 
 export default function About() {
+  const { t } = useTranslation();
+  const meta = {
+    title: t('ABOUT_US'),
+  };
   const variables = { id: CONTENT_ID };
   const { data, loading } = useQuery(GET_CONTENT, {
     variables,

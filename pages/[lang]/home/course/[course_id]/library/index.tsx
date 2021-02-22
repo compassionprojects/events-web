@@ -7,15 +7,12 @@ import { Nav, NavItem, NavLink, Button } from 'reactstrap';
 import { useQuery } from '@apollo/react-hooks';
 import moment from 'moment';
 
-import withAuth from '../../../../../hocs/auth';
-import Meta from '../../../../../components/Meta';
-import Loading from '../../../../../components/Loading';
-import Icon from '../../../../../components/Icon';
-import Link from '../../../../../components/Link';
-
-const meta = {
-  title: 'Library',
-};
+import withAuth from 'hocs/auth';
+import Meta from 'components/Meta';
+import Loading from 'components/Loading';
+import Icon from 'components/Icon';
+import Link from 'components/Link';
+import useTranslation from 'hooks/useTranslation';
 
 const GET_LIBRARY_CONTENTS = gql`
   query getLibraryContents(
@@ -67,6 +64,11 @@ const GET_LIBRARY_CONTENTS = gql`
 `;
 
 function Library() {
+  const { t, locale } = useTranslation();
+  const meta = {
+    title: t('LIBRARY'),
+  };
+
   const { query } = useRouter();
   const limit = 15;
   const variables = {
@@ -87,10 +89,10 @@ function Library() {
   const filter = (e, section) => {
     e.preventDefault();
     Router.push({
-      pathname: `/home/course/[course_id]/library`,
+      pathname: `/[lang]/home/course/[course_id]/library`,
       query: section
-        ? { section, course_id: query.course_id }
-        : { course_id: query.course_id },
+        ? { section, course_id: query.course_id, lang: locale }
+        : { course_id: query.course_id, lang: locale },
     });
   };
 
@@ -127,16 +129,16 @@ function Library() {
       <Nav pills className="my-4">
         <NavItem>
           <NavLink
-            href={`/home/course/${query.course_id}/library`}
+            href={`/${locale}/home/course/${query.course_id}/library`}
             active={!query.section}
             onClick={(e) => filter(e, '')}>
-            All
+            {t('ALL')}
           </NavLink>
         </NavItem>
         {allLibrarySections.map((item) => (
           <NavItem key={item.id}>
             <NavLink
-              href={`/home/course/${query.course_id}/library/?section=${item.id}`}
+              href={`/${locale}/home/course/${query.course_id}/library/?section=${item.id}`}
               active={item.id === query.section}
               onClick={(e) => filter(e, item.id)}>
               {item.title}
@@ -157,9 +159,9 @@ function Library() {
             {moment(item.createdAt).fromNow()} by {item.createdBy.name} in{' '}
             {item.librarySection.title}{' '}
             <Link
-              href={`/home/course/[course_id]/library/content/[content_id]`}
-              as={`/home/course/${query.course_id}/library/content/${item.id}`}>
-              view
+              href={`/[lang]/home/course/[course_id]/library/content/[content_id]`}
+              as={`/${locale}/home/course/${query.course_id}/library/content/${item.id}`}>
+              {t('VIEW')}
             </Link>
           </div>
           <ContentBlock>
@@ -198,7 +200,7 @@ function Library() {
               target="_blank"
               rel="noreferrer"
               className="btn btn-primary rounded-pill">
-              {item.callToActionTitle || 'Join'}
+              {item.callToActionTitle || t('JOIN')}
             </a>
           )}
         </div>
@@ -207,7 +209,7 @@ function Library() {
         <>
           <br />
           <Button color="outline-primary" block onClick={loadMore}>
-            Load more ({count - allContents.length})
+            {t('LOAD_MORE')} ({count - allContents.length})
           </Button>
         </>
       )}

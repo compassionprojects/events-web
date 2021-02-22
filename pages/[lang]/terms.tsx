@@ -2,14 +2,12 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
-import Loading from '../components/Loading';
+import Loading from 'components/Loading';
 import ReactMarkdown from 'react-markdown/with-html';
-import Meta from '../components/Meta';
+import Meta from 'components/Meta';
+import useTranslation from 'hooks/useTranslation';
 
 const CONTENT_ID = 134;
-const meta = {
-  title: 'Terms',
-};
 
 const GET_CONTENT = gql`
   query Content($id: ID!) {
@@ -21,6 +19,11 @@ const GET_CONTENT = gql`
 `;
 
 export default function Terms() {
+  const { t } = useTranslation();
+  const meta = {
+    title: t('TERMS'),
+  };
+
   const variables = { id: CONTENT_ID };
   const { data, loading } = useQuery(GET_CONTENT, {
     variables,

@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useTranslation from 'hooks/useTranslation';
 
 export default function Loading({ color }) {
+  const { t } = useTranslation();
   return (
     <>
       <span
@@ -9,7 +11,7 @@ export default function Loading({ color }) {
         role="status"
         aria-hidden="true"
       />
-      <span className="sr-only">Loading...</span>
+      <span className="sr-only">{t('LOADING')}...</span>
     </>
   );
 }

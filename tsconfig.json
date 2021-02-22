@@ -21,7 +21,34 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*"
+      ],
+      "components/*": [
+        "components/*"
+      ],
+      "lib": [
+        "./lib"
+      ],
+      "hocs": [
+        "./hocs"
+      ],
+      "context": [
+        "./context"
+      ],
+      "hooks": [
+        "./hooks"
+      ],
+      "translations": [
+        "./translations"
+      ],
+      "data": [
+        "./data"
+      ],
+    }
   },
   "exclude": [
     "node_modules"

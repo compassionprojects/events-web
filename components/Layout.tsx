@@ -12,8 +12,8 @@ import { UserContext } from '../lib/UserContext';
 
 export default function Layout({ router, ...props }) {
   const activePath = router.pathname;
-  const isLanding = activePath === '/';
-  const isOneCol = !activePath.startsWith('/home/');
+  const isLanding = router.route === '/[lang]';
+  const isOneCol = !activePath.startsWith('/[lang]/home/');
   const { user } = useContext(UserContext);
   const onecol =
     (user && isOneCol) || (!user && !isOneCol) || (!user && isOneCol);

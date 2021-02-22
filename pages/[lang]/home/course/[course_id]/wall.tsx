@@ -10,17 +10,15 @@ import moment from 'moment';
 import Gravatar from 'react-gravatar';
 import ReactMarkdown from 'react-markdown/with-html';
 
-import { UserContext } from '../../../../lib/UserContext';
-import withAuth from '../../../../hocs/auth';
-import Meta from '../../../../components/Meta';
-import Loading from '../../../../components/Loading';
-import Icon from '../../../../components/Icon';
+import { UserContext } from 'lib/UserContext';
+import withAuth from 'hocs/auth';
+import Meta from 'components/Meta';
+import Loading from 'components/Loading';
+import Icon from 'components/Icon';
+import useTranslation from 'hooks/useTranslation';
 
 const limit = 15;
 const limitReplies = 2;
-const meta = {
-  title: 'Message boards',
-};
 
 const GET_MESSAGE_TYPES = gql`
   query getMessageTypes($typeId: ID!, $courseId: ID) {
@@ -176,6 +174,10 @@ const UPDATE_MESSAGE = gql`
 `;
 
 function Wall() {
+  const { t, locale } = useTranslation();
+  const meta = {
+    title: t('MESSAGE_BOARDS'),
+  };
   const { query } = useRouter();
   const variables = {
     typeId: query.type,
@@ -205,8 +207,8 @@ function Wall() {
   const filter = (e, typeId) => {
     e.preventDefault();
     Router.push({
-      pathname: `/home/course/[course_id]/wall`,
-      query: { type: typeId, course_id: query.course_id },
+      pathname: `/[lang]/home/course/[course_id]/wall`,
+      query: { type: typeId, course_id: query.course_id, lang: locale },
     });
   };
 
@@ -372,7 +374,7 @@ function Wall() {
       <Respond
         onSubmit={post}
         loading={cm}
-        placeholder="Share what's on your mind!"
+        placeholder={t('SHARE_WHAT_IS_ON_YOUR_MIND')}
         className="mb-4"
       />
 
@@ -391,7 +393,8 @@ function Wall() {
                 block
                 size="sm"
                 onClick={(e) => showReplies(e, message)}>
-                Show previous replies ({message.replies.length - limitReplies})
+                {t('SHOW_PREVIOUS_REPLIES')} (
+                {message.replies.length - limitReplies})
               </Button>
             )}
           {message.replies.map((m, idx) => (
@@ -419,15 +422,15 @@ function Wall() {
           </span>
           &nbsp;&nbsp;
           <a href="" className="small" onClick={(e) => openReply(e, message)}>
-            reply
+            {t('REPLY')}
           </a>
           {message.id in openReplies && (
             <div className="pt-2">
               <Respond
                 onSubmit={(e, ref) => reply(e, ref, message)}
                 loading={um}
-                placeholder="Share what's on your mind!"
-                btnTitle="Reply"
+                placeholder={t('SHARE_WHAT_IS_ON_YOUR_MIND')}
+                btnTitle={t('REPLY')}
                 btnSmall
                 min={1}
                 max={2}
@@ -441,7 +444,7 @@ function Wall() {
         <>
           <br />
           <Button color="outline-primary" block onClick={loadMore}>
-            Load more ({count - allMessages.length})
+            {t('LOAD_MORE')} ({count - allMessages.length})
           </Button>
         </>
       )}
@@ -461,6 +464,7 @@ function Respond({
   btnSmall,
   className,
 }) {
+  const { t } = useTranslation();
   const inputRef = useRef(null);
   return (
     <Form onSubmit={(e) => onSubmit(e, inputRef)} className={className}>
@@ -483,7 +487,7 @@ function Respond({
         className="rounded-pill"
         size={(btnSmall && 'sm') || ''}
         disabled={loading}>
-        {btnTitle} {loading && <Loading />}
+        {t(btnTitle)} {loading && <Loading />}
       </Button>
     </Form>
   );

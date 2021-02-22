@@ -7,14 +7,11 @@ import moment from 'moment';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
-import withAuth from '../../../../hocs/auth';
-import Meta from '../../../../components/Meta';
-import Loading from '../../../../components/Loading';
-import scheduleData from '../../../../data/schedule/index';
-
-const meta = {
-  title: 'Schedule',
-};
+import withAuth from 'hocs/auth';
+import Meta from 'components/Meta';
+import Loading from 'components/Loading';
+import scheduleData from 'data/schedule/index';
+import useTranslation from 'hooks/useTranslation';
 
 const GET_SCHEDULE = gql`
   query getSchedule($courseId: ID!) {
@@ -25,6 +22,10 @@ const GET_SCHEDULE = gql`
 `;
 
 function Home() {
+  const { t } = useTranslation();
+  const meta = {
+    title: t('SCHEDULE'),
+  };
   const { query } = useRouter();
   const variables = { courseId: query.course_id };
   const { data, loading } = useQuery(GET_SCHEDULE, {
@@ -66,20 +67,20 @@ function Home() {
         <div className="py-4">
           <div className="d-flex justify-content-between">
             <strong>
-              Day {current + 1} {day.startDateFormatted}
+              {t('DAY')} {current + 1} {day.startDateFormatted}
             </strong>
             <div>
               <Button
                 color="warning"
                 onClick={() => setCurrent(current - 1)}
                 disabled={current === 0}>
-                Previous day
+                {t('PREVIOUS_DAY')}
               </Button>{' '}
               <Button
                 color="warning"
                 onClick={() => setCurrent(current + 1)}
                 disabled={current === course.length - 1}>
-                Next day
+                {t('NEXT_DAY')}
               </Button>
             </div>
           </div>
@@ -99,7 +100,7 @@ function Home() {
                     {row.session && (
                       <>
                         <br />
-                        Session {row.session}
+                        {t('SESSION')} {row.session}
                       </>
                     )}
                   </td>

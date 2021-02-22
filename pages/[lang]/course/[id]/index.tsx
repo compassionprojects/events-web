@@ -19,14 +19,14 @@ import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
 import striptags from 'striptags';
 
-import { UserContext } from '../../../lib/UserContext';
+import { UserContext } from 'lib/UserContext';
 
-import media from '../../../components/Media';
-import GetTickets from '../../../components/GetTickets';
-import Icon from '../../../components/Icon';
-import Link from '../../../components/Link';
-import Meta from '../../../components/Meta';
-import Loading from '../../../components/Loading';
+import media from 'components/Media';
+import GetTickets from 'components/GetTickets';
+import Icon from 'components/Icon';
+import Link from 'components/Link';
+import Meta from 'components/Meta';
+import Loading from 'components/Loading';
 
 interface Trainer {
   name: string;

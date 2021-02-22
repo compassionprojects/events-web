@@ -4,7 +4,7 @@ import { Label, Form, Input, FormGroup, Button } from 'reactstrap';
 import Loading from './Loading';
 import mailchimp from '../lib/mailchimp';
 
-function Subscribe({ id }) {
+function Subscribe({ id, lang }) {
   if (!id) {
     throw new Error('You need a mailchimp id to use this component');
   }
@@ -13,7 +13,7 @@ function Subscribe({ id }) {
     subscribing: false,
     subscribed: false,
     email: '',
-    lang: 'en',
+    lang: lang || 'en',
     valid: false,
   };
 

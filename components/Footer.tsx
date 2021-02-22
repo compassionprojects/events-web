@@ -1,23 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from './Link';
-import data from '../data/landing';
 import Subscribe from './Subscribe';
+import data from 'data/landing';
+import useTranslation from 'hooks/useTranslation';
 
 const year = new Date().getFullYear();
 
 export default function Footer() {
+  const { t, locale } = useTranslation();
   return (
     <footer className="footer mt-auto py-5 border-top bg-light">
       <div className="container mt-4">
         <div className="row">
           <ul className="my-3 list-unstyled col-md-3 col-sm-12 order-1 order-sm-1 order-md-0">
             <li>
-              <MenuHeading>About</MenuHeading>
+              <MenuHeading>{t('ABOUT')}</MenuHeading>
             </li>
             <li className="my-2">
-              <Link href="/about" as="/about">
-                About us
+              <Link href="/[lang]/about" as={`/${locale}/about`}>
+                {t('ABOUT_US')}
               </Link>
             </li>
             <li className="my-2">
@@ -25,30 +27,27 @@ export default function Footer() {
                 href="https://community.peacefactory.fr"
                 target="_blank"
                 rel="noreferrer">
-                Community
+                {t('COMMUNITY')}
               </a>
             </li>
             <li className="my-2">
               <a href={`mailto:${data.contact_email}`}>Contact</a>
             </li>
             <li className="my-2">
-              <Link href="/terms" as="/terms">
-                Terms
+              <Link href="/[lang]/terms" as={`/${locale}/terms`}>
+                {t('TERMS')}
               </Link>
             </li>
           </ul>
 
           <div className="my-3 col-md-6 col-lg-5 col-sm-12 pb-4 pb-md-0 order-0 order-sm-0 order-md-1">
-            <MenuHeading>Subscribe</MenuHeading>
-            <p>
-              We will keep you updated on Nonviolent Communication Courses here
-              at Peace Factory
-            </p>
-            <Subscribe id="7315a21229" />
+            <MenuHeading>{t('SUBSCRIBE')}</MenuHeading>
+            <p>{t('SUBSCRIPTION_SHORT_MSG')}</p>
+            <Subscribe id="7315a21229" lang={locale} />
           </div>
 
           <ul className="my-3 list-inline col-md-3 col-sm-12 ml-auto order-2">
-            <MenuHeading>Connect</MenuHeading>
+            <MenuHeading>{t('CONNECT')}</MenuHeading>
             <li className="list-inline-item">
               <a
                 href="https://www.facebook.com/Peace-Factory-563809806979098/"
