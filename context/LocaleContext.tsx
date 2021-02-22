@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 import { Locale, isLocale } from '../translations/types';
 import { locales } from '../translations/config';
 
@@ -22,8 +23,9 @@ export const LocaleProvider: React.FC<{
   const { query } = useRouter();
 
   React.useEffect(() => {
-    if (locale !== localStorage.getItem('locale')) {
-      localStorage.setItem('locale', locale);
+    if (locale !== Cookies.get('locale')) {
+      // localStorage.setItem('locale', locale);
+      Cookies.set('locale', locale);
     }
   }, [locale]);
 

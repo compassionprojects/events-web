@@ -27,7 +27,6 @@ import Link from 'components/Link';
 import Meta from 'components/Meta';
 import Loading from 'components/Loading';
 import PreserveLineBreaks from 'components/PreserveLineBreaks';
-import withLocale from 'hocs/locale';
 import useTranslation from 'hooks/useTranslation';
 
 // Featured course:
@@ -377,7 +376,7 @@ function Landing() {
   );
 }
 
-export default withLocale(Landing);
+export default Landing;
 
 function Trainer({ name, avatar_url, bio, setTrainer }) {
   const openModal = (e) => {

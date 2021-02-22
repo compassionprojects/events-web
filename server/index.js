@@ -7,6 +7,8 @@ const next = require('next');
 const fetch = require('node-fetch');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
+const localeParser = require('accept-language-parser');
+const cookieParser = require('cookie-parser');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const { subscribe_api_endpoint } = require('./newsletter');
 const HOST = process.env.HOST_URL;
@@ -23,6 +25,7 @@ app.prepare().then(() => {
 
   server.use(helmet());
   server.use(bodyParser.json());
+  server.use(cookieParser());
 
   server.post('/create-checkout-session', async (req, res) => {
     const { course_id } = req.query;
@@ -37,6 +40,12 @@ app.prepare().then(() => {
     });
 
     res.json({ id: session.id });
+  });
+
+  server.get('/', (req, res) => {
+    const [browserLang] = localeParser.parse(req.headers['accept-language']);
+    const locale = req.cookies['locale'];
+    res.redirect(`/${locale || browserLang.code}`);
   });
 
   server.get('/auth', async (req, res) => {

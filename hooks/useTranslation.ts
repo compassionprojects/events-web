@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { LocaleContext } from 'context/LocaleContext';
 import strings from 'translations/strings';
-import { defaultLocale } from 'translations/config';
+// import { defaultLocale } from 'translations/config';
 
 export default function useTranslation() {
   const { locale } = useContext(LocaleContext);
@@ -11,8 +11,7 @@ export default function useTranslation() {
       console.warn(`Translation '${key}' for locale '${locale}' not found.`);
     }
 
-    let str = strings[locale][key] || strings[defaultLocale][key];
-
+    let str = strings[locale][key];
     if (!str) return `${locale}_${key}`;
 
     // Interpolate

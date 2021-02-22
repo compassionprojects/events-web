@@ -29,10 +29,12 @@
   "dependencies": {
     "@apollo/react-hooks": "~3.1.5",
     "@stripe/stripe-js": "~1.9.0",
+    "accept-language-parser": "~1.5.0",
     "apollo-boost": "~0.4.9",
     "body-parser": "~1.19.0",
     "classnames": "~2.2.6",
     "cookie": "~0.4.1",
+    "cookie-parser": "~1.4.5",
     "dotenv": "~8.2.0",
     "express": "~4.17.1",
     "graphql": "~15.3.0",

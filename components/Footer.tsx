@@ -31,7 +31,7 @@ export default function Footer() {
               </a>
             </li>
             <li className="my-2">
-              <a href={`mailto:${data.contact_email}`}>Contact</a>
+              <a href={`mailto:${data.contact_email}`}>{t('CONTACT')}</a>
             </li>
             <li className="my-2">
               <Link href="/[lang]/terms" as={`/${locale}/terms`}>
