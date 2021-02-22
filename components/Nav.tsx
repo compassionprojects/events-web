@@ -5,6 +5,7 @@ import Link from './Link';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
+import useTranslation from 'hooks/useTranslation';
 
 const GET_SPACES_AND_MESSAGE_TYPES = gql`
   query allSpacesAndMessageTypes($courseId: ID) {
@@ -23,6 +24,7 @@ const GET_SPACES_AND_MESSAGE_TYPES = gql`
 `;
 
 export default function Navigation() {
+  const { t, locale } = useTranslation();
   const { pathname, asPath, query } = useRouter();
   const { data, loading } = useQuery(GET_SPACES_AND_MESSAGE_TYPES, {
     variables: { courseId: query.course_id },
@@ -31,21 +33,21 @@ export default function Navigation() {
   const [defaultWall = {}] = (data && data.allMessageTypes) || [];
 
   const items = [
-    { path: `/home`, title: 'Home' },
+    { path: `/[lang]/home`, as: `/${locale}/home`, title: t('HOME') },
     {
-      path: `/home/course/[course_id]/schedule`,
-      as: `/home/course/${query.course_id}/schedule`,
-      title: 'Schedule',
+      path: `/[lang]/home/course/[course_id]/schedule`,
+      as: `/${locale}/home/course/${query.course_id}/schedule`,
+      title: t('SCHEDULE'),
     },
     {
-      path: `/home/course/[course_id]/library`,
-      as: `/home/course/${query.course_id}/library`,
-      title: 'Library',
+      path: `/[lang]/home/course/[course_id]/library`,
+      as: `/${locale}/home/course/${query.course_id}/library`,
+      title: t('LIBRARY'),
     },
     {
-      path: `/home/course/[course_id]/wall?type=${defaultWall.id}`,
-      as: `/home/course/${query.course_id}/wall?type=${defaultWall.id}`,
-      title: 'Message boards',
+      path: `/[lang]/home/course/[course_id]/wall?type=${defaultWall.id}`,
+      as: `/${locale}/home/course/${query.course_id}/wall?type=${defaultWall.id}`,
+      title: t('MESSAGE_BOARDS'),
     },
   ];
 
@@ -68,9 +70,9 @@ export default function Navigation() {
           !loading &&
           data.allSpaces
             .map((s) => ({
-              path: `/home/course/[course_id]/space/[id]`,
+              path: `/[lang]/home/course/[course_id]/space/[id]`,
               title: s.title,
-              as: `/home/course/${query.course_id}/space/${s.id}`,
+              as: `/${locale}/home/course/${query.course_id}/space/${s.id}`,
             }))
             .map((item) => (
               <NavItem key={item.as}>
@@ -87,10 +89,10 @@ export default function Navigation() {
         <NavItem>
           <Link
             className={classnames('nav-link', {
-              active: pathname === `/home/course/[course_id]/cards`,
+              active: pathname === `/[lang]/home/course/[course_id]/cards`,
             })}
-            href="/home/course/[course_id]/cards?type=challenge"
-            as={`/home/course/${query.course_id}/cards?type=challenge`}>
+            href="/[lang]/home/course/[course_id]/cards?type=challenge"
+            as={`/${locale}/home/course/${query.course_id}/cards?type=challenge`}>
             Interactive tools
           </Link>
         </NavItem>

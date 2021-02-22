@@ -9,11 +9,13 @@ import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown/with-html';
 import moment from 'moment';
 import { loadStripe } from '@stripe/stripe-js';
-import GetTickets from '../../../components/GetTickets';
-import Loading from '../../../components/Loading';
-import Icon from '../../../components/Icon';
-import Meta from '../../../components/Meta';
-import d from '../../../data/landing';
+import GetTickets from 'components/GetTickets';
+import Loading from 'components/Loading';
+import Icon from 'components/Icon';
+import Meta from 'components/Meta';
+import d from 'data/landing';
+import useTranslation from 'hooks/useTranslation';
+import Markup from 'components/Markup';
 
 const PUBLISHABLE_KEY =
   process.env.STRIPE_PUBLISHABLE_KEY ||
@@ -42,6 +44,7 @@ const GET_COURSE = gql`
 `;
 
 export default function Tickets() {
+  const { t, locale } = useTranslation();
   const { query } = useRouter();
   const variables = { id: query.id };
   const { data, loading } = useQuery(GET_COURSE, {
@@ -110,11 +113,9 @@ export default function Tickets() {
       <>
         <Meta {...meta} />
         <Container className="py-5">
-          <h1 className="my-3 text-center">Tickets</h1>
+          <h1 className="my-3 text-center">{t('TICKETS')}</h1>
           <Intro className="py-3 text-center">
-            The sale of tickets has closed for this course because it has
-            already started. To register on a course with similar content, you
-            are invited to contact{' '}
+            {t('MSG_TICKET_SALES_CLOSED')}{' '}
             <a href={`mailto:${d.contact_email}`}>{d.contact_name}</a>.
           </Intro>
         </Container>
@@ -126,9 +127,9 @@ export default function Tickets() {
     <>
       <Meta {...meta} />
       <Container className="py-5">
-        <h1 className="my-3 text-center">Tickets</h1>
+        <h1 className="my-3 text-center">{t('TICKETS')}</h1>
         <Intro className="py-3 text-center">
-          Get your tickets for <strong>{course.title}</strong>.
+          <Markup>{t('GET_YOUR_TICKETS_FOR', { title: course.title })}</Markup>.
           <ReactMarkdown
             source={course.description}
             escapeHtml={false}
@@ -142,7 +143,7 @@ export default function Tickets() {
                 <Check type="checkbox" onChange={() => setAgreed(!agreed)} />
                 <div className="ml-2">
                   I agree to the{' '}
-                  <a href="/terms" target="_blank">
+                  <a href={`/${locale}/terms`} target="_blank" rel="noreferrer">
                     terms and conditions{' '}
                     <Icon shape="external-link" width={16} height={16} />
                   </a>

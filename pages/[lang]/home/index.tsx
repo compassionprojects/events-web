@@ -6,10 +6,11 @@ import moment from 'moment';
 import ReactMarkdown from 'react-markdown';
 // import { gql } from 'apollo-boost';
 // import { useQuery } from '@apollo/react-hooks';
-import { UserContext } from '../../lib/UserContext';
-import withAuth from '../auth';
-import Meta from '../../components/Meta';
-import Link from '../../components/Link';
+import { UserContext } from 'lib/UserContext';
+import withAuth from 'hocs/auth';
+import Meta from 'components/Meta';
+import Link from 'components/Link';
+import useTranslation from 'hooks/useTranslation';
 // import Loading from '../../components/Loading';
 
 const meta = {
@@ -17,6 +18,7 @@ const meta = {
 };
 
 function Home() {
+  const { t } = useTranslation();
   const { user } = useContext(UserContext);
 
   const ongoing = user.courses.filter((c) =>
@@ -31,9 +33,9 @@ function Home() {
     <>
       <Meta {...meta} />
       <Container className="py-5">
-        <h1>Your courses</h1>
-        Hello {user.name}! Welcome!
-        <h2 className="pb-2 pt-4 mt-5">Ongoing</h2>
+        <h1>{t('YOUR_COURSES')}</h1>
+        {t('WELCOME_USER', { name: user.name })}
+        <h2 className="pb-2 pt-4 mt-5">{t('ONGOING')}</h2>
         <Row>
           {ongoing.map((c) => (
             <Col sm={12} md={6} lg={4} key={c.id}>
@@ -42,9 +44,9 @@ function Home() {
           ))}
         </Row>
         {!ongoing.length && (
-          <div className="text-muted">No ongoing courses</div>
+          <div className="text-muted">{t('NO_ONGOING_COURSES')}</div>
         )}
-        <h2 className="pb-2 pt-4 mt-5">Upcoming</h2>
+        <h2 className="pb-2 pt-4 mt-5">{t('UPCOMING')}</h2>
         <Row>
           {upcoming.map((c) => (
             <Col sm={12} md={6} lg={4} key={c.id}>
@@ -53,9 +55,9 @@ function Home() {
           ))}
         </Row>
         {!upcoming.length && (
-          <div className="text-muted">No upcoming courses</div>
+          <div className="text-muted">{t('NO_UPCOMING_COURSES')}</div>
         )}
-        <h2 className="pb-2 pt-4 mt-5">Past</h2>
+        <h2 className="pb-2 pt-4 mt-5">{t('PAST')}</h2>
         <Row>
           {past.map((c) => (
             <Col sm={12} md={6} lg={4} key={c.id}>
@@ -63,7 +65,9 @@ function Home() {
             </Col>
           ))}
         </Row>
-        {!past.length && <div className="text-muted">No past courses</div>}
+        {!past.length && (
+          <div className="text-muted">{t('NO_PAST_COURSES')}</div>
+        )}
       </Container>
     </>
   );
@@ -74,6 +78,7 @@ Home.propTypes = {
 };
 
 function CourseCard({ id, title, description, dateStart, dateEnd }) {
+  const { t, locale } = useTranslation();
   return (
     <Card body className="my-2">
       <CardTitle className="font-weight-bold">{title}</CardTitle>
@@ -85,9 +90,9 @@ function CourseCard({ id, title, description, dateStart, dateEnd }) {
         </div>
       </CardText>
       <Link
-        href={`/home/course/[course_id]/schedule`}
-        as={`/home/course/${id}/schedule`}>
-        Go to course
+        href={`/[lang]/home/course/[course_id]/schedule`}
+        as={`/${locale}/home/course/${id}/schedule`}>
+        {t('GO_TO_COURSE')}
       </Link>
     </Card>
   );

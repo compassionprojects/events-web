@@ -3,6 +3,29 @@
     "next/babel"
   ],
   "plugins": [
-    "babel-plugin-styled-components"
+    "babel-plugin-styled-components",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ],
+        "alias": {
+          "components": "./components",
+          "lib": "./lib",
+          "hocs": "./hocs",
+          "context": "./context",
+          "hooks": "./hooks",
+          "translations": "./translations",
+          "data": "./data"
+        }
+      }
+    ]
   ]
 }

@@ -22,18 +22,20 @@ import { APP_NAME } from '../constants';
 import data from '../data/landing';
 import { UserContext } from '../lib/UserContext';
 // import { useRouter } from 'next/router';
+import useTranslation from 'hooks/useTranslation';
 
 export const o = { duration: 300, offset: -70 };
 
 /* @todo: simplify header, use one for logged in and another for visitors */
 
 export default function HeaderLanding() {
+  const { t, locale } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const { user, signOut } = useContext(UserContext);
 
-  let root = '/';
-  if (user) root = '/home';
+  let root = `/${locale}`;
+  if (user) root = `/${locale}/home`;
 
   return (
     <Navbar
@@ -52,73 +54,73 @@ export default function HeaderLanding() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto py-md-3" navbar>
             <NavItem className="pl-md-2 pl-lg-4">
-              <NavLink href="/about" className="text-accent">
-                About us
+              <NavLink href={`/${locale}/about`} className="text-accent">
+                {t('ABOUT_US')}
               </NavLink>
             </NavItem>
             {!user && (
               <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
                 <DropdownToggle nav caret className="text-accent">
-                  Course
+                  {t('COURSE')}
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem onClick={() => scrollTo('#about', o)}>
-                    About
+                    {t('ABOUT')}
                   </DropdownItem>
                   <DropdownItem onClick={() => scrollTo('#course', o)}>
-                    Course
+                    {t('COURSE')}
                   </DropdownItem>
                   <DropdownItem onClick={() => scrollTo('#what-to-expect', o)}>
-                    What to expect
+                    {t('WHAT_TO_EXPECT')}
                   </DropdownItem>
                   <DropdownItem onClick={() => scrollTo('#language', o)}>
-                    Language
+                    {t('LANGUAGE')}
                   </DropdownItem>
                   <DropdownItem onClick={() => scrollTo('#what-you-need', o)}>
-                    What you need?
+                    {t('WHAT_YOU_NEED')}
                   </DropdownItem>
                   <DropdownItem onClick={() => scrollTo('#fee', o)}>
-                    Participation fee
+                    {t('PARTICIPATION_FEE')}
                   </DropdownItem>
                   <DropdownItem onClick={() => scrollTo('#trainers', o)}>
-                    Trainers
+                    {t('TRAINERS')}
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             )}
             <NavItem className="pl-md-2 pl-lg-4">
               <NavLink
-                href="/#faq"
+                href={`/${locale}/#faq`}
                 onClick={() => scrollTo('#faq', o)}
                 className="text-accent">
-                FAQ&apos;s
+                {t('FAQS')}
               </NavLink>
             </NavItem>
             <NavItem className="pl-md-2 pl-lg-4">
               <_NavLink
                 href={`mailto:${data.contact_email}`}
                 className="text-accent">
-                Contact
+                {t('CONTACT')}
               </_NavLink>
             </NavItem>
             {!user && (
               <NavItem className="pl-md-2 pl-lg-4">
                 <Link
-                  href="/signin"
-                  as="/signin"
+                  href={`/[lang]/signin`}
+                  as={`/${locale}/signin`}
                   className="text-accent nav-link">
-                  Sign in
+                  {t('SIGN_IN')}
                 </Link>
               </NavItem>
             )}
             {user && (
               <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
                 <DropdownToggle nav caret>
-                  Logout
+                  {t('LOGOUT')}
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem header>{user.email}</DropdownItem>
-                  <DropdownItem onClick={signOut}>Logout</DropdownItem>
+                  <DropdownItem onClick={signOut}>{t('LOGOUT')}</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             )}
@@ -130,13 +132,14 @@ export default function HeaderLanding() {
 }
 
 export function Header() {
+  const { t, locale } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   // const { pathname } = useRouter();
   const toggle = () => setIsOpen(!isOpen);
 
   const { user, signOut } = useContext(UserContext);
-  let root = '/';
-  if (user) root = '/home';
+  let root = `/${locale}`;
+  if (user) root = `/${locale}/home`;
   // const isHome = pathname === '/home';
 
   return (
@@ -157,23 +160,23 @@ export function Header() {
             {!user && (
               <>
                 <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink href="/about" className="text-accent">
-                    About us
+                  <NavLink href={`/${locale}/about`} className="text-accent">
+                    {t('ABOUT_US')}
                   </NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
                   <_NavLink
                     href={`mailto:${data.contact_email}`}
                     className="text-accent">
-                    Contact
+                    {t('CONTACT')}
                   </_NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
                   <Link
-                    href="/signin"
-                    as="/signin"
+                    href={`/[lang]/signin`}
+                    as={`/${locale}/signin`}
                     className="text-accent nav-link">
-                    Sign in
+                    {t('SIGN_IN')}
                   </Link>
                 </NavItem>
               </>
@@ -184,21 +187,21 @@ export function Header() {
                   <_NavLink
                     href={`mailto:${data.contact_email}`}
                     className="text-accent">
-                    Help
+                    {t('HELP')}
                   </_NavLink>
                 </NavItem>
                 <NavItem className="pl-md-2 pl-lg-4">
-                  <NavLink href="/about" className="text-accent">
-                    About us
+                  <NavLink href={`/${locale}/about`} className="text-accent">
+                    {t('ABOUT_US')}
                   </NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
                   <DropdownToggle nav caret>
-                    Logout
+                    {t('LOGOUT')}
                   </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem header>{user.email}</DropdownItem>
-                    <DropdownItem onClick={signOut}>Logout</DropdownItem>
+                    <DropdownItem onClick={signOut}>{t('LOGOUT')}</DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </>

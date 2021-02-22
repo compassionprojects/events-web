@@ -7,9 +7,10 @@ import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
 import { Button } from 'reactstrap';
 
-import withAuth from '../../../../auth';
-import Meta from '../../../../../components/Meta';
-import Loading from '../../../../../components/Loading';
+import withAuth from 'hocs/auth';
+import Meta from 'components/Meta';
+import Loading from 'components/Loading';
+import useTranslation from 'hooks/useTranslation';
 
 const GET_CONTENT = gql`
   query allContentOnSpaces($id: ID!, $skip: Int, $first: Int, $courseId: ID) {
@@ -44,6 +45,7 @@ const GET_CONTENT = gql`
 `;
 
 function Space() {
+  const { t } = useTranslation();
   const { query } = useRouter();
   const limit = 15;
   const variables = {
@@ -111,7 +113,7 @@ function Space() {
               target="_blank"
               rel="noreferrer"
               className="btn btn-primary rounded-pill">
-              {item.callToActionTitle || 'Join'}
+              {item.callToActionTitle || t('JOIN')}
             </a>
           )}
         </div>
@@ -120,7 +122,7 @@ function Space() {
         <>
           <br />
           <Button color="outline-primary" block onClick={loadMore}>
-            Load more ({count - allContents.length})
+            {t('LOAD_MORE')} ({count - allContents.length})
           </Button>
         </>
       )}

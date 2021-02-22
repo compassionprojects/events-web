@@ -6,13 +6,10 @@ import { Button, Nav, NavItem, NavLink } from 'reactstrap';
 import Router, { useRouter } from 'next/router';
 import { gql } from 'apollo-boost';
 import Cookies from 'js-cookie';
-import withAuth from '../../../auth';
-import Meta from '../../../../components/Meta';
-import Loading from '../../../../components/Loading';
-
-const meta = {
-  title: 'Interactive tools',
-};
+import withAuth from 'hocs/auth';
+import Meta from 'components/Meta';
+import Loading from 'components/Loading';
+import useTranslation from 'hooks/useTranslation';
 
 const GET_CARDS = gql`
   query getCards($type: CardTypeType) {
@@ -25,6 +22,10 @@ const GET_CARDS = gql`
 `;
 
 function Cards() {
+  const { t, locale: lang } = useTranslation();
+  const meta = {
+    title: t('INTERACTIVE_TOOLS'),
+  };
   const { query } = useRouter();
   const [opened, setOpen] = useState({});
   const { data, loading } = useQuery(GET_CARDS, {
@@ -36,7 +37,7 @@ function Cards() {
   const filter = (e, type) => {
     e.preventDefault();
     Router.push({
-      pathname: `/home/course/${query.course_id}/cards`,
+      pathname: `/${lang}/home/course/${query.course_id}/cards`,
       query: type ? { type } : {},
     });
   };
@@ -73,25 +74,25 @@ function Cards() {
         </h2>
         <div className="ml-auto">
           <Button size="sm" onClick={(e) => toggleAll(e, true)}>
-            Open All
+            {t('OPEN_ALL')}
           </Button>{' '}
           <Button size="sm" onClick={(e) => toggleAll(e, false)}>
-            Close All
+            {t('CLOSE_ALL')}
           </Button>
         </div>
       </div>
       <Nav pills className="my-4">
         <NavItem>
           <NavLink
-            href={`/home/course/${query.course_id}/cards?type=challenge`}
+            href={`/${lang}/home/course/${query.course_id}/cards?type=challenge`}
             active={query.type === 'challenge'}
             onClick={(e) => filter(e, 'challenge')}>
-            Daily challenge
+            {t('DAILY_CHALLENGE')}
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink
-            href={`/home/course/${query.course_id}/cards?type=feelings`}
+            href={`/${lang}/home/course/${query.course_id}/cards?type=feelings`}
             active={query.type === 'feelings'}
             onClick={(e) => filter(e, 'feelings')}>
             Feelings
@@ -99,7 +100,7 @@ function Cards() {
         </NavItem>
         <NavItem>
           <NavLink
-            href={`/home/course/${query.course_id}/cards?type=needs`}
+            href={`/${lang}/home/course/${query.course_id}/cards?type=needs`}
             active={query.type === 'needs'}
             onClick={(e) => filter(e, 'needs')}>
             Needs
@@ -150,7 +151,7 @@ function Cards() {
                   </div>
                   {card.type === 'challenge' && (
                     <Button size="sm" onClick={(e) => choose(e, card.text)}>
-                      Choose
+                      {t('CHOOSE')}
                     </Button>
                   )}
                 </CardBackBorder>
