@@ -487,7 +487,7 @@ function Respond({
         className="rounded-pill"
         size={(btnSmall && 'sm') || ''}
         disabled={loading}>
-        {t(btnTitle)} {loading && <Loading />}
+        {t(btnTitle.toUpperCase())} {loading && <Loading />}
       </Button>
     </Form>
   );
