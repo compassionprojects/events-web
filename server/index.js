@@ -45,7 +45,11 @@ app.prepare().then(() => {
   server.get('/', (req, res) => {
     const [browserLang] = localeParser.parse(req.headers['accept-language']);
     const locale = req.cookies['locale'];
-    res.redirect(`/${locale || browserLang.code}`);
+    // use en as default locale
+    const lang = ['en', 'fr'].includes(browserLang.code)
+      ? browserLang.code
+      : 'en';
+    res.redirect(`/${locale || lang}`);
   });
 
   server.get('/auth', async (req, res) => {
