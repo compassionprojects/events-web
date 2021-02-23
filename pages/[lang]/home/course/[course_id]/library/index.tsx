@@ -68,6 +68,7 @@ function Library() {
   const meta = {
     title: t('LIBRARY'),
   };
+  moment.locale(locale);
 
   const { query } = useRouter();
   const limit = 15;
@@ -156,8 +157,11 @@ function Library() {
             </a>
           )}
           <div className="text-muted small py-1">
-            {moment(item.createdAt).fromNow()} by {item.createdBy.name} in{' '}
-            {item.librarySection.title}{' '}
+            {t('ITEM_CREATED_BY_IN', {
+              timeAgo: moment(item.createdAt).fromNow(),
+              createdBy: item.createdBy.name,
+              category: item.librarySection.title,
+            })}{' '}
             <Link
               href={`/[lang]/home/course/[course_id]/library/content/[content_id]`}
               as={`/${locale}/home/course/${query.course_id}/library/content/${item.id}`}>

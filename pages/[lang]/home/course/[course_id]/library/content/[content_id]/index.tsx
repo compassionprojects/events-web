@@ -13,10 +13,7 @@ import Loading from 'components/Loading';
 // import Link from 'components/Link';
 import Icon from 'components/Icon';
 import { disableRightClick, ContentBlock } from '../../';
-
-const meta = {
-  title: 'Content',
-};
+import useTranslation from 'hooks/useTranslation';
 
 const GET_LIBRARY_CONTENT = gql`
   query getContent($id: ID!) {
@@ -41,6 +38,7 @@ const GET_LIBRARY_CONTENT = gql`
 `;
 
 function Content() {
+  const { t, locale } = useTranslation();
   // const { user } = useContext(UserContext);
   const { query } = useRouter();
   const variables = {
@@ -51,12 +49,17 @@ function Content() {
     variables,
     fetchPolicy: 'cache-and-network',
   });
+  moment.locale(locale);
 
   const { Content: item } = data || {};
 
   if (item) {
     item.isOneDrive = item.url && item.url.includes('onedrive.live.com');
   }
+
+  const meta = {
+    title: item && item.title,
+  };
 
   return (
     <>
@@ -76,8 +79,11 @@ function Content() {
               </a>
             )}
             <div className="text-muted small py-1">
-              {moment(item.createdAt).fromNow()} by {item.createdBy.name} in{' '}
-              {item.librarySection.title}
+              {t('ITEM_CREATED_BY_IN', {
+                timeAgo: moment(item.createdAt).fromNow(),
+                createdBy: item.createdBy.name,
+                category: item.librarySection.title,
+              })}{' '}
             </div>
             <ContentBlock>
               <ReactMarkdown

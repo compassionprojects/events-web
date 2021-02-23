@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 // import cookies from 'next-cookies';
 import Layout from 'components/Layout';
 import { UserContext } from 'lib/UserContext';
-import useAuth from 'lib/useAuth';
+import useAuth from 'hooks/useAuth';
 import theme from 'lib/theme';
 import { isLocale } from 'translations/types';
 import { LocaleProvider } from 'context/LocaleContext';

@@ -22,7 +22,7 @@ const GET_SCHEDULE = gql`
 `;
 
 function Home() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const meta = {
     title: t('SCHEDULE'),
   };
@@ -31,10 +31,12 @@ function Home() {
   const { data, loading } = useQuery(GET_SCHEDULE, {
     variables,
   });
+  // Set moment locale
+  moment.locale(locale);
 
   const [schedule = {}] = data?.allSchedules || [];
 
-  const course = scheduleData[query.course_id.toString()]; // array (days)
+  const course = scheduleData[query.course_id.toString()](locale); // array (days)
 
   let index = 0;
   if (course) {

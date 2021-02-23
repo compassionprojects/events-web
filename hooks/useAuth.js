@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
-import client from './apollo';
-import logout from './logout';
+import client from 'lib/apollo';
+import logout from 'lib/logout';
 
 const GET_AUTHED_USER = gql`
   query authenticatedUser {

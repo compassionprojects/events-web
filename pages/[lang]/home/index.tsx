@@ -18,8 +18,11 @@ const meta = {
 };
 
 function Home() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const { user } = useContext(UserContext);
+
+  // Set moment locale
+  moment.locale(locale);
 
   const ongoing = user.courses.filter((c) =>
     moment().isBetween(moment(c.dateStart), moment(c.dateEnd))

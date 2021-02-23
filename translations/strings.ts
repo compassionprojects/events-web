@@ -1,6 +1,7 @@
 import { Strings } from './types';
 
 const strings: Strings = {
+  // English
   en: {
     COURSE_DATES: `Starts at {startDate}
     until {endDate}`,
@@ -70,7 +71,10 @@ const strings: Strings = {
     CHOOSE: 'Choose',
     SHARE: 'Share',
     CONFIRM_DELETE_MSG: 'Are you sure you want to delete this message?',
+    ITEM_CREATED_BY_IN: '{timeAgo} by {createdBy} in {category}',
   },
+
+  // French
   fr: {
     COURSE_DATES: `Commence à {startDate}
     et fini à {endDate}`,
