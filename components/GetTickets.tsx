@@ -9,8 +9,8 @@ import useTranslation from 'hooks/useTranslation';
 // if the user is logged in, this will return a link pointing to home
 
 export default function GetTickets({ size, title, course_id, ticket_url }) {
-  const { locale } = useTranslation();
-  const cta_title = title;
+  const { t, locale } = useTranslation();
+  const cta_title = title || t('GET_TICKETS');
   if (ticket_url) {
     return (
       <a
@@ -48,5 +48,4 @@ GetTickets.propTypes = {
 GetTickets.defaultProps = {
   accent: false,
   size: 'lg',
-  title: 'Get Tickets',
 };

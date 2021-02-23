@@ -34,7 +34,7 @@ import useTranslation from 'hooks/useTranslation';
 // end date and course id
 const START_DATE = new Date(2021, 1, 24);
 const END_DATE = new Date(2021, 1, 28);
-const COURSE_ID = 2;
+const COURSE_ID = 4;
 
 interface Trainer {
   name: string;
