@@ -27,6 +27,7 @@ import Icon from 'components/Icon';
 import Link from 'components/Link';
 import Meta from 'components/Meta';
 import Loading from 'components/Loading';
+import useTranslation from 'hooks/useTranslation';
 
 interface Trainer {
   name: string;
@@ -63,6 +64,7 @@ const GET_COURSE = gql`
 `;
 
 function CTA({ course_id, start, end, ticketUrl }) {
+  const { t, locale } = useTranslation();
   const beforeTheEvent = moment(new Date()).isBefore(start);
   const duringTheEvent = moment(new Date()).isBetween(start, end);
   const afterTheEvent = moment(new Date()).isAfter(end);
@@ -74,19 +76,19 @@ function CTA({ course_id, start, end, ticketUrl }) {
   } else if ((!user && duringTheEvent) || (!user && afterTheEvent)) {
     return (
       <Link
-        href="/signin"
-        as="/signin"
+        href="/[lang]/signin"
+        as={`/${locale}/signin`}
         className="btn btn-lg rounded-pill my-4 btn-primary">
-        Sign in
+        {t('SIGN_IN')}
       </Link>
     );
   }
   return (
     <Link
-      href="/home"
-      as="/home"
+      href="/[lang]/home"
+      as={`/${locale}/home`}
       className="btn btn-lg rounded-pill my-4 btn-primary">
-      Home
+      {t('HOME')}
     </Link>
   );
 }
@@ -99,13 +101,14 @@ CTA.propTypes = {
 };
 
 function Landing() {
+  const { t, locale } = useTranslation();
   const { user } = useContext(UserContext);
   const [faq, setFAQIsOpen] = useState({});
   const toggleFAQ = (index) =>
     setFAQIsOpen((prev) => ({ ...prev, [index]: !prev[index] }));
 
-  const t: Trainer = { name: '', avatar_url: '', bio: '' };
-  const [trainer, setTrainer] = useState(t);
+  const tra: Trainer = { name: '', avatar_url: '', bio: '' };
+  const [trainer, setTrainer] = useState(tra);
 
   const [modal, setModal] = useState(false);
   const toggleModal = () => setModal(!modal);
@@ -128,6 +131,8 @@ function Landing() {
 
   if (!course) return null;
 
+  moment.locale(locale);
+
   const timeZone = moment.tz.guess();
   const timeZoneOffset = new Date().getTimezoneOffset();
   const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
@@ -137,9 +142,8 @@ function Landing() {
   const endDate = moment(course.dateEnd)
     .tz(tzName)
     .format('h:mm a z dddd, MMMM Do YYYY');
-  const courseDates = `Starts at ${startDate}
-  until ${endDate}`;
   const isPastEvent = moment(new Date()).isAfter(course.dateEnd);
+  const courseDates = t('COURSE_DATES', { startDate, endDate });
 
   const cta = (
     <CTA
@@ -204,7 +208,7 @@ function Landing() {
         {/* About section */}
         <Section className="mt-4 py-5 border-top-0" id="about" tabIndex={-1}>
           <Narrow className="mx-auto">
-            <h2 className="text-center py-3">About</h2>
+            <h2 className="text-center py-3">{t('ABOUT')}</h2>
             <ReactMarkdown
               linkTarget="_blank"
               source={course.about}
@@ -217,7 +221,7 @@ function Landing() {
         {/* Course section */}
         <Section id="course" tabIndex={-1}>
           <Narrow className="mx-auto">
-            <h2 className="text-center py-3">Course</h2>
+            <h2 className="text-center py-3">{t('COURSE')}</h2>
             <ReactMarkdown
               linkTarget="_blank"
               source={course.details}
@@ -230,7 +234,7 @@ function Landing() {
         {/* Trainers section */}
         <Section id="trainers" tabIndex={-1}>
           <Narrow className="mx-auto">
-            <h2 className="text-center py-3">Trainers</h2>
+            <h2 className="text-center py-3">{t('TRAINERS')}</h2>
             {/* <div className="pb-4 text-center">{data.trainers_intro}</div> */}
             <Row className="justify-content-center">
               {course.trainers.map((item, index) => (
@@ -278,7 +282,7 @@ function Landing() {
             </ModalBody>
             <ModalFooter>
               <Button color="secondary" onClick={toggleModal}>
-                Close
+                {t('CLOSE')}
               </Button>
             </ModalFooter>
           </Modal>
@@ -288,7 +292,7 @@ function Landing() {
         {/* FAQ section */}
         {faqs.length > 0 && (
           <Section id="faq" tabIndex={-1}>
-            <h2 className="text-center py-3">Frequently Asked Questions</h2>
+            <h2 className="text-center py-3">{t('FAQ_ABBR')}</h2>
             <Narrow className="mx-auto pl-sm-5">
               {faqs.map((item, index) => (
                 <div
@@ -338,8 +342,13 @@ function Landing() {
                   href={course.facebookLink}
                   target="_blank"
                   rel="noreferrer">
-                  <Icon shape="facebook" height={18} width={18} />
-                  Facebook
+                  {t('CHECK_FACEBOOK_EVENT')}{' '}
+                  <Icon
+                    shape="external-link"
+                    width={20}
+                    height={20}
+                    className="pb-1"
+                  />
                 </a>
               </div>
             </Narrow>
