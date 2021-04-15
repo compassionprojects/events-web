@@ -102,7 +102,7 @@ export default function Footer() {
             </li>
             <li className="list-inline-item">
               <a
-                href="https://peacefactory.fr"
+                href="http://www.peacefactory.fr"
                 target="_blank"
                 rel="noreferrer">
                 <IconSocial
