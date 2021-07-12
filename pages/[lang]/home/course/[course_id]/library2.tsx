@@ -64,7 +64,6 @@ function Library() {
   });
 
   const sessions = data?.allSessions || [];
-  console.log(sessions);
 
   return (
     <>

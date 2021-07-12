@@ -12,10 +12,6 @@ import Meta from 'components/Meta';
 import Loading from 'components/Loading';
 import useTranslation from 'hooks/useTranslation';
 
-// const timeZone = moment.tz.guess();
-// const timeZoneOffset = new Date().getTimezoneOffset();
-// const tzName = moment.tz.zone(timeZone).abbr(timeZoneOffset);
-
 const GET_SESSIONS = gql`
   query getSessions($courseId: ID!) {
     allSessions(
@@ -61,6 +57,7 @@ function Home() {
 
   const sessions = data?.allSessions || [];
 
+  // group all sessions by day
   const grouped = sessions.reduce((groups, session) => {
     const date = moment(session.startDateTime).format('YYYY-MM-DD');
     if (!groups[date]) {
@@ -70,8 +67,10 @@ function Home() {
     return groups;
   }, {});
 
+  // get all days in an array
   const days = Object.keys(grouped);
 
+  // keep an index to point to the current day in the `days` array
   let index = 0;
   for (let i = 0; i < days.length; i++) {
     if (moment().isSame(days[i], 'day')) {
@@ -81,7 +80,12 @@ function Home() {
   }
 
   const [current, setCurrent] = useState(index);
-  const day = grouped[days[current]] || []; // object (day)
+  // get sessions of that particular day
+  const day = (grouped[days[current]] || []).map((d) => ({
+    ...d,
+    active: moment().isBetween(d.startDateTime, d.endDateTime),
+    sameDay: moment().isSame(d.startDateTime, 'day'),
+  }));
 
   return (
     <>
@@ -118,6 +122,7 @@ function Home() {
               <tr
                 key={idx}
                 style={{
+                  opacity: row.sameDay && !row.active ? 0.5 : 1,
                   background:
                     row.type && row.type === 'break'
                       ? 'rgb(252, 248, 227)'
@@ -150,13 +155,15 @@ function Home() {
                       </div>
                     ))}
                   </div>
-                  <a
-                    className="btn btn-sm btn-primary"
-                    href={row.room.link}
-                    target="_blank"
-                    rel="noreferrer">
-                    Join in {row.room.title}
-                  </a>
+                  {row.sameDay && row.active && (
+                    <a
+                      className="btn btn-sm btn-primary"
+                      href={row.room.link}
+                      target="_blank"
+                      rel="noreferrer">
+                      Join in {row.room.title}
+                    </a>
+                  )}
                 </td>
               </tr>
             ))}
