@@ -26,27 +26,30 @@ const GET_SPACES_AND_MESSAGE_TYPES = gql`
 export default function Navigation() {
   const { t, locale } = useTranslation();
   const { pathname, asPath, query } = useRouter();
+  const { course_id } = query;
   const { data, loading } = useQuery(GET_SPACES_AND_MESSAGE_TYPES, {
-    variables: { courseId: query.course_id },
+    variables: { courseId: course_id },
   });
 
   const [defaultWall = {}] = (data && data.allMessageTypes) || [];
 
+  const newPath = parseInt(course_id.toString()) >= 4 ? '2' : '';
+
   const items = [
     { path: `/[lang]/home`, as: `/${locale}/home`, title: t('HOME') },
     {
-      path: `/[lang]/home/course/[course_id]/schedule`,
-      as: `/${locale}/home/course/${query.course_id}/schedule`,
+      path: `/[lang]/home/course/[course_id]/schedule${newPath}`,
+      as: `/${locale}/home/course/${course_id}/schedule${newPath}`,
       title: t('SCHEDULE'),
     },
     {
-      path: `/[lang]/home/course/[course_id]/library`,
-      as: `/${locale}/home/course/${query.course_id}/library`,
+      path: `/[lang]/home/course/[course_id]/library${newPath}`,
+      as: `/${locale}/home/course/${course_id}/library${newPath}`,
       title: t('LIBRARY'),
     },
     {
       path: `/[lang]/home/course/[course_id]/wall?type=${defaultWall.id}`,
-      as: `/${locale}/home/course/${query.course_id}/wall?type=${defaultWall.id}`,
+      as: `/${locale}/home/course/${course_id}/wall?type=${defaultWall.id}`,
       title: t('MESSAGE_BOARDS'),
     },
   ];
@@ -72,7 +75,7 @@ export default function Navigation() {
             .map((s) => ({
               path: `/[lang]/home/course/[course_id]/space/[id]`,
               title: s.title,
-              as: `/${locale}/home/course/${query.course_id}/space/${s.id}`,
+              as: `/${locale}/home/course/${course_id}/space/${s.id}`,
             }))
             .map((item) => (
               <NavItem key={item.as}>
@@ -92,7 +95,7 @@ export default function Navigation() {
               active: pathname === `/[lang]/home/course/[course_id]/cards`,
             })}
             href="/[lang]/home/course/[course_id]/cards?type=challenge"
-            as={`/${locale}/home/course/${query.course_id}/cards?type=challenge`}>
+            as={`/${locale}/home/course/${course_id}/cards?type=challenge`}>
             {t('INTERACTIVE_TOOLS')}
           </Link>
         </NavItem>
