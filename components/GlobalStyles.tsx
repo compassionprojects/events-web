@@ -40,6 +40,10 @@ export default createGlobalStyle`
     background: #ffd7d7;
   }
 
+  .bg-muted {
+    background: #eee;
+  }
+
   textarea:required {
     box-shadow:none;
   }

@@ -155,10 +155,10 @@ function Library() {
               <div
                 onClick={(e) => toggle(day)}
                 className={classnames(
-                  'py-2 px-2 my-1 bg-light rounded d-flex text-muted',
+                  'py-2 px-2 my-1 rounded d-flex text-muted',
                   {
-                    'border border-success': isSame(day),
-                    'cursor-pointer': isOpen !== day,
+                    'cursor-pointer bg-light': isOpen !== day,
+                    'bg-muted': isOpen === day,
                   }
                 )}
                 id={`day${index}`}>
@@ -166,7 +166,12 @@ function Library() {
                   <Icon
                     shape={isOpen === day ? 'chevron-down' : 'chevron-right'}
                   />{' '}
-                  {t('DAY')} {index + 1}
+                  {t('DAY')} {index + 1}{' '}
+                  {isSame(day) && (
+                    <small className="text-success pl-2">
+                      <b>{t('TODAY')}</b>
+                    </small>
+                  )}
                 </div>
                 <div className="ml-auto">
                   {moment(day).format('DD MMM YYYY')}
