@@ -49,4 +49,8 @@ export default createGlobalStyle`
 
   .text-uppercase  { text-transform: uppercase !important; }
   .text-capitalize { text-transform: capitalize !important; }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
 `;

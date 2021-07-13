@@ -72,6 +72,7 @@ const strings: Strings = {
     SHARE: 'Share',
     CONFIRM_DELETE_MSG: 'Are you sure you want to delete this message?',
     ITEM_CREATED_BY_IN: '{timeAgo} by {createdBy} in {category}',
+    HAPPENING_NOW: 'Happening now',
   },
 
   // French

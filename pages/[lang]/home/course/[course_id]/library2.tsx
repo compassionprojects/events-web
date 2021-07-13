@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import styled from 'styled-components';
 // import ReactMarkdown from 'react-markdown';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { gql } from 'apollo-boost';
-// import { Nav, NavItem, NavLink, Button } from 'reactstrap';
+import {
+  Collapse,
+  ListGroup,
+  ListGroupItem,
+  ListGroupItemText,
+} from 'reactstrap';
 import { useQuery } from '@apollo/react-hooks';
-import moment from 'moment';
+import moment from 'moment-timezone';
+import msf from 'moment-shortformat';
+import striptags from 'striptags';
+import classnames from 'classnames';
 
 import withAuth from 'hocs/auth';
 import Meta from 'components/Meta';
 import Loading from 'components/Loading';
-// import Icon from 'components/Icon';
+import Icon from 'components/Icon';
 // import Link from 'components/Link';
 import useTranslation from 'hooks/useTranslation';
+import truncate from 'truncate';
+import ReactMarkdown from 'react-markdown';
 
 const GET_SESSIONS = gql`
   query getSessions($courseId: ID!) {
@@ -20,8 +30,10 @@ const GET_SESSIONS = gql`
       where: { course: { id: $courseId } }
       sortBy: startDateTime_ASC
     ) {
+      id
       startDateTime
       endDateTime
+      videoRecordingUrl
       title
       description
       startDateTime
@@ -65,6 +77,58 @@ function Library() {
 
   const sessions = data?.allSessions || [];
 
+  // get sessions where we have a video recording or an attachment
+  const grouped = sessions
+    .filter((s) => s.attachments.length > 0 || s.videoRecordingUrl)
+    .reduce((groups, session) => {
+      const date = moment(session.startDateTime).format('YYYY-MM-DD');
+      if (!groups[date]) {
+        groups[date] = [];
+      }
+      groups[date].push(session);
+      return groups;
+    }, {});
+
+  const days = Object.keys(grouped);
+
+  const isSame = (day) => moment().isSame(day, 'day');
+  const isHappening = (session) =>
+    moment().isBetween(session.startDateTime, session.endDateTime);
+
+  const getActiveSession = (id) =>
+    id && sessions.filter((s) => s.id.toString() === id.toString())[0];
+
+  const getSelectedDate = (s) =>
+    moment((s && s.startDateTime) || new Date()).format('YYYY-MM-DD');
+
+  const [selectedSession, setSession] = useState(
+    getActiveSession(query.session_id)
+  );
+  const [isOpen, setIsOpen] = useState(getSelectedDate(selectedSession));
+
+  const toggle = (day) => setIsOpen(day);
+
+  const selectSession = (session) => (e) => {
+    e.preventDefault();
+    Router.push({
+      pathname: `/[lang]/home/course/[course_id]/library2`,
+      query: {
+        course_id: query.course_id,
+        lang: locale,
+        session_id: session.id,
+      },
+    });
+    setSession(session);
+  };
+
+  useEffect(() => {
+    setSession(getActiveSession(query.session_id));
+  }, [sessions]);
+
+  useEffect(() => {
+    toggle(getSelectedDate(selectedSession));
+  }, [selectedSession]);
+
   return (
     <>
       <Meta {...meta} />
@@ -72,6 +136,95 @@ function Library() {
         <span className="pr-2">{meta.title}</span>
         {loading && <Loading color="primary" />}
       </h2>
+      <div className="row">
+        <div className="col-md-12 col-lg-7">
+          {selectedSession && (
+            <div className="my-3">
+              <h4>{selectedSession.title}</h4>
+              <ReactMarkdown
+                source={selectedSession.description}
+                escapeHtml={false}
+                linkTarget="_blank"
+              />
+            </div>
+          )}
+        </div>
+        <div className="col-md-12 col-lg-5">
+          {days.map((day, index) => (
+            <div key={day}>
+              <div
+                onClick={(e) => toggle(day)}
+                className={classnames(
+                  'py-2 px-2 my-1 bg-light rounded d-flex text-muted',
+                  {
+                    'border border-success': isSame(day),
+                    'cursor-pointer': isOpen !== day,
+                  }
+                )}
+                id={`day${index}`}>
+                <div>
+                  <Icon
+                    shape={isOpen === day ? 'chevron-down' : 'chevron-right'}
+                  />{' '}
+                  {t('DAY')} {index + 1}
+                </div>
+                <div className="ml-auto">
+                  {moment(day).format('DD MMM YYYY')}
+                </div>
+              </div>
+              <Collapse isOpen={isOpen === day}>
+                <ListGroup tag="div">
+                  {grouped[day].map((session) => (
+                    <ListGroupItem
+                      key={session.id}
+                      tag="a"
+                      onClick={selectSession(session)}
+                      className={classnames(
+                        'list-group-item-action cursor-pointer',
+                        {
+                          'list-group-item-success':
+                            session.id === query.session_id,
+                        }
+                      )}>
+                      <div className="d-flex w-100 justify-content-between align-items-center">
+                        <div className="mb-1">
+                          <b>{session.title}</b>
+                        </div>
+                        <small className="text-muted">
+                          {msf(session.startDateTime).short()}
+                        </small>
+                      </div>
+                      <ListGroupItemText>
+                        {truncate(striptags(session.description), 80)}
+                      </ListGroupItemText>
+                      <div className="d-flex w-100 justify-content-between align-items-center text-muted">
+                        <small>
+                          {session.trainers
+                            .map((t) => t.name.split(' ')[0])
+                            .join(', ')}
+                        </small>
+                        <span>
+                          {session.videoRecordingUrl && (
+                            <Icon width={20} shape="video" className="mr-3" />
+                          )}
+                          {session.attachments.length > 0 && (
+                            <Icon width={20} shape="paperclip" />
+                          )}
+                        </span>
+                      </div>
+                      {isHappening(session) && (
+                        <div className="text-success small">
+                          <b>{t('HAPPENING_NOW')}</b>
+                        </div>
+                      )}
+                    </ListGroupItem>
+                  ))}
+                </ListGroup>
+              </Collapse>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 }

@@ -10,6 +10,8 @@ import { useRouter } from 'next/router';
 import withAuth from 'hocs/auth';
 import Meta from 'components/Meta';
 import Loading from 'components/Loading';
+import Link from 'components/Link';
+import Icon from 'components/Icon';
 import useTranslation from 'hooks/useTranslation';
 
 const GET_SESSIONS = gql`
@@ -18,6 +20,7 @@ const GET_SESSIONS = gql`
       where: { course: { id: $courseId } }
       sortBy: startDateTime_ASC
     ) {
+      id
       startDateTime
       endDateTime
       title
@@ -27,6 +30,11 @@ const GET_SESSIONS = gql`
       room {
         title
         link
+      }
+      attachments {
+        file {
+          publicUrl
+        }
       }
       trainers {
         id
@@ -84,7 +92,8 @@ function Home() {
   const day = (grouped[days[current]] || []).map((d) => ({
     ...d,
     active: moment().isBetween(d.startDateTime, d.endDateTime),
-    sameDay: moment().isSame(d.startDateTime, 'day'),
+    isOver: moment().isAfter(d.endDateTime),
+    // sameDay: moment().isSame(d.startDateTime, 'day'),
   }));
 
   useEffect(() => {
@@ -100,11 +109,15 @@ function Home() {
       </h2>
 
       <div className="py-4">
-        <div className="d-flex justify-content-between">
-          <strong>
-            {t('DAY')} {current + 1}{' '}
-            {moment(days[current]).format('dddd, MMMM Do YYYY z')}
-          </strong>
+        <div className="d-flex justify-content-between align-items-center mb-4">
+          <h5>
+            <strong className="rounded px-2">
+              {t('DAY')} {current + 1}{' '}
+            </strong>
+            <small className="ml-3">
+              {moment(days[current]).format('ddd, MMM Do YYYY z')}
+            </small>
+          </h5>
           <div>
             <Button
               color="warning"
@@ -120,59 +133,74 @@ function Home() {
             </Button>
           </div>
         </div>
-        <Table className="table">
-          <tbody>
-            {day.map((row, idx) => (
-              <tr
-                key={idx}
-                style={{
-                  opacity: row.sameDay && !row.active ? 0.5 : 1,
-                  background:
-                    row.type && row.type === 'break'
-                      ? 'rgb(252, 248, 227)'
-                      : 'transparent',
-                }}>
-                <td width="20%">
-                  {moment(row.startDateTime).format('HH:mm')} -{' '}
-                  {moment(row.endDateTime).format('HH:mm')}
-                </td>
-                <td>
-                  <b>{row.title}</b>
-                  <ReactMarkdown
-                    source={row.description}
-                    escapeHtml={false}
-                    linkTarget="_blank"
-                  />
-                  <div className="d-flex my-4">
-                    {row.trainers.map((obj) => (
-                      <div key={obj.id} className="text-center">
-                        <div className="mb-2 px-5">
-                          {obj.attachment && (
-                            <img
-                              src={obj.attachment.file.publicUrl}
-                              className="img-fluid rounded-circle"
-                              style={{ height: 120 }}
-                            />
-                          )}
-                        </div>
-                        {obj.name}
+
+        {day.map((row, idx) => (
+          <div
+            key={row.id}
+            className="d-flex mb-5"
+            style={{
+              opacity: row.isOver ? 0.5 : 1,
+              background:
+                row.type && row.type === 'break'
+                  ? 'rgb(252, 248, 227)'
+                  : 'transparent',
+            }}>
+            <div className="flex-shrink-0 text-muted">
+              {moment(row.startDateTime).format('HH:mm')} -{' '}
+              {moment(row.endDateTime).format('HH:mm')}
+            </div>
+            <div className="ml-5">
+              <b>{row.title}</b>
+              <ReactMarkdown
+                source={row.description}
+                escapeHtml={false}
+                linkTarget="_blank"
+              />
+              {row.trainers.length > 0 && (
+                <div className="d-flex my-3">
+                  {row.trainers.map((obj) => (
+                    <div
+                      key={obj.id}
+                      className="d-flex align-items-center mr-4">
+                      <div className="mr-2 flex-shrink-0">
+                        {obj.attachment && (
+                          <img
+                            src={obj.attachment.file.publicUrl}
+                            className="img-fluid rounded-circle"
+                            style={{ height: 25 }}
+                          />
+                        )}
                       </div>
-                    ))}
-                  </div>
-                  {row.sameDay && row.active && (
-                    <a
-                      className="btn btn-sm btn-primary"
-                      href={row.room.link}
-                      target="_blank"
-                      rel="noreferrer">
-                      Join in {row.room.title}
-                    </a>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
+                      <span className="text-muted">{obj.name}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="d-flex align-items-center mt-3">
+                {row.active && row.room && row.room.link && (
+                  <a
+                    className="btn btn-primary rounded-pill mr-3"
+                    href={row.room.link}
+                    target="_blank"
+                    rel="noreferrer">
+                    Join in {row.room.title}
+                  </a>
+                )}
+                {row.attachments.length > 0 && (
+                  <span className="text-muted d-inline-flex align-items-center">
+                    <Icon height={18} shape="paperclip" />
+                    <Link
+                      href={`/[lang]/home/course/[course_id]/library2?session_id=${row.id}`}
+                      as={`/${locale}/home/course/${query.course_id}/library2?session_id=${row.id}`}>
+                      {t('LIBRARY')} <Icon height={18} shape="arrow-right" />
+                    </Link>
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );

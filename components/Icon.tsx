@@ -16,7 +16,9 @@ Icon.propTypes = {
   shape: PropTypes.oneOf([
     'chevron-down',
     'chevron-up',
+    'chevron-right',
     'arrow-up',
+    'arrow-right',
     'x',
     'send',
     'external-link',
@@ -25,6 +27,7 @@ Icon.propTypes = {
     'file-text',
     'trash-2',
     'facebook',
+    'paperclip',
   ]),
 };
 
