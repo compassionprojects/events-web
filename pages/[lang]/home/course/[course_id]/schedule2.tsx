@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment-timezone';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Button } from 'reactstrap';
 import ReactMarkdown from 'react-markdown';
@@ -134,7 +133,7 @@ function Home() {
           </div>
         </div>
 
-        {day.map((row, idx) => (
+        {day.map((row) => (
           <div
             key={row.id}
             className="d-flex mb-5"
@@ -211,9 +210,3 @@ Home.propTypes = {
 };
 
 export default withAuth(Home);
-
-const Table = styled.table`
-  td p {
-    margin: 0 !important;
-  }
-`;

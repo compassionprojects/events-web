@@ -153,7 +153,7 @@ function Library() {
           {days.map((day, index) => (
             <div key={day}>
               <div
-                onClick={(e) => toggle(day)}
+                onClick={() => toggle(day)}
                 className={classnames(
                   'py-2 px-2 my-1 rounded d-flex text-muted',
                   {
