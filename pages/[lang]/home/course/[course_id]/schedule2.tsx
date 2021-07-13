@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment-timezone';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -86,6 +86,10 @@ function Home() {
     active: moment().isBetween(d.startDateTime, d.endDateTime),
     sameDay: moment().isSame(d.startDateTime, 'day'),
   }));
+
+  useEffect(() => {
+    setCurrent(index);
+  }, [index]);
 
   return (
     <>
