@@ -261,7 +261,6 @@ function Video({ url }) {
       )}
       {isOneDrive && (
         <video
-          className="rounded"
           onContextMenu={disableRightClick}
           width="auto"
           height="auto"
@@ -284,7 +283,7 @@ function Files({ items }) {
   return (
     <div className="mt-4">
       {items.map((item) => (
-        <div className="my-3" key={item.id}>
+        <div className="my-3 text-muted" key={item.id}>
           <Icon width={20} shape="paperclip" />{' '}
           <a
             href={item.file.publicUrl}
