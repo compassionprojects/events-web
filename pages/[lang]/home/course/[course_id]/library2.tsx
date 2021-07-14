@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 // import ReactMarkdown from 'react-markdown';
 import Router, { useRouter } from 'next/router';
@@ -14,7 +15,7 @@ import moment from 'moment-timezone';
 import msf from 'moment-shortformat';
 import striptags from 'striptags';
 import classnames from 'classnames';
-
+import { disableRightClick } from './library/index';
 import withAuth from 'hocs/auth';
 import Meta from 'components/Meta';
 import Loading from 'components/Loading';
@@ -23,6 +24,7 @@ import Icon from 'components/Icon';
 import useTranslation from 'hooks/useTranslation';
 import truncate from 'truncate';
 import ReactMarkdown from 'react-markdown';
+import { Trainers } from './schedule2';
 
 const GET_SESSIONS = gql`
   query getSessions($courseId: ID!) {
@@ -42,8 +44,11 @@ const GET_SESSIONS = gql`
         title
       }
       attachments {
+        id
         file {
           publicUrl
+          originalFilename
+          mimetype
         }
       }
       trainers {
@@ -101,10 +106,8 @@ function Library() {
   const getSelectedDate = (s) =>
     moment((s && s.startDateTime) || new Date()).format('YYYY-MM-DD');
 
-  const [selectedSession, setSession] = useState(
-    getActiveSession(query.session_id)
-  );
-  const [isOpen, setIsOpen] = useState(getSelectedDate(selectedSession));
+  const [selected, setSession] = useState(getActiveSession(query.session_id));
+  const [isOpen, setIsOpen] = useState(getSelectedDate(selected));
 
   const toggle = (day) => setIsOpen(day);
 
@@ -126,8 +129,8 @@ function Library() {
   }, [sessions]);
 
   useEffect(() => {
-    toggle(getSelectedDate(selectedSession));
-  }, [selectedSession]);
+    toggle(getSelectedDate(selected));
+  }, [selected]);
 
   return (
     <>
@@ -138,14 +141,22 @@ function Library() {
       </h2>
       <div className="row">
         <div className="col-md-12 col-lg-7">
-          {selectedSession && (
+          {selected && (
             <div className="my-3">
-              <h4>{selectedSession.title}</h4>
+              <h4>{selected.title}</h4>
+              <div className="text-muted small mb-3">
+                {moment(selected.startDateTime).format('DD MMM YYYY')}{' '}
+                {moment(selected.startDateTime).format('HH:mm')} -{' '}
+                {moment(selected.endDateTime).format('HH:mm')}
+              </div>
               <ReactMarkdown
-                source={selectedSession.description}
+                source={selected.description}
                 escapeHtml={false}
                 linkTarget="_blank"
               />
+              <Trainers items={selected.trainers} />
+              <Video url={selected.videoRecordingUrl} />
+              <Files items={selected.attachments} />
             </div>
           )}
         </div>
@@ -235,3 +246,58 @@ function Library() {
 }
 
 export default withAuth(Library);
+
+function Video({ url }) {
+  if (!url) return null;
+  const isOneDrive = url.includes('onedrive.live.com');
+  return (
+    <div className="embed-responsive embed-responsive-16by9">
+      {!isOneDrive && (
+        <iframe
+          className="embed-responsive-item rounded"
+          src={url}
+          allowFullScreen></iframe>
+      )}
+      {isOneDrive && (
+        <video
+          className="rounded"
+          onContextMenu={disableRightClick}
+          width="auto"
+          height="auto"
+          controls
+          controlsList="nodownload">
+          <source src={url} type="video/mp4" />
+        </video>
+      )}
+    </div>
+  );
+}
+
+Video.propTypes = {
+  url: PropTypes.string,
+};
+
+function Files({ items }) {
+  if (!items) return null;
+  if (!items.length) return null;
+  return (
+    <div className="mt-4">
+      {items.map((item) => (
+        <div className="my-3" key={item.id}>
+          <Icon width={20} shape="paperclip" />{' '}
+          <a
+            href={item.file.publicUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="bg-muted rounded p-2">
+            {item.file.originalFilename}
+          </a>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+Files.propTypes = {
+  items: PropTypes.array,
+};

@@ -155,26 +155,7 @@ function Home() {
                 escapeHtml={false}
                 linkTarget="_blank"
               />
-              {row.trainers.length > 0 && (
-                <div className="d-flex my-3">
-                  {row.trainers.map((obj) => (
-                    <div
-                      key={obj.id}
-                      className="d-flex align-items-center mr-4">
-                      <div className="mr-2 flex-shrink-0">
-                        {obj.attachment && (
-                          <img
-                            src={obj.attachment.file.publicUrl}
-                            className="img-fluid rounded-circle"
-                            style={{ height: 25 }}
-                          />
-                        )}
-                      </div>
-                      <span className="text-muted">{obj.name}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+              <Trainers items={row.trainers} />
 
               <div className="d-flex align-items-center mt-3">
                 {row.active && row.room && row.room.link && (
@@ -210,3 +191,30 @@ Home.propTypes = {
 };
 
 export default withAuth(Home);
+
+export function Trainers({ items }) {
+  if (!items) return null;
+  if (!items.length) return null;
+  return (
+    <div className="d-flex my-3">
+      {items.map((obj) => (
+        <div key={obj.id} className="d-flex align-items-center mr-4">
+          <div className="mr-2 flex-shrink-0">
+            {obj.attachment && (
+              <img
+                src={obj.attachment.file.publicUrl}
+                className="img-fluid rounded-circle"
+                style={{ height: 25 }}
+              />
+            )}
+          </div>
+          <span className="text-muted">{obj.name}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+Trainers.propTypes = {
+  items: PropTypes.array,
+};

@@ -61,7 +61,7 @@ export default function Navigation() {
           <NavItem key={item.path}>
             <Link
               className={classnames('nav-link', {
-                active: item.path.split('?')[0] === pathname,
+                'border border-primary': item.path.split('?')[0] === pathname,
               })}
               href={item.path}
               as={item.as}>
@@ -81,7 +81,7 @@ export default function Navigation() {
               <NavItem key={item.as}>
                 <Link
                   className={classnames('nav-link', {
-                    active: item.as === asPath,
+                    'border border-primary': item.as === asPath,
                   })}
                   href={item.path}
                   as={item.as}>
@@ -92,7 +92,8 @@ export default function Navigation() {
         <NavItem>
           <Link
             className={classnames('nav-link', {
-              active: pathname === `/[lang]/home/course/[course_id]/cards`,
+              'border border-primary':
+                pathname === `/[lang]/home/course/[course_id]/cards`,
             })}
             href="/[lang]/home/course/[course_id]/cards?type=challenge"
             as={`/${locale}/home/course/${course_id}/cards?type=challenge`}>
