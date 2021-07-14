@@ -44,6 +44,10 @@ export default createGlobalStyle`
     background: #eee;
   }
 
+  .bg-gray {
+    background: #ccc;
+  }
+
   textarea:required {
     box-shadow:none;
   }

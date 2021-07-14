@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment-timezone';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { Button } from 'reactstrap';
 import ReactMarkdown from 'react-markdown';
 import { gql } from 'apollo-boost';
@@ -107,7 +108,7 @@ function Home() {
         {loading && <Loading color="primary" />}
       </h2>
 
-      <div className="py-4">
+      <div className="py-4 position-relative mb-5">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h5>
             <strong className="rounded px-2">
@@ -132,11 +133,13 @@ function Home() {
             </Button>
           </div>
         </div>
-
+        <div className="ml-5 pl-5 border-right position-absolute h-100">
+          <div className="ml-3"></div>
+        </div>
         {day.map((row) => (
           <div
             key={row.id}
-            className="d-flex mb-5"
+            className="d-flex mt-5"
             style={{
               opacity: row.isOver ? 0.5 : 1,
               background:
@@ -148,6 +151,20 @@ function Home() {
               {moment(row.startDateTime).format('HH:mm')} -{' '}
               {moment(row.endDateTime).format('HH:mm')}
             </div>
+            <div
+              className={classnames(
+                'rounded-circle position-absolute ml-5 mt-2',
+                {
+                  'bg-gray': !row.active,
+                  'bg-success': row.active,
+                }
+              )}
+              style={{
+                width: 10,
+                height: 10,
+                left: '3.7rem',
+              }}
+            />
             <div className="ml-5">
               <b>{row.title}</b>
               <ReactMarkdown
