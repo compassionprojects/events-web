@@ -82,6 +82,8 @@ Home.propTypes = {
 
 function CourseCard({ id, title, description, dateStart, dateEnd }) {
   const { t, locale } = useTranslation();
+  const path = parseInt(id) >= 4 ? 'schedule2' : 'schedule';
+
   return (
     <Card body className="my-2">
       <CardTitle className="font-weight-bold">{title}</CardTitle>
@@ -93,8 +95,8 @@ function CourseCard({ id, title, description, dateStart, dateEnd }) {
         </div>
       </CardText>
       <Link
-        href={`/[lang]/home/course/[course_id]/schedule`}
-        as={`/${locale}/home/course/${id}/schedule`}>
+        href={`/[lang]/home/course/[course_id]/${path}`}
+        as={`/${locale}/home/course/${id}/${path}`}>
         {t('GO_TO_COURSE')}
       </Link>
     </Card>
