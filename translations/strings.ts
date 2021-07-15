@@ -74,6 +74,8 @@ const strings: Strings = {
     ITEM_CREATED_BY_IN: '{timeAgo} by {createdBy} in {category}',
     HAPPENING_NOW: 'Happening now',
     TODAY: 'today',
+    NOT_PART_OF_COURSE:
+      'Sorry, you are not part of this course. If you think this is a mistake, contact us!',
   },
 
   // French

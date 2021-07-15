@@ -1,11 +1,13 @@
 import React, { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { UserContext } from '../lib/UserContext';
-import Loading from '../components/Loading';
+import Loading from 'components/Loading';
+import useTranslation from 'hooks/useTranslation';
 
 const AuthWrap = (Component) => {
   const Auth = (props) => {
     const router = useRouter();
+    const { t, locale } = useTranslation();
     const { user, authenticating, error } = useContext(UserContext);
 
     if (authenticating && !user) {
@@ -17,7 +19,8 @@ const AuthWrap = (Component) => {
     }
 
     useEffect(() => {
-      if ((!user && !authenticating) || error) router.push('/signin?fail=1');
+      if ((!user && !authenticating) || error)
+        router.push(`/${locale}/signin?fail=1`);
     }, [user, authenticating, error]);
 
     if ((!user && !authenticating) || error) {
@@ -30,12 +33,7 @@ const AuthWrap = (Component) => {
       router.query.course_id &&
       !user.courses.map((c) => c.id).includes(router.query.course_id)
     ) {
-      return (
-        <div>
-          Sorry, you are not part of this course. If you think this is a
-          mistake, contact us!
-        </div>
-      );
+      return <div>{t('NOT_PART_OF_COURSE')}</div>;
     }
 
     if (user) return <Component {...props} />;
