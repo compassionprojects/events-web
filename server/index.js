@@ -28,6 +28,7 @@ app.prepare().then(() => {
   server.use(cookieParser());
 
   server.post('/create-checkout-session', async (req, res) => {
+    const lang = getLang(req);
     const { course_id } = req.query;
     const session = await stripe.checkout.sessions.create({
       billing_address_collection: 'required',
@@ -35,21 +36,16 @@ app.prepare().then(() => {
       payment_method_types: ['card', 'ideal'],
       line_items: req.body,
       mode: 'payment',
-      success_url: `${HOST}/course/${course_id}/payment-success?session_id={CHECKOUT_SESSION_ID}&course_id=${course_id}`,
-      cancel_url: `${HOST}/course/${course_id}/tickets`,
+      success_url: `${HOST}/${lang}/course/${course_id}/payment-success?session_id={CHECKOUT_SESSION_ID}&course_id=${course_id}`,
+      cancel_url: `${HOST}/${lang}/course/${course_id}/tickets`,
     });
 
     res.json({ id: session.id });
   });
 
   server.get('/', (req, res) => {
-    const [browserLang] = localeParser.parse(req.headers['accept-language']);
-    const locale = req.cookies['locale'];
-    // use en as default locale
-    const lang = ['en', 'fr'].includes(browserLang.code)
-      ? browserLang.code
-      : 'en';
-    res.redirect(`/${locale || lang}`);
+    const lang = getLang(req);
+    res.redirect(`/${lang}`);
   });
 
   server.get('/auth', async (req, res) => {
@@ -99,4 +95,14 @@ async function validateToken(token) {
 
   if (response.status !== 200) throw new Error('Invalid token');
   return response.headers.get('set-cookie');
+}
+
+function getLang(req) {
+  const [browserLang] = localeParser.parse(req.headers['accept-language']);
+  const locale = req.cookies['locale'];
+  // use en as default locale
+  const lang = ['en', 'fr'].includes(browserLang.code)
+    ? browserLang.code
+    : 'en';
+  return locale || lang;
 }
