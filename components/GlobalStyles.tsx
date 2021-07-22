@@ -1,8 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  html, body, #__next {
+  html, body {
     height: 100%;
+  }
+
+  #__next {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   blockquote {

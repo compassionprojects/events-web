@@ -47,7 +47,7 @@ class VicDocument extends Document {
           />
           <link rel="icon" href="/images/favicon.png" />
         </Head>
-        <body>
+        <body className="d-flex flex-column h-100">
           <div id="top"></div>
           <Main />
           <NextScript />

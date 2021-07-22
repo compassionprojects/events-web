@@ -27,14 +27,14 @@ export default function Layout({ router, ...props }) {
   };
 
   return (
-    <div className="d-flex flex-column h-100">
+    <>
       <GlobalStyles />
       {isOneCol && <SkipLinks />}
       {isLanding ? <HeaderLanding /> : <Header />}
       {onecol && <main className="flex-shrink-0" role="main" {...props} />}
 
       {user && !isOneCol && (
-        <main className="flex-shrink-0" role="main">
+        <main className="flex-shrink-0 mb-5" role="main">
           {challenge && (
             <div className="bg-light border-bottom py-3 text-center">
               Daily challenge you have chosen: {challenge} &nbsp;&nbsp;{' '}
@@ -56,7 +56,7 @@ export default function Layout({ router, ...props }) {
         </main>
       )}
       <Footer />
-    </div>
+    </>
   );
 }
 
