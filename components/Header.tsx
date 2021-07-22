@@ -58,36 +58,6 @@ export default function HeaderLanding() {
                 {t('ABOUT_US')}
               </NavLink>
             </NavItem>
-            {!user && (
-              <UncontrolledDropdown nav inNavbar className="pl-md-2 pl-lg-4">
-                <DropdownToggle nav caret className="text-accent">
-                  {t('COURSE')}
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem onClick={() => scrollTo('#about', o)}>
-                    {t('ABOUT')}
-                  </DropdownItem>
-                  <DropdownItem onClick={() => scrollTo('#course', o)}>
-                    {t('COURSE')}
-                  </DropdownItem>
-                  <DropdownItem onClick={() => scrollTo('#what-to-expect', o)}>
-                    {t('WHAT_TO_EXPECT')}
-                  </DropdownItem>
-                  <DropdownItem onClick={() => scrollTo('#language', o)}>
-                    {t('LANGUAGE')}
-                  </DropdownItem>
-                  <DropdownItem onClick={() => scrollTo('#what-you-need', o)}>
-                    {t('WHAT_YOU_NEED')}
-                  </DropdownItem>
-                  <DropdownItem onClick={() => scrollTo('#fee', o)}>
-                    {t('PARTICIPATION_FEE')}
-                  </DropdownItem>
-                  <DropdownItem onClick={() => scrollTo('#trainers', o)}>
-                    {t('TRAINERS')}
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            )}
             <NavItem className="pl-md-2 pl-lg-4">
               <NavLink
                 href={`/${locale}/#faq`}
