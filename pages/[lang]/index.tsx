@@ -201,7 +201,7 @@ function Landing() {
       </Cover>
 
       <div className="d-flex justify-content-center bg-light py-5 align-items-center">
-        <ImgAffiliates src="/images/logo-pf.svg" alt="Peace Factory" />
+        <ImgAffiliates src="/images/logo-pf-new.svg" alt="Peace Factory" />
         <ImgAffiliates
           src="/images/logo-cnvc.svg"
           alt="Center for nonviolent communication logo"
