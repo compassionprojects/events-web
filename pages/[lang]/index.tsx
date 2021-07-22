@@ -30,10 +30,6 @@ import PreserveLineBreaks from 'components/PreserveLineBreaks';
 import useTranslation from 'hooks/useTranslation';
 
 // Featured course:
-// a few days before start date to show sign in link,
-// end date and course id
-const START_DATE = new Date(2021, 1, 24);
-const END_DATE = new Date(2021, 1, 28);
 const COURSE_ID = 5;
 
 interface Trainer {
@@ -98,9 +94,9 @@ LinkInternal.propTypes = {
 
 function CTA({ ...props }) {
   const { t, locale } = useTranslation();
-  const beforeTheEvent = moment(new Date()).isBefore(START_DATE);
-  const duringTheEvent = moment(new Date()).isBetween(START_DATE, END_DATE);
-  const afterTheEvent = moment(new Date()).isAfter(END_DATE);
+  const beforeTheEvent = moment(new Date()).isBefore(props.start);
+  const duringTheEvent = moment(new Date()).isBetween(props.start, props.end);
+  const afterTheEvent = moment(new Date()).isAfter(props.end);
 
   const { user } = useContext(UserContext);
   if (!user && beforeTheEvent) {
@@ -110,6 +106,12 @@ function CTA({ ...props }) {
   }
   return <LinkInternal path={`/${locale}/home`} title={t('HOME')} />;
 }
+
+CTA.propTypes = {
+  start: PropTypes.string,
+  end: PropTypes.string,
+  course_id: PropTypes.number,
+};
 
 function Landing() {
   const { t, locale } = useTranslation();
@@ -166,7 +168,11 @@ function Landing() {
   const courseDates = t('COURSE_DATES', { startDate, endDate });
 
   const cta = (
-    <CTA start={course.dateStart} end={course.dateEnd} course_id={course.id} />
+    <CTA
+      start={course.dateStart}
+      end={course.dateEnd}
+      course_id={parseInt(course.id)}
+    />
   );
 
   return (
@@ -356,19 +362,21 @@ function Landing() {
               />
               <div className="mt-4 d-flex align-items-center justify-content-center">
                 <GetTickets course_id={course.id} />
-                <a
-                  className="ml-3"
-                  href={course.facebookLink}
-                  target="_blank"
-                  rel="noreferrer">
-                  {t('CHECK_FACEBOOK_EVENT')}{' '}
-                  <Icon
-                    shape="external-link"
-                    width={20}
-                    height={20}
-                    className="pb-1"
-                  />
-                </a>
+                {course.facebookLink && (
+                  <a
+                    className="ml-3"
+                    href={course.facebookLink}
+                    target="_blank"
+                    rel="noreferrer">
+                    {t('CHECK_FACEBOOK_EVENT')}{' '}
+                    <Icon
+                      shape="external-link"
+                      width={20}
+                      height={20}
+                      className="pb-1"
+                    />
+                  </a>
+                )}
               </div>
             </Narrow>
           </Section>
