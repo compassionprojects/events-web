@@ -28,6 +28,7 @@ import Meta from 'components/Meta';
 import Loading from 'components/Loading';
 import PreserveLineBreaks from 'components/PreserveLineBreaks';
 import useTranslation from 'hooks/useTranslation';
+import ImgUnselectable from 'components/ImgUnselectable';
 
 // Featured course:
 const COURSE_ID = 5;
@@ -443,18 +444,6 @@ const Section = styled.section.attrs({
   className: 'mt-4 py-5 border-top',
 })`
   outline: none;
-`;
-
-// Preventing an image from being draggable or selectable without using JS
-// https://stackoverflow.com/a/12906840/232619
-const ImgUnselectable = styled.img`
-  pointer-events: none;
-  user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 `;
 
 const Shape = styled(ImgUnselectable).attrs({

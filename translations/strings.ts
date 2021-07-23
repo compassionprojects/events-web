@@ -78,6 +78,7 @@ const strings: Strings = {
       'Sorry, you are not part of this course. If you think this is a mistake, contact us!',
     DISPLAYED_IN_YOUR_TZ: 'Displayed in your timezone',
     JOIN_COMMUNITY_ROOM: 'Join community room',
+    SELECT_SESSION: 'Select a session',
   },
 
   // French
@@ -157,6 +158,7 @@ const strings: Strings = {
       'Sorry, you are not part of this course. If you think this is a mistake, contact us!',
     DISPLAYED_IN_YOUR_TZ: 'Displayed in your timezone',
     JOIN_COMMUNITY_ROOM: 'Join community room',
+    SELECT_SESSION: 'Select a session',
   },
 };
 

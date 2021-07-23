@@ -15,15 +15,16 @@ import moment from 'moment-timezone';
 import msf from 'moment-shortformat';
 import striptags from 'striptags';
 import classnames from 'classnames';
-import { disableRightClick } from './library/index';
-import withAuth from 'hocs/auth';
+import ReactMarkdown from 'react-markdown';
 import Meta from 'components/Meta';
 import Loading from 'components/Loading';
 import Icon from 'components/Icon';
+import ImgUnselectable from 'components/ImgUnselectable';
 // import Link from 'components/Link';
+import withAuth from 'hocs/auth';
 import useTranslation from 'hooks/useTranslation';
 import truncate from 'truncate';
-import ReactMarkdown from 'react-markdown';
+import { disableRightClick } from './library/index';
 import { Trainers } from './schedule2';
 
 const GET_SESSIONS = gql`
@@ -157,6 +158,16 @@ function Library() {
               <Trainers items={selected.trainers} />
               <Video url={selected.videoRecordingUrl} />
               <Files items={selected.attachments} />
+            </div>
+          )}
+          {!selected && (
+            <div className="py-5 text-center">
+              <ImgUnselectable
+                className="img-fluid"
+                src="/images/icon-select.png"
+                style={{ height: 200, opacity: 0.2 }}
+              />
+              <div className="mt-4 text-muted">{t('SELECT_SESSION')}</div>
             </div>
           )}
         </div>
