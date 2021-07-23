@@ -16,6 +16,9 @@ import useTranslation from 'hooks/useTranslation';
 
 const GET_SESSIONS = gql`
   query getSessions($courseId: ID!) {
+    Course(where: { id: $courseId }) {
+      communityRoomLink
+    }
     allSessions(
       where: { course: { id: $courseId } }
       sortBy: startDateTime_ASC
@@ -64,6 +67,7 @@ function Home() {
   moment.locale(locale);
 
   const sessions = data?.allSessions || [];
+  const { communityRoomLink } = data?.Course || {};
 
   // group all sessions by day
   const grouped = sessions.reduce((groups, session) => {
@@ -106,6 +110,15 @@ function Home() {
       <h2 className="d-flex align-items-center">
         <span className="pr-2">{meta.title}</span>
         {loading && <Loading color="primary" />}
+        {communityRoomLink && (
+          <a
+            className="btn btn-outline-primary"
+            href={communityRoomLink}
+            target="_blank"
+            rel="noopener noreferrer">
+            {t('JOIN_COMMUNITY_ROOM')}
+          </a>
+        )}
       </h2>
       <div className="small text-muted mb-3">{t('DISPLAYED_IN_YOUR_TZ')}</div>
       <div className="pt-4 position-relative mb-5">

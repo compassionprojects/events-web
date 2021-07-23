@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Card, CardText, CardTitle, Container, Row, Col } from 'reactstrap';
-// import styled from 'styled-components';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import ReactMarkdown from 'react-markdown';
@@ -42,7 +42,7 @@ function Home() {
         <Row>
           {ongoing.map((c) => (
             <Col sm={12} md={6} lg={4} key={c.id}>
-              <CourseCard {...c} />
+              <CourseCard primary {...c} />
             </Col>
           ))}
         </Row>
@@ -80,7 +80,7 @@ Home.propTypes = {
   user: PropTypes.object,
 };
 
-function CourseCard({ id, title, description, dateStart, dateEnd }) {
+function CourseCard({ id, title, description, dateStart, dateEnd, primary }) {
   const { t, locale } = useTranslation();
   const path = parseInt(id) >= 4 ? 'schedule2' : 'schedule';
 
@@ -96,6 +96,9 @@ function CourseCard({ id, title, description, dateStart, dateEnd }) {
       </CardText>
       <Link
         href={`/[lang]/home/course/[course_id]/${path}`}
+        className={classnames({
+          'btn btn-primary mr-auto': primary,
+        })}
         as={`/${locale}/home/course/${id}/${path}`}>
         {t('GO_TO_COURSE')}
       </Link>
@@ -109,6 +112,7 @@ CourseCard.propTypes = {
   description: PropTypes.string,
   dateStart: PropTypes.string,
   dateEnd: PropTypes.string,
+  primary: PropTypes.bool,
 };
 
 export default withAuth(Home);
