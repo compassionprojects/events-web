@@ -195,10 +195,14 @@ function Landing() {
           <div className="lead py-4">
             <ReactMarkdown source={course.description} escapeHtml={false} />
           </div>
-          <PreserveLineBreaks
-            className="my-4"
-            dangerouslySetInnerHTML={{ __html: courseDates }}
-          />
+          <div className="my-4">
+            <PreserveLineBreaks
+              dangerouslySetInnerHTML={{ __html: courseDates }}
+            />
+            <div className="mt-2 small text-muted">
+              ({t('DISPLAYED_IN_YOUR_TZ')})
+            </div>
+          </div>
           {cta}
           <div className="mb-2"></div>
         </Narrow>
@@ -360,6 +364,9 @@ function Landing() {
                 className="my-2 text-muted"
                 dangerouslySetInnerHTML={{ __html: courseDates }}
               />
+              <div className="mt-2 small text-muted">
+                ({t('DISPLAYED_IN_YOUR_TZ')})
+              </div>
               <div className="mt-4 d-flex align-items-center justify-content-center">
                 <GetTickets course_id={course.id} />
                 {course.facebookLink && (

@@ -107,7 +107,7 @@ function Home() {
         <span className="pr-2">{meta.title}</span>
         {loading && <Loading color="primary" />}
       </h2>
-
+      <div className="small text-muted mb-3">{t('DISPLAYED_IN_YOUR_TZ')}</div>
       <div className="pt-4 position-relative mb-5">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h5>
