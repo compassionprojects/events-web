@@ -89,10 +89,10 @@ function CourseCard({ id, title, description, dateStart, dateEnd, primary }) {
       <CardTitle className="font-weight-bold">{title}</CardTitle>
       <CardText>
         <ReactMarkdown source={description} escapeHtml={false} />
-        <div className="text-muted">
+        <span className="text-muted">
           {moment(dateStart).format('Do MMM')} -{' '}
           {moment(dateEnd).format('Do MMM YYYY')}
-        </div>
+        </span>
       </CardText>
       <Link
         href={`/[lang]/home/course/[course_id]/${path}`}
@@ -107,7 +107,7 @@ function CourseCard({ id, title, description, dateStart, dateEnd, primary }) {
 }
 
 CourseCard.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   dateStart: PropTypes.string,

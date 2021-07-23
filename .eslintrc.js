@@ -11,7 +11,7 @@ module.exports = {
       jsx: true, // Allows for the parsing of JSX
     },
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'react-hooks'],
   settings: {
     react: {
       version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
@@ -42,5 +42,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/ban-ts-comment': 0,
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    // 'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
   },
 };

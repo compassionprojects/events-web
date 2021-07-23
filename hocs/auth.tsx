@@ -10,6 +10,11 @@ const AuthWrap = (Component) => {
     const { t, locale } = useTranslation();
     const { user, authenticating, error } = useContext(UserContext);
 
+    useEffect(() => {
+      if ((!user && !authenticating) || error)
+        router.push(`/${locale}/signin?fail=1`);
+    }, [user, authenticating, error]);
+
     if (authenticating && !user) {
       return (
         <div className="d-flex align-items-center justify-content-center pt-5 mt-2">
@@ -17,11 +22,6 @@ const AuthWrap = (Component) => {
         </div>
       );
     }
-
-    useEffect(() => {
-      if ((!user && !authenticating) || error)
-        router.push(`/${locale}/signin?fail=1`);
-    }, [user, authenticating, error]);
 
     if ((!user && !authenticating) || error) {
       return null;
