@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="container mt-4">
           <div className="row justify-content-between">
             <ul className="my-3 list-inline col-md-6 col-sm-12 order-1 order-sm-1 order-md-0">
-              <li className="mx-2 list-inline-item">
+              <li className="mr-2 list-inline-item">
                 <Link href="/[lang]/about" as={`/${locale}/about`}>
                   {t('ABOUT_US')}
                 </Link>
@@ -107,8 +107,12 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="pb-4 mb-5 small text-muted">
+      <div className="pb-4 small text-muted">
         <div className="container">&copy; {year} peacefactory.fr</div>
+      </div>
+      <div className="container pb-4 mb-5">
+        Have questions about the platform?{' '}
+        <a href="mailto:madhu@peacefactory.fr">contact Madhu</a>
       </div>
     </footer>
   );

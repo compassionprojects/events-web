@@ -79,6 +79,7 @@ const strings: Strings = {
     DISPLAYED_IN_YOUR_TZ: 'Displayed in your timezone',
     JOIN_COMMUNITY_ROOM: 'Join community room',
     SELECT_SESSION: 'Select a session',
+    COURSE_CANCELLED: 'This course has been cancelled',
   },
 
   // French
@@ -159,6 +160,7 @@ const strings: Strings = {
     DISPLAYED_IN_YOUR_TZ: 'Displayed in your timezone',
     JOIN_COMMUNITY_ROOM: 'Join community room',
     SELECT_SESSION: 'Select a session',
+    COURSE_CANCELLED: 'This course has been cancelled',
   },
 };
 

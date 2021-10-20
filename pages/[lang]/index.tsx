@@ -62,6 +62,7 @@ const GET_COURSE = gql`
       videoUrl
       dateStart
       dateEnd
+      cancelled
       trainers {
         id
         name
@@ -168,7 +169,7 @@ function Landing() {
     .format('h:mm a z dddd, MMMM Do YYYY');
   const courseDates = t('COURSE_DATES', { startDate, endDate });
 
-  const cta = (
+  const cta = !course.cancelled && (
     <CTA
       start={course.dateStart}
       end={course.dateEnd}
@@ -205,6 +206,9 @@ function Landing() {
             </div>
           </div>
           {cta}
+          {course.cancelled && (
+            <div className="py-3 text-danger">{t('COURSE_CANCELLED')}</div>
+          )}
           <div className="mb-2"></div>
         </Narrow>
         <ShapeLeft />
@@ -356,7 +360,7 @@ function Landing() {
         )}
 
         {/* Register tickets section */}
-        {!user && (
+        {!user && !course.cancelled && (
           <Section>
             <h2 className="text-center pt-3">{t('GET_TICKETS')}</h2>
             <Narrow className="px-2 py-4 mx-auto text-center">
