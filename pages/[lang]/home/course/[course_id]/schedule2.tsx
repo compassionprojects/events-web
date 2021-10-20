@@ -18,6 +18,7 @@ const GET_SESSIONS = gql`
   query getSessions($courseId: ID!) {
     Course(where: { id: $courseId }) {
       communityRoomLink
+      cancelled
     }
     allSessions(
       where: { course: { id: $courseId } }
@@ -67,7 +68,7 @@ function Home() {
   moment.locale(locale);
 
   const sessions = data?.allSessions || [];
-  const { communityRoomLink } = data?.Course || {};
+  const { communityRoomLink, cancelled } = data?.Course || {};
 
   // group all sessions by day
   const grouped = sessions.reduce((groups, session) => {
@@ -121,6 +122,9 @@ function Home() {
         )}
       </h2>
       <div className="small text-muted mb-3">{t('DISPLAYED_IN_YOUR_TZ')}</div>
+      {cancelled && (
+        <div className="py-3 text-danger">{t('COURSE_CANCELLED')}</div>
+      )}
       <div className="pt-4 position-relative mb-5">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h5>

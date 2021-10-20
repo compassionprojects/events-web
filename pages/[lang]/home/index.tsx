@@ -80,7 +80,15 @@ Home.propTypes = {
   user: PropTypes.object,
 };
 
-function CourseCard({ id, title, description, dateStart, dateEnd, primary }) {
+function CourseCard({
+  id,
+  title,
+  description,
+  dateStart,
+  dateEnd,
+  primary,
+  cancelled,
+}) {
   const { t, locale } = useTranslation();
   const path = parseInt(id) >= 4 ? 'schedule2' : 'schedule';
 
@@ -94,6 +102,7 @@ function CourseCard({ id, title, description, dateStart, dateEnd, primary }) {
           {moment(dateEnd).format('Do MMM YYYY')}
         </span>
       </CardText>
+      {cancelled && <div className="text-danger pb-3">{t('CANCELLED')}</div>}
       <Link
         href={`/[lang]/home/course/[course_id]/${path}`}
         className={classnames({
@@ -113,6 +122,7 @@ CourseCard.propTypes = {
   dateStart: PropTypes.string,
   dateEnd: PropTypes.string,
   primary: PropTypes.bool,
+  cancelled: PropTypes.bool,
 };
 
 export default withAuth(Home);

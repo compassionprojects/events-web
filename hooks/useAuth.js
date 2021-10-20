@@ -15,6 +15,7 @@ const GET_AUTHED_USER = gql`
         description
         dateStart
         dateEnd
+        cancelled
       }
     }
   }

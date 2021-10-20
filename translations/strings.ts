@@ -80,6 +80,7 @@ const strings: Strings = {
     JOIN_COMMUNITY_ROOM: 'Join community room',
     SELECT_SESSION: 'Select a session',
     COURSE_CANCELLED: 'This course has been cancelled',
+    CANCELLED: 'Cancelled',
   },
 
   // French
@@ -161,6 +162,7 @@ const strings: Strings = {
     JOIN_COMMUNITY_ROOM: 'Join community room',
     SELECT_SESSION: 'Select a session',
     COURSE_CANCELLED: 'This course has been cancelled',
+    CANCELLED: 'Cancelled',
   },
 };
 
