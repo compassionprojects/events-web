@@ -21,3 +21,4 @@ visit localhost:3000
 ## Deployment
 
 We use [heroku](http://heroku.com/) as an application server and we have CI/CD configured via gitlab pipelines. As soon as a chnage is committed to master branch, it is deployed to heroku.
+
