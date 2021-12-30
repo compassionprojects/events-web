@@ -12,13 +12,14 @@ const cookieParser = require('cookie-parser');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const { subscribe_api_endpoint } = require('./newsletter');
 const HOST = process.env.HOST_URL;
+const { host: hostname } = require('url').parse(HOST);
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const port = process.env.PORT || 4000;
-const domain = dev ? 'localhost' : 'peacefactory.fr';
+const domain = dev ? 'localhost' : hostname;
 
 app.prepare().then(() => {
   const server = express();
