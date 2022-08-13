@@ -19,7 +19,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const port = process.env.PORT || 4000;
-const domain = dev ? 'localhost' : hostname;
+const domain = dev ? 'vic-web:4000' : hostname;
 
 app.prepare().then(() => {
   const server = express();
@@ -54,7 +54,10 @@ app.prepare().then(() => {
     try {
       // Set token if validation succeeds
       const session = await validateToken(req.query.token);
-      res.setHeader('Set-Cookie', `${session}; Domain=${domain}`);
+      res.setHeader(
+        'Set-Cookie',
+        session.replace(/HttpOnly/i, '; SameSite=None; Secure;')
+      );
       res.redirect(`/${lang}/home`);
     } catch (e) {
       res.clearCookie('keystone.sid');
