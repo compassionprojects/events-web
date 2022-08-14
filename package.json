@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/madhums/vic-website.git"
+    "url": "git+ssh://git@github.com:compassionprojects/events-web.git"
   },
   "keywords": [
     "vic",
@@ -19,12 +19,12 @@
   "author": "Madhusudhan Srinivasa <me@madhums.me>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://gitlab.com/madhums/vic-website/issues"
+    "url": "https://github.com/compassionprojects/events-web/issues"
   },
-  "homepage": "https://gitlab.com/madhums/vic-website#readme",
+  "homepage": "https://github.com/compassionprojects/events-web#readme",
   "engines": {
-    "node": "12.16.1",
-    "npm": "6.13.4"
+    "node": "16.x",
+    "npm": "8.x"
   },
   "dependencies": {
     "@apollo/react-hooks": "~3.1.5",
