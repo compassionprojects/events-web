@@ -1,7 +1,7 @@
 {
-  "name": "vic-website",
+  "name": "cp-events-web",
   "version": "1.0.0",
-  "description": "Website for vic platform",
+  "description": "A platform for running events, workshops or courses",
   "main": "index.js",
   "scripts": {
     "dev": "node server",
