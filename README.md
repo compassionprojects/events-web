@@ -1,6 +1,6 @@
-## VEP web
+## Events platform
 
-Virtual Exchange Platform / app
+A platform to run events, courses or workshops
 
 ## Development
 
@@ -20,5 +20,4 @@ visit localhost:3000
 
 ## Deployment
 
-We use [heroku](http://heroku.com/) as an application server and we have CI/CD configured via gitlab pipelines. As soon as a chnage is committed to master branch, it is deployed to heroku.
-
+Using heroku through github workflows. The master brnach is configured to deploy continuously, for more details checkout [`.github/workflows/`](/.github/workflows)
