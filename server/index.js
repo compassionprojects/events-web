@@ -3,6 +3,7 @@ require('dotenv').config();
 // server.js
 
 const express = require('express');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 const next = require('next');
 const fetch = require('node-fetch');
 const helmet = require('helmet');
@@ -12,21 +13,27 @@ const cookieParser = require('cookie-parser');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const { subscribe_api_endpoint } = require('./newsletter');
 const HOST = process.env.HOST_URL;
-const { host: hostname } = require('url').parse(HOST);
-
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const port = process.env.PORT || 4000;
-const domain = dev ? 'vic-web:4000' : hostname;
 
 app.prepare().then(() => {
   const server = express();
 
   server.use(helmet());
-  server.use(bodyParser.json());
   server.use(cookieParser());
+  server.use(
+    '/admin/api',
+    createProxyMiddleware({
+      target: process.env.VIC_API_HOST,
+      logLevel: 'debug',
+      changeOrigin: true,
+    })
+  );
+
+  server.use(bodyParser.json());
 
   server.post('/create-checkout-session', async (req, res) => {
     const lang = getLang(req);
@@ -54,10 +61,7 @@ app.prepare().then(() => {
     try {
       // Set token if validation succeeds
       const session = await validateToken(req.query.token);
-      res.setHeader(
-        'Set-Cookie',
-        session.replace(/HttpOnly/i, '; SameSite=None; Secure;')
-      );
+      res.setHeader('Set-Cookie', session);
       res.redirect(`/${lang}/home`);
     } catch (e) {
       res.clearCookie('keystone.sid');
