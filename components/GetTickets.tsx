@@ -17,7 +17,7 @@ export default function GetTickets({ size, title, course_id, ticket_url }) {
         href={ticket_url}
         target="_blank"
         rel="noopener noreferrer"
-        className={classnames('btn btn-primary rounded-pill', {
+        className={classnames('btn btn-primary', {
           'btn-lg': size === 'lg',
           'btn-sm': size === 'sm',
         })}>
@@ -29,7 +29,7 @@ export default function GetTickets({ size, title, course_id, ticket_url }) {
     <Link
       href={`/[lang]/course/[course_id]/tickets`}
       as={`/${locale}/course/${course_id}/tickets`}
-      className={classnames('btn btn-primary rounded-pill', {
+      className={classnames('btn btn-primary', {
         'btn-lg': size === 'lg',
         'btn-sm': size === 'sm',
       })}>
