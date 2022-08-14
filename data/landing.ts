@@ -1,7 +1,6 @@
-const contact_email = 'louise@peacefactory.fr';
-const contact_name = 'Louise Romain';
-const post_payment_questionaire =
-  'https://peacefactory.typeform.com/to/aIIB8QBn';
+const contact_email = 'madhu@nomaddev.co';
+const contact_name = 'Madhu';
+const post_payment_questionaire = 'https://typeform.com/';
 
 export default {
   payment_thank_you: `

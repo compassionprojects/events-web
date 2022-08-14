@@ -21,7 +21,7 @@ export default function Footer() {
               </li>
               <li className="mx-2 list-inline-item">
                 <a
-                  href="https://community.peacefactory.fr"
+                  href="https://discourse.org/{{community}}"
                   target="_blank"
                   rel="noreferrer">
                   {t('COMMUNITY')}
@@ -40,7 +40,7 @@ export default function Footer() {
             <ul className="my-3 list-inline col-md-4 col-sm-12 order-2 ml-auto">
               <li className="list-inline-item">
                 <a
-                  href="https://www.facebook.com/Peace-Factory-563809806979098/"
+                  href="https://www.facebook.com/{{community}}"
                   target="_blank"
                   rel="noreferrer">
                   <IconSocial
@@ -53,7 +53,7 @@ export default function Footer() {
               </li>
               <li className="list-inline-item">
                 <a
-                  href="https://www.instagram.com/louise_romain/"
+                  href="https://www.instagram.com/{{community}}/"
                   target="_blank"
                   rel="noreferrer">
                   <IconSocial
@@ -66,7 +66,7 @@ export default function Footer() {
               </li>
               <li className="list-inline-item">
                 <a
-                  href="https://www.youtube.com/channel/UCtBY3xN-CtE_-x3rnHgTg_Q"
+                  href="https://www.youtube.com/{{community}}"
                   target="_blank"
                   rel="noreferrer">
                   <IconSocial
@@ -79,7 +79,7 @@ export default function Footer() {
               </li>
               <li className="list-inline-item">
                 <a
-                  href="https://www.linkedin.com/company/peace-factory/"
+                  href="https://www.linkedin.com/company/{{community}}/"
                   target="_blank"
                   rel="noreferrer">
                   <IconSocial
@@ -92,11 +92,11 @@ export default function Footer() {
               </li>
               <li className="list-inline-item">
                 <a
-                  href="https://peacefactory.fr"
+                  href="https://vic-web.herokuapp.com/"
                   target="_blank"
                   rel="noreferrer">
                   <IconSocial
-                    alt="Visit Peace Factory website"
+                    alt="Visit our website"
                     src="/images/icon-website.svg"
                     height={30}
                     width={30}
@@ -108,11 +108,11 @@ export default function Footer() {
         </div>
       </div>
       <div className="pb-4 small text-muted">
-        <div className="container">&copy; {year} peacefactory.fr</div>
+        <div className="container">&#127279; {year} compassion projects</div>
       </div>
       <div className="container pb-4 mb-5">
         Have questions about the platform?{' '}
-        <a href="mailto:madhu@peacefactory.fr">contact Madhu</a>
+        <a href="mailto:madhu@nomaddev.co">contact Madhu</a>
       </div>
     </footer>
   );

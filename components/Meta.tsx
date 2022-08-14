@@ -11,10 +11,10 @@ function Meta({ title, description, image_url }) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image_url} />
-      <meta property="og:url" content="https://vic.peacefactory.fr" />
+      <meta property="og:url" content="https://vic-web.herokuapp.com" />
       <meta name="twitter:card" content={image_url} />
 
-      {/* Hotjar Tracking Code for https://vic.peacefactory.fr */}
+      {/* Hotjar Tracking Code for https://vic-web.herokuapp.com */}
       <script
         dangerouslySetInnerHTML={{
           __html: `
