@@ -83,7 +83,7 @@ function LinkInternal({ path, title }) {
     <Link
       href={path}
       as={path}
-      className="btn btn-lg rounded-pill my-4 btn-primary">
+      className="btn btn-lg my-4 btn-primary">
       {title}
     </Link>
   );
