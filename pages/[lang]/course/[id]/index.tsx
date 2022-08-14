@@ -182,7 +182,6 @@ function Landing() {
       </Cover>
 
       <div className="d-flex justify-content-center bg-light py-5 align-items-center">
-        <ImgAffiliates src="/images/logo-pf.svg" alt="Logo" />
         <ImgAffiliates
           src="/images/logo-cnvc.svg"
           alt="Center for nonviolent communication logo"
@@ -194,7 +193,7 @@ function Landing() {
         <div className="pt-5 mt-4 container" id="video">
           <div className="embed-responsive embed-responsive-16by9">
             <iframe
-              title="a video presentation on vic"
+              title="a video presentation"
               frameBorder="1"
               className="embed-responsive-item"
               sandbox="allow-same-origin allow-scripts"

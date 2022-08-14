@@ -15,7 +15,7 @@ import classnames from 'classnames';
 import ReactMarkdown from 'react-markdown/with-html';
 import { createGlobalStyle } from 'styled-components';
 import moment from 'moment-timezone';
-import striptags from 'striptags';
+// import striptags from 'striptags';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 
@@ -24,7 +24,7 @@ import GetTickets from 'components/GetTickets';
 import Icon from 'components/Icon';
 import media, { sizes } from 'components/Media';
 import Link from 'components/Link';
-import Meta from 'components/Meta';
+// import Meta from 'components/Meta';
 import Loading from 'components/Loading';
 import PreserveLineBreaks from 'components/PreserveLineBreaks';
 import useTranslation from 'hooks/useTranslation';
@@ -80,10 +80,7 @@ const GET_COURSE = gql`
 
 function LinkInternal({ path, title }) {
   return (
-    <Link
-      href={path}
-      as={path}
-      className="btn btn-lg my-4 btn-primary">
+    <Link href={path} as={path} className="btn btn-lg my-4 btn-primary">
       {title}
     </Link>
   );
@@ -180,11 +177,12 @@ function Landing() {
   return (
     <>
       {/* title and description for SEO */}
-      <Meta
+      {/* @todo enable once there's a mechanism to generate a dynamic one */}
+      {/* <Meta
         title={striptags(course.title)}
         description={striptags(course.description)}
         image_url="/images/social-media-banner.png"
-      />
+      /> */}
 
       <LandingStyles />
 
@@ -211,12 +209,9 @@ function Landing() {
           )}
           <div className="mb-2"></div>
         </Narrow>
-        <ShapeLeft />
-        <ShapeRight />
       </Cover>
 
       <div className="d-flex justify-content-center bg-light py-5 align-items-center">
-        <ImgAffiliates src="/images/logo-pf-new.svg" alt="Peace Factory" />
         <ImgAffiliates
           src="/images/logo-cnvc.svg"
           alt="Center for nonviolent communication logo"
@@ -448,34 +443,6 @@ const Section = styled.section.attrs({
   className: 'mt-4 py-5 border-top',
 })`
   outline: none;
-`;
-
-const Shape = styled(ImgUnselectable).attrs({
-  alt: 'Decorative artwork of semi-circle',
-})`
-  z-index: -1;
-  opacity: 0.5;
-  ${// @ts-ignore
-  media.down.tablet`
-    width: 256px;
-    height: 256px;
-  `}
-`;
-
-const ShapeLeft = styled(Shape).attrs({
-  src: '/images/shape-left.svg',
-})`
-  position: absolute;
-  left: 30px;
-  bottom: 0;
-`;
-
-const ShapeRight = styled(Shape).attrs({
-  src: '/images/shape-right.svg',
-})`
-  position: absolute;
-  right: 30px;
-  top: 20px;
 `;
 
 const ImgAffiliates = styled(ImgUnselectable).attrs({

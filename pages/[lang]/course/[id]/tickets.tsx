@@ -67,7 +67,8 @@ export default function Tickets() {
       'Do MMM YYYY'
     )} - Get your ticket`,
     description: striptags(course.description),
-    image_url: '/images/social-media-banner.png',
+    // @todo enable once there's a mechanism to generate a dynamic one
+    // image_url: '/images/social-media-banner.png',
   };
 
   const handleClick = async (e, p) => {

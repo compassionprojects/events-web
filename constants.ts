@@ -1,1 +1,1 @@
-export const APP_NAME = 'Virtual Exchange Platform';
+export const APP_NAME = 'Virtual Events Platform';

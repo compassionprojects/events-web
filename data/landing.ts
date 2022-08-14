@@ -6,7 +6,7 @@ export default {
   payment_thank_you: `
   We are delighted to see that you registered using this email address **{{email_id}}**.
 
-  If the email is not correct or you decide to use a different one to access the course platform, we invite you to send an email from the address you would like to use to <a href="mailto:${contact_email}?subject=VIC Email ID Correction">${contact_email}</a>.
+  If the email is not correct or you decide to use a different one to access the course platform, we invite you to send an email from the address you would like to use to <a href="mailto:${contact_email}?subject=Email ID Correction">${contact_email}</a>.
 
   We asked for minimal information when booking so that you choose the best moment to fill in more details. Before the start of the course and when you have about 10 minutes free, we invite you to fill in the questionaire.
 

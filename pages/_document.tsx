@@ -8,7 +8,7 @@ import Document, {
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-class VicDocument extends Document {
+class CustomDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     // https://github.com/vercel/next.js/blob/master/examples/with-styled-components/pages/_document.js
     const sheet = new ServerStyleSheet();
@@ -57,4 +57,4 @@ class VicDocument extends Document {
   }
 }
 
-export default VicDocument;
+export default CustomDocument;
