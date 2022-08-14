@@ -21,7 +21,7 @@ export default function Footer() {
               </li>
               <li className="mx-2 list-inline-item">
                 <a
-                  href="https://discourse.org/{{community}}"
+                  href="#"
                   target="_blank"
                   rel="noreferrer">
                   {t('COMMUNITY')}
@@ -40,7 +40,7 @@ export default function Footer() {
             <ul className="my-3 list-inline col-md-4 col-sm-12 order-2 ml-auto">
               <li className="list-inline-item">
                 <a
-                  href="https://www.facebook.com/{{community}}"
+                  href="#"
                   target="_blank"
                   rel="noreferrer">
                   <IconSocial
@@ -53,7 +53,7 @@ export default function Footer() {
               </li>
               <li className="list-inline-item">
                 <a
-                  href="https://www.instagram.com/{{community}}/"
+                  href="#"
                   target="_blank"
                   rel="noreferrer">
                   <IconSocial
@@ -66,7 +66,7 @@ export default function Footer() {
               </li>
               <li className="list-inline-item">
                 <a
-                  href="https://www.youtube.com/{{community}}"
+                  href="#"
                   target="_blank"
                   rel="noreferrer">
                   <IconSocial
@@ -79,7 +79,7 @@ export default function Footer() {
               </li>
               <li className="list-inline-item">
                 <a
-                  href="https://www.linkedin.com/company/{{community}}/"
+                  href="#"
                   target="_blank"
                   rel="noreferrer">
                   <IconSocial
@@ -92,7 +92,7 @@ export default function Footer() {
               </li>
               <li className="list-inline-item">
                 <a
-                  href="https://vic-web.herokuapp.com/"
+                  href="#"
                   target="_blank"
                   rel="noreferrer">
                   <IconSocial
@@ -108,7 +108,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="pb-4 small text-muted">
-        <div className="container">&#127279; {year} compassion projects</div>
+        <div className="container"><Copyleft>&copy;</Copyleft> {year} compassion projects</div>
       </div>
       <div className="container pb-4 mb-5">
         Have questions about the platform?{' '}
@@ -121,4 +121,9 @@ export default function Footer() {
 const IconSocial = styled.img`
   filter: grayscale(100%);
   opacity: 0.8;
+`;
+
+const Copyleft = styled.span`
+  display:inline-block;
+  transform: rotate(180deg);
 `;
