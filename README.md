@@ -2,16 +2,27 @@
 
 A platform to run events, courses or workshops
 
+## Requirements
+
+- nodejs@16
+
+You may install [asdf](https://asdf-vm.com/guide/getting-started.html) and then
+
+```sh
+asdf install nodejs 16.5.0
+```
+
 ## Development
 
 Clone the repository and then run
 
-```
+```sh
 npm install
+cp .env.example .env
 npm run dev
 ```
 
-visit localhost:3000
+visit localhost:4000 (make sure a course is added via [admin](https://github.com/compassionprojects/events-admin))
 
 ## Tech stack
 
