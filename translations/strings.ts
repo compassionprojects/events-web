@@ -19,7 +19,7 @@ const strings: Strings = {
     LOGOUT: 'Logout',
     HELP: 'Help',
     SUBSCRIPTION_SHORT_MSG:
-      'We will keep you updated on Nonviolent Communication Courses here.',
+      'We will keep you updated on Nonviolent Communication Courses here',
     COMMUNITY: 'Community',
     TERMS: 'Terms',
     SUBSCRIBE: 'Subscribe',
@@ -101,7 +101,7 @@ const strings: Strings = {
     LOGOUT: 'Logout',
     HELP: 'Help',
     SUBSCRIPTION_SHORT_MSG:
-      'We will keep you updated on Nonviolent Communication Courses here.',
+      'We will keep you updated on Nonviolent Communication Courses here',
     COMMUNITY: 'Community',
     TERMS: 'Terms',
     SUBSCRIBE: 'Subscribe',
