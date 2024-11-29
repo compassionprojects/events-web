@@ -1,6 +1,6 @@
-## Events platform
+## NVC Learning
 
-A platform to run events, courses or workshops
+A platform to learn NVC
 
 ## Requirements
 
@@ -31,4 +31,4 @@ visit localhost:4000 (make sure a course is added via [admin](https://github.com
 
 ## Deployment
 
-Using heroku through github workflows. The master brnach is configured to deploy continuously, for more details checkout [`.github/workflows/`](/.github/workflows)
+Using fly.io through github action. The main brnach is configured to deploy continuously. For access to fly.io, contact [@madhums](https://github.com/madhums)
