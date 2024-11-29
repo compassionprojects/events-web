@@ -13,7 +13,6 @@
     "url": "git+ssh://git@github.com:compassionprojects/events-web.git"
   },
   "keywords": [
-    "vic",
     "nvc"
   ],
   "author": "Madhusudhan Srinivasa <me@madhums.me>",

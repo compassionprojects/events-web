@@ -1,1 +1,1 @@
-export const APP_NAME = 'Virtual Events Platform';
+export const APP_NAME = 'NVC Learning';
