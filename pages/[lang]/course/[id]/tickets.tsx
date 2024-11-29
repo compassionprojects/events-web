@@ -61,11 +61,9 @@ export default function Tickets() {
   if (!course) return null;
 
   const meta = {
-    title: `Peace Factory presents ${course.title} - ${moment(
-      course.dateStart
-    ).format('Do MMM')} - ${moment(course.dateEnd).format(
-      'Do MMM YYYY'
-    )} - Get your ticket`,
+    title: `${course.title} - ${moment(course.dateStart).format(
+      'Do MMM'
+    )} - ${moment(course.dateEnd).format('Do MMM YYYY')} - Get your ticket`,
     description: striptags(course.description),
     // @todo enable once there's a mechanism to generate a dynamic one
     // image_url: '/images/social-media-banner.png',
