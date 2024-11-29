@@ -184,7 +184,7 @@ export function Header() {
 }
 
 const Logo = styled.img.attrs({
-  src: '/images/logo.svg',
+  src: '/images/logo.png',
   className: 'mr-2',
   alt: APP_NAME + ' logo',
 })`
