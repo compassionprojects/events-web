@@ -344,7 +344,7 @@ function Landing() {
             <Narrow className="mx-auto pl-sm-5">
               {faqs.map((item) => (
                 <div
-                  className={classnames('py-2 my-1 px-sm-2', {
+                  className={classnames('py-4 my-1 px-sm-2', {
                     'bg-light rounded-lg': faq[item.id],
                   })}
                   key={item.id}>
