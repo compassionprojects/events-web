@@ -33,9 +33,16 @@ import ImgUnselectable from 'components/ImgUnselectable';
 // Featured course:
 const COURSE_ID = 1;
 
+interface Attachment {
+  file: {
+    publicUrl: string;
+  };
+}
+
 interface Trainer {
   name: string;
   avatar_url: string;
+  attachment: Attachment;
   bio: string;
 }
 
@@ -68,6 +75,11 @@ const GET_COURSE = gql`
         name
         bio
         avatar_url
+        attachment {
+          file {
+            publicUrl
+          }
+        }
       }
     }
     allFAQS(where: { courses_some: { id: $id } }, sortBy: [id_ASC]) {
@@ -127,7 +139,12 @@ function Landing() {
     </button>
   );
 
-  const trnr: Trainer = { name: '', avatar_url: '', bio: '' };
+  const trnr: Trainer = {
+    name: '',
+    avatar_url: '',
+    bio: '',
+    attachment: { file: { publicUrl: '' } },
+  };
   const [trainer, setTrainer] = useState(trnr);
 
   // course id
@@ -296,7 +313,7 @@ function Landing() {
                 <img
                   style={{ height: 30, width: 30 }}
                   alt={trainer.name}
-                  src={trainer.avatar_url}
+                  src={trainer.attachment.file.publicUrl}
                   className="mr-2 img-fluid rounded-circle"
                 />
                 <span>{trainer.name}</span>
@@ -395,20 +412,27 @@ function Landing() {
 
 export default Landing;
 
-function Trainer({ name, avatar_url, bio, setTrainer }) {
+function Trainer({ name, avatar_url, bio, attachment, setTrainer }) {
   const openModal = (e) => {
     e.preventDefault();
-    setTrainer({ name, avatar_url, bio });
+    setTrainer({ name, avatar_url, bio, attachment });
   };
   return (
     <>
       <div className="my-3">
-        <img
-          alt={name}
-          src={avatar_url}
-          className="img-fluid rounded-circle"
-          style={{ height: 120, margin: '0 auto', cursor: 'pointer' }}
+        <div
           onClick={openModal}
+          className="rounded-circle"
+          style={{
+            background: `url(${
+              avatar_url || attachment.file.publicUrl
+            }) no-repeat`,
+            backgroundSize: 'cover',
+            height: 120,
+            width: 120,
+            margin: '0 auto',
+            cursor: 'pointer',
+          }}
         />
         <a className="mt-3 h6 d-block" href="" onClick={openModal}>
           {name}
@@ -423,6 +447,7 @@ Trainer.propTypes = {
   bio: PropTypes.string,
   avatar_url: PropTypes.string,
   setTrainer: PropTypes.func,
+  attachment: PropTypes.object,
 };
 
 const Cover = styled.div`
