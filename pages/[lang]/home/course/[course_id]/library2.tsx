@@ -263,7 +263,9 @@ function Video({ url }) {
   if (!url) return null;
   const isOneDrive = url.includes('onedrive.live.com');
   return (
-    <div className="embed-responsive embed-responsive-16by9">
+    <div
+      className="embed-responsive embed-responsive-16by9"
+      style={{ borderRadius: 15 }}>
       {!isOneDrive && (
         <iframe
           className="embed-responsive-item rounded"

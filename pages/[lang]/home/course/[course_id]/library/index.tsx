@@ -179,7 +179,9 @@ function Library() {
             <img src={item.url} className="img-fluid rounded" />
           )}
           {item.contentType === 'video' && item.url && (
-            <div className="embed-responsive embed-responsive-16by9">
+            <div
+              className="embed-responsive embed-responsive-16by9"
+              style={{ borderRadius: 15 }}>
               {!item.isOneDrive && (
                 <iframe
                   className="embed-responsive-item"

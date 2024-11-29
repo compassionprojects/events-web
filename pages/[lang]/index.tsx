@@ -238,7 +238,9 @@ function Landing() {
       {/* Video presentation section */}
       {course.videoUrl && (
         <div className="pt-5 mt-4 container" id="video">
-          <div className="embed-responsive embed-responsive-16by9">
+          <div
+            className="embed-responsive embed-responsive-16by9"
+            style={{ borderRadius: 15 }}>
             <iframe
               title="a video presentation of the course"
               frameBorder="1"
