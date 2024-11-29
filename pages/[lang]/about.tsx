@@ -7,7 +7,7 @@ import Meta from 'components/Meta';
 import Loading from 'components/Loading';
 import useTranslation from 'hooks/useTranslation';
 
-const CONTENT_ID = 133;
+const CONTENT_ID = 1;
 
 const GET_CONTENT = gql`
   query Content($id: ID!) {

@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown/with-html';
 import Meta from 'components/Meta';
 import useTranslation from 'hooks/useTranslation';
 
-const CONTENT_ID = 134;
+const CONTENT_ID = 2;
 
 const GET_CONTENT = gql`
   query Content($id: ID!) {

@@ -31,7 +31,7 @@ import useTranslation from 'hooks/useTranslation';
 import ImgUnselectable from 'components/ImgUnselectable';
 
 // Featured course:
-const COURSE_ID = 5;
+const COURSE_ID = 1;
 
 interface Trainer {
   name: string;
