@@ -33,18 +33,16 @@ export default function Navigation() {
 
   const [defaultWall = {}] = (data && data.allMessageTypes) || [];
 
-  const newPath = parseInt(course_id.toString()) >= 4 ? '2' : '';
-
   const items = [
     { path: `/[lang]/home`, as: `/${locale}/home`, title: t('HOME') },
     {
-      path: `/[lang]/home/course/[course_id]/schedule${newPath}`,
-      as: `/${locale}/home/course/${course_id}/schedule${newPath}`,
+      path: `/[lang]/home/course/[course_id]/schedule2`,
+      as: `/${locale}/home/course/${course_id}/schedule2`,
       title: t('SCHEDULE'),
     },
     {
-      path: `/[lang]/home/course/[course_id]/library${newPath}`,
-      as: `/${locale}/home/course/${course_id}/library${newPath}`,
+      path: `/[lang]/home/course/[course_id]/library2`,
+      as: `/${locale}/home/course/${course_id}/library2`,
       title: t('LIBRARY'),
     },
     {

@@ -90,7 +90,7 @@ function CourseCard({
   cancelled,
 }) {
   const { t, locale } = useTranslation();
-  const path = parseInt(id) >= 4 ? 'schedule2' : 'schedule';
+  const path = 'schedule2';
 
   return (
     <Card body className="my-2">

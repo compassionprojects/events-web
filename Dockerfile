@@ -28,6 +28,11 @@ RUN npm ci --include=dev
 COPY . .
 
 # Build application
+ENV VIC_API_ROOT=https://nvclearning-admin.fly.dev/admin/api
+ENV NEXT_PUBLIC_VIC_API_ROOT=https://nvclearning-admin.fly.dev/admin/api
+ENV VIC_API_HOST=https://nvclearning-admin.fly.dev
+ENV NEXT_PUBLIC_VIC_API_HOST=https://nvclearning-admin.fly.dev
+ENV HOST_URL=https://nvclearning-admin.fly.dev
 RUN npm run build
 
 # Remove development dependencies

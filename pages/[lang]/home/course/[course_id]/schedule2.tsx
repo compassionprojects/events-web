@@ -235,10 +235,14 @@ export function Trainers({ items }) {
         <div key={obj.id} className="d-flex align-items-center mr-4">
           <div className="mr-2 flex-shrink-0">
             {obj.attachment && (
-              <img
-                src={obj.attachment.file.publicUrl}
-                className="img-fluid rounded-circle"
-                style={{ height: 25 }}
+              <div
+                className="rounded-circle"
+                style={{
+                  background: `url(${obj.attachment.file.publicUrl}) no-repeat`,
+                  backgroundSize: 'cover',
+                  height: 25,
+                  width: 25,
+                }}
               />
             )}
           </div>
