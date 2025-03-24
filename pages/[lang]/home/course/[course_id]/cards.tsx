@@ -123,17 +123,19 @@ function Cards() {
                 setOpen({ ...opened, [card.id]: !opened[card.id] })
               }>
               <CardFront>
-                <img
-                  style={{
-                    height: 175,
-                    width: card.type !== 'challenge' && 250,
-                  }}
-                  src={`/images/card-${card.type}.svg`}
-                  alt={card.type}
+                <div
                   className={classnames('img-fluid border p-3', {
                     'rounded-circle': card.type === 'challenge',
                     rounded: card.type !== 'challenge',
                   })}
+                  style={{
+                    height: 175,
+                    width: 250,
+                    margin: '0 auto',
+                    background: `url(/images/card-${card.type}.svg) no-repeat`,
+                    backgroundPosition: '50% 50%',
+                    backgroundSize: 'contain',
+                  }}
                 />
               </CardFront>
               <CardBack
